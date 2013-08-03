@@ -125,7 +125,7 @@
 
 		<div class="tab-pane" id="Agudeza_Visual">
 			<!-- Agudeza Visual -->
-			<fieldset>
+			
 
 			<!-- Form Name -->
 			<legend>Agudeza Visual</legend>
@@ -245,6 +245,68 @@
 
 
 
+
+
+
+		<div class="tab-pane" id="Biomicroscopia">
+			<!-- biomicroscopia -->		
+			<legend>Biomicroscopía</legend>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  {{ Form::label('ConjuntivaD', 'ConjuntivaD: ', array ('class' => 'control-label')) }}
+			  <div class="controls">
+			  	{{ Form::textarea('ConjuntivaD','',array('class' => 'span6')) }}
+			  </div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  {{ Form::label('CorneaD', 'CorneaD: ', array ('class' => 'control-label')) }}
+			  <div class="controls">
+			  	{{ Form::textarea('CorneaD','',array('class' => 'span6')) }}
+			  </div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  {{ Form::label('BUTD', 'BUTD: ', array ('class' => 'control-label')) }}
+			  <div class="controls">
+			    {{ Form::text('BUTD','',array('class' => 'input-medium')) }}
+			    Seg.                
+			  </div>
+			</div>
+
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  {{ Form::label('ConjuntivaI', 'ConjuntivaI: ', array ('class' => 'control-label')) }}
+			  <div class="controls">
+			  	{{ Form::textarea('ConjuntivaI','',array('class' => 'span6')) }}
+			  </div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  {{ Form::label('CorneaI', 'CorneaI: ', array ('class' => 'control-label')) }}
+			  <div class="controls">
+			  	{{ Form::textarea('CorneaI','',array('class' => 'span6')) }}
+			  </div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="control-group">
+			  {{ Form::label('BUTI', 'BUTI: ', array ('class' => 'control-label')) }}
+			  <div class="controls">
+			    {{ Form::text('BUTI','',array('class' => 'input-medium')) }}
+			    Seg.                
+			  </div>
+			</div>
+
+
+
+			<!-- Fin de biomicroscopia -->
+		</div>
 
 
 

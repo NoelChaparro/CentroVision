@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AgudezaVisual' => $baseDir . '/app/models/AgudezaVisual.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/Carbon/Carbon.php',
     'Carbon\\Tests\\TestFixture' => $vendorDir . '/nesbot/carbon/Carbon/Tests/TestFixture.php',
@@ -20,6 +21,7 @@ return array(
     'ClassPreloader\\Parser\\FileVisitor' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/FileVisitor.php',
     'ClassPreloader\\Parser\\NodeTraverser' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Parser/NodeTraverser.php',
     'CreateAgudezaVisualTable' => $baseDir . '/app/database/migrations/2013_08_01_025821_create_agudezavisual_table.php',
+    'CreateBiomicroscopiaTable' => $baseDir . '/app/database/migrations/2013_08_03_164127_create_biomicroscopia_table.php',
     'CreatePadecimientoPacientesTable' => $baseDir . '/app/database/migrations/2013_07_31_025317_create_padecimientopacientes_table.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'DatosPacientes' => $baseDir . '/app/models/DatosPacientes.php',

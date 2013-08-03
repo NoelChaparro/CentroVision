@@ -309,51 +309,7 @@
 
 
 					
-					<div class="tab-pane" id="Biomicroscopia">
-						<!-- biomicroscopia -->
-						<form class="form-horizontal">
-							<fieldset>
-
-							<!-- Form Name -->
-							<legend>Biomicroscopía</legend>
-
-							<!-- Textarea -->
-							<div class="control-group">
-							  <label class="control-label">Conjuntiva</label>
-							  <div class="controls">                     
-							    <textarea id="conjuntivad" name="conjuntivad"></textarea>
-							  </div>
-							</div>
-
-							<!-- Textarea -->
-							<div class="control-group">
-							  <label class="control-label">Cornea</label>
-							  <div class="controls">                     
-							    <textarea id="cornead" name="cornead"></textarea>
-							  </div>
-							</div>
-
-							<!-- Textarea -->
-							<div class="control-group">
-							  <label class="control-label">Conjuntiva</label>
-							  <div class="controls">                     
-							    <textarea id="conjuntivai" name="conjuntivai"></textarea>
-							  </div>
-							</div>
-
-							<!-- Textarea -->
-							<div class="control-group">
-							  <label class="control-label">Cornea</label>
-							  <div class="controls">                     
-							    <textarea id="corneai" name="corneai"></textarea>
-							  </div>
-							</div>
-
-							</fieldset>
-							</form>
-
-						<!-- Fin de biomicroscopia -->
-					</div>
+					
 					<div class="tab-pane" id="Iris">
 						<p>7lorem </p>
 					</div>
