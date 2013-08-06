@@ -78,6 +78,17 @@ class ExpedientePacienteController extends BaseController{
 				);
 				$biomicroscopia = new Biomicroscopia($biomicroscopiaPaciente);
 				$biomicroscopia->save();
+
+				// Guardar en tabla Iris
+				$irisPaciente = array(
+					"Paciente_id" => $id_paciente,
+					"IrisPupilasD" => Input::get("IrisPupilasD"),
+					"CristalinoD" => Input::get("CristalinoD"),
+					"IrisPupilasI" => Input::get("IrisPupilasI"),
+					"CristalinoI" => Input::get("CristalinoI")
+				);
+				$iris = new Iris($irisPaciente);
+				$iris->save();
 			}
 		}
 	}

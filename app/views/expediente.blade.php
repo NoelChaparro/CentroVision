@@ -303,15 +303,40 @@
 			  </div>
 			</div>
 
-
-
 			<!-- Fin de biomicroscopia -->
 		</div>
 
 
+		<!-- biomicroscopia -->		
+		<legend>Iris</legend>
+		<div class="control-group">
+			{{ Form::label('IrisPupilasD', 'Iris, Pupilas: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('IrisPupilasD','',array('class' => 'span6')) }}
+			</div>
+		</div>			
 
+		<div class="control-group">
+			{{ Form::label('CristalinoD', 'Cristalino: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('CristalinoD','',array('class' => 'span6')) }}
+			</div>
+		</div>
 
+		<div class="control-group">
+			{{ Form::label('IrisPupilasI', 'Iris, Pupilas: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('IrisPupilasI','',array('class' => 'span6')) }}			
+			</div>
+		</div>
 
+		<div class="control-group">
+			{{ Form::label('CristalinoI', 'Cristalino: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('CristalinoI','',array('class' => 'span6')) }}
+			</div>
+		</div>
+		<!-- Fin Iris -->
 
 
 
