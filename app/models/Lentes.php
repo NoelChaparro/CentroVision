@@ -1,8 +1,8 @@
 <?php
 
-class Fondo extends Eloquent {
-	protected $table = 'Fondo';
-	
+class Lentes extends Eloquent {
+	protected $table = 'Lentes';
+
     protected $guarded = array();
 
     public static $rules = array();
@@ -10,5 +10,5 @@ class Fondo extends Eloquent {
     public function DatosPacientes()
     {
         return $this->hasOne('DatosPacientes');
-    }
+    }    
 }

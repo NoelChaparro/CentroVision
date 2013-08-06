@@ -1,8 +1,8 @@
 <?php
 
-class Fondo extends Eloquent {
-	protected $table = 'Fondo';
-	
+class Receta extends Eloquent {
+	protected $table = 'Receta';
+
     protected $guarded = array();
 
     public static $rules = array();
