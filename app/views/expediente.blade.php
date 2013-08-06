@@ -307,7 +307,7 @@
 		</div>
 
 
-		<!-- biomicroscopia -->		
+		<!-- Iris -->		
 		<legend>Iris</legend>
 		<div class="control-group">
 			{{ Form::label('IrisPupilasD', 'Iris, Pupilas: ', array('class' => 'control-label')) }}
@@ -339,8 +339,35 @@
 		<!-- Fin Iris -->
 
 
+		<!-- Fondo -->
+		<legend>Fondo</legend>
+		<div class="control-group">
+			{{ Form::label('PapilaD', 'Papila: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('PapilaD','',array('class' => 'span6')) }}
+			</div>
+		</div>
 
+		<div class="control-group">
+			{{ Form::label('MaculaD', 'Mácula: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('MaculaD','',array('class' => 'span6')) }}
+			</div>
+		</div>
 
+		<div class="control-group">
+			{{ Form::label('PapilaI', 'Papila: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('PapilaI','',array('class' => 'span6')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('MaculaI', 'Mácula: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('MaculaI','',array('class' => 'span6')) }}
+			</div>
+		</div>
 
 
 		<!-- Button -->

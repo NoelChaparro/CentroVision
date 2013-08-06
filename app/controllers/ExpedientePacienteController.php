@@ -89,6 +89,17 @@ class ExpedientePacienteController extends BaseController{
 				);
 				$iris = new Iris($irisPaciente);
 				$iris->save();
+
+				// Guardar en tabla Fondo
+				$fondoPaciente = array(
+					"Paciente_id" => $id_paciente,
+					"PapilaD" => Input::get("PapilaD"),
+					"MaculaD" => Input::get("MaculaD"),
+					"PapilaI" => Input::get("PapilaI"),
+					"MaculaI" => Input::get("MaculaI")					
+				);
+				$fondo = new Fondo($fondoPaciente);
+				$fondo->save();
 			}
 		}
 	}
