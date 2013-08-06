@@ -100,6 +100,17 @@ class ExpedientePacienteController extends BaseController{
 				);
 				$fondo = new Fondo($fondoPaciente);
 				$fondo->save();
+
+				// Guardar en tabla Retina
+				$retinaPaciente = array(
+					"Paciente_id" => $id_paciente,
+					"VasosD" => Input::get("VasosD"),
+					"RetinaPerifericaD" => Input::get("RetinaPerifericaD"),
+					"VasosI" => Input::get("VasosI"),
+					"RetinaPerifericaI" => Input::get("RetinaPerifericaI")
+				);
+				$retina = new Retina($retinaPaciente);
+				$retina->save();
 			}
 		}
 	}

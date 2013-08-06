@@ -368,7 +368,41 @@
 				{{ Form::textarea('MaculaI','',array('class' => 'span6')) }}
 			</div>
 		</div>
+		<!-- Fin Fondo -->
 
+		<!-- Retina -->
+		<legend>Retina</legend>
+		<div class="control-group">
+			{{ Form::label('VasosD', 'Vasos: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('VasosD','',array('class' => 'span6')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('RetinaPerifericaD', 'Retina Periférica: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('RetinaPerifericaD','',array('class' => 'span6')) }}
+			</div>
+		</div>
+
+
+		<div class="control-group">
+			{{ Form::label('VasosI', 'Vasos: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('VasosI','',array('class' => 'span6')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('RetinaPerifericaI', 'Retina Periférica: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('RetinaPerifericaI','',array('class' => 'span6')) }}
+			</div>
+		</div>
+
+
+		<!-- Fin Retina -->
 
 		<!-- Button -->
 		<div class="control-group">
