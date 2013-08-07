@@ -400,9 +400,210 @@
 				{{ Form::textarea('RetinaPerifericaI','',array('class' => 'span6')) }}
 			</div>
 		</div>
-
-
 		<!-- Fin Retina -->
+
+
+
+		<!-- Gonioscopía -->
+		<legend>Gonioscopía</legend>
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G1D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G2D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G3D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G4D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('OrbitaD', 'Orbita: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('OrbitaD','',array('class' => 'span6')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G1I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G2I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G3I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('G4I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('OrbitaI', 'Orbita: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::textarea('OrbitaI','',array('class' => 'span6')) }}
+			</div>
+		</div>
+		<!-- Fin Gonioscopía -->
+
+
+		<!-- Movilidad -->
+		<legend>Movilidad</legend>
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M1D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M2D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M3D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M4D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M5D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M6D','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M1C','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M2C','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M3C','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M1I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M2I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M3I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M4I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M5I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				{{ Form::text('M6I','',array('class' => 'input-small')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('PPM', 'PPM: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::text('PPM','',array('class' => 'input-xxlarge')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('PMonocular', 'P. Monocular: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::text('PMonocular','',array('class' => 'input-xxlarge')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('PAlterno', 'P. Alterno: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::text('PAlterno','',array('class' => 'input-xxlarge')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('Ducciones', 'Ducciones: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::text('Ducciones','',array('class' => 'input-xxlarge')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('Versiones', 'Versiones: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::text('Versiones','',array('class' => 'input-xxlarge')) }}
+			</div>
+		</div>
+
+		<div class="control-group">
+			{{ Form::label('OjoFijador', 'Ojo Fijador: ', array('class' => 'control-label')) }}
+			<div class="controls">
+				{{ Form::text('OjoFijador','',array('class' => 'input-xxlarge')) }}
+			</div>
+		</div>
+		<!-- Fin Movilidad -->
 
 		<!-- Button -->
 		<div class="control-group">
