@@ -6,6 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddCCIPCBiomicroscopiaTable' => $baseDir . '/app/database/migrations/2013_08_10_001425_add_ccipc_biomicroscopia_table.php',
+    'AddCampoToDatosPacientesTable' => $baseDir . '/app/database/migrations/2013_08_09_232958_add_campo_to_datospacientes_table.php',
+    'AddCamposFondoFondoTable' => $baseDir . '/app/database/migrations/2013_08_10_002447_add_camposfondo_fondo_table.php',
+    'AddMmhgToAgudezaVisualTable' => $baseDir . '/app/database/migrations/2013_08_09_234656_add_mmhg_to_agudezavisual_table.php',
     'AgudezaVisual' => $baseDir . '/app/models/AgudezaVisual.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Biomicroscopia' => $baseDir . '/app/models/Biomicroscopia.php',
@@ -35,6 +39,7 @@ return array(
     'CreateMovilidadTable' => $baseDir . '/app/database/migrations/2013_08_06_015025_create_movilidad_table.php',
     'CreatePadecimientoPacientesTable' => $baseDir . '/app/database/migrations/2013_07_31_025317_create_padecimientopacientes_table.php',
     'CreateRecetaTable' => $baseDir . '/app/database/migrations/2013_08_06_024124_create_receta_table.php',
+    'CreateRefraccionTable' => $baseDir . '/app/database/migrations/2013_08_10_011824_create_refraccion_table.php',
     'CreateResumenClinicoTable' => $baseDir . '/app/database/migrations/2013_08_06_025458_create_resumenclinico_table.php',
     'CreateRetinaTable' => $baseDir . '/app/database/migrations/2013_08_06_012623_create_retina_table.php',
     'CreateTratamientoTable' => $baseDir . '/app/database/migrations/2013_08_06_023834_create_tratamiento_table.php',
@@ -319,6 +324,7 @@ return array(
     'Fondo' => $baseDir . '/app/models/Fondo.php',
     'Gonioscopia' => $baseDir . '/app/models/Gonioscopia.php',
     'HomeController' => $baseDir . '/app/controllers/HomeController.php',
+    'Hospitalizacion' => $baseDir . '/app/models/Hospitalizacion.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
     'Illuminate\\Auth\\AuthManager' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/AuthManager.php',
     'Illuminate\\Auth\\AuthServiceProvider' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/AuthServiceProvider.php',
@@ -1130,6 +1136,9 @@ return array(
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/Psr/Log/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
     'Receta' => $baseDir . '/app/models/Receta.php',
+    'RemoveCamposBiomicroscopia2FromBiomicroscopiaTable' => $baseDir . '/app/database/migrations/2013_08_10_001700_remove_camposbiomicroscopia2_from_biomicroscopia_table.php',
+    'RemoveCamposBiomicroscopiaFromBiomicroscopiaTable' => $baseDir . '/app/database/migrations/2013_08_10_000708_remove_camposbiomicroscopia_from_biomicroscopia_table.php',
+    'RemoveCamposFondoFromFondoTable' => $baseDir . '/app/database/migrations/2013_08_10_002742_remove_camposfondo_from_fondo_table.php',
     'ResumenClinico' => $baseDir . '/app/models/ResumenClinico.php',
     'Retina' => $baseDir . '/app/models/Retina.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',

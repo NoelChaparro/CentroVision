@@ -183,7 +183,6 @@
 			</div>
 
 
-			<!-- Form Name -->
 			<h3>Tonometría</h3>
 
 			<!-- Text input-->
@@ -206,7 +205,7 @@
 
 			<!-- Textarea -->
 			<div class="control-group">
-			  {{ Form::label('ParpadoD', 'Parpados, Aparato Lagrimal:', array('class' => 'control-label')) }}
+			  {{ Form::label('ParpadoD', 'Órbita, Parpados y Aparato Lagrimal:', array('class' => 'control-label')) }}
 			  <div class="controls">
 			  	{{ Form::textarea('ParpadoD','',array('class' => 'span6')) }}
 
@@ -233,7 +232,7 @@
 
 			<!-- Textarea -->
 			<div class="control-group">
-		      {{ Form::label('ParpadoI', 'Parpados, Aparato Lagrimal:', array('class' => 'control-label')) }}
+		      {{ Form::label('ParpadoI', 'Órbita, Parpados y Aparato Lagrimal:', array('class' => 'control-label')) }}
 			  <div class="controls"> 
 			    {{ Form::textarea('ParpadoI','',array('class' => 'span6')) }}                    
 
