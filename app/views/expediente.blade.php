@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('titulo')  
     Centro de Visión
-@endsection
+@stop
 
 @section('DatosPaciente')
 		<!-- Form Name -->
@@ -310,13 +310,6 @@
 			</div>
 
 			<div class="control-group">
-				{{ Form::label('OrbitaD', 'Orbita: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('OrbitaD','',array('class' => 'span6')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
 				<div class="controls">
 					{{ Form::text('G1I','',array('class' => 'input-small')) }}
 				</div>
@@ -340,12 +333,6 @@
 				</div>
 			</div>
 
-			<div class="control-group">
-				{{ Form::label('OrbitaI', 'Orbita: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('OrbitaI','',array('class' => 'span6')) }}
-				</div>
-			</div>
 		</div>
 		<!-- Fin Gonioscopía -->
 
@@ -652,6 +639,48 @@
 				{{ Form::label('EsquiascopiaAVOD', 'EsquiascopiaAVOD: ', array('class' => 'control-label')) }}
 				<div class="controls">
 					{{ Form::text('EsquiascopiaAVOD','',array('class' => 'input-xlarge')) }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('EsquiascopiaSphOI', 'EsquiascopiaSphOI: ', array('class' => 'control-label')) }}
+				<div class="controls">
+					{{ Form::text('EsquiascopiaSphOI','',array('class' => 'input-xlarge')) }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('EsquiascopiaCylOI', 'EsquiascopiaCylOI: ', array('class' => 'control-label')) }}
+				<div class="controls">
+					{{ Form::text('EsquiascopiaCylOI','',array('class' => 'input-xlarge')) }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('EsquiascopiaEjeOI', 'EsquiascopiaEjeOI: ', array('class' => 'control-label')) }}
+				<div class="controls">
+					{{ Form::text('EsquiascopiaEjeOI','',array('class' => 'input-xlarge')) }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('REsquiascopiaAddOI', 'EsquiascopiaAddOI: ', array('class' => 'control-label')) }}
+				<div class="controls">
+					{{ Form::text('EsquiascopiaAddOI','',array('class' => 'input-xlarge')) }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('EsquiascopiaBifocalOI', 'EsquiascopiaBifocalOI: ', array('class' => 'control-label')) }}
+				<div class="controls">
+					{{ Form::text('EsquiascopiaBifocalOI','',array('class' => 'input-xlarge')) }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('EsquiascopiaAVOI', 'EsquiascopiaAVOI: ', array('class' => 'control-label')) }}
+				<div class="controls">
+					{{ Form::text('EsquiascopiaAVOI','',array('class' => 'input-xlarge')) }}
 				</div>
 			</div>
 
@@ -992,9 +1021,9 @@
 		</div>
 
 	{{ Form::close() }}
-@endsection
+@stop
 
 
 @section('Javascript')
 	<script src="js/ExpedientePaciente.js"></script>
-@endsection
+@stop

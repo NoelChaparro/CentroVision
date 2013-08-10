@@ -7,4 +7,8 @@ class DatosPacientes extends Eloquent {
     protected $guarded = array();
 
     public static $rules = array();
+
+    public function PadecimientoPacientes(){
+    	return $this->hasMany('PadecimientoPacientes');
+    }
 }

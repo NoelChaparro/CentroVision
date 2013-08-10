@@ -1139,6 +1139,7 @@ return array(
     'RemoveCamposBiomicroscopia2FromBiomicroscopiaTable' => $baseDir . '/app/database/migrations/2013_08_10_001700_remove_camposbiomicroscopia2_from_biomicroscopia_table.php',
     'RemoveCamposBiomicroscopiaFromBiomicroscopiaTable' => $baseDir . '/app/database/migrations/2013_08_10_000708_remove_camposbiomicroscopia_from_biomicroscopia_table.php',
     'RemoveCamposFondoFromFondoTable' => $baseDir . '/app/database/migrations/2013_08_10_002742_remove_camposfondo_from_fondo_table.php',
+    'RemoveOrbitasFromGonioscopiaTable' => $baseDir . '/app/database/migrations/2013_08_10_195025_remove_orbitas_from_gonioscopia_table.php',
     'ResumenClinico' => $baseDir . '/app/models/ResumenClinico.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'Symfony\\Component\\BrowserKit\\Client' => $vendorDir . '/symfony/browser-kit/Symfony/Component/BrowserKit/Client.php',
