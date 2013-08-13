@@ -1016,6 +1016,7 @@
 		  <label class="control-label"></label>
 		  <div class="controls">
 		    <input value="Guardar" class="btn btn-large btn-primary" type="submit">
+		    <input value="Buscar" class="btn" type="button" id="btnBuscarPaciente">
 		    <input value="Cancelar" class="btn btn-large btn-primary" type="button">
 		  </div>
 		</div>

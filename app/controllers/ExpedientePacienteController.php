@@ -5,6 +5,14 @@ class ExpedientePacienteController extends BaseController{
 		return View::make('expediente');
 	}
 
+	public function buscarExpediente(){
+		if (Request::ajax()){
+			//$pacientes=DB::table('DatosPacientes')->get();
+			$paciente = DB::table('DatosPacientes')->where('Nombre', 'LIKE', '%Chaparr%')->get();
+			return Response::json(array('Nombre'=> $paciente));
+		}
+	}
+
 	public function guardarExpediente(){
 		if (Request::ajax()){
 			//Validamos el formulario

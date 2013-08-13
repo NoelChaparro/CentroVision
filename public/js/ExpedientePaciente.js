@@ -3,6 +3,7 @@ $(document).on("ready",inicio);
 function inicio() 
 {
 	guardarFormularioExpediente();
+	$("#btnBuscarPaciente").on("click",buscarPaciente);
 }
 
 function guardarFormularioExpediente(){
@@ -22,4 +23,18 @@ function guardarFormularioExpediente(){
 		return false;
 	});
 	
+}
+
+function buscarPaciente(){
+        $.ajax({
+                data:  '',
+                url:   'buscarExpediente',
+                type:  'post',
+                beforeSend: function () {
+                        alert("Procesando, espere por favor...");
+                },
+                success:  function (response) {
+                        alert(response.Nombre[0].Domicilio);
+                }
+        });
 }

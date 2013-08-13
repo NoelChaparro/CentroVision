@@ -19,3 +19,5 @@
 Route::get('/','ExpedientePacienteController@expediente');
 
 Route::post('guardarExpediente', 'ExpedientePacienteController@guardarExpediente');
+
+Route::post('buscarExpediente', 'ExpedientePacienteController@buscarExpediente');
