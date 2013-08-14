@@ -15,10 +15,19 @@
 	<!-- end: Mobile Specific -->
 	
 	<!-- start: CSS -->
-	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link id="base-style" href="css/style.css" rel="stylesheet">
-	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-responsive.css">
+
+    <script src="js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 	<link rel="stylesheet" href="css/alertify.core.css" />
 	<link rel="stylesheet" href="css/alertify.default.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
@@ -301,6 +310,9 @@
 							</div>
 						</fieldset>
 					</form>
+					<button href="#Vademecum" role="button" class="btn btn-large " data-toggle="modal">Vademecum</button>
+                <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, odio sapiente enim quae error vero rem quidem aliquid dolor porro praesentium aliquam soluta cum itaque eius corporis illo libero nostrum!</p>
+                <button href="#Buscar" role="button" class="btn btn-large " data-toggle="modal">Buscar Paciente</button>
 					</div>
 
 
@@ -311,7 +323,7 @@
 					
 					
 					<div class="tab-pane" id="Iris">
-						<p>7lorem </p>
+						
 					</div>
 					<div class="tab-pane" id="Fondo">
 						<p>8</p>
@@ -367,7 +379,27 @@
 	</div>
 	
 	<div class="clearfix"></div>
-	
+	<div class="modal hide fade in" id="Buscar">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Buscar Paciente</h3>
+            </div>
+            <div class="modal-body">
+                <p>Aqui va lo que necesitas</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Cerrar</a>
+            </div>
+        </div>
+        <div id="Vademecum" class="modal hide fade in"  >
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Vademecum.com</h3>
+            </div>
+            <div class="modal-body">
+                <iframe src="http://www.vademecum.es/" frameborder="0" width="730px" height="1141px" scrolling="no" style="top:-270px; position:absolute" ></iframe>
+            </div>
+        </div>
 	<footer>
 		<p>
 			<span style="text-align:left;float:left">&copy; Dr. Gerardo Contreras Herrera 2013</span>
