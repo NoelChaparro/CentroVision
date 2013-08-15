@@ -22,19 +22,23 @@ function guardarFormularioExpediente(){
 		});
 		return false;
 	});
-	
 }
 
 function buscarPaciente(){
-        $.ajax({
-                data:  '',
-                url:   'buscarExpediente',
-                type:  'post',
-                beforeSend: function () {
-                        alert("Procesando, espere por favor...");
-                },
-                success:  function (response) {
-                        alert(response.Nombre[0].Domicilio);
-                }
-        });
+	var contenido = $('.tblBusquedaPacientesModal tbody');
+    $.ajax({
+            data:  'buscar=' + $('#txtBuscarPaciente').val(),
+            url:   'buscarExpediente',
+            type:  'post',
+            beforeSend: function () {
+            	contenido.html('Buscando...');
+            },
+            success:  function (response) {
+            	contenido.html('');
+            	$.each(response.Paciente, function(i,elemento){
+            		$('<tr><td>'+elemento.IdPaciente+'</td><td>'+elemento.Nombre+'</td><td>'+elemento.Domicilio+'</td><td>'+elemento.Telefono+'</td></tr>').appendTo(contenido);
+            	});
+            }
+    });
+    return false;
 }

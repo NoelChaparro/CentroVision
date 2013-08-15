@@ -3,9 +3,50 @@
     Centro de Visión
 @stop
 
-@section('DatosPaciente')
+@section('Contenido')
+	<!-- start: Content -->
+	<div id="content" class="span10">
+		<div id="TabContent" class="tab-content">
+			<div class="tab-pane active" id="Inicio">
+			<!-- Inicio -->
+				<button href="#Vademecum" role="button" class="btn btn-large " data-toggle="modal">Vademecum</button>
+			</div>
+
+
+
 		<!-- Form Name -->
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente')) }}
+
+
+
+			<button href="#BuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
+       		<div class="modal hide fade in" id="BuscarPaciente">
+            	<div class="modal-header">
+               		<a class="close" data-dismiss="modal">&times;</a>
+               		<h3>Buscar Paciente</h3>
+               		<br />
+               		<input type="text" class="input-xlarge search-query span4" id="txtBuscarPaciente" placeholder="Buscar Paciente">
+               		<button type="submit" class="btn" id="btnBuscarPaciente">Buscar</button>
+           		</div>
+           		<div class="modal-body">
+           	    	<table class="table tblBusquedaPacientesModal table-striped">
+           	    		<thead>
+           	    			<tr>
+           	    				<th>#</th>
+           	    				<th>Nombre</th>
+           	    				<th>Dirección</th>
+           	    				<th>Teléfono</th>
+           	    			</tr>
+           	    		</thead>
+						<tbody></tbody>
+           	    	</table>
+       	    	</div>
+   	        	<div class="modal-footer">
+                	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
+           		</div>
+       		</div>
+
+
 		
 		<!-- Datos Generales -->
 		<div class="tab-pane" id="DatosGenerales">
@@ -1016,12 +1057,84 @@
 		  <label class="control-label"></label>
 		  <div class="controls">
 		    <input value="Guardar" class="btn btn-large btn-primary" type="submit">
-		    <input value="Buscar" class="btn" type="button" id="btnBuscarPaciente">
 		    <input value="Cancelar" class="btn btn-large btn-primary" type="button">
 		  </div>
 		</div>
 
 	{{ Form::close() }}
+
+
+
+		<div class="tab-pane" id="Iris">
+						
+					</div>
+					<div class="tab-pane" id="Fondo">
+						<p>8</p>
+					</div>
+					<div class="tab-pane" id="Gonioscopia">
+						<p>9</p>
+					</div>
+					<div class="tab-pane" id="Movilidad">
+						<p>12</p>
+					</div>
+					<div class="tab-pane" id="Exoftalmometria">
+						<p>124</p>
+					</div>
+					<div class="tab-pane" id="Diagnostico">
+						<p>1324</p>
+					</div>
+					<div class="tab-pane" id="Tratamiento">
+						<p>245</p>
+					</div>
+					<div class="tab-pane" id="Receta">
+						<p>245dgujjy</p>
+					</div>
+					<div class="tab-pane" id="Lentes">
+						<p>467</p>
+					</div>
+					<div class="tab-pane" id="Certificados">
+						<p>adsffas</p>
+					</div>
+					<div class="tab-pane" id="Resumen_Clinico">
+						<p>dasfh</p>
+					</div>
+					<div class="tab-pane" id="Hospitalizacion">
+						<p>gfhfgh</p>
+					</div>
+				</div>
+			</div>
+			<!-- end: Content -->
+		</div><!--/#content.span10-->
+	</div><!--/fluid-row-->
+
+	<div class="modal hide fade" id="myModal">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">×</button>
+			<h3>Settings</h3>
+		</div>
+		<div class="modal-body">
+			<p>Here settings can be configured...</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal">Close</a>
+			<a href="#" class="btn btn-primary">Save changes</a>
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>
+
+
+		
+        <div id="Vademecum" class="modal hide fade in"  >
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">&times;</a>
+                <h3>Vademecum.com</h3>
+            </div>
+            <div class="modal-body">
+                <iframe src="http://www.vademecum.es/" frameborder="0" width="730px" height="1141px" scrolling="no" style="top:-270px; position:absolute" ></iframe>
+            </div>
+        </div>
+
 @stop
 
 

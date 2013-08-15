@@ -8,8 +8,9 @@ class ExpedientePacienteController extends BaseController{
 	public function buscarExpediente(){
 		if (Request::ajax()){
 			//$pacientes=DB::table('DatosPacientes')->get();
-			$paciente = DB::table('DatosPacientes')->where('Nombre', 'LIKE', '%Chaparr%')->get();
-			return Response::json(array('Nombre'=> $paciente));
+			$busqueda = Input::get("buscar");
+			$paciente = DB::table('DatosPacientes')->where('Nombre', 'LIKE', '%'.$busqueda.'%')->get();
+			return Response::json(array('Paciente'=> $paciente));
 		}
 	}
 

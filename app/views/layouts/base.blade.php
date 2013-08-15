@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	
 	<!-- start: Meta -->
@@ -294,112 +294,19 @@
 				</div>
 			</noscript>
 			
-			<!-- start: Content -->
-			<div id="content" class="span10">
-				<div id="TabContent" class="tab-content">
-					<div class="tab-pane active" id="Inicio">
-					<!-- Inicio -->
-					<form class="form-vertical text-center">
-						<fieldset>
-							<div class="control-group">
-							  <label class="control-label" for="typeahead"><h1><b>Buscar Paciente</b></h1> </label>
-							  <div class="controls">
-								<input type="text" class="span4 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
-								
-							  </div>
-							</div>
-						</fieldset>
-					</form>
-					<button href="#Vademecum" role="button" class="btn btn-large " data-toggle="modal">Vademecum</button>
-                <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, odio sapiente enim quae error vero rem quidem aliquid dolor porro praesentium aliquam soluta cum itaque eius corporis illo libero nostrum!</p>
-                <button href="#Buscar" role="button" class="btn btn-large " data-toggle="modal">Buscar Paciente</button>
-					</div>
+			
 
 
-					@yield('DatosPaciente')
+					@yield('Contenido')
 
 
 
 					
 					
-					<div class="tab-pane" id="Iris">
-						
-					</div>
-					<div class="tab-pane" id="Fondo">
-						<p>8</p>
-					</div>
-					<div class="tab-pane" id="Gonioscopia">
-						<p>9</p>
-					</div>
-					<div class="tab-pane" id="Movilidad">
-						<p>12</p>
-					</div>
-					<div class="tab-pane" id="Exoftalmometria">
-						<p>124</p>
-					</div>
-					<div class="tab-pane" id="Diagnostico">
-						<p>1324</p>
-					</div>
-					<div class="tab-pane" id="Tratamiento">
-						<p>245</p>
-					</div>
-					<div class="tab-pane" id="Receta">
-						<p>245dgujjy</p>
-					</div>
-					<div class="tab-pane" id="Lentes">
-						<p>467</p>
-					</div>
-					<div class="tab-pane" id="Certificados">
-						<p>adsffas</p>
-					</div>
-					<div class="tab-pane" id="Resumen_Clinico">
-						<p>dasfh</p>
-					</div>
-					<div class="tab-pane" id="Hospitalizacion">
-						<p>gfhfgh</p>
-					</div>
-				</div>
-			</div>
-			<!-- end: Content -->
-		</div><!--/#content.span10-->
-		</div><!--/fluid-row-->
+					
 		
-	<div class="modal hide fade" id="myModal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Settings</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here settings can be configured...</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
-	
-	<div class="clearfix"></div>
-	<div class="modal hide fade in" id="Buscar">
-            <div class="modal-header">
-                <a class="close" data-dismiss="modal">&times;</a>
-                <h3>Buscar Paciente</h3>
-            </div>
-            <div class="modal-body">
-                <p>Aqui va lo que necesitas</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn" data-dismiss="modal">Cerrar</a>
-            </div>
-        </div>
-        <div id="Vademecum" class="modal hide fade in"  >
-            <div class="modal-header">
-                <a class="close" data-dismiss="modal">&times;</a>
-                <h3>Vademecum.com</h3>
-            </div>
-            <div class="modal-body">
-                <iframe src="http://www.vademecum.es/" frameborder="0" width="730px" height="1141px" scrolling="no" style="top:-270px; position:absolute" ></iframe>
-            </div>
-        </div>
+
+		
 	<footer>
 		<p>
 			<span style="text-align:left;float:left">&copy; Dr. Gerardo Contreras Herrera 2013</span>
