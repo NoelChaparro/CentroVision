@@ -5,20 +5,11 @@
 
 @section('Contenido')
 	<!-- start: Content -->
-	<div id="content" class="span10">
-		<div id="TabContent" class="tab-content">
-			<div class="tab-pane active" id="Inicio">
-			<!-- Inicio -->
-				<button href="#Vademecum" role="button" class="btn btn-large " data-toggle="modal">Vademecum</button>
-			</div>
-
-
-
+	<div class="offset2">		
 		<!-- Form Name -->
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente')) }}
-
-
-
+		<!--start: Inicio -->
+		<div id="Inicio">
 			<button href="#BuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
        		<div class="modal hide fade in" id="BuscarPaciente">
             	<div class="modal-header">
@@ -45,39 +36,38 @@
                 	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
            		</div>
        		</div>
-
-
-		
+		</div>
+		<!--End: Inicio -->
 		<!-- Datos Generales -->
-		<div class="tab-pane" id="DatosGenerales">
+		<div id="Datos_Generales">
 			<legend>Registrar Paciente</legend>
 
 			<div class="control-group">
-			  {{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
-			  <div class="controls">
-			    {{ Form::text('nombre','',array('class' => 'input-xlarge')) }}
-			  </div>
+			  	{{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
+			  	<div class="controls">
+			    	{{ Form::text('nombre','',array('class' => 'input-xlarge')) }}
+			  	</div>
 			</div>
 				
 			<div class="control-group">
-			  {{ Form::label('domicilio', 'Domicilio:', array('class' => 'control-label')) }}
-			  <div class="controls">
-			    {{ Form::text('domicilio','',array('class' => 'input-xlarge')) }}
-			  </div>
+				{{ Form::label('domicilio', 'Domicilio:', array('class' => 'control-label')) }}
+				<div class="controls">
+			    	{{ Form::text('domicilio','',array('class' => 'input-xlarge')) }}
+			  	</div>
 			</div>
 						
 			<div class="control-group">
-			  {{ Form::label('colonia', 'Colonia:', array('class' => 'control-label')) }}
-			  <div class="controls">
-			    {{ Form::text('colonia','',array('class' => 'input-xlarge')) }}				
-			  </div>
+			  	{{ Form::label('colonia', 'Colonia:', array('class' => 'control-label')) }}
+			  	<div class="controls">
+			    	{{ Form::text('colonia','',array('class' => 'input-xlarge')) }}				
+			  	</div>
 			</div>				
 
 			<div class="control-group">
-			  {{ Form::label('campo', 'Campo:', array('class' => 'control-label')) }}
-			  <div class="controls">
-			    {{ Form::text('campo','',array('class' => 'input-xlarge')) }}				
-			  </div>
+			  	{{ Form::label('campo', 'Campo:', array('class' => 'control-label')) }}
+			  	<div class="controls">
+			    	{{ Form::text('campo','',array('class' => 'input-xlarge')) }}				
+			  	</div>
 			</div>				
 
 			<div class="control-group">
@@ -152,7 +142,7 @@
 		<!-- Fin de Padecimiento -->
 
 		<!-- Agudeza Visual -->
-		<div class="tab-pane" id="AgudezaVisual">
+		<div class="tab-pane" id="Agudeza_Visual">
 			<legend>Agudeza Visual</legend>
 			<div class="control-group">
 			  {{ Form::label('AVSCOD', 'AVSCOD:', array('class' => 'control-label')) }}
@@ -1020,7 +1010,7 @@
 		<!-- Fin Certificado -->
 
 		<!-- Resumen Clínico -->
-		<div class="tab-pane" id="ResumenClinico">
+		<div class="tab-pane" id="Resumen_Clinico">
 			<legend>Resumen Clínico</legend>
 
 			<div class="control-group">
@@ -1103,27 +1093,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- end: Content -->
-		</div><!--/#content.span10-->
 	</div><!--/fluid-row-->
-
-	<div class="modal hide fade" id="myModal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal">×</button>
-			<h3>Settings</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here settings can be configured...</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal">Close</a>
-			<a href="#" class="btn btn-primary">Save changes</a>
-		</div>
-	</div>
-	
-	<div class="clearfix"></div>
-
-
 		
         <div id="Vademecum" class="modal hide fade in"  >
             <div class="modal-header">
