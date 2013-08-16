@@ -1,15 +1,13 @@
 /* Higher than 960 (desktop devices)
 ====================================================================== */
-@media only screen and (min-width: 980px) and (max-width: 1199px){
-	
-	
+@media only screen and (min-width: 980px) and (max-width: 3000px){
 	#sidebar-left {
 		background: #3A3A3A;
+		border:0;
 		position: fixed;
 		height: 100%;
-		width:150px !important;
+		width:250px !important;
 	}
-	
 	.sidebar-nav > ul{
 		margin: 0px;
 	}
@@ -17,6 +15,10 @@
 @media only screen and (min-width: 768px) and (max-width: 979px) {
 
 	#sidebar-left{
+		background: #3A3A3A;
+		border:0;
+		position: fixed;
+		height: 100%;
 		width:125px !important;
 	}
 
@@ -39,25 +41,26 @@
 	body {
 		padding: 0px;
 	}
-	#sidebar-left{
-		width:50px !important;
-	}
 	.nav-tabs.nav-stacked > li > a,
 	.nav-tabs.nav-stacked > li > ul > li > a {
 		font-size: 12px;
 		text-align: left;	
+		color:black;
 	}
 }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 =================================================================== */
 @media only screen and (max-width: 479px) {
-	#sidebar-left{
-		width:50px !important;
+
+	.sidebar-left{
+		position:relative;
 	}
+
 	.nav-tabs.nav-stacked > li > a,
 	.nav-tabs.nav-stacked > li > ul > li > a {
-		font-size: 12px;
-		text-align: center;	
+		font-size: 10px;
+		text-align: left;
+		color:black;	
 	}
 }	
 @media only screen and (max-height: 768px) {

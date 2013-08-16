@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/main-responsive.css">
     <link rel="stylesheet" href="css/alertify.core.css" />
 	<link rel="stylesheet" href="css/alertify.default.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
 	<!-- end: CSS -->
 	
 
@@ -44,50 +45,19 @@
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+				<a class="btn btn-navbar hidden-tablet" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand offset2" href="index.html"><span>@yield('titulo') </span></a>		
+				<a class="brand offset2" href="index.html"><span>@yield('titulo') </span></a>	
 			</div>
 		</div>
 	</div>
 	<!-- start: Header -->	
 		<div class="container-fluid-full">
 			<div class="row-fluid">	
-				<!-- start: Main Menu -->
-				<div id="sidebar-left" class="span2">
-					<nav class="nav-collapse sidebar-nav">
-						<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
-							<li><a href="#Inicio" class="active"><i class="icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
-	                        <li><a href="#Datos_Generales"><i class="icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li> 
-	                        <li><a href="#Padecimientos"><i class="icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
-	                        <li><a href="#Agudeza_Visual"><i class="icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
-	                        <li><a href="#BiomicroscopiaIris"><i class="icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
-	                        <li><a href="#FondoRetina"><i class="icon-white icon-road"></i><span class="hidden-phone"> Fondo</span></a></li>
-	                        <li><a href="#Gonioscopia"><i class="icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
-	                        <li><a href="#Movilidad"><i class="icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
-	                        <li><a href="#Refraccion"><i class="icon-white icon-picture"></i><span class="hidden-phone"> Exoftalmometria</span></a></li>
-	                        <li><a href="#Diagnostico"><i class="icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
-	                        <li><a href="#Tratamiento"><i class="icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
-	                        <li><a href="#Receta"><i class="icon-white icon-ok"></i><span class="hidden-phone"> Receta</span></a></li>
-	                        <li><a href="#Lentes"><i class="icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
-	                        <li><a href="#Certificado"><i class="icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
-	                        <li><a href="#Resumen_Clinico"><i class="icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
-	                        <li><a href="#Hospitalizacion"><i class="icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
-						</ul>
-					</nav>
-				</div>
-				<!-- end: Main Menu -->
 				
-				<noscript>
-					<div class="alert alert-block span10">
-						<h4 class="alert-heading">Warning!</h4>
-						<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-					</div>
-				</noscript>
-
 					@yield('Contenido')
 
 			</div>
@@ -103,6 +73,7 @@
 	<!-- start: JavaScript-->
 	<script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/jquery-ui-1.10.0.custom.min.js"></script><!--para calendario en inputbox-->
     <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/navbar.js"></script>
@@ -110,7 +81,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 	<script src="js/alertify.min.js"></script>
-
+	
 
 		@yield('Javascript')
 	<!-- end: JavaScript-->

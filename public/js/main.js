@@ -1,0 +1,2 @@
+/* ---------- Datapicker ---------- */
+	$('.datepicker').datepicker();
