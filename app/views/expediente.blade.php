@@ -44,7 +44,7 @@
 		<!--start: Inicio -->
 		<section id="Inicio">
 			<button href="#BuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
-       		<div class="modal hide fade in" id="BuscarPaciente">
+       		<div class="modal hide fade" tabindex="-1" role="dialog" style="display:none" id="BuscarPaciente">
             	<div class="modal-header">
                		<a class="close" data-dismiss="modal">&times;</a>
                		<h3>Buscar Paciente</h3>
@@ -56,10 +56,10 @@
            	    	<table class="table tblBusquedaPacientesModal table-striped">
            	    		<thead>
            	    			<tr>
-           	    				<th>#</th>
-           	    				<th>Nombre</th>
-           	    				<th>Dirección</th>
-           	    				<th>Teléfono</th>
+           	    				<th class"span1">#</th>
+           	    				<th class"span2">Nombre</th>
+           	    				<th class"span2">Dirección</th>
+           	    				<th class"span2">Teléfono</th>
            	    			</tr>
            	    		</thead>
 						<tbody></tbody>
