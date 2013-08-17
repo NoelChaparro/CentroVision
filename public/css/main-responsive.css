@@ -2,11 +2,8 @@
 ====================================================================== */
 @media only screen and (min-width: 980px) and (max-width: 3000px){
 	#sidebar-left {
-		background: #3A3A3A;
-		border:0;
-		position: fixed;
 		height: 100%;
-		width:250px !important;
+		width:190px !important;
 	}
 	.sidebar-nav > ul{
 		margin: 0px;
@@ -15,9 +12,6 @@
 @media only screen and (min-width: 768px) and (max-width: 979px) {
 
 	#sidebar-left{
-		background: #3A3A3A;
-		border:0;
-		position: fixed;
 		height: 100%;
 		width:125px !important;
 	}
@@ -41,10 +35,15 @@
 	body {
 		padding: 0px;
 	}
+	#sidebar-left{
+		width:50px !important;
+		left:0px;
+		height:100%;
+	}
 	.nav-tabs.nav-stacked > li > a,
 	.nav-tabs.nav-stacked > li > ul > li > a {
 		font-size: 12px;
-		text-align: left;	
+		text-align: center;	
 		color:black;
 	}
 }
@@ -52,14 +51,16 @@
 =================================================================== */
 @media only screen and (max-width: 479px) {
 
-	.sidebar-left{
-		position:relative;
+	#sidebar-left{
+		width:50px !important;
+		left:0px;
+		height:95%;
 	}
 
 	.nav-tabs.nav-stacked > li > a,
 	.nav-tabs.nav-stacked > li > ul > li > a {
 		font-size: 10px;
-		text-align: left;
+		text-align: center;
 		color:black;	
 	}
 }	

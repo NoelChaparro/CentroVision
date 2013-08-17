@@ -24,6 +24,12 @@ footer div span{
 .container-fluid{
 	padding: 0;
 }
+
+#sidebar-left{
+		background: #3A3A3A;
+		border:0;
+		position: fixed;
+	}
 .sidebar-nav > ul{
 	margin: 0px;
 	padding-bottom: 1px;

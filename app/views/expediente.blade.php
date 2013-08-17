@@ -7,24 +7,24 @@
 
 	<!-- start: Main Menu -->
 				<div id="sidebar-left" class="span2">
-					<nav class="nav-collapse collapse sidebar-nav">
+					<nav class=" sidebar-nav">
 						<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
-							<li><a href="#Inicio" class="active"><i class="hidden-phone icon-white icon-home"></i><span> Inicio</span></a></li>
-	                        <li><a href="#Datos_Generales"><i class="hidden-phone icon-white icon-user"></i><span> Datos Generales</span></a></li> 
-	                        <li><a href="#Padecimientos"><i class="hidden-phone icon-white icon-briefcase"></i><span> Padecimientos</span></a></li>
-	                        <li><a href="#Agudeza_Visual"><i class="hidden-phone icon-white icon-minus-sign"></i><span> Agudeza Visual</span></a></li>
-	                        <li><a href="#BiomicroscopiaIris"><i class="hidden-phone icon-white icon-eye-close"></i><span> Biomicroscopia</span></a></li>                
-	                        <li><a href="#FondoRetina"><i class="hidden-phone icon-white icon-road"></i><span> Fondo</span></a></li>
-	                        <li><a href="#Gonioscopia"><i class="hidden-phone icon-white icon-filter"></i><span> Gonioscopia</span></a></li>
-	                        <li><a href="#Movilidad"><i class="hidden-phone icon-white icon-th-large"></i><span> Movilidad</span></a></li>
-	                        <li><a href="#Refraccion"><i class="hidden-phone icon-white icon-picture"></i><span> Exoftalmometria</span></a></li>
-	                        <li><a href="#Diagnostico"><i class="hidden-phone icon-white icon-comment"></i><span> Diagnosticos</span></a></li>
-	                        <li><a href="#Tratamiento"><i class="hidden-phone icon-white icon-folder-open"></i><span> Tratamiento</span></a></li>
-	                        <li><a href="#Receta"><i class="hidden-phone icon-white icon-ok"></i><span> Receta</span></a></li>
-	                        <li><a href="#Lentes"><i class="hidden-phone icon-white icon-zoom-in"></i><span> Lentes</span></a></li>
-	                        <li><a href="#Certificado"><i class="hidden-phone icon-white icon-file"></i><span> Certificado</span></a></li>
-	                        <li><a href="#Resumen_Clinico"><i class="hidden-phone icon-white icon-list"></i><span> Resumen Clinico</span></a></li>
-	                        <li><a href="#Hospitalizacion"><i class="hidden-phone icon-white icon-plus"></i><span> Hospitalizacion</span></a></li>
+							<li><a href="#Inicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
+	                        <li><a href="#Datos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li> 
+	                        <li><a href="#Padecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
+	                        <li><a href="#Agudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
+	                        <li><a href="#BiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
+	                        <li><a href="#FondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo</span></a></li>
+	                        <li><a href="#Gonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
+	                        <li><a href="#Movilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
+	                        <li><a href="#Refraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Exoftalmometria</span></a></li>
+	                        <li><a href="#Diagnostico"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
+	                        <li><a href="#Tratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
+	                        <li><a href="#Receta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
+	                        <li><a href="#Lentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
+	                        <li><a href="#Certificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
+	                        <li><a href="#Resumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
+	                        <li><a href="#Hospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
 						</ul>
 					</nav>
 				</div>
