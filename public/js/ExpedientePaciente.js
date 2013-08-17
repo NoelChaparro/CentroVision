@@ -1,12 +1,13 @@
 $(document).on("ready",inicio);
 
-function inicio() 
+function inicio() //Inicio del documento
 {
 	guardarFormularioExpediente();
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
+	tablaBusquedaPacientesModal();
 }
 
-function guardarFormularioExpediente(){
+function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
 	var form = $('.frmExpedientePaciente');
 	form.bind("submit",function(){
 		$.ajax({
@@ -24,21 +25,201 @@ function guardarFormularioExpediente(){
 	});
 }
 
-function buscarPaciente(){
+function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla
 	var contenido = $('.tblBusquedaPacientesModal tbody');
     $.ajax({
-            data:  'buscar=' + $('#txtBuscarPaciente').val(),
-            url:   'buscarExpediente',
+            data:  'buscarPaciente=' + $('#txtBuscarPaciente').val(),
+            url:   'buscarPaciente',
             type:  'post',
             beforeSend: function () {
             	contenido.html('Buscando...');
             },
             success:  function (response) {
             	contenido.html('');
-            	$.each(response.Paciente, function(i,elemento){
+            	$.each(response.Pacientes, function(i,elemento){
             		$('<tr><td>'+elemento.IdPaciente+'</td><td>'+elemento.Nombre+'</td><td>'+elemento.Domicilio+'</td><td>'+elemento.Telefono+'</td></tr>').appendTo(contenido);
             	});
             }
     });
     return false;
+}
+
+function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la tabla de busqueda de los pacientes
+	$('.tblBusquedaPacientesModal tbody').on('mouseover', 'tr', function(event) { //Toma el evento mouseover en funcion live para que el tr seleccionado cambie de color al igual que el cursor
+		$(this).parent().parent().removeClass("table-striped");
+	    $(this).css({"background-color":"#adff2f","cursor":"pointer"});
+    });
+
+    $('.tblBusquedaPacientesModal tbody').on('mouseout', 'tr', function(event) { // evento mouseout que elimina los estilos (background de todo el tr) y agrega el estilo sebra a la tabla
+		$(this).parent().parent().addClass("table-striped");
+        $(this).removeAttr("style");
+    });
+
+    $('.tblBusquedaPacientesModal tbody').on('click', 'tr', function(event) { // permite agregar a la tabla de personas principal el registro que se seleccione.              
+		idPaciente = $(this).children('td')[0].innerText;
+        buscarPacienteConId(idPaciente);
+        $(".close").click();
+    });
+}
+
+function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
+	$.ajax({
+            data:  'idPaciente=' + idPaciente,
+            url:   'buscarPacientePorId',
+            type:  'post',
+            beforeSend: function () {
+            	//contenido.html('Buscando...');
+            },
+            success:  function (response) {
+            	$.each(response.Paciente, function(i,elemento){
+            		// Datos Generales del Paciente
+            		$("#nombre").val(elemento.Nombre);
+            		$("#domicilio").val(elemento.Domicilio);
+            		$("#colonia").val(elemento.Colonia);
+            		$("#campo").val(elemento.Campo);
+            		$("#ciudad").val(elemento.Ciudad);
+            		$("#date01").val((elemento.FechaNacimiento).substr(8,2)+"/"+(elemento.FechaNacimiento).substr(5,2)+"/"+(elemento.FechaNacimiento).substr(0,4));
+            		if (elemento.Sexo == 'M'){
+            			$('input:radio[name=Sexo]:nth(0)').prop('checked',true);
+            		}else{
+            			$('input:radio[name=Sexo]:nth(1)').prop('checked',true);
+            		}
+            		$("#ocupacion").val(elemento.Ocupacion);
+            		$("#telefono").val(elemento.Telefono);
+            		$("#referencia").val(elemento.Referencia);
+
+            		// Padecimiento Paciente
+            		$("#sintomatologia").val(response.Padecimiento[0].Sintomatologia);
+            		$("#antecedentes").val(response.Padecimiento[0].Antecedentes);
+
+            		// Agudeza Visual
+            		$("#AVSCOD").val(response.AgudezaVisual[0].AVSCOD);
+            		$("#CCD").val(response.AgudezaVisual[0].CCD);
+            		$("#PuntoD").val(response.AgudezaVisual[0].PuntoD);
+            		$("#AVSCOI").val(response.AgudezaVisual[0].AVSCOI);
+            		$("#CCI").val(response.AgudezaVisual[0].CCI);
+            		$("#PuntoI").val(response.AgudezaVisual[0].PuntoI);
+					$("#TonometriaD5").val(response.AgudezaVisual[0].TonometriaD5);
+					$("#TonometriaD10").val(response.AgudezaVisual[0].TonometriaD10);
+            		//falta crear id en los mmhg
+            		$("#ParpadoD").val(response.AgudezaVisual[0].ParpadoD);
+					$("#TonometriaI5").val(response.AgudezaVisual[0].TonometriaD5);
+					$("#TonometriaI10").val(response.AgudezaVisual[0].TonometriaD10);
+            		//falta crear id en los mmhg
+            		$("#ParpadoI").val(response.AgudezaVisual[0].ParpadoD);
+
+            		// Biomicroscopia e Iris
+            		$("#CCIPCD").val(response.Biomicroscopia[0].CCIPCD);
+            		$("#BUTD").val(response.Biomicroscopia[0].BUTD);
+            		$("#CCIPCI").val(response.Biomicroscopia[0].CCIPCI);
+            		$("#BUTI").val(response.Biomicroscopia[0].BUTI);
+
+            		// Fondo y Retina
+            		$("#PMVRD").val(response.FondoRetina[0].PMVRD);
+            		$("#PMVRI").val(response.FondoRetina[0].PMVRI);
+
+            		// Gonioscopia
+            		// Faltan los IDs
+
+            		// Movilidad
+            		// Faltan datos
+            		$("#PPM").val(response.Movilidad[0].PPM);
+            		$("#PMonocular").val(response.Movilidad[0].PMonocular);
+            		$("#PAlterno").val(response.Movilidad[0].PAlterno);
+            		$("#Ducciones").val(response.Movilidad[0].Ducciones);
+            		$("#Versiones").val(response.Movilidad[0].Versiones);
+            		$("#OjoFijador").val(response.Movilidad[0].OjoFijador);
+
+            		// Refraccion
+            		$("#ExoftalmometriaOD").val(response.Refraccion[0].ExoftalmometriaOD);
+            		$("#ExoftalmometriaOI").val(response.Refraccion[0].ExoftalmometriaOI);
+            		$("#ExoftalmometriaBase").val(response.Refraccion[0].ExoftalmometriaBase);
+            		$("#PaquimetriaOD").val(response.Refraccion[0].PaquimetriaOD);
+            		$("#PaquimetriaOI").val(response.Refraccion[0].PaquimetriaOI);
+            		$("#RefraccionSphOD").val(response.Refraccion[0].RefraccionSphOD);
+            		$("#RefraccionCylOD").val(response.Refraccion[0].RefraccionCylOD);
+            		$("#RefraccionEjeOD").val(response.Refraccion[0].RefraccionEjeOD);
+            		$("#RefraccionAddOD").val(response.Refraccion[0].RefraccionAddOD);
+            		$("#RefraccionBifocalOD").val(response.Refraccion[0].RefraccionBifocalOD);
+            		$("#RefraccionAVOD").val(response.Refraccion[0].RefraccionAVOD);
+            		$("#RefraccionSphOI").val(response.Refraccion[0].RefraccionSphOI);
+            		$("#RefraccionCylOI").val(response.Refraccion[0].RefraccionCylOI);
+            		$("#RefraccionEjeOI").val(response.Refraccion[0].RefraccionEjeOI);
+            		$("#RefraccionAddOI").val(response.Refraccion[0].RefraccionAddOI);
+            		$("#RefraccionBifocalOI").val(response.Refraccion[0].RefraccionBifocalOI);
+            		$("#RefraccionAVOI").val(response.Refraccion[0].RefraccionAVOI);
+            		$("#EsquiascopiaSphOD").val(response.Refraccion[0].EsquiascopiaSphOD);
+            		$("#EsquiascopiaCylOD").val(response.Refraccion[0].EsquiascopiaCylOD);
+            		$("#EsquiascopiaEjeOD").val(response.Refraccion[0].EsquiascopiaEjeOD);
+            		// FALTA AOD
+            		$("#EsquiascopiaBifocalOD").val(response.Refraccion[0].EsquiascopiaBifocalOD);
+            		$("#EsquiascopiaAVOD").val(response.Refraccion[0].EsquiascopiaAVOD);
+            		$("#EsquiascopiaSphOI").val(response.Refraccion[0].EsquiascopiaSphOI);
+            		$("#EsquiascopiaCylOI").val(response.Refraccion[0].EsquiascopiaCylOI);
+            		$("#EsquiascopiaEjeOI").val(response.Refraccion[0].EsquiascopiaEjeOI);
+            		// FALTA AOD
+            		$("#EsquiascopiaBifocalOI").val(response.Refraccion[0].EsquiascopiaBifocalOI);
+            		$("#EsquiascopiaAVOI").val(response.Refraccion[0].EsquiascopiaAVOI);
+            		$("#QueratometriaOD").val(response.Refraccion[0].QueratometriaOD);
+            		$("#QueratometriaOI").val(response.Refraccion[0].QueratometriaOI);
+
+                    //Diagnostico
+                    if (response.Diagnostico[0].AstigmatismoD = 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
+                    if (response.Diagnostico[0].GlaucomaD = 1){ $('input:checkbox[name="GlaucomaD"]').prop('checked',true); }
+                    if (response.Diagnostico[0].CataratasD = 1){ $('input:checkbox[name="CataratasD"]').prop('checked',true); }
+                    if (response.Diagnostico[0].ConjuntivitisD = 1){ $('input:checkbox[name="ConjuntivitisD"]').prop('checked',true); }
+                    if (response.Diagnostico[0].QueratitisD = 1){ $('input:checkbox[name="QueratitisD"]').prop('checked',true); }
+                    if (response.Diagnostico[0].EstrabismoD = 1){ $('input:checkbox[name="EstrabismoD"]').prop('checked',true); }
+                    if (response.Diagnostico[0].AstigmatismoI = 1){ $('input:checkbox[name="AstigmatismoI"]').prop('checked',true); }
+                    if (response.Diagnostico[0].GlaucomaI = 1){ $('input:checkbox[name="GlaucomaI"]').prop('checked',true); }
+                    if (response.Diagnostico[0].CataratasI = 1){ $('input:checkbox[name="CataratasI"]').prop('checked',true); }
+                    if (response.Diagnostico[0].ConjuntivitisI = 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
+                    if (response.Diagnostico[0].QueratitisI = 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
+                    if (response.Diagnostico[0].EstrabismoI = 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
+                    //$("#Diagnostico").val(response.Diagnostico[0].Diagnostico); //Cambiar este Id porque se empalma con el del menu
+
+                    //Tratamiento
+                    //$("#Tratamiento").val(response.Tratamiento[0].Tratamiento); //Cambiar este Id porque se empalma con el del menu
+
+                    //Receta
+                    //$("#Receta").val(response.Receta[0].Receta); //Cambiar este Id porque se empalma con el del menu
+
+                    //Lentes
+                    $("#SphOD").val(response.Lentes[0].SphOD);
+                    $("#CylOD").val(response.Lentes[0].CylOD);
+                    $("#EjeOD").val(response.Lentes[0].EjeOD);
+                    $("#DIOD").val(response.Lentes[0].DIOD);
+                    $("#PrismaOD").val(response.Lentes[0].PrismaOD);
+                    $("#BaseOD").val(response.Lentes[0].BaseOD);
+                    $("#SphOI").val(response.Lentes[0].SphOI);
+                    $("#CylOI").val(response.Lentes[0].CylOI);
+                    $("#EjeOI").val(response.Lentes[0].EjeOI);
+                    $("#DIOI").val(response.Lentes[0].DIOI);
+                    $("#PrismaOI").val(response.Lentes[0].PrismaOI);
+                    $("#BaseOI").val(response.Lentes[0].BaseOI);                    
+                    $("#Add").val(response.Lentes[0].Add);
+                    $("#AO").val(response.Lentes[0].AO);
+                    $("#Color").val(response.Lentes[0].Color);
+                    $("#Bifocal").val(response.Lentes[0].Bifocal);
+                    if (response.Lentes[0].Cristal = 1){ $('input:checkbox[name="Cristal"]').prop('checked',true); }
+                    if (response.Lentes[0].CR39 = 1){ $('input:checkbox[name="CR39"]').prop('checked',true); }
+                    $("#ObservacionesLentes").val(response.Lentes[0].Observaciones);
+
+                    //Certificado
+                    $("#AnexosOculares").val(response.Certificado[0].AnexosOculares);
+                    $("#SegmentoAnterior").val(response.Certificado[0].SegmentoAnterior);
+                    $("#FondoOjo").val(response.Certificado[0].FondoOjo);
+                    $("#PercepcionCromatica").val(response.Certificado[0].PercepcionCromatica);
+                    $("#DiagnosticoCertificado").val(response.Certificado[0].Diagnostico);
+                    $("#TratamientoCertificado").val(response.Certificado[0].Tratamiento);
+
+                    //Resumen Clinico
+                    $("#ResumenClinico").val(response.ResumenClinico[0].ResumenClinico);
+
+                    //Hospitalización
+                    $("#Clinica").val(response.Hospitalizacion[0].Clinica);
+                    $("#Orden").val(response.Hospitalizacion[0].Orden);
+            	});
+            }
+    });
 }

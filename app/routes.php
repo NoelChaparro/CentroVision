@@ -18,6 +18,7 @@
 
 Route::get('/','ExpedientePacienteController@expediente');
 
+//Rutas para el controlador ExpedientePacienteController
 Route::post('guardarExpediente', 'ExpedientePacienteController@guardarExpediente');
-
-Route::post('buscarExpediente', 'ExpedientePacienteController@buscarExpediente');
+Route::post('buscarPaciente', 'ExpedientePacienteController@buscarPaciente');
+Route::post('buscarPacientePorId','ExpedientePacienteController@buscarPacientePorId');

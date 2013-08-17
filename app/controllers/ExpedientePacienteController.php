@@ -1,20 +1,45 @@
 <?php
 
 class ExpedientePacienteController extends BaseController{
-	public function expediente(){
+	public function expediente(){ //manda llamar la vista expediente
 		return View::make('expediente');
 	}
 
-	public function buscarExpediente(){
+	public function buscarPaciente(){ //Busca el paciente por nombre
 		if (Request::ajax()){
 			//$pacientes=DB::table('DatosPacientes')->get();
-			$busqueda = Input::get("buscar");
-			$paciente = DB::table('DatosPacientes')->where('Nombre', 'LIKE', '%'.$busqueda.'%')->get();
-			return Response::json(array('Paciente'=> $paciente));
+			$busqueda = Input::get("buscarPaciente");
+			$pacientes = DB::table('DatosPacientes')->where('Nombre', 'LIKE', '%'.$busqueda.'%')->get();
+			return Response::json(array('Pacientes'=> $pacientes));
 		}
 	}
 
-	public function guardarExpediente(){
+	public function buscarPacientePorId(){
+		if (Request::ajax()){
+			$idPaciente = Input::get("idPaciente");
+			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();
+			$padecimientoPaciente = DB::table('PadecimientoPacientes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$agudezaVisual = DB::table('AgudezaVisual')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$biomicroscopiaIris = DB::table('Biomicroscopia')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$fondoRetina = DB::table('Fondo')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$gonioscopia = DB::table('Gonioscopia')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$movilidad = DB::table('Movilidad')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$refraccion = DB::table('Refraccion')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$diagnostico = DB::table('Diagnostico')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$tratamiento = DB::table('Tratamiento')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$receta = DB::table('Receta')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$lentes = DB::table('Lentes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$certificado = DB::table('Certificado')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$resumenClinico = DB::table('ResumenClinico')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$hospitalizacion = DB::table('Hospitalizacion')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			return Response::json(array('Paciente'=>$datosPaciente,'Padecimiento'=>$padecimientoPaciente,'AgudezaVisual' => $agudezaVisual, 'Biomicroscopia'=>$biomicroscopiaIris,
+										'FondoRetina'=>$fondoRetina, 'Gonioscopia'=>$gonioscopia, 'Movilidad'=>$movilidad, 'Refraccion'=>$refraccion, 'Diagnostico'=>$diagnostico,
+										'Tratamiento' => $tratamiento, 'Receta'=> $receta, 'Lentes' => $lentes, 'Certificado'=> $certificado, 'ResumenClinico'=> $resumenClinico,
+										'Hospitalizacion'=>$hospitalizacion));
+		}
+	}
+
+	public function guardarExpediente(){ //Guarda todos los datos del expediente en las diferentes tablas
 		if (Request::ajax()){
 			//Validamos el formulario
 			$datosPacientes = array(

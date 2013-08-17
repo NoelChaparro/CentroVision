@@ -83,6 +83,6 @@
 	<script src="js/alertify.min.js"></script>
 	
 
-		@yield('Javascript')
+	@yield('Javascript')
 	<!-- end: JavaScript-->
 </html>
