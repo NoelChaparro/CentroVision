@@ -42,15 +42,9 @@
 		<!-- Form Name -->
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente')) }}
 		<!--start: Inicio -->
-<<<<<<< HEAD
 		<section id="Inicio">
 			<button href="#BuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
        		<div class="modal hide fade" tabindex="-1" role="dialog" style="display:none" id="BuscarPaciente">
-=======
-		<section id="mnInicio">
-			<button href="#mdlBuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
-       		<div class="modal hide fade in" id="mdlBuscarPaciente">
->>>>>>> 1923432e6df466a828c2a9f6ee3c0491d1465016
             	<div class="modal-header">
                		<a class="close" data-dismiss="modal">&times;</a>
                		<h3>Buscar Paciente</h3>
