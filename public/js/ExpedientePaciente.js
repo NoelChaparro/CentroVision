@@ -80,6 +80,7 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
 }
 
 function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
+    limpiarFormularioExpedientePaciente();
 	$.ajax({
             data:  'idPaciente=' + idPaciente,
             url:   'buscarPacientePorId',
@@ -106,157 +107,185 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#referencia").val(elemento.Referencia);
 
             		// Padecimiento Paciente
-            		$("#sintomatologia").val(response.Padecimiento[0].Sintomatologia);
-            		$("#antecedentes").val(response.Padecimiento[0].Antecedentes);
+                    if(response.Padecimiento[0]){
+                		$("#sintomatologia").val(response.Padecimiento[0].Sintomatologia);
+                		$("#antecedentes").val(response.Padecimiento[0].Antecedentes);
+                    }
 
             		// Agudeza Visual
-            		$("#AVSCOD").val(response.AgudezaVisual[0].AVSCOD);
-            		$("#CCD").val(response.AgudezaVisual[0].CCD);
-            		$("#PuntoD").val(response.AgudezaVisual[0].PuntoD);
-            		$("#AVSCOI").val(response.AgudezaVisual[0].AVSCOI);
-            		$("#CCI").val(response.AgudezaVisual[0].CCI);
-            		$("#PuntoI").val(response.AgudezaVisual[0].PuntoI);
-					$("#TonometriaD5").val(response.AgudezaVisual[0].TonometriaD5);
-					$("#TonometriaD10").val(response.AgudezaVisual[0].TonometriaD10);
-                    $("#MmhgD").val(response.AgudezaVisual[0].MmhgD);
-            		$("#ParpadoD").val(response.AgudezaVisual[0].ParpadoD);
-					$("#TonometriaI5").val(response.AgudezaVisual[0].TonometriaD5);
-					$("#TonometriaI10").val(response.AgudezaVisual[0].TonometriaD10);
-            		$("#MmhgI").val(response.AgudezaVisual[0].MmhgI);
-            		$("#ParpadoI").val(response.AgudezaVisual[0].ParpadoD);
+                    if (response.AgudezaVisual[0]){
+                		$("#AVSCOD").val(response.AgudezaVisual[0].AVSCOD);
+                		$("#CCD").val(response.AgudezaVisual[0].CCD);
+                		$("#PuntoD").val(response.AgudezaVisual[0].PuntoD);
+                		$("#AVSCOI").val(response.AgudezaVisual[0].AVSCOI);
+                		$("#CCI").val(response.AgudezaVisual[0].CCI);
+                		$("#PuntoI").val(response.AgudezaVisual[0].PuntoI);
+    					$("#TonometriaD5").val(response.AgudezaVisual[0].TonometriaD5);
+    					$("#TonometriaD10").val(response.AgudezaVisual[0].TonometriaD10);
+                        $("#MmhgD").val(response.AgudezaVisual[0].MmhgD);
+                		$("#ParpadoD").val(response.AgudezaVisual[0].ParpadoD);
+    					$("#TonometriaI5").val(response.AgudezaVisual[0].TonometriaD5);
+    					$("#TonometriaI10").val(response.AgudezaVisual[0].TonometriaD10);
+                		$("#MmhgI").val(response.AgudezaVisual[0].MmhgI);
+                		$("#ParpadoI").val(response.AgudezaVisual[0].ParpadoD);
+                    }
 
             		// Biomicroscopia e Iris
-            		$("#CCIPCD").val(response.Biomicroscopia[0].CCIPCD);
-            		$("#BUTD").val(response.Biomicroscopia[0].BUTD);
-            		$("#CCIPCI").val(response.Biomicroscopia[0].CCIPCI);
-            		$("#BUTI").val(response.Biomicroscopia[0].BUTI);
+                    if(response.Biomicroscopia[0]){
+                		$("#CCIPCD").val(response.Biomicroscopia[0].CCIPCD);
+                		$("#BUTD").val(response.Biomicroscopia[0].BUTD);
+                		$("#CCIPCI").val(response.Biomicroscopia[0].CCIPCI);
+                		$("#BUTI").val(response.Biomicroscopia[0].BUTI);
+                    }
 
             		// Fondo y Retina
-            		$("#PMVRD").val(response.FondoRetina[0].PMVRD);
-            		$("#PMVRI").val(response.FondoRetina[0].PMVRI);
+                    if(response.FondoRetina[0]){
+                		$("#PMVRD").val(response.FondoRetina[0].PMVRD);
+                		$("#PMVRI").val(response.FondoRetina[0].PMVRI);
+                    }
 
             		// Gonioscopia
-                    $("#G1D").val(response.Gonioscopia[0].G1D);
-                    $("#G2D").val(response.Gonioscopia[0].G2D);
-                    $("#G3D").val(response.Gonioscopia[0].G3D);
-                    $("#G4D").val(response.Gonioscopia[0].G4D);
-                    $("#G1I").val(response.Gonioscopia[0].G1I);
-                    $("#G2I").val(response.Gonioscopia[0].G2I);
-                    $("#G3I").val(response.Gonioscopia[0].G3I);
-                    $("#G4I").val(response.Gonioscopia[0].G4I);
+                    if(response.Gonioscopia[0]){
+                        $("#G1D").val(response.Gonioscopia[0].G1D);
+                        $("#G2D").val(response.Gonioscopia[0].G2D);
+                        $("#G3D").val(response.Gonioscopia[0].G3D);
+                        $("#G4D").val(response.Gonioscopia[0].G4D);
+                        $("#G1I").val(response.Gonioscopia[0].G1I);
+                        $("#G2I").val(response.Gonioscopia[0].G2I);
+                        $("#G3I").val(response.Gonioscopia[0].G3I);
+                        $("#G4I").val(response.Gonioscopia[0].G4I);
+                    }
             		
             		// Movilidad
-            		$("#M1D").val(response.Movilidad[0].M1D);
-                    $("#M2D").val(response.Movilidad[0].M2D);
-                    $("#M3D").val(response.Movilidad[0].M3D);
-                    $("#M4D").val(response.Movilidad[0].M4D);
-                    $("#M5D").val(response.Movilidad[0].M5D);
-                    $("#M6D").val(response.Movilidad[0].M6D);
-                    $("#M1C").val(response.Movilidad[0].M1C);
-                    $("#M2C").val(response.Movilidad[0].M2C);
-                    $("#M3C").val(response.Movilidad[0].M3C);
-                    $("#M1I").val(response.Movilidad[0].M1I);
-                    $("#M2I").val(response.Movilidad[0].M2I);
-                    $("#M3I").val(response.Movilidad[0].M3I);
-                    $("#M4I").val(response.Movilidad[0].M4I);
-                    $("#M5I").val(response.Movilidad[0].M5I);
-                    $("#M6I").val(response.Movilidad[0].M6I);
-            		$("#PPM").val(response.Movilidad[0].PPM);
-            		$("#PMonocular").val(response.Movilidad[0].PMonocular);
-            		$("#PAlterno").val(response.Movilidad[0].PAlterno);
-            		$("#Ducciones").val(response.Movilidad[0].Ducciones);
-            		$("#Versiones").val(response.Movilidad[0].Versiones);
-            		$("#OjoFijador").val(response.Movilidad[0].OjoFijador);
+                    if(response.Movilidad[0]){
+                		$("#M1D").val(response.Movilidad[0].M1D);
+                        $("#M2D").val(response.Movilidad[0].M2D);
+                        $("#M3D").val(response.Movilidad[0].M3D);
+                        $("#M4D").val(response.Movilidad[0].M4D);
+                        $("#M5D").val(response.Movilidad[0].M5D);
+                        $("#M6D").val(response.Movilidad[0].M6D);
+                        $("#M1C").val(response.Movilidad[0].M1C);
+                        $("#M2C").val(response.Movilidad[0].M2C);
+                        $("#M3C").val(response.Movilidad[0].M3C);
+                        $("#M1I").val(response.Movilidad[0].M1I);
+                        $("#M2I").val(response.Movilidad[0].M2I);
+                        $("#M3I").val(response.Movilidad[0].M3I);
+                        $("#M4I").val(response.Movilidad[0].M4I);
+                        $("#M5I").val(response.Movilidad[0].M5I);
+                        $("#M6I").val(response.Movilidad[0].M6I);
+                		$("#PPM").val(response.Movilidad[0].PPM);
+                		$("#PMonocular").val(response.Movilidad[0].PMonocular);
+                		$("#PAlterno").val(response.Movilidad[0].PAlterno);
+                		$("#Ducciones").val(response.Movilidad[0].Ducciones);
+                		$("#Versiones").val(response.Movilidad[0].Versiones);
+                		$("#OjoFijador").val(response.Movilidad[0].OjoFijador);
+                    }
 
             		// Refraccion
-            		$("#ExoftalmometriaOD").val(response.Refraccion[0].ExoftalmometriaOD);
-            		$("#ExoftalmometriaOI").val(response.Refraccion[0].ExoftalmometriaOI);
-            		$("#ExoftalmometriaBase").val(response.Refraccion[0].ExoftalmometriaBase);
-            		$("#PaquimetriaOD").val(response.Refraccion[0].PaquimetriaOD);
-            		$("#PaquimetriaOI").val(response.Refraccion[0].PaquimetriaOI);
-            		$("#RefraccionSphOD").val(response.Refraccion[0].RefraccionSphOD);
-            		$("#RefraccionCylOD").val(response.Refraccion[0].RefraccionCylOD);
-            		$("#RefraccionEjeOD").val(response.Refraccion[0].RefraccionEjeOD);
-            		$("#RefraccionAddOD").val(response.Refraccion[0].RefraccionAddOD);
-            		$("#RefraccionBifocalOD").val(response.Refraccion[0].RefraccionBifocalOD);
-            		$("#RefraccionAVOD").val(response.Refraccion[0].RefraccionAVOD);
-            		$("#RefraccionSphOI").val(response.Refraccion[0].RefraccionSphOI);
-            		$("#RefraccionCylOI").val(response.Refraccion[0].RefraccionCylOI);
-            		$("#RefraccionEjeOI").val(response.Refraccion[0].RefraccionEjeOI);
-            		$("#RefraccionAddOI").val(response.Refraccion[0].RefraccionAddOI);
-            		$("#RefraccionBifocalOI").val(response.Refraccion[0].RefraccionBifocalOI);
-            		$("#RefraccionAVOI").val(response.Refraccion[0].RefraccionAVOI);
-            		$("#EsquiascopiaSphOD").val(response.Refraccion[0].EsquiascopiaSphOD);
-            		$("#EsquiascopiaCylOD").val(response.Refraccion[0].EsquiascopiaCylOD);
-            		$("#EsquiascopiaEjeOD").val(response.Refraccion[0].EsquiascopiaEjeOD);
-                    $("#EsquiascopiaAddOD").val(response.Refraccion[0].EsquiascopiaAddOD);
-            		$("#EsquiascopiaBifocalOD").val(response.Refraccion[0].EsquiascopiaBifocalOD);
-            		$("#EsquiascopiaAVOD").val(response.Refraccion[0].EsquiascopiaAVOD);
-            		$("#EsquiascopiaSphOI").val(response.Refraccion[0].EsquiascopiaSphOI);
-            		$("#EsquiascopiaCylOI").val(response.Refraccion[0].EsquiascopiaCylOI);
-            		$("#EsquiascopiaEjeOI").val(response.Refraccion[0].EsquiascopiaEjeOI);
-                    $("#EsquiascopiaAddOI").val(response.Refraccion[0].EsquiascopiaAddOI);
-            		$("#EsquiascopiaBifocalOI").val(response.Refraccion[0].EsquiascopiaBifocalOI);
-            		$("#EsquiascopiaAVOI").val(response.Refraccion[0].EsquiascopiaAVOI);
-            		$("#QueratometriaOD").val(response.Refraccion[0].QueratometriaOD);
-            		$("#QueratometriaOI").val(response.Refraccion[0].QueratometriaOI);
+                    if(response.Refraccion[0]){
+                		$("#ExoftalmometriaOD").val(response.Refraccion[0].ExoftalmometriaOD);
+                		$("#ExoftalmometriaOI").val(response.Refraccion[0].ExoftalmometriaOI);
+                		$("#ExoftalmometriaBase").val(response.Refraccion[0].ExoftalmometriaBase);
+                		$("#PaquimetriaOD").val(response.Refraccion[0].PaquimetriaOD);
+                		$("#PaquimetriaOI").val(response.Refraccion[0].PaquimetriaOI);
+                		$("#RefraccionSphOD").val(response.Refraccion[0].RefraccionSphOD);
+                		$("#RefraccionCylOD").val(response.Refraccion[0].RefraccionCylOD);
+                		$("#RefraccionEjeOD").val(response.Refraccion[0].RefraccionEjeOD);
+                		$("#RefraccionAddOD").val(response.Refraccion[0].RefraccionAddOD);
+                		$("#RefraccionBifocalOD").val(response.Refraccion[0].RefraccionBifocalOD);
+                		$("#RefraccionAVOD").val(response.Refraccion[0].RefraccionAVOD);
+                		$("#RefraccionSphOI").val(response.Refraccion[0].RefraccionSphOI);
+                		$("#RefraccionCylOI").val(response.Refraccion[0].RefraccionCylOI);
+                		$("#RefraccionEjeOI").val(response.Refraccion[0].RefraccionEjeOI);
+                		$("#RefraccionAddOI").val(response.Refraccion[0].RefraccionAddOI);
+                		$("#RefraccionBifocalOI").val(response.Refraccion[0].RefraccionBifocalOI);
+                		$("#RefraccionAVOI").val(response.Refraccion[0].RefraccionAVOI);
+                		$("#EsquiascopiaSphOD").val(response.Refraccion[0].EsquiascopiaSphOD);
+                		$("#EsquiascopiaCylOD").val(response.Refraccion[0].EsquiascopiaCylOD);
+                		$("#EsquiascopiaEjeOD").val(response.Refraccion[0].EsquiascopiaEjeOD);
+                        $("#EsquiascopiaAddOD").val(response.Refraccion[0].EsquiascopiaAddOD);
+                		$("#EsquiascopiaBifocalOD").val(response.Refraccion[0].EsquiascopiaBifocalOD);
+                		$("#EsquiascopiaAVOD").val(response.Refraccion[0].EsquiascopiaAVOD);
+                		$("#EsquiascopiaSphOI").val(response.Refraccion[0].EsquiascopiaSphOI);
+                		$("#EsquiascopiaCylOI").val(response.Refraccion[0].EsquiascopiaCylOI);
+                		$("#EsquiascopiaEjeOI").val(response.Refraccion[0].EsquiascopiaEjeOI);
+                        $("#EsquiascopiaAddOI").val(response.Refraccion[0].EsquiascopiaAddOI);
+                		$("#EsquiascopiaBifocalOI").val(response.Refraccion[0].EsquiascopiaBifocalOI);
+                		$("#EsquiascopiaAVOI").val(response.Refraccion[0].EsquiascopiaAVOI);
+                		$("#QueratometriaOD").val(response.Refraccion[0].QueratometriaOD);
+                		$("#QueratometriaOI").val(response.Refraccion[0].QueratometriaOI);
+                    }
 
                     //Diagnostico
-                    if (response.Diagnostico[0].AstigmatismoD = 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
-                    if (response.Diagnostico[0].GlaucomaD = 1){ $('input:checkbox[name="GlaucomaD"]').prop('checked',true); }
-                    if (response.Diagnostico[0].CataratasD = 1){ $('input:checkbox[name="CataratasD"]').prop('checked',true); }
-                    if (response.Diagnostico[0].ConjuntivitisD = 1){ $('input:checkbox[name="ConjuntivitisD"]').prop('checked',true); }
-                    if (response.Diagnostico[0].QueratitisD = 1){ $('input:checkbox[name="QueratitisD"]').prop('checked',true); }
-                    if (response.Diagnostico[0].EstrabismoD = 1){ $('input:checkbox[name="EstrabismoD"]').prop('checked',true); }
-                    if (response.Diagnostico[0].AstigmatismoI = 1){ $('input:checkbox[name="AstigmatismoI"]').prop('checked',true); }
-                    if (response.Diagnostico[0].GlaucomaI = 1){ $('input:checkbox[name="GlaucomaI"]').prop('checked',true); }
-                    if (response.Diagnostico[0].CataratasI = 1){ $('input:checkbox[name="CataratasI"]').prop('checked',true); }
-                    if (response.Diagnostico[0].ConjuntivitisI = 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
-                    if (response.Diagnostico[0].QueratitisI = 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
-                    if (response.Diagnostico[0].EstrabismoI = 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
-                    $("#Diagnostico").val(response.Diagnostico[0].Diagnostico);
+                    if (response.Diagnostico[0]){
+                        if (response.Diagnostico[0].AstigmatismoD = 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].GlaucomaD = 1){ $('input:checkbox[name="GlaucomaD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].CataratasD = 1){ $('input:checkbox[name="CataratasD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].ConjuntivitisD = 1){ $('input:checkbox[name="ConjuntivitisD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].QueratitisD = 1){ $('input:checkbox[name="QueratitisD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].EstrabismoD = 1){ $('input:checkbox[name="EstrabismoD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].AstigmatismoI = 1){ $('input:checkbox[name="AstigmatismoI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].GlaucomaI = 1){ $('input:checkbox[name="GlaucomaI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].CataratasI = 1){ $('input:checkbox[name="CataratasI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].ConjuntivitisI = 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].QueratitisI = 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].EstrabismoI = 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
+                        $("#Diagnostico").val(response.Diagnostico[0].Diagnostico);
+                    }
 
                     //Tratamiento
-                    $("#Tratamiento").val(response.Tratamiento[0].Tratamiento);
+                    if(response.Tratamiento[0]){
+                        $("#Tratamiento").val(response.Tratamiento[0].Tratamiento);
+                    }
 
                     //Receta
-                    $("#Receta").val(response.Receta[0].Receta);
+                    if(response.Receta[0]){
+                        $("#Receta").val(response.Receta[0].Receta);
+                    }
 
                     //Lentes
-                    $("#SphOD").val(response.Lentes[0].SphOD);
-                    $("#CylOD").val(response.Lentes[0].CylOD);
-                    $("#EjeOD").val(response.Lentes[0].EjeOD);
-                    $("#DIOD").val(response.Lentes[0].DIOD);
-                    $("#PrismaOD").val(response.Lentes[0].PrismaOD);
-                    $("#BaseOD").val(response.Lentes[0].BaseOD);
-                    $("#SphOI").val(response.Lentes[0].SphOI);
-                    $("#CylOI").val(response.Lentes[0].CylOI);
-                    $("#EjeOI").val(response.Lentes[0].EjeOI);
-                    $("#DIOI").val(response.Lentes[0].DIOI);
-                    $("#PrismaOI").val(response.Lentes[0].PrismaOI);
-                    $("#BaseOI").val(response.Lentes[0].BaseOI);                    
-                    $("#Add").val(response.Lentes[0].Add);
-                    $("#AO").val(response.Lentes[0].AO);
-                    $("#Color").val(response.Lentes[0].Color);
-                    $("#Bifocal").val(response.Lentes[0].Bifocal);
-                    if (response.Lentes[0].Cristal = 1){ $('input:checkbox[name="Cristal"]').prop('checked',true); }
-                    if (response.Lentes[0].CR39 = 1){ $('input:checkbox[name="CR39"]').prop('checked',true); }
-                    $("#ObservacionesLentes").val(response.Lentes[0].Observaciones);
+                    if(response.Lentes[0]){
+                        $("#SphOD").val(response.Lentes[0].SphOD);
+                        $("#CylOD").val(response.Lentes[0].CylOD);
+                        $("#EjeOD").val(response.Lentes[0].EjeOD);
+                        $("#DIOD").val(response.Lentes[0].DIOD);
+                        $("#PrismaOD").val(response.Lentes[0].PrismaOD);
+                        $("#BaseOD").val(response.Lentes[0].BaseOD);
+                        $("#SphOI").val(response.Lentes[0].SphOI);
+                        $("#CylOI").val(response.Lentes[0].CylOI);
+                        $("#EjeOI").val(response.Lentes[0].EjeOI);
+                        $("#DIOI").val(response.Lentes[0].DIOI);
+                        $("#PrismaOI").val(response.Lentes[0].PrismaOI);
+                        $("#BaseOI").val(response.Lentes[0].BaseOI);                    
+                        $("#Add").val(response.Lentes[0].Add);
+                        $("#AO").val(response.Lentes[0].AO);
+                        $("#Color").val(response.Lentes[0].Color);
+                        $("#Bifocal").val(response.Lentes[0].Bifocal);
+                        if (response.Lentes[0].Cristal = 1){ $('input:checkbox[name="Cristal"]').prop('checked',true); }
+                        if (response.Lentes[0].CR39 = 1){ $('input:checkbox[name="CR39"]').prop('checked',true); }
+                        $("#ObservacionesLentes").val(response.Lentes[0].Observaciones);
+                    }
 
                     //Certificado
-                    $("#AnexosOculares").val(response.Certificado[0].AnexosOculares);
-                    $("#SegmentoAnterior").val(response.Certificado[0].SegmentoAnterior);
-                    $("#FondoOjo").val(response.Certificado[0].FondoOjo);
-                    $("#PercepcionCromatica").val(response.Certificado[0].PercepcionCromatica);
-                    $("#DiagnosticoCertificado").val(response.Certificado[0].Diagnostico);
-                    $("#TratamientoCertificado").val(response.Certificado[0].Tratamiento);
+                    if(response.Certificado[0]){
+                        $("#AnexosOculares").val(response.Certificado[0].AnexosOculares);
+                        $("#SegmentoAnterior").val(response.Certificado[0].SegmentoAnterior);
+                        $("#FondoOjo").val(response.Certificado[0].FondoOjo);
+                        $("#PercepcionCromatica").val(response.Certificado[0].PercepcionCromatica);
+                        $("#DiagnosticoCertificado").val(response.Certificado[0].Diagnostico);
+                        $("#TratamientoCertificado").val(response.Certificado[0].Tratamiento);
+                    }
 
                     //Resumen Clinico
-                    $("#ResumenClinico").val(response.ResumenClinico[0].ResumenClinico);
+                    if(response.ResumenClinico[0]){
+                        $("#ResumenClinico").val(response.ResumenClinico[0].ResumenClinico);
+                    }
 
                     //Hospitalización
-                    $("#Clinica").val(response.Hospitalizacion[0].Clinica);
-                    $("#Orden").val(response.Hospitalizacion[0].Orden);
+                    if(response.Hospitalizacion[0]){
+                        $("#Clinica").val(response.Hospitalizacion[0].Clinica);
+                        $("#Orden").val(response.Hospitalizacion[0].Orden);
+                    }
             	});
             }
     });
