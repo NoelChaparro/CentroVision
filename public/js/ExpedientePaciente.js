@@ -4,7 +4,20 @@ function inicio() //Inicio del documento
 {
 	guardarFormularioExpediente();
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
+    $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);
+    $("#btnCancelar").on("click",limpiarFormularioExpedientePaciente);
 	tablaBusquedaPacientesModal();
+}
+
+function limpiarBuscarPacienteModal(){ //Funcion que limpia la ventana modal de buscar paciente
+    $('.tblBusquedaPacientesModal tbody').html('');
+    $("#txtBuscarPaciente").val('');
+}
+
+function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formulario del expediente paciente
+    $(".frmExpedientePaciente").each(function(){
+        this.reset();
+    });
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
@@ -45,6 +58,10 @@ function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y lo
 }
 
 function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la tabla de busqueda de los pacientes
+    $('#mdlBuscarPaciente').on('shown', function(){
+        $("#txtBuscarPaciente").focus();
+    });
+
 	$('.tblBusquedaPacientesModal tbody').on('mouseover', 'tr', function(event) { //Toma el evento mouseover en funcion live para que el tr seleccionado cambie de color al igual que el cursor
 		$(this).parent().parent().removeClass("table-striped");
 	    $(this).css({"background-color":"#adff2f","cursor":"pointer"});
@@ -101,11 +118,11 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#PuntoI").val(response.AgudezaVisual[0].PuntoI);
 					$("#TonometriaD5").val(response.AgudezaVisual[0].TonometriaD5);
 					$("#TonometriaD10").val(response.AgudezaVisual[0].TonometriaD10);
-            		//falta crear id en los mmhg
+                    $("#MmhgD").val(response.AgudezaVisual[0].MmhgD);
             		$("#ParpadoD").val(response.AgudezaVisual[0].ParpadoD);
 					$("#TonometriaI5").val(response.AgudezaVisual[0].TonometriaD5);
 					$("#TonometriaI10").val(response.AgudezaVisual[0].TonometriaD10);
-            		//falta crear id en los mmhg
+            		$("#MmhgI").val(response.AgudezaVisual[0].MmhgI);
             		$("#ParpadoI").val(response.AgudezaVisual[0].ParpadoD);
 
             		// Biomicroscopia e Iris
@@ -119,10 +136,31 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#PMVRI").val(response.FondoRetina[0].PMVRI);
 
             		// Gonioscopia
-            		// Faltan los IDs
-
+                    $("#G1D").val(response.Gonioscopia[0].G1D);
+                    $("#G2D").val(response.Gonioscopia[0].G2D);
+                    $("#G3D").val(response.Gonioscopia[0].G3D);
+                    $("#G4D").val(response.Gonioscopia[0].G4D);
+                    $("#G1I").val(response.Gonioscopia[0].G1I);
+                    $("#G2I").val(response.Gonioscopia[0].G2I);
+                    $("#G3I").val(response.Gonioscopia[0].G3I);
+                    $("#G4I").val(response.Gonioscopia[0].G4I);
+            		
             		// Movilidad
-            		// Faltan datos
+            		$("#M1D").val(response.Movilidad[0].M1D);
+                    $("#M2D").val(response.Movilidad[0].M2D);
+                    $("#M3D").val(response.Movilidad[0].M3D);
+                    $("#M4D").val(response.Movilidad[0].M4D);
+                    $("#M5D").val(response.Movilidad[0].M5D);
+                    $("#M6D").val(response.Movilidad[0].M6D);
+                    $("#M1C").val(response.Movilidad[0].M1C);
+                    $("#M2C").val(response.Movilidad[0].M2C);
+                    $("#M3C").val(response.Movilidad[0].M3C);
+                    $("#M1I").val(response.Movilidad[0].M1I);
+                    $("#M2I").val(response.Movilidad[0].M2I);
+                    $("#M3I").val(response.Movilidad[0].M3I);
+                    $("#M4I").val(response.Movilidad[0].M4I);
+                    $("#M5I").val(response.Movilidad[0].M5I);
+                    $("#M6I").val(response.Movilidad[0].M6I);
             		$("#PPM").val(response.Movilidad[0].PPM);
             		$("#PMonocular").val(response.Movilidad[0].PMonocular);
             		$("#PAlterno").val(response.Movilidad[0].PAlterno);
@@ -151,13 +189,13 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#EsquiascopiaSphOD").val(response.Refraccion[0].EsquiascopiaSphOD);
             		$("#EsquiascopiaCylOD").val(response.Refraccion[0].EsquiascopiaCylOD);
             		$("#EsquiascopiaEjeOD").val(response.Refraccion[0].EsquiascopiaEjeOD);
-            		// FALTA AOD
+                    $("#EsquiascopiaAddOD").val(response.Refraccion[0].EsquiascopiaAddOD);
             		$("#EsquiascopiaBifocalOD").val(response.Refraccion[0].EsquiascopiaBifocalOD);
             		$("#EsquiascopiaAVOD").val(response.Refraccion[0].EsquiascopiaAVOD);
             		$("#EsquiascopiaSphOI").val(response.Refraccion[0].EsquiascopiaSphOI);
             		$("#EsquiascopiaCylOI").val(response.Refraccion[0].EsquiascopiaCylOI);
             		$("#EsquiascopiaEjeOI").val(response.Refraccion[0].EsquiascopiaEjeOI);
-            		// FALTA AOD
+                    $("#EsquiascopiaAddOI").val(response.Refraccion[0].EsquiascopiaAddOI);
             		$("#EsquiascopiaBifocalOI").val(response.Refraccion[0].EsquiascopiaBifocalOI);
             		$("#EsquiascopiaAVOI").val(response.Refraccion[0].EsquiascopiaAVOI);
             		$("#QueratometriaOD").val(response.Refraccion[0].QueratometriaOD);
@@ -176,13 +214,13 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                     if (response.Diagnostico[0].ConjuntivitisI = 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
                     if (response.Diagnostico[0].QueratitisI = 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
                     if (response.Diagnostico[0].EstrabismoI = 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
-                    //$("#Diagnostico").val(response.Diagnostico[0].Diagnostico); //Cambiar este Id porque se empalma con el del menu
+                    $("#Diagnostico").val(response.Diagnostico[0].Diagnostico);
 
                     //Tratamiento
-                    //$("#Tratamiento").val(response.Tratamiento[0].Tratamiento); //Cambiar este Id porque se empalma con el del menu
+                    $("#Tratamiento").val(response.Tratamiento[0].Tratamiento);
 
                     //Receta
-                    //$("#Receta").val(response.Receta[0].Receta); //Cambiar este Id porque se empalma con el del menu
+                    $("#Receta").val(response.Receta[0].Receta);
 
                     //Lentes
                     $("#SphOD").val(response.Lentes[0].SphOD);

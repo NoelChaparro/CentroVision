@@ -9,22 +9,22 @@
 				<div id="sidebar-left" class="span2">
 					<nav class=" sidebar-nav">
 						<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
-							<li><a href="#Inicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
-	                        <li><a href="#Datos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li> 
-	                        <li><a href="#Padecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
-	                        <li><a href="#Agudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
-	                        <li><a href="#BiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
-	                        <li><a href="#FondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo</span></a></li>
-	                        <li><a href="#Gonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
-	                        <li><a href="#Movilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
-	                        <li><a href="#Refraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Exoftalmometria</span></a></li>
-	                        <li><a href="#Diagnostico"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
-	                        <li><a href="#Tratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
-	                        <li><a href="#Receta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
-	                        <li><a href="#Lentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
-	                        <li><a href="#Certificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
-	                        <li><a href="#Resumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
-	                        <li><a href="#Hospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
+							<li><a href="#mnInicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
+	                        <li><a href="#mnDatos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li> 
+	                        <li><a href="#mnPadecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
+	                        <li><a href="#mnAgudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
+	                        <li><a href="#mnBiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
+	                        <li><a href="#mnFondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo</span></a></li>
+	                        <li><a href="#mnGonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
+	                        <li><a href="#mnMovilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
+	                        <li><a href="#mnRefraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Refracción</span></a></li>
+	                        <li><a href="#mnDiagnostico"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
+	                        <li><a href="#mnTratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
+	                        <li><a href="#mnReceta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
+	                        <li><a href="#mnLentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
+	                        <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
+	                        <li><a href="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
+	                        <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
 						</ul>
 					</nav>
 				</div>
@@ -42,9 +42,9 @@
 		<!-- Form Name -->
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente')) }}
 		<!--start: Inicio -->
-		<section id="Inicio">
-			<button href="#BuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
-       		<div class="modal hide fade in" id="BuscarPaciente">
+		<section id="mnInicio">
+			<button href="#mdlBuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
+       		<div class="modal hide fade in" id="mdlBuscarPaciente">
             	<div class="modal-header">
                		<a class="close" data-dismiss="modal">&times;</a>
                		<h3>Buscar Paciente</h3>
@@ -72,7 +72,7 @@
 		</section>
 		<!--End: Inicio -->
 		<!--start: Datos Generales -->
-		<section id="Datos_Generales">
+		<section id="mnDatos_Generales">
 			<legend>Registrar Paciente</legend>
 
 			<div class="control-group">
@@ -155,7 +155,7 @@
 		<!-- end: Datos Generales -->
 
 		<!-- start: Padecimiento -->
-		<section id="Padecimientos"> 
+		<section id="mnPadecimientos"> 
 			<legend>Padecimiento</legend>
 			<div class="control-group">
 			  	{{ Form::label('sintomatologia', 'Sintomatología:', array('class' => 'control-label')) }}
@@ -174,7 +174,7 @@
 		<!-- end: Padecimiento -->
 
 		<!-- start: Agudeza Visual -->
-		<section id="Agudeza_Visual">
+		<section id="mnAgudeza_Visual">
 			<legend>Agudeza Visual</legend>
 			<div class="control-group">
 			  	{{ Form::label('AVSCOD', 'AVSCOD:', array('class' => 'control-label')) }}
@@ -235,6 +235,7 @@
 			</div>
 
 			<div class="control-group">
+				{{ Form::label('MmhgD', 'MmhgD:', array('class' => 'control-label')) }}
 			  	<div class="controls">
 			  		{{ Form::text('MmhgD','',array('class' => 'input-medium')) }}
 			  	</div>
@@ -262,6 +263,7 @@
 			</div>
 
 			<div class="control-group">
+				{{ Form::label('MmhgI', 'MmhgI:', array('class' => 'control-label')) }}
 			  	<div class="controls">
 			  		{{ Form::text('MmhgI','',array('class' => 'input-medium')) }}
 			  	</div>
@@ -277,7 +279,7 @@
 		<!-- end: Agudeza Visual -->
 
 		<!--start: Biomicroscopia e Iris -->
-		<section id="BiomicroscopiaIris">
+		<section id="mnBiomicroscopiaIris">
 				
 			<legend>Biomicroscopía e Iris</legend>
 
@@ -314,7 +316,7 @@
 		<!-- end: Biomicroscopia e Iris -->
 
 		<!-- start: Fondo y Retina -->
-		<section id="FondoRetina">
+		<section id="mnFondoRetina">
 			<legend>Fondo y Retina</legend>
 			<div class="control-group">
 				{{ Form::label('PMVRD', 'Papila, Mácula, Vasos y Retina Periférica: ', array('class' => 'control-label')) }}
@@ -333,53 +335,53 @@
 		<!-- end: Fondo y Retina -->
 
 		<!-- start: Gonioscopía -->
-		<section id="Gonioscopia">
+		<section id="mnGonioscopia">
 			<legend>Gonioscopía</legend>
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G1D','',array('class' => 'input-small')) }}
+					{{ Form::text('G1D','',array('class' => 'input-small', 'id'=> 'G1D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G2D','',array('class' => 'input-small')) }}
+					{{ Form::text('G2D','',array('class' => 'input-small', 'id'=> 'G2D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G3D','',array('class' => 'input-small')) }}
+					{{ Form::text('G3D','',array('class' => 'input-small', 'id'=> 'G3D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G4D','',array('class' => 'input-small')) }}
+					{{ Form::text('G4D','',array('class' => 'input-small', 'id'=> 'G4D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G1I','',array('class' => 'input-small')) }}
+					{{ Form::text('G1I','',array('class' => 'input-small', 'id'=> 'G1I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G2I','',array('class' => 'input-small')) }}
+					{{ Form::text('G2I','',array('class' => 'input-small', 'id'=> 'G2I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G3I','',array('class' => 'input-small')) }}
+					{{ Form::text('G3I','',array('class' => 'input-small', 'id'=> 'G3I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('G4I','',array('class' => 'input-small')) }}
+					{{ Form::text('G4I','',array('class' => 'input-small', 'id'=> 'G4I')) }}
 				</div>
 			</div>
 
@@ -387,95 +389,95 @@
 		<!-- End: Gonioscopía -->
 
 		<!-- start: Movilidad -->
-		<section id="Movilidad">
+		<section id="mnMovilidad">
 			<legend>Movilidad</legend>
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M1D','',array('class' => 'input-small')) }}
+					{{ Form::text('M1D','',array('class' => 'input-small', 'id'=> 'M1D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M2D','',array('class' => 'input-small')) }}
+					{{ Form::text('M2D','',array('class' => 'input-small', 'id'=> 'M2D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M3D','',array('class' => 'input-small')) }}
+					{{ Form::text('M3D','',array('class' => 'input-small', 'id'=> 'M3D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M4D','',array('class' => 'input-small')) }}
+					{{ Form::text('M4D','',array('class' => 'input-small', 'id'=> 'M4D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M5D','',array('class' => 'input-small')) }}
+					{{ Form::text('M5D','',array('class' => 'input-small', 'id'=> 'M5D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M6D','',array('class' => 'input-small')) }}
+					{{ Form::text('M6D','',array('class' => 'input-small', 'id'=> 'M6D')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M1C','',array('class' => 'input-small')) }}
+					{{ Form::text('M1C','',array('class' => 'input-small', 'id'=> 'M1C')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M2C','',array('class' => 'input-small')) }}
+					{{ Form::text('M2C','',array('class' => 'input-small', 'id'=> 'M2C')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M3C','',array('class' => 'input-small')) }}
+					{{ Form::text('M3C','',array('class' => 'input-small', 'id'=> 'M3C')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M1I','',array('class' => 'input-small')) }}
+					{{ Form::text('M1I','',array('class' => 'input-small', 'id'=> 'M1I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M2I','',array('class' => 'input-small')) }}
+					{{ Form::text('M2I','',array('class' => 'input-small', 'id'=> 'M2I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M3I','',array('class' => 'input-small')) }}
+					{{ Form::text('M3I','',array('class' => 'input-small', 'id'=> 'M3I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M4I','',array('class' => 'input-small')) }}
+					{{ Form::text('M4I','',array('class' => 'input-small', 'id'=> 'M4I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M5I','',array('class' => 'input-small')) }}
+					{{ Form::text('M5I','',array('class' => 'input-small', 'id'=> 'M5I')) }}
 				</div>
 			</div>
 
 			<div class="control-group">
 				<div class="controls">
-					{{ Form::text('M6I','',array('class' => 'input-small')) }}
+					{{ Form::text('M6I','',array('class' => 'input-small', 'id'=> 'M6I')) }}
 				</div>
 			</div>
 
@@ -524,7 +526,7 @@
 		<!-- end: Movilidad -->
 
 		<!-- start: Refracción -->
-		<section id="Refraccion">
+		<section id="mnRefraccion">
 			<legend>Refracción</legend>
 
 			<div class="control-group">
@@ -672,7 +674,7 @@
 			</div>
 
 			<div class="control-group">
-				{{ Form::label('REsquiascopiaAddOD', 'EsquiascopiaAddOD: ', array('class' => 'control-label')) }}
+				{{ Form::label('EsquiascopiaAddOD', 'EsquiascopiaAddOD: ', array('class' => 'control-label')) }}
 				<div class="controls">
 					{{ Form::text('EsquiascopiaAddOD','',array('class' => 'input-xlarge')) }}
 				</div>
@@ -714,7 +716,7 @@
 			</div>
 
 			<div class="control-group">
-				{{ Form::label('REsquiascopiaAddOI', 'EsquiascopiaAddOI: ', array('class' => 'control-label')) }}
+				{{ Form::label('EsquiascopiaAddOI', 'EsquiascopiaAddOI: ', array('class' => 'control-label')) }}
 				<div class="controls">
 					{{ Form::text('EsquiascopiaAddOI','',array('class' => 'input-xlarge')) }}
 				</div>
@@ -752,7 +754,7 @@
 		<!-- end: Refracción -->
 
 		<!-- start: Diagnóstico -->
-		<section id="Diagnostico">
+		<section id="mnDiagnostico">
 			<legend>Diagnóstico</legend>
 
 			<div class="control-group">
@@ -820,7 +822,7 @@
 		<!-- end: Diagnóstico -->
 
 		<!-- start: Tratamiento -->
-		<section id="Tratamiento">
+		<section id="mnTratamiento">
 			<legend>Tratamiento</legend>
 
 			<div class="control-group">
@@ -833,7 +835,7 @@
 		<!-- end: Tratamiento -->
 
 		<!-- start: Receta -->
-		<section id="Receta">
+		<section id="mnReceta">
 			<legend>Receta</legend>
 
 			<div class="control-group">
@@ -846,7 +848,7 @@
 		<!-- end: Receta -->
 
 		<!-- start: Lentes -->
-		<section id="Lentes">
+		<section id="mnLentes">
 			<legend>Lentes</legend>
 
 			<div class="control-group">
@@ -981,7 +983,7 @@
 		<!-- end: Lentes -->
 
 		<!-- start: Certificado -->
-		<section id="Certificado">
+		<section id="mnCertificado">
 			<legend>Certificado</legend>
 
 			<div class="control-group">
@@ -1029,7 +1031,7 @@
 		<!-- end: Certificado -->
 
 		<!-- start: Resumen Clínico -->
-		<section id="Resumen_Clinico">
+		<section id="mnResumen_Clinico">
 			<legend>Resumen Clínico</legend>
 
 			<div class="control-group">
@@ -1042,7 +1044,7 @@
 		<!-- end: Resumen Clínico -->
 
 		<!-- start: Hospitalización -->
-		<section id="Hospitalizacion">
+		<section id="mnHospitalizacion">
 			<legend>Hospitalización</legend>
 
 			<div class="control-group">
@@ -1066,7 +1068,7 @@
 		  	<label class="control-label"></label>
 		  	<div class="controls">
 		    	<input value="Guardar" class="btn btn-large btn-primary" type="submit">
-		    	<input value="Cancelar" class="btn btn-large btn-primary" type="button">
+		    	<input value="Cancelar" class="btn btn-large btn-primary" type="button" id="btnCancelar">
 		  	</div>
 		</div>
 		<!-- end: button-->
