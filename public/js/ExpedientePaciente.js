@@ -18,6 +18,7 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     $(".frmExpedientePaciente").each(function(){
         this.reset();
     });
+    $("#nombre").focus();
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
@@ -29,6 +30,7 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
 			data: form.serialize(),
 			success: function(data){
 				alertify.alert('Datos Guardados Correctamente');
+                limpiarFormularioExpedientePaciente();
 			},
 			error: function(errors){
 				alertify.alert('Error al guardar');
@@ -85,12 +87,13 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
 
 function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
     limpiarFormularioExpedientePaciente();
+    var contenido = $('.tblBusquedaPacientesModal tbody');
 	$.ajax({
             data:  'idPaciente=' + idPaciente,
             url:   'buscarPacientePorId',
             type:  'post',
             beforeSend: function () {
-            	//contenido.html('Buscando...');
+            	contenido.html('Buscando...');
             },
             success:  function (response) {
             	$.each(response.Paciente, function(i,elemento){
@@ -222,18 +225,18 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Diagnostico
                     if (response.Diagnostico[0]){
-                        if (response.Diagnostico[0].AstigmatismoD = 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
-                        if (response.Diagnostico[0].GlaucomaD = 1){ $('input:checkbox[name="GlaucomaD"]').prop('checked',true); }
-                        if (response.Diagnostico[0].CataratasD = 1){ $('input:checkbox[name="CataratasD"]').prop('checked',true); }
-                        if (response.Diagnostico[0].ConjuntivitisD = 1){ $('input:checkbox[name="ConjuntivitisD"]').prop('checked',true); }
-                        if (response.Diagnostico[0].QueratitisD = 1){ $('input:checkbox[name="QueratitisD"]').prop('checked',true); }
-                        if (response.Diagnostico[0].EstrabismoD = 1){ $('input:checkbox[name="EstrabismoD"]').prop('checked',true); }
-                        if (response.Diagnostico[0].AstigmatismoI = 1){ $('input:checkbox[name="AstigmatismoI"]').prop('checked',true); }
-                        if (response.Diagnostico[0].GlaucomaI = 1){ $('input:checkbox[name="GlaucomaI"]').prop('checked',true); }
-                        if (response.Diagnostico[0].CataratasI = 1){ $('input:checkbox[name="CataratasI"]').prop('checked',true); }
-                        if (response.Diagnostico[0].ConjuntivitisI = 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
-                        if (response.Diagnostico[0].QueratitisI = 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
-                        if (response.Diagnostico[0].EstrabismoI = 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].AstigmatismoD == 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].GlaucomaD == 1){ $('input:checkbox[name="GlaucomaD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].CataratasD == 1){ $('input:checkbox[name="CataratasD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].ConjuntivitisD == 1){ $('input:checkbox[name="ConjuntivitisD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].QueratitisD == 1){ $('input:checkbox[name="QueratitisD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].EstrabismoD == 1){ $('input:checkbox[name="EstrabismoD"]').prop('checked',true); }
+                        if (response.Diagnostico[0].AstigmatismoI == 1){ $('input:checkbox[name="AstigmatismoI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].GlaucomaI == 1){ $('input:checkbox[name="GlaucomaI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].CataratasI == 1){ $('input:checkbox[name="CataratasI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].ConjuntivitisI == 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].QueratitisI == 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].EstrabismoI == 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
                         $("#Diagnostico").val(response.Diagnostico[0].Diagnostico);
                     }
 
@@ -265,8 +268,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                         $("#AO").val(response.Lentes[0].AO);
                         $("#Color").val(response.Lentes[0].Color);
                         $("#Bifocal").val(response.Lentes[0].Bifocal);
-                        if (response.Lentes[0].Cristal = 1){ $('input:checkbox[name="Cristal"]').prop('checked',true); }
-                        if (response.Lentes[0].CR39 = 1){ $('input:checkbox[name="CR39"]').prop('checked',true); }
+                        if (response.Lentes[0].Cristal == 1){ $('input:checkbox[name="Cristal"]').prop('checked',true); }
+                        if (response.Lentes[0].CR39 == 1){ $('input:checkbox[name="CR39"]').prop('checked',true); }
                         $("#ObservacionesLentes").val(response.Lentes[0].Observaciones);
                     }
 
