@@ -80,7 +80,7 @@ class ExpedientePacienteController extends BaseController{
 					"antecedentes" => Input::get("antecedentes")
 				);
 				$padecimiento = new PadecimientoPacientes($padecimientoPaciente);
-				$padecimiento->save();
+				if ($padecimientoPaciente["sintomatologia"] || $padecimientoPaciente["antecedentes"]){$padecimiento->save();}
 
 				// Guardar en tabla AgudezaVisual
 				$agudezaVisualPaciente = array (
@@ -101,7 +101,7 @@ class ExpedientePacienteController extends BaseController{
 					"MmhgI" => Input::get("MmhgI")
 				);
 				$agudezaVisual = new AgudezaVisual($agudezaVisualPaciente);
-				$agudezaVisual->save();
+				if ($agudezaVisualPaciente["AVSCOD"] || $agudezaVisualPaciente["CCD"] || $agudezaVisualPaciente["PuntoD"] || $agudezaVisualPaciente["AVSCOI"] || $agudezaVisualPaciente["CCI"] || $agudezaVisualPaciente["PuntoI"] || $agudezaVisualPaciente["TonometriaD5"] || $agudezaVisualPaciente["TonometriaD10"] || $agudezaVisualPaciente["TonometriaI5"] || $agudezaVisualPaciente["TonometriaI10"] || $agudezaVisualPaciente["ParpadoD"] || $agudezaVisualPaciente["ParpadoI"] || $agudezaVisualPaciente["MmhgD"] || $agudezaVisualPaciente["MmhgI"]){$agudezaVisual->save();}
 
 				// Guardar en tabla Biomicroscopía
 				$biomicroscopiaPaciente = array(
@@ -112,7 +112,7 @@ class ExpedientePacienteController extends BaseController{
 					"BUTI" => Input::get("BUTI")
 				);
 				$biomicroscopia = new Biomicroscopia($biomicroscopiaPaciente);
-				$biomicroscopia->save();
+				if ($biomicroscopiaPaciente["CCIPCD"] || $biomicroscopiaPaciente["BUTD"] || $biomicroscopiaPaciente["CCIPCI"] || $biomicroscopiaPaciente["BUTI"]){$biomicroscopia->save();}
 
 				// Guardar en tabla Fondo
 				$fondoPaciente = array(
@@ -121,7 +121,7 @@ class ExpedientePacienteController extends BaseController{
 					"PMVRI" => Input::get("PMVRI"),
 				);
 				$fondo = new Fondo($fondoPaciente);
-				$fondo->save();
+				if ($fondoPaciente["PMVRD"] || $fondoPaciente["PMVRI"]){$fondo->save();}
 
 				// Guardar en tabla Gonioscopia
 				$gonioscopiaPaciente = array(
@@ -136,7 +136,7 @@ class ExpedientePacienteController extends BaseController{
 					"G4I" => Input::get("G4I")
 				);
 				$gonioscopia = new Gonioscopia($gonioscopiaPaciente);
-				$gonioscopia->save();
+				if ($gonioscopiaPaciente["G1D"] || $gonioscopiaPaciente["G2D"] || $gonioscopiaPaciente["G3D"] || $gonioscopiaPaciente["G4D"] || $gonioscopiaPaciente["G1I"] || $gonioscopiaPaciente["G2I"] || $gonioscopiaPaciente["G3I"] || $gonioscopiaPaciente["G4I"]){$gonioscopia->save();}
 
 				// Guardar en tabla Movilidad
 				$movilidadPaciente = array(
@@ -164,7 +164,7 @@ class ExpedientePacienteController extends BaseController{
 					"OjoFijador" => Input::get("OjoFijador")
 				);
 				$movilidad = new Movilidad($movilidadPaciente);
-				$movilidad->save();
+				if ($movilidadPaciente["M1D"] || $movilidadPaciente["M2D"] || $movilidadPaciente["M3D"] || $movilidadPaciente["M4D"] || $movilidadPaciente["M5D"] || $movilidadPaciente["M6D"] || $movilidadPaciente["M1C"] || $movilidadPaciente["M2C"] || $movilidadPaciente["M3C"] || $movilidadPaciente["M1I"] || $movilidadPaciente["M2I"] || $movilidadPaciente["M3I"] || $movilidadPaciente["M4I"] || $movilidadPaciente["M5I"] || $movilidadPaciente["M6I"] || $movilidadPaciente["PPM"] || $movilidadPaciente["PMonocular"] || $movilidadPaciente["PAlterno"] || $movilidadPaciente["Ducciones"] || $movilidadPaciente["Versiones"] || $movilidadPaciente["OjoFijador"]){$movilidad->save();}
 
 				// Guardar en tabla Refracción
 				$refraccionPaciente = array(
@@ -202,7 +202,7 @@ class ExpedientePacienteController extends BaseController{
 					"QueratometriaOI" => Input::get("QueratometriaOI")
 				);
 				$refraccion = new Refraccion($refraccionPaciente);
-				$refraccion->save();
+				if ($refraccionPaciente["ExoftalmometriaOD"] || $refraccionPaciente["ExoftalmometriaOI"] || $refraccionPaciente["ExoftalmometriaBase"] || $refraccionPaciente["PaquimetriaOD"] || $refraccionPaciente["PaquimetriaOI"] || $refraccionPaciente["RefraccionSphOD"] || $refraccionPaciente["RefraccionCylOD"] || $refraccionPaciente["RefraccionEjeOD"] || $refraccionPaciente["RefraccionAddOD"] || $refraccionPaciente["RefraccionBifocalOD"] || $refraccionPaciente["RefraccionAVOD"] || $refraccionPaciente["RefraccionSphOI"] || $refraccionPaciente["RefraccionCylOI"] || $refraccionPaciente["RefraccionEjeOI"] || $refraccionPaciente["RefraccionAddOI"] || $refraccionPaciente["RefraccionBifocalOI"] || $refraccionPaciente["RefraccionAVOI"] || $refraccionPaciente["EsquiascopiaSphOD"] || $refraccionPaciente["EsquiascopiaCylOD"] || $refraccionPaciente["EsquiascopiaEjeOD"] || $refraccionPaciente["EsquiascopiaAddOD"] || $refraccionPaciente["EsquiascopiaBifocalOD"] || $refraccionPaciente["EsquiascopiaAVOD"] || $refraccionPaciente["EsquiascopiaSphOI"] || $refraccionPaciente["EsquiascopiaCylOI"] || $refraccionPaciente["EsquiascopiaEjeOI"] || $refraccionPaciente["EsquiascopiaAddOI"] || $refraccionPaciente["EsquiascopiaBifocalOI"] || $refraccionPaciente["EsquiascopiaAVOI"] || $refraccionPaciente["QueratometriaOD"] || $refraccionPaciente["QueratometriaOI"]){$refraccion->save();}
 
 				// Guardar en tabla Diagnostico
 				$diagnosticoPaciente = array(
@@ -222,7 +222,7 @@ class ExpedientePacienteController extends BaseController{
 					"Diagnostico" => Input::get("Diagnostico")
 				);
 				$diagnostico = new Diagnostico($diagnosticoPaciente);
-				$diagnostico->save();
+				if ($diagnosticoPaciente["AstigmatismoD"] || $diagnosticoPaciente["GlaucomaD"] || $diagnosticoPaciente["CataratasD"] || $diagnosticoPaciente["ConjuntivitisD"] || $diagnosticoPaciente["QueratitisD"] || $diagnosticoPaciente["EstrabismoD"] || $diagnosticoPaciente["AstigmatismoI"] || $diagnosticoPaciente["GlaucomaI"] || $diagnosticoPaciente["CataratasI"] || $diagnosticoPaciente["ConjuntivitisI"] || $diagnosticoPaciente["QueratitisI"] || $diagnosticoPaciente["EstrabismoI"] || $diagnosticoPaciente["Diagnostico"]){$diagnostico->save();}
 
 				// Guardar en tabla Tratamiento
 				$tratamientoPaciente = array(
@@ -230,7 +230,7 @@ class ExpedientePacienteController extends BaseController{
 					"Tratamiento" => Input::get("Tratamiento")
 				);
 				$tratamiento = new Tratamiento($tratamientoPaciente);
-				$tratamiento->save();
+				if ($tratamientoPaciente["Tratamiento"]){$tratamiento->save();}
 
 				// Guardar en tabla Receta
 				$recetaPaciente = array(
@@ -238,7 +238,7 @@ class ExpedientePacienteController extends BaseController{
 					"Receta" => Input::get("Receta")
 				);
 				$receta = new Receta($recetaPaciente);
-				$receta->save();
+				if ($recetaPaciente["Receta"]){$receta->save();}
 
 				// Guardar en tabla Lentes
 				$lentesPaciente = array(
@@ -264,7 +264,7 @@ class ExpedientePacienteController extends BaseController{
 					"Observaciones" => Input::get("ObservacionesLentes")
 				);
 				$lentes = new Lentes($lentesPaciente);
-				$lentes->save();
+				if ($lentesPaciente["SphOD"] || $lentesPaciente["CylOD"] || $lentesPaciente["EjeOD"] || $lentesPaciente["DIOD"] || $lentesPaciente["PrismaOD"] || $lentesPaciente["BaseOD"] || $lentesPaciente["SphOI"] || $lentesPaciente["CylOI"] || $lentesPaciente["EjeOI"] || $lentesPaciente["DIOI"] || $lentesPaciente["PrismaOI"] || $lentesPaciente["BaseOI"] || $lentesPaciente["Add"] || $lentesPaciente["AO"] || $lentesPaciente["Color"] || $lentesPaciente["Bifocal"] || $lentesPaciente["Cristal"] || $lentesPaciente["CR39"] || $lentesPaciente["Observaciones"]){$lentes->save();}
 
 				// Guardar en tabla Certificado
 				$certificadoPaciente = array(
@@ -277,7 +277,7 @@ class ExpedientePacienteController extends BaseController{
 					"Tratamiento" => Input::get("TratamientoCertificado")
 				);
 				$certificado = new Certificado($certificadoPaciente);
-				$certificado->save();
+				if ($certificadoPaciente["AnexosOculares"] || $certificadoPaciente["SegmentoAnterior"] || $certificadoPaciente["FondoOjo"] || $certificadoPaciente["PercepcionCromatica"] || $certificadoPaciente["Diagnostico"] || $certificadoPaciente["Tratamiento"]){$certificado->save();}
 
 				// Guardar en tabla Resumen Clínico
 				$resumenClinicoPaciente = array(
@@ -285,7 +285,7 @@ class ExpedientePacienteController extends BaseController{
 					"ResumenClinico" => Input::get("ResumenClinico")
 				);
 				$resumenClinico = new ResumenClinico($resumenClinicoPaciente);
-				$resumenClinico->save();
+				if ($resumenClinicoPaciente["ResumenClinico"]){$resumenClinico->save();}
 
 				// Guardarn en tabla Hospitalización
 				$hospitalizacionPaciente = array(
@@ -294,7 +294,7 @@ class ExpedientePacienteController extends BaseController{
 					"Orden" => Input::get("Orden")
 				);
 				$hospitalizacion = new Hospitalizacion($hospitalizacionPaciente);
-				$hospitalizacion->save();
+				if($hospitalizacionPaciente["Clinica"] || $hospitalizacionPaciente["Orden"]){$hospitalizacion->save();}
 			}
 		}
 	}
