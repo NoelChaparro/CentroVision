@@ -23,7 +23,7 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
 	var form = $('.frmExpedientePaciente');
-	form.bind("submit",function(){
+	/*form.bind("submit",function(){
 		$.ajax({
 			type: form.attr('method'),
 			url: form.attr('action'),
@@ -37,7 +37,7 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
 			}
 		});
 		return false;
-	});
+	});*/
 }
 
 function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla

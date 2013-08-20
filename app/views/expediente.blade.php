@@ -40,7 +40,8 @@
 	<!-- start: Content -->
 	<div class="offset2">		
 		<!-- Form Name -->
-		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente')) }}
+		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente', 'data-validate' => 'parsley')) }}
+		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
 		<!--start: Inicio -->
 		<section id="Inicio">
 			<button href="#mdlBuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
@@ -80,7 +81,7 @@
 				<div class="control-group">
 					  	{{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
 					  	<div class="controls">
-					    	{{ Form::text('nombre','',array('class' => 'input-xxlarge')) }}
+					    	{{ Form::text('nombre','',array('class' => 'input-xxlarge', 'data-required' => 'true')) }}
 					  	</div>
 					</div>
 			</div>
@@ -1153,4 +1154,6 @@
 
 @section('Javascript')
 	<script src="js/ExpedientePaciente.js"></script>
+	<script src="js/lib/messages.es.js"></script>
+	<script src="js/lib/parsley.js"></script>
 @stop
