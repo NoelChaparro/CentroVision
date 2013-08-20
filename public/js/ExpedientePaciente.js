@@ -61,7 +61,11 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
     $('#mdlBuscarPaciente').on('shown', function(){
         $("#txtBuscarPaciente").focus();
     });
-
+    //$('#txtBuscarPaciente').on('keypress', function (e) {
+    //            if (e.which == 13) {
+    //               $('#btnBuscarPaciente').on("click",buscarPaciente);
+    //           }
+    //        });
 	$('.tblBusquedaPacientesModal tbody').on('mouseover', 'tr', function(event) { //Toma el evento mouseover en funcion live para que el tr seleccionado cambie de color al igual que el cursor
 		$(this).parent().parent().removeClass("table-striped");
 	    $(this).css({"background-color":"#adff2f","cursor":"pointer"});
