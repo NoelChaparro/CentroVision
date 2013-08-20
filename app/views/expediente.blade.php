@@ -53,17 +53,19 @@
                		<button type="submit" class="btn" id="btnBuscarPaciente">Buscar</button>
            		</div>
            		<div class="modal-body">
+           			<div class="span10">
            	    	<table class="table tblBusquedaPacientesModal table-striped">
            	    		<thead>
            	    			<tr>
-           	    				<th class"span1">#</th>
-           	    				<th class"span2">Nombre</th>
-           	    				<th class"span2">Dirección</th>
-           	    				<th class"span2">Teléfono</th>
+           	    				<th>#</th>
+           	    				<th>Nombre</th>
+           	    				<th>Dirección</th>
+           	    				<th>Teléfono</th>
            	    			</tr>
            	    		</thead>
 						<tbody></tbody>
            	    	</table>
+           	    	</div>
        	    	</div>
    	        	<div class="modal-footer">
                 	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
