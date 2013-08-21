@@ -19,6 +19,7 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
         this.reset();
     });
     $("#nombre").focus();
+    $("#varIdPaciente").val("");
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
@@ -98,6 +99,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             success:  function (response) {
             	$.each(response.Paciente, function(i,elemento){
             		// Datos Generales del Paciente
+                    $("#varIdPaciente").val(idPaciente);
             		$("#nombre").val(elemento.Nombre);
             		$("#domicilio").val(elemento.Domicilio);
             		$("#colonia").val(elemento.Colonia);

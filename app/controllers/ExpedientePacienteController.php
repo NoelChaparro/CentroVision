@@ -69,9 +69,15 @@ class ExpedientePacienteController extends BaseController{
 			if ($validation -> fails()){
 
 			}else{
-				$paciente = new DatosPacientes($datosPacientes);
-				$paciente->save();
-				$id_paciente = $paciente->id;
+
+				if (Input::get("varIdPaciente")){
+					$affectedRows = DatosPacientes::where('IdPaciente', '=', Input::get("varIdPaciente"))->update($datosPacientes);
+					$id_paciente = Input::get("varIdPaciente");
+				}else{
+					$paciente = new DatosPacientes($datosPacientes);
+					$paciente->save();
+					$id_paciente = $paciente->id;
+				}
 
 				// Se guarda en la tabla PadecimientoPacientes
 				$padecimientoPaciente = array (
