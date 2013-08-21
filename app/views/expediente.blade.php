@@ -465,135 +465,154 @@
 		<!-- start: Movilidad -->
 		<section id="mnMovilidad">
 			<legend>Movilidad</legend>
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M1D','',array('class' => 'input-small', 'id'=> 'M1D')) }}
+			<div class="row">
+				<div class="span3">
+					<table>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M1D','',array('class' => 'input-mini', 'id'=> 'M1D')) }}
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">	
+									{{ Form::text('M2D','',array('class' => 'input-mini', 'id'=> 'M2D')) }}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M3D','',array('class' => 'input-mini', 'id'=> 'M3D')) }}
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M4D','',array('class' => 'input-mini', 'id'=> 'M4D')) }}
+								</div>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M5D','',array('class' => 'input-mini', 'id'=> 'M5D')) }}
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M6D','',array('class' => 'input-mini', 'id'=> 'M6D')) }}
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="span2">
+					<div class="control-group">
+						{{ Form::text('M1C','',array('class' => 'input-small', 'id'=> 'M1C')) }}
+					</div>
+
+					<div class="control-group">
+						{{ Form::text('M2C','',array('class' => 'input-small', 'id'=> 'M2C')) }}
+					</div>
+
+					<div class="control-group">
+						{{ Form::text('M3C','',array('class' => 'input-small', 'id'=> 'M3C')) }}
+					</div>
+				</div>
+				<div class="span3">
+					<table>
+						<tr>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M1I','',array('class' => 'input-mini', 'id'=> 'M1I')) }}
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M2I','',array('class' => 'input-mini', 'id'=> 'M2I')) }}
+								</div>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M3I','',array('class' => 'input-mini', 'id'=> 'M3I')) }}
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M4I','',array('class' => 'input-mini', 'id'=> 'M4I')) }}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M5I','',array('class' => 'input-mini', 'id'=> 'M5I')) }}
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									{{ Form::text('M6I','',array('class' => 'input-mini', 'id'=> 'M6I')) }}
+								</div>
+							</td>
+							<td></td>
+						</tr>
+					</table>
 				</div>
 			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M2D','',array('class' => 'input-small', 'id'=> 'M2D')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('PPM', 'PPM: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('PPM','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M3D','',array('class' => 'input-small', 'id'=> 'M3D')) }}
+				<div class="control-group">
+					{{ Form::label('PMonocular', 'P. Monocular: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('PMonocular','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M4D','',array('class' => 'input-small', 'id'=> 'M4D')) }}
+				<div class="control-group">
+					{{ Form::label('PAlterno', 'P. Alterno: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('PAlterno','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M5D','',array('class' => 'input-small', 'id'=> 'M5D')) }}
+				<div class="control-group">
+					{{ Form::label('Ducciones', 'Ducciones: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('Ducciones','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M6D','',array('class' => 'input-small', 'id'=> 'M6D')) }}
+				<div class="control-group">
+					{{ Form::label('Versiones', 'Versiones: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('Versiones','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M1C','',array('class' => 'input-small', 'id'=> 'M1C')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M2C','',array('class' => 'input-small', 'id'=> 'M2C')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M3C','',array('class' => 'input-small', 'id'=> 'M3C')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M1I','',array('class' => 'input-small', 'id'=> 'M1I')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M2I','',array('class' => 'input-small', 'id'=> 'M2I')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M3I','',array('class' => 'input-small', 'id'=> 'M3I')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M4I','',array('class' => 'input-small', 'id'=> 'M4I')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M5I','',array('class' => 'input-small', 'id'=> 'M5I')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				<div class="controls">
-					{{ Form::text('M6I','',array('class' => 'input-small', 'id'=> 'M6I')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('PPM', 'PPM: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PPM','',array('class' => 'input-xxlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('PMonocular', 'P. Monocular: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PMonocular','',array('class' => 'input-xxlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('PAlterno', 'P. Alterno: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PAlterno','',array('class' => 'input-xxlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('Ducciones', 'Ducciones: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('Ducciones','',array('class' => 'input-xxlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('Versiones', 'Versiones: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('Versiones','',array('class' => 'input-xxlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('OjoFijador', 'Ojo Fijador: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('OjoFijador','',array('class' => 'input-xxlarge')) }}
+				<div class="control-group">
+					{{ Form::label('OjoFijador', 'Ojo Fijador: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('OjoFijador','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
 			</div>
 		</section>
@@ -602,293 +621,287 @@
 		<!-- start: Refracción -->
 		<section id="mnRefraccion">
 			<legend>Refracción</legend>
+			<div class="row">
+				<div class="control-group span3">
+					{{ Form::label('ExoftalmometriaOD', 'Exoftalmometria OD: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('ExoftalmometriaOD','',array('class' => 'input-large')) }}
+					</div>
+				</div>
 
-			<div class="control-group">
-				{{ Form::label('ExoftalmometriaOD', 'Exoftalmometria OD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('ExoftalmometriaOD','',array('class' => 'input-xlarge')) }}
+				<div class="control-group span3">
+					{{ Form::label('ExoftalmometriaOI', 'Exoftalmometria OI: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('ExoftalmometriaOI','',array('class' => 'input-large')) }}
+					</div>
 				</div>
 			</div>
-
-			<div class="control-group">
-				{{ Form::label('ExoftalmometriaOI', 'Exoftalmometria OI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('ExoftalmometriaOI','',array('class' => 'input-xlarge')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('ExoftalmometriaBase', 'Exoftalmometria Base: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('ExoftalmometriaBase','',array('class' => 'input-xlarge')) }}
+					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="control-group span3">
+					{{ Form::label('PaquimetriaOD', 'Paquimetría OD: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('PaquimetriaOD','',array('class' => 'input-large')) }}
+					</div>
+				</div>
 
-			<div class="control-group">
-				{{ Form::label('ExoftalmometriaBase', 'Exoftalmometria Base: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('ExoftalmometriaBase','',array('class' => 'input-xlarge')) }}
+				<div class="control-group span3">
+					{{ Form::label('PaquimetriaOI', 'Paquimetría OI: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('PaquimetriaOI','',array('class' => 'input-large')) }}
+					</div>
 				</div>
 			</div>
-
-			<div class="control-group">
-				{{ Form::label('PaquimetriaOD', 'Paquimetría OD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PaquimetriaOD','',array('class' => 'input-xlarge')) }}
+			<h5>Refracción</h5>
+			<div class="row">
+				<div class="span3">
+					<div class="control-group">
+						{{ Form::label('RefraccionSphOD', 'RefraccionSphOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionSphOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('RefraccionEjeOD', 'RefraccionEjeOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionEjeOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('RefraccionBifocalOD', 'RefraccionBifocalOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('RefraccionCylOD', 'RefraccionCylOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionCylOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('RefraccionAddOD', 'RefraccionAddOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionAddOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('RefraccionAVOD', 'RefraccionAVOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionAVOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="control-group">
+						{{ Form::label('RefraccionSphOI', 'RefraccionSphOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionSphOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('RefraccionEjeOI', 'RefraccionEjeOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionEjeOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>				
+					<div class="control-group">
+						{{ Form::label('RefraccionBifocalOI', 'RefraccionBifocalOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>					
+					<div class="control-group">
+						{{ Form::label('RefraccionCylOI', 'RefraccionCylOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionCylOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>					
+					<div class="control-group">
+						{{ Form::label('RefraccionAddOI', 'RefraccionAddOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionAddOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>					
+					<div class="control-group">
+						{{ Form::label('RefraccionAVOI', 'RefraccionAVOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('RefraccionAVOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
 				</div>
 			</div>
-
-			<div class="control-group">
-				{{ Form::label('PaquimetriaOI', 'Paquimetría OI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PaquimetriaOI','',array('class' => 'input-xlarge')) }}
+			<h5>Esquiascopia</h5>
+			<div class="row">
+				<div class="span3">
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaSphOD', 'EsquiascopiaSphOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaSphOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaEjeOD', 'EsquiascopiaEjeOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaEjeOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaBifocalOD', 'EsquiascopiaBifocalOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaBifocalOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaCylOD', 'EsquiascopiaCylOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaCylOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaAddOD', 'EsquiascopiaAddOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaAddOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaAVOD', 'EsquiascopiaAVOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaAVOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('QueratometriaOD', 'Queratometría OD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('QueratometriaOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
 				</div>
+				<div class="span3">
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaSphOI', 'EsquiascopiaSphOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaSphOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaEjeOI', 'EsquiascopiaEjeOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaEjeOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaBifocalOI', 'EsquiascopiaBifocalOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaBifocalOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaCylOI', 'EsquiascopiaCylOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaCylOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaAddOI', 'EsquiascopiaAddOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaAddOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('EsquiascopiaAVOI', 'EsquiascopiaAVOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EsquiascopiaAVOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					<div class="control-group">
+						{{ Form::label('QueratometriaOI', 'Queratometría OI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('QueratometriaOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>			
+				</div>				
 			</div>
-
-			<h3>Refracción</h3>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionSphOD', 'RefraccionSphOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionSphOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionCylOD', 'RefraccionCylOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionCylOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionEjeOD', 'RefraccionEjeOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionEjeOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionAddOD', 'RefraccionAddOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionAddOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionBifocalOD', 'RefraccionBifocalOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionAVOD', 'RefraccionAVOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionAVOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionSphOI', 'RefraccionSphOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionSphOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionCylOI', 'RefraccionCylOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionCylOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionEjeOI', 'RefraccionEjeOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionEjeOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionAddOI', 'RefraccionAddOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionAddOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionBifocalOI', 'RefraccionBifocalOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('RefraccionAVOI', 'RefraccionAVOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('RefraccionAVOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<h3>Esquiascopia</h3>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaSphOD', 'EsquiascopiaSphOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaSphOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaCylOD', 'EsquiascopiaCylOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaCylOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaEjeOD', 'EsquiascopiaEjeOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaEjeOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaAddOD', 'EsquiascopiaAddOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaAddOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaBifocalOD', 'EsquiascopiaBifocalOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaBifocalOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaAVOD', 'EsquiascopiaAVOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaAVOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaSphOI', 'EsquiascopiaSphOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaSphOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaCylOI', 'EsquiascopiaCylOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaCylOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaEjeOI', 'EsquiascopiaEjeOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaEjeOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaAddOI', 'EsquiascopiaAddOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaAddOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaBifocalOI', 'EsquiascopiaBifocalOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaBifocalOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EsquiascopiaAVOI', 'EsquiascopiaAVOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EsquiascopiaAVOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('QueratometriaOD', 'Queratometría OD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('QueratometriaOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('QueratometriaOI', 'Queratometría OI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('QueratometriaOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
 		</section>
 		<!-- end: Refracción -->
 
 		<!-- start: Diagnóstico -->
 		<section id="mnDiagnostico">
 			<legend>Diagnóstico</legend>
-
 			<div class="control-group">
+				<div class="row">
 			  	<label class="control-label" for="chkDiagnostico">Diagnóstico:</label>
+			  	</div>
 			  	<div class="controls">
-				    <label class="checkbox" for="AstigmatismoD">
-				      	{{ Form::checkbox("AstigmatismoD", "1"); }}
-				      	Astigmatismo OD
-				    </label>
-				    <label class="checkbox" for="GlaucomaD">
-				      	{{ Form::checkbox("GlaucomaD", "1"); }}
-				      	Glaucoma OD
-				    </label>
-				    <label class="checkbox" for="CataratasD">
-				      	{{ Form::checkbox("CataratasD", "1"); }}
-				      	Cataratas OD
-				    </label>
-				    <label class="checkbox" for="ConjuntivitisD">
-				      	{{ Form::checkbox("ConjuntivitisD", "1"); }}
-				      	Conjuntivitis OD
-				    </label>
-				    <label class="checkbox" for="QueratitisD">
-				      	{{ Form::checkbox("QueratitisD", "1"); }}
-				      	Queratitis OD
-				    </label>
-				    <label class="checkbox" for="EstrabismoD">
-				      	{{ Form::checkbox("EstrabismoD", "1"); }}
-				      	Estrabismo OD
-				    </label>
-				    <label class="checkbox" for="AstigmatismoI">
-				      	{{ Form::checkbox("AstigmatismoI", "1"); }}
-				      	Astigmatismo OI
-				    </label>
-				    <label class="checkbox" for="GlaucomaI">
-				      	{{ Form::checkbox("GlaucomaI", "1"); }}
-				      	Glaucoma OD
-				    </label>
-				    <label class="checkbox" for="CataratasI">
-				      	{{ Form::checkbox("CataratasI", "1"); }}
-				      	Cataratas OD
-				    </label>
-				    <label class="checkbox" for="ConjuntivitisI">
-				      	{{ Form::checkbox("ConjuntivitisI", "1"); }}
-				      	Conjuntivitis OD
-				    </label>
-				    <label class="checkbox" for="QueratitisI">
-				      	{{ Form::checkbox("QueratitisI", "1"); }}
-				      	Queratitis OD
-				    </label>
-				    <label class="checkbox" for="EstrabismoI">
-				      	{{ Form::checkbox("EstrabismoI", "1"); }}
-				      	Estrabismo OD
-				    </label>
+			  		<div class="row">
+			  			<div class="span3">
+						    <label class="checkbox" for="AstigmatismoD">
+						      	{{ Form::checkbox("AstigmatismoD", "1"); }}
+						      	Astigmatismo OD
+						    </label>
+						    <label class="checkbox" for="GlaucomaD">
+						      	{{ Form::checkbox("GlaucomaD", "1"); }}
+						      	Glaucoma OD
+						    </label>
+						    <label class="checkbox" for="ConjuntivitisD">
+						      	{{ Form::checkbox("ConjuntivitisD", "1"); }}
+						      	Conjuntivitis OD
+						    </label>
+						    <label class="checkbox" for="CataratasD">
+						      	{{ Form::checkbox("CataratasD", "1"); }}
+						      	Cataratas OD
+						    </label>
+						    <label class="checkbox" for="EstrabismoD">
+						      	{{ Form::checkbox("EstrabismoD", "1"); }}
+						      	Estrabismo OD
+						    </label>				   
+						    <label class="checkbox" for="QueratitisD">
+						      	{{ Form::checkbox("QueratitisD", "1"); }}
+						      	Queratitis OD
+						    </label>    
+						</div>
+					<div class="span3">
+					    <label class="checkbox" for="AstigmatismoI">
+					      	{{ Form::checkbox("AstigmatismoI", "1"); }}
+					      	Astigmatismo OI
+					    </label>
+					    <label class="checkbox" for="GlaucomaI">
+					      	{{ Form::checkbox("GlaucomaI", "1"); }}
+					      	Glaucoma OI
+					    </label>
+					    <label class="checkbox" for="ConjuntivitisI">
+					      	{{ Form::checkbox("ConjuntivitisI", "1"); }}
+					      	Conjuntivitis OI
+					    </label>
+						<label class="checkbox" for="CataratasI">
+					      	{{ Form::checkbox("CataratasI", "1"); }}
+					      	Cataratas OI
+					    </label>
+					    <label class="checkbox" for="EstrabismoI">
+					      	{{ Form::checkbox("EstrabismoI", "1"); }}
+					      	Estrabismo OI
+					    </label>
+					    <label class="checkbox" for="QueratitisI">
+					      	{{ Form::checkbox("QueratitisI", "1"); }}
+					      	Queratitis OI
+					    </label>
+				    </div>
 			 	</div>
 			</div>
-
-			<div class="control-group">
-				{{ Form::label('Diagnostico', 'Diagnóstico: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('Diagnostico','',array('class' => 'span6')) }}
+		</br>
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('Diagnostico', 'Diagnóstico: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('Diagnostico','',array('class' => 'span6')) }}
+					</div>
 				</div>
 			</div>
 
@@ -898,11 +911,12 @@
 		<!-- start: Tratamiento -->
 		<section id="mnTratamiento">
 			<legend>Tratamiento</legend>
-
-			<div class="control-group">
-				{{ Form::label('Tratamiento', 'Tratamiento: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('Tratamiento','',array('class' => 'span6')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('Tratamiento', 'Tratamiento: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('Tratamiento','',array('class' => 'span6')) }}
+					</div>
 				</div>
 			</div>
 		</section>
@@ -911,11 +925,12 @@
 		<!-- start: Receta -->
 		<section id="mnReceta">
 			<legend>Receta</legend>
-
-			<div class="control-group">
-				{{ Form::label('Receta', 'Receta: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('Receta','',array('class' => 'span6')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('Receta', 'Receta: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('Receta','',array('class' => 'span6')) }}
+					</div>
 				</div>
 			</div>
 		</section>
@@ -924,133 +939,142 @@
 		<!-- start: Lentes -->
 		<section id="mnLentes">
 			<legend>Lentes</legend>
+			<div class="row">
+				<div class="span3">
+					<div class="control-group">
+						{{ Form::label('SphOD', 'SphOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('SphOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
 
-			<div class="control-group">
-				{{ Form::label('SphOD', 'SphOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('SphOD','',array('class' => 'input-xlarge')) }}
+					<div class="control-group">
+						{{ Form::label('CylOD', 'CylOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('CylOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('EjeOD', 'EjeOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EjeOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('DIOD', 'DIOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('DIOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('PrismaOD', 'PrismaOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('PrismaOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('BaseOD', 'BaseOD: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('BaseOD','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="control-group">
+						{{ Form::label('SphOI', 'SphOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('SphOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('CylOI', 'CylOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('CylOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('EjeOI', 'EjeOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('EjeOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('DIOI', 'DIOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('DIOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+
+					<div class="control-group">
+						{{ Form::label('PrismaOI', 'PrismaOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('PrismaOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
+					
+					<div class="control-group">
+						{{ Form::label('BaseOI', 'BaseOI: ', array('class' => 'control-label')) }}
+						<div class="controls">
+							{{ Form::text('BaseOI','',array('class' => 'input-large')) }}
+						</div>
+					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('Add', 'Add: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('Add','',array('class' => 'input-xlarge')) }}
+					</div>
+				</div>
+				
+				<div class="control-group">
+					{{ Form::label('AO', 'AO: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('AO','',array('class' => 'input-xlarge')) }}
+					</div>
+				</div>
 
-			<div class="control-group">
-				{{ Form::label('CylOD', 'CylOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('CylOD','',array('class' => 'input-xlarge')) }}
+				<div class="control-group">
+					{{ Form::label('Color', 'Color: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('Color','',array('class' => 'input-xlarge')) }}
+					</div>
+				</div>
+
+				<div class="control-group">
+					{{ Form::label('Bifocal', 'Bifocal: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('Bifocal','',array('class' => 'input-xlarge')) }}
+					</div>
 				</div>
 			</div>
-
-			<div class="control-group">
-				{{ Form::label('EjeOD', 'EjeOD: ', array('class' => 'control-label')) }}
+			<div class="row">
 				<div class="controls">
-					{{ Form::text('EjeOD','',array('class' => 'input-xlarge')) }}
-				</div>
+					<label class="checkbox span3" for="Cristal">
+					    {{ Form::checkbox("Cristal", "1"); }}
+					    Cristal
+				    </label>
+
+				    <label class="checkbox span3" for="CR39">
+					    {{ Form::checkbox("CR39", "1"); }}
+					    CR-39
+				    </label>
+			    </div>
 			</div>
-
-			<div class="control-group">
-				{{ Form::label('DIOD', 'DIOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('DIOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('PrismaOD', 'PrismaOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PrismaOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('BaseOD', 'BaseOD: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('BaseOD','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('SphOI', 'SphOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('SphOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('CylOI', 'CylOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('CylOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('EjeOI', 'EjeOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('EjeOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('DIOI', 'DIOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('DIOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('PrismaOI', 'PrismaOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('PrismaOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-			
-			<div class="control-group">
-				{{ Form::label('BaseOI', 'BaseOI: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('BaseOI','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('Add', 'Add: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('Add','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-			
-			<div class="control-group">
-				{{ Form::label('AO', 'AO: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('AO','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('Color', 'Color: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('Color','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<div class="control-group">
-				{{ Form::label('Bifocal', 'Bifocal: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('Bifocal','',array('class' => 'input-xlarge')) }}
-				</div>
-			</div>
-
-			<label class="checkbox" for="Cristal">
-			    {{ Form::checkbox("Cristal", "1"); }}
-			    Cristal
-		    </label>
-
-		    <label class="checkbox" for="CR39">
-			    {{ Form::checkbox("CR39", "1"); }}
-			    CR-39
-		    </label>
-
-		    <div class="control-group">
-				{{ Form::label('ObservacionesLentes', 'Observaciones: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('ObservacionesLentes','',array('class' => 'input-xxlarge')) }}
+			<div class="row">
+			    <div class="control-group">
+					{{ Form::label('ObservacionesLentes', 'Observaciones: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('ObservacionesLentes','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1059,46 +1083,47 @@
 		<!-- start: Certificado -->
 		<section id="mnCertificado">
 			<legend>Certificado</legend>
-
-			<div class="control-group">
-				{{ Form::label('AnexosOculares', 'Anexos Oculares: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('AnexosOculares','',array('class' => 'span6')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('AnexosOculares', 'Anexos Oculares: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('AnexosOculares','',array('class' => 'span6')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				{{ Form::label('SegmentoAnterior', 'Segmento Anterior: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('SegmentoAnterior','',array('class' => 'span6')) }}
+				<div class="control-group">
+					{{ Form::label('SegmentoAnterior', 'Segmento Anterior: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('SegmentoAnterior','',array('class' => 'span6')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				{{ Form::label('FondoOjo', 'Fondo Ojo: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('FondoOjo','',array('class' => 'span6')) }}
+				<div class="control-group">
+					{{ Form::label('FondoOjo', 'Fondo Ojo: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('FondoOjo','',array('class' => 'span6')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				{{ Form::label('PercepcionCromatica', 'Percepción Cromática: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('PercepcionCromatica','',array('class' => 'span6')) }}
+				<div class="control-group">
+					{{ Form::label('PercepcionCromatica', 'Percepción Cromática: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('PercepcionCromatica','',array('class' => 'span6')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				{{ Form::label('DiagnosticoCertificado', 'Diagnóstico: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('DiagnosticoCertificado','',array('class' => 'span6')) }}
+				<div class="control-group">
+					{{ Form::label('DiagnosticoCertificado', 'Diagnóstico: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('DiagnosticoCertificado','',array('class' => 'span6')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				{{ Form::label('TratamientoCertificado', 'Tratamiento: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('TratamientoCertificado','',array('class' => 'span6')) }}
+				<div class="control-group">
+					{{ Form::label('TratamientoCertificado', 'Tratamiento: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('TratamientoCertificado','',array('class' => 'span6')) }}
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1107,11 +1132,12 @@
 		<!-- start: Resumen Clínico -->
 		<section id="mnResumen_Clinico">
 			<legend>Resumen Clínico</legend>
-
-			<div class="control-group">
-				{{ Form::label('ResumenClinico', 'Resumen Clínico: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('ResumenClinico','',array('class' => 'span6')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('ResumenClinico', 'Resumen Clínico: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('ResumenClinico','',array('class' => 'span6')) }}
+					</div>
 				</div>
 			</div>
 		</section>	
@@ -1120,18 +1146,19 @@
 		<!-- start: Hospitalización -->
 		<section id="mnHospitalizacion">
 			<legend>Hospitalización</legend>
-
-			<div class="control-group">
-				{{ Form::label('Clinica', 'Clínica: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::text('Clinica','',array('class' => 'input-xxlarge')) }}
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('Clinica', 'Clínica: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('Clinica','',array('class' => 'input-xxlarge')) }}
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				{{ Form::label('Orden', 'Orden: ', array('class' => 'control-label')) }}
-				<div class="controls">
-					{{ Form::textarea('Orden','',array('class' => 'span6')) }}
+				<div class="control-group">
+					{{ Form::label('Orden', 'Orden: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('Orden','',array('class' => 'span6')) }}
+					</div>
 				</div>
 			</div>
 		</section>		
