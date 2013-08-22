@@ -25,7 +25,7 @@ $(function() {
 			$(this).attr("href"),
 			{
 				duration: 400,
-				offset: { 'left':0, 'top':-0.01*$(window).height() }
+				offset: { 'left':0, 'top':-0.05*$(window).height() }
 			}
 		);
 	});

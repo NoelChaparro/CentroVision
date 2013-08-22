@@ -53,6 +53,11 @@
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 =================================================================== */
 @media only screen and (max-width: 479px) {
+	#btn_box{
+	position:fixed;
+	right:15px;
+	bottom: 0px;
+}
 
 	#sidebar-left{
 		width:50px !important;

@@ -14,7 +14,7 @@
 	                        <li><a href="#mnPadecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
 	                        <li><a href="#mnAgudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
 	                        <li><a href="#mnBiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
-	                        <li><a href="#mnFondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo</span></a></li>
+	                        <li><a href="#mnFondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo y Retina</span></a></li>
 	                        <li><a href="#mnGonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
 	                        <li><a href="#mnMovilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
 	                        <li><a href="#mnRefraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Refracción</span></a></li>
@@ -90,7 +90,7 @@
 				<div class="control-group">
 					{{ Form::label('domicilio', 'Domicilio:', array('class' => 'control-label')) }}
 					<div class="controls">
-				    	{{ Form::text('domicilio','',array('class' => 'input-xxlarge')) }}
+				    	{{ Form::text('domicilio','',array('class' => 'input-xxlarge', 'data-required' => 'true')) }}
 				  	</div>
 				</div>
 			</div>
@@ -129,7 +129,7 @@
 				<div class="control-group span3">
 				  	{{ Form::label('fechanacimiento', 'Fecha Nacimiento:',array('class' => 'control-label', 'for' => 'date01')) }}
 				  	<div class="controls">
-				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small datepicker', 'id' => 'date01', 'placeholder' => 'DD/MM/YYYY')) }}
+				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small datepicker', 'id' => 'date01', 'placeholder' => 'DD/MM/YYYY', 'data-required' => 'true')) }}
 				  	</div>
 				</div>
 				<div class="control-group span5">
@@ -933,6 +933,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="controls">
+				<a href="#" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</a>
+			</div>
 		</section>
 		<!-- end: Receta -->
 
@@ -1077,6 +1080,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="controls">
+				<a href="#" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</a>
+			</div>
 		</section>
 		<!-- end: Lentes -->
 
@@ -1140,6 +1146,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="controls">
+				<a href="#" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</a>
+			</div>
 		</section>	
 		<!-- end: Resumen Clínico -->
 
@@ -1165,11 +1174,11 @@
 		<!-- end: Hospitalización -->
 
 		<!-- start: Button -->
-		<div class="control-group">
+		<div class="control-group" id="btn_box">
 		  	<label class="control-label"></label>
 		  	<div class="controls">
 		    	<input value="Guardar" class="btn btn-large btn-primary" type="submit">
-		    	<input value="Cancelar" class="btn btn-large btn-primary" type="button" id="btnCancelar">
+		    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelar">
 		  	</div>
 		</div>
 		<!-- end: button-->

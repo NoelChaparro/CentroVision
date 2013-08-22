@@ -2,7 +2,7 @@ window.ParsleyConfig = window.ParsleyConfig || {};
 
 (function ($) {
   window.ParsleyConfig = $.extend( true, {}, window.ParsleyConfig, {
-    messages: {
+   messages: {
       // parsley //////////////////////////////////////
         defaultMessage: "Este valor parece ser inválido."
       , type: {

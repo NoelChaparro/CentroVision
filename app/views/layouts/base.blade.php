@@ -43,7 +43,7 @@
 <body>
 		<!-- start: Header -->
 	<div class="navbar">
-		<div class="navbar-inner">
+		<div class="navbar-inner navbar-fixed-top">
 			<div class="container-fluid">
 				<a class="btn btn-navbar hidden-tablet" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
 					<span class="icon-bar"></span>
@@ -55,13 +55,13 @@
 		</div>
 	</div>
 	<!-- start: Header -->	
-		<div class="container-fluid-full">
-			<div class="row-fluid">	
-				
-					@yield('Contenido')
+	<div class="container-fluid-full">
+		<div class="row-fluid">	
+			
+				@yield('Contenido')
 
-			</div>
-		</div>		
+		</div>
+	</div>		
 	<footer>
 		<p>
 			<span style="text-align:left;float:left">&copy; Dr. Gerardo Contreras Herrera 2013</span>
