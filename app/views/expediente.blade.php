@@ -21,9 +21,9 @@
 	                        <li><a href="#mnTratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
 	                        <li><a href="#mnReceta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
 	                        <li><a href="#mnLentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
+	                        <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
 	                        <li><a href="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
 	                        <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
-	                        <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
 						</ul>
 					</nav>
 				</div>
@@ -42,7 +42,7 @@
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente', 'data-validate' => 'parsley')) }}
 		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
 		<!--start: Inicio -->
-		<section id="Inicio">
+		<section id="mnInicio">
 			<figure>
 				<img src="img/logo.jpg" alt="">
 			</figure>

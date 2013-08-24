@@ -1312,8 +1312,8 @@
     , errors: {
         classHandler: function ( elem, isRadioOrCheckbox ) {}             // specify where parsley error-success classes are set
       , container: function ( elem, isRadioOrCheckbox ) {}                // specify an elem where errors will be **apened**
-      , errorsWrapper: '<ul></ul>'                                        // do not set an id for this elem, it would have an auto-generated id
-      , errorElem: '<li></li>'                                            // each field constraint fail in an li
+      , errorsWrapper: '<p></p>'                                        // do not set an id for this elem, it would have an auto-generated id
+      , errorElem: '<span></span>'                                            // each field constraint fail in an li
       }
     , listeners: {
         onFieldValidate: function ( elem, ParsleyForm ) { return false; } // Executed on validation. Return true to ignore field validation

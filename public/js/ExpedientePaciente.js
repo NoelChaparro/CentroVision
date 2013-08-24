@@ -1,5 +1,9 @@
 $(document).on("ready",inicio);
 
+/* ---------- Datapicker ---------- */
+    $(".datepicker").datepicker({dateFormat: 'dd/mm/yy'});
+    $('.datepicker').datepicker();
+
 function inicio() //Inicio del documento
 {
 	guardarFormularioExpediente();

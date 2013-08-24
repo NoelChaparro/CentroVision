@@ -14,7 +14,6 @@
         <style>
             body {
                 padding-top: 60px;
-                padding-bottom: 40px;
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
@@ -43,7 +42,7 @@
                     </a>
                     <a class="brand" href="#">Centro de Visión</a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav">
+                        <ul class="nav pull-right">
                             <li class="active"><a href="#">Expediente Paciente</a></li>
                             <li><a href="#about">Operación Láser</a></li>
                             <li><a href="#contact">Lentes de Contacto</a></li>
@@ -85,11 +84,8 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
         <script src="js/jquery-ui-1.10.0.custom.min.js"></script><!--para calendario en inputbox-->
         <script src="js/alertify.min.js"></script>
-        <script src="js/main.js"></script>
         <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
         <script src="js/waypoints.min.js"></script>
         <script src="js/navbar.js"></script>

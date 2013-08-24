@@ -16,7 +16,7 @@ window.ParsleyConfig = window.ParsleyConfig || {};
         }
       , notnull: "Este valor no debe ser nulo."
       , notblank: "Este valor no debe estar en blanco."
-      , required: "Este valor es requerido."
+      , required: ""
       , regexp: "Este valor es incorrecto."
       , min: "Este valor no debe ser menor que %s."
       , max: "Este valor no debe ser mayor que %s."
