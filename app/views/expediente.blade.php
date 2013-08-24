@@ -1,16 +1,15 @@
 @extends('layouts.base')
 @section('titulo')  
-    Centro de Visión
+    Expediente Paciente
 @stop
 
 @section('Contenido')
-
-	<!-- start: Main Menu -->
+				<!-- start: Main Menu -->
 				<div id="sidebar-left" class="span2">
 					<nav class=" sidebar-nav">
 						<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
 							<li><a href="#mnInicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
-	                        <li><a href="#mnDatos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li> 
+	                        <li><a href="#mnDatos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li>
 	                        <li><a href="#mnPadecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
 	                        <li><a href="#mnAgudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
 	                        <li><a href="#mnBiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
@@ -44,8 +43,8 @@
 		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
 		<!--start: Inicio -->
 		<section id="Inicio">
-			<button href="#mdlBuscarPaciente" role="button" class="btn btn-large " data-toggle="modal" id="btnBuscarPacienteModal">Buscar Paciente</button>
-       		<div class="modal hide fade" tabindex="-1" role="dialog" style="display:none" id="mdlBuscarPaciente">
+			<a href="#mdlBuscarPaciente" role="button" class="btn btn-primary" data-toggle="modal" id="btnBuscarPacienteModal"><i class="icon-search icon-white"></i> Buscar Paciente</a>
+       		<div class="modal hide fade" tabindex="-1" role="dialog" id="mdlBuscarPaciente">
             	<div class="modal-header">
                		<a class="close" data-dismiss="modal">&times;</a>
                		<h3>Buscar Paciente</h3>
@@ -54,7 +53,6 @@
                		<button type="submit" class="btn" id="btnBuscarPaciente">Buscar</button>
            		</div>
            		<div class="modal-body">
-           			<div class="span10">
            	    	<table class="table tblBusquedaPacientesModal table-striped">
            	    		<thead>
            	    			<tr>
@@ -66,7 +64,6 @@
            	    		</thead>
 						<tbody></tbody>
            	    	</table>
-           	    	</div>
        	    	</div>
    	        	<div class="modal-footer">
                 	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
@@ -79,11 +76,11 @@
 			<legend>Registrar Paciente</legend>
 			<div class="row">
 				<div class="control-group">
-					  	{{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
-					  	<div class="controls">
-					    	{{ Form::text('nombre','',array('class' => 'input-xxlarge', 'data-required' => 'true')) }}
-					  	</div>
-					</div>
+				  	{{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
+				  	<div class="controls">
+				    	{{ Form::text('nombre','',array('class' => 'input-xxlarge', 'data-required' => 'true')) }}
+				  	</div>
+				</div>
 			</div>
 			
 			<div class="row">
@@ -1147,7 +1144,7 @@
 				</div>
 			</div>
 			<div class="controls">
-				<a href="#" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</a>
+				<button id="btnImprimirResumenClinico" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
 			</div>
 		</section>	
 		<!-- end: Resumen Clínico -->

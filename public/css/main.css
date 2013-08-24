@@ -1,133 +1,81 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-body {
-	background: #F5F5F5;
-	color: #333;
-	border: none;
-	font-family: 'Open Sans', arial;
-	font-weight: 400;
-	margin:0 auto;
+/* Higher than 960 (desktop devices)
+====================================================================== */
+@media only screen and (min-width: 980px) and (max-width: 3000px){
+	#sidebar-left {
+		height: 100%;
+		width:190px !important;
+	}
+	.sidebar-nav > ul{
+		margin: 0px;
+	}
+	.margen3{
+		margin-left: 200px;
+	}
 }
-body .container-fluid-full{
-	margin-top: 50px;
-}
-footer {
-	min-height: 24px;
-	background: #3A3A3A;
-	color: #fff !important;
-	-webkit-border-radius: 0px;
-	   -moz-border-radius: 0px;
-	      	border-radius: 0px;
-}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
 
-footer div span{
-	padding: 2px 10px 2px 10px;
+	#sidebar-left{
+		height: 100%;
+		width:125px !important;
+	}
+
+	.sidebar-nav > ul{
+		margin: 0px;
+	}
+	
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 12px;
+		text-align: left;	
+	}
+	
+}	
+/* All Mobile Sizes (devices and browser)
+====================================================================== */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	body {
+		padding: 0px;
+	}
+	#sidebar-left{
+		width:50px !important;
+		left:0px;
+		height:100%;
+	}
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 12px;
+		text-align: center;	
+		color:black;
+	}
 }
-input.parsley-success, textarea.parsley-success {
-    color: #468847 !important;
-    background-color: #DFF0D8 !important;
-    border: 1px solid #D6E9C6 !important;
-}
-input.parsley-error, textarea.parsley-error {
-    color: #B94A48 !important;
-    background-color: #F2DEDE !important;
-    border: 1px solid #EED3D7 !important;
-}
-#btn_box{
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+=================================================================== */
+@media only screen and (max-width: 479px) {
+	#btn_box{
 	position:fixed;
 	right:15px;
-	bottom: 20px;
-}
-.centrado{
-	text-align: center;
-}
-.container-fluid{
-	padding: 0;
+	bottom: 0px;
 }
 
-#sidebar-left{
-		background: #3A3A3A;
-		border:0;
-		position: fixed;
+	#sidebar-left{
+		width:50px !important;
+		left:0px;
+		height:95%;
 	}
-.sidebar-nav > ul{
-	margin: 0px;
-	padding-bottom: 1px;
-	font-size: 14px;
-}
 
-.modal-body{
-	height:1000px;
-	width:735px;
-}
-
-.nav-tabs.nav-stacked > li > a {
-	padding: 4% 10px 14px 2%;
-	color: #fff;
-	border-top: none;
-  	border-bottom: 1px solid #666;
-	border-left: none;
-	border-right: none;
-	text-decoration: none;
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;		
-
-}
-
-.nav-tabs.nav-stacked > li:last-child > a {
-  	border-bottom: 1px solid transparent;		
-}
-
-.nav-tabs > li > a:hover,
-.nav-tabs > li > ul > li > a:hover {
-  	color: #666;
-}
-
-.nav-tabs.nav-stacked  > li > a.active,
-.nav-tabs.nav-stacked  > li > ul > li > a.active  {
-  	background: #2D89EF;
-	border-bottom: 1px solid #2D89EF;
-	cursor:default;
-	pointer-events:none;
-}
-
-.nav-tabs.nav-stacked  > li.active > a:hover,
-.nav-tabs.nav-stacked  > li > ul > li.active > a:hover {
-  	background: #2D89EF;
-	color: #fff;
-	border: none;
-	border-bottom: 1px solid #2D89EF;
-}
-
-.nav-tabs.nav-stacked  > li.active > ul {
-	padding: 5px 0px;
-  	color: #3b3b41;
-  	background: #fff;
-}
-
-.nav-tabs.nav-stacked > li:first-child > a {
-	margin: 0px 0px 0px 0px;
-  	-webkit-border-radius: 0px;
-       -moz-border-radius: 0px;
-          	border-radius: 0px;
-}
-
-.nav-tabs.nav-stacked > li:last-child > a {
-  	-webkit-border-radius: 0px;
-       -moz-border-radius: 0px;
-          	border-radius: 0px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 10px;
+		text-align: center;
+		color:black;	
+	}
+}	
+@media only screen and (max-height: 768px) {
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 12px;
+		height:10px;	
+	}
+}	

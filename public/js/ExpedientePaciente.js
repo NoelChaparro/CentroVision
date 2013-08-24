@@ -6,7 +6,17 @@ function inicio() //Inicio del documento
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);
     $("#btnCancelar").on("click",limpiarFormularioExpedientePaciente);
+    $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
 	tablaBusquedaPacientesModal();
+}
+
+function imprimirResumenClinico(){ //Funcion para mandar a imprimir el Resumen Clinico
+    if ($("#varIdPaciente").val() != ''){
+        location.href= "ResumenClinico/"+$("#varIdPaciente").val();
+    }else{
+        alertify.alert("No existe información para imprimir");
+    }
+    return false;
 }
 
 function limpiarBuscarPacienteModal(){ //Funcion que limpia la ventana modal de buscar paciente
@@ -23,22 +33,31 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
-	var form = $('.frmExpedientePaciente');
-	form.bind("submit",function(){
-		$.ajax({
-			type: form.attr('method'),
-			url: form.attr('action'),
-			data: form.serialize(),
-			success: function(data){
-				alertify.alert('Datos Guardados Correctamente');
-                limpiarFormularioExpedientePaciente();
-			},
-			error: function(errors){
-				alertify.alert('Error al guardar');
-			}
-		});
-		return false;
-	});
+    if (validarFormularioExpedientePaciente()){
+    	var form = $('.frmExpedientePaciente');
+    	form.bind("submit",function(){
+    		$.ajax({
+    			type: form.attr('method'),
+    			url: form.attr('action'),
+    			data: form.serialize(),
+    			success: function(data){
+    				alertify.alert('Datos Guardados Correctamente');
+                    limpiarFormularioExpedientePaciente();
+    			},
+    			error: function(errors){
+    				alertify.alert('Error al guardar');
+    			}
+    		});
+    	});
+    }
+    return false;
+}
+
+function validarFormularioExpedientePaciente(){ //Funcion que valida campos vacios del expediente del paciente
+    if($("#nombre").val() == '' || $("#domicilio").val() == '' || $("#date01").val() == ''){
+        return false;
+    }
+    return true;
 }
 
 function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla
@@ -64,11 +83,6 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
     $('#mdlBuscarPaciente').on('shown', function(){
         $("#txtBuscarPaciente").focus();
     });
-    //$('#txtBuscarPaciente').on('keypress', function (e) {
-    //            if (e.which == 13) {
-    //               $('#btnBuscarPaciente').on("click",buscarPaciente);
-    //           }
-    //        });
 	$('.tblBusquedaPacientesModal tbody').on('mouseover', 'tr', function(event) { //Toma el evento mouseover en funcion live para que el tr seleccionado cambie de color al igual que el cursor
 		$(this).parent().parent().removeClass("table-striped");
 	    $(this).css({"background-color":"#adff2f","cursor":"pointer"});

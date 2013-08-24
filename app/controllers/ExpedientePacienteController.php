@@ -5,16 +5,45 @@ class ExpedientePacienteController extends BaseController{
 		return View::make('expediente');
 	}
 
+	public function imprimirRecetaLentes($idPaciente=null){ // manda a imprimir los datos para la receta de los lentes
+		$datosPaciente = '';
+		$lentesPaciente = '';
+		if($idPaciente){
+			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();
+			$lentesPaciente = DB::table('Lentes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+		}
+		return View::make('recetaLentes')->with('datosPaciente',$datosPaciente)->with('lentesPaciente',$lentesPaciente);
+	}
+
+	public function imprimirResumenClinico($idPaciente=null){ //Manda a imprimir los datos para el resumen clinico
+		$datosPaciente = '';
+		$edadPaciente = '';
+		$resumenClinico = '';
+		if ($idPaciente){
+			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();
+			$diaFechaNacimiento = date("j",strtotime($datosPaciente[0]->FechaNacimiento));
+			$mesFechaNacimiento = date("n",strtotime($datosPaciente[0]->FechaNacimiento));
+			$anoFechaNacimiento = date("Y",strtotime($datosPaciente[0]->FechaNacimiento));
+			$diaActual=date("j"); 
+			$mesActual=date("n"); 
+			$anoActual=date("Y");
+			if (($mesFechaNacimiento == $mesActual) && ($diaFechaNacimiento > $diaActual)) { $anoActual=($anoActual-1); }
+			if ($mesFechaNacimiento > $mesActual) { $anoActual=($anoActual-1);}
+			$edadPaciente=($anoActual-$anoFechaNacimiento);
+			$resumenClinico = DB::table('ResumenClinico')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+		}
+		return View::make('resumenClinico')->with('datosPaciente',$datosPaciente)->with('edadPaciente',$edadPaciente)->with('resumenClinico',$resumenClinico);
+	}
+
 	public function buscarPaciente(){ //Busca el paciente por nombre
 		if (Request::ajax()){
-			//$pacientes=DB::table('DatosPacientes')->get();
 			$busqueda = Input::get("buscarPaciente");
 			$pacientes = DB::table('DatosPacientes')->where('Nombre', 'LIKE', '%'.$busqueda.'%')->get();
 			return Response::json(array('Pacientes'=> $pacientes));
 		}
 	}
 
-	public function buscarPacientePorId(){
+	public function buscarPacientePorId(){ //Busca el paciente por Id y regresa todos sus datos en formato JSON
 		if (Request::ajax()){
 			$idPaciente = Input::get("idPaciente");
 			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();

@@ -10,21 +10,17 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <style>
             body {
                 padding-top: 60px;
                 padding-bottom: 40px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/main-responsive.css">
-        <link rel="stylesheet" href="css/alertify.core.css" />
-        <link rel="stylesheet" href="css/alertify.default.css" />
-        <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
+        <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="../css/main.css">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -65,37 +61,31 @@
             </div>
         </div>
 
-        <div class="container-fluid-full">
-            <div class="row-fluid"> 
-                @yield('Contenido')
-            </div>
+        <div class="container">
+            @yield('Contenido')
 
             <hr>
 
             <footer>
-                <p>
-                <span style="text-align:left;float:left">&copy; Dr. Gerardo Contreras Herrera 2013</span>
-                <span class="hidden-phone" style="text-align:right;float:right">Powered by: Imagine Code Labs</span>
-                </p>
+                <p>&copy; 2012</p>
             </footer>
 
         </div> <!-- /container -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
 
-        <script src="js/main.js"></script>
-        <script src="js/jquery-ui-1.10.0.custom.min.js"></script><!--para calendario en inputbox-->
-        <script src="js/alertify.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/navbar.js"></script>
-        <script src="js/plugins.js"></script>
+        <script src="../js/main.js"></script>
 
         @yield('Javascript')
 
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>
