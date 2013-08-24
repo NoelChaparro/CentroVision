@@ -25,3 +25,5 @@ Route::post('buscarPacientePorId','ExpedientePacienteController@buscarPacientePo
 //Ruta para la impresion de documentacion del ExpedientePacienteController
 Route::get('ResumenClinico/{idPaciente?}','ExpedientePacienteController@imprimirResumenClinico')->where('idPaciente','[0-9]+');
 Route::get('RecetaLentes/{idPaciente?}','ExpedientePacienteController@imprimirRecetaLentes')->where('idPaciente','[0-9]+');
+Route::get('ConsentimientoCirugiaOcularExtraocular','ConsentimientoController@imprimirConsentimientoCirugiaOcularExtraocular');
+Route::get('ConsentimientoMedicamentoIntravitreo','ConsentimientoController@imprimirConsentimientoMedicamentoIntravitreo');
