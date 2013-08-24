@@ -7,7 +7,17 @@ function inicio() //Inicio del documento
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);
     $("#btnCancelar").on("click",limpiarFormularioExpedientePaciente);
     $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
+    $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
 	tablaBusquedaPacientesModal();
+}
+
+function imprimirRecetaLentes(){ //Funcion para mandar a imprimir la Receta de Lentes
+    if ($("#varIdPaciente").val() != ''){
+        location.href= "RecetaLentes/"+$("#varIdPaciente").val();
+    }else{
+        alertify.alert("No existe información para imprimir");
+    }
+    return false;
 }
 
 function imprimirResumenClinico(){ //Funcion para mandar a imprimir el Resumen Clinico
@@ -301,13 +311,16 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Resumen Clinico
                     if(response.ResumenClinico[0]){
-                        $("#ResumenClinico").val(response.ResumenClinico[0].ResumenClinico);
+                        CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico);
                     }
 
                     //Hospitalización
                     if(response.Hospitalizacion[0]){
                         $("#Clinica").val(response.Hospitalizacion[0].Clinica);
-                        $("#Orden").val(response.Hospitalizacion[0].Orden);
+                        CKEDITOR.instances['Orden'].setData(response.Hospitalizacion[0].Orden);
+                        pruebadata = CKEDITOR.instances['Orden'].getData();
+                        alert(pruebadata);
+                        //alert(CKEDITOR.instances.Orden.getData());
                     }
             	});
             }
