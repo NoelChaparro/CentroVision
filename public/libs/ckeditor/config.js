@@ -22,9 +22,9 @@ CKEDITOR.editorConfig = function( config ) {
 	];*/
 
 	config.toolbar = [
-    { name: 'document', items: [ 'Source', '-', 'NewPage', 'Preview', '-', 'Templates' ] },
+    { name: 'document', items: [ 'Print' ] },
     { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] },
-    '/',
-    { name: 'basicstyles', items: [ 'Bold', 'Italic' ] }
-];
+    { name: 'basicstyles', items: [ 'Bold', 'Italic','Underline' ] },
+    { name: 'styles', items:['Font','FontSize'] },
+    ];
 };
