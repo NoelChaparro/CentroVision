@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
-                padding-top: 60px;
+                padding-top: 40px;
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
@@ -34,13 +34,13 @@
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container">
+                <div class="container-fluid">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Centro de Visión</a>
+                    <a class="brand pull-left" href="#">Centro de Visión</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="active"><a href="#">Expediente Paciente</a></li>
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="container-fluid-full">
+        <div class="container-fluid">
             <div class="row-fluid"> 
                 @yield('Contenido')
             </div>

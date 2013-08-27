@@ -4,39 +4,39 @@
 @stop
 
 @section('Contenido')
-				<!-- start: Main Menu -->
-				<div id="sidebar-left" class="span2">
-					<nav class=" sidebar-nav">
-						<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
-							<li><a href="#mnInicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
-	                        <li><a href="#mnDatos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li>
-	                        <li><a href="#mnPadecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
-	                        <li><a href="#mnAgudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
-	                        <li><a href="#mnBiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
-	                        <li><a href="#mnFondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo y Retina</span></a></li>
-	                        <li><a href="#mnGonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
-	                        <li><a href="#mnMovilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
-	                        <li><a href="#mnRefraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Refracción</span></a></li>
-	                        <li><a href="#mnDiagnostico"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
-	                        <li><a href="#mnTratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
-	                        <li><a href="#mnReceta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
-	                        <li><a href="#mnLentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
-	                        <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
-	                        <li><a href="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
-	                        <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
-	                        <li><a href="#mnConsentimientoCirugiaOcularExtraocular"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
-	                        <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
-						</ul>
-					</nav>
-				</div>
-				<!-- end: Main Menu -->
+	<!-- start: Main Menu -->
+	<div id="sidebar-left" class="span2">
+		<nav class=" sidebar-nav">
+			<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
+				<li><a href="#mnInicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
+	            <li><a href="#mnDatos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li>
+	            <li><a href="#mnPadecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
+	            <li><a href="#mnAgudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
+	            <li><a href="#mnBiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
+	            <li><a href="#mnFondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo y Retina</span></a></li>
+	            <li><a href="#mnGonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
+	            <li><a href="#mnMovilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
+	            <li><a href="#mnRefraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Refracción</span></a></li>
+	            <li><a href="#mnDiagnostico"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
+	            <li><a href="#mnTratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
+	            <li><a href="#mnReceta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
+	            <li><a href="#mnLentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
+	            <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
+	            <li><a href="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
+	            <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
+	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
+	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
+			</ul>
+		</nav>
+	</div>
+	<!-- end: Main Menu -->
 				
-				<noscript>
-					<div class="alert alert-block span10">
-						<h4 class="alert-heading">Ups!!!!</h4>
-						<p>Se Necesita tener instalado <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> para usar este sitio.</p>
-					</div>
-				</noscript>
+	<noscript>
+		<div class="alert alert-block span10">
+			<h4 class="alert-heading">Ups!!!!</h4>
+			<p>Se Necesita tener instalado <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> para usar este sitio.</p>
+		</div>
+	</noscript>
 
 	<!-- start: Content -->
 	<div class="offset2">		
@@ -74,8 +74,10 @@
                 	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
            		</div>
        		</div>
+       		</br></br></br></br>
 		</section>
 		<!--End: Inicio -->
+		
 		<!--start: Datos Generales -->
 		<section id="mnDatos_Generales">
 			<legend>Registrar Paciente</legend>
@@ -166,9 +168,10 @@
 				  	</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Datos Generales -->
-
+		
 		<!-- start: Padecimiento -->
 		<section id="mnPadecimientos"> 
 			<legend>Padecimiento</legend>
@@ -185,10 +188,11 @@
 				  		{{ Form::textarea('antecedentes','',array('class' => 'span6')) }}
 				  	</div>
 				</div>
-			</div>					
+			</div>	
+			</br></br></br></br>				
 		</section>
 		<!-- end: Padecimiento -->
-
+		
 		<!-- start: Agudeza Visual -->
 		<section id="mnAgudeza_Visual">
 			<legend>Agudeza Visual</legend>
@@ -310,9 +314,10 @@
 				</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Agudeza Visual -->
-
+		
 		<!--start: Biomicroscopia e Iris -->
 		<section id="mnBiomicroscopiaIris">
 				
@@ -349,9 +354,10 @@
 				  	</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Biomicroscopia e Iris -->
-
+		
 		<!-- start: Fondo y Retina -->
 		<section id="mnFondoRetina">
 			<legend>Fondo y Retina</legend>
@@ -370,9 +376,10 @@
 					</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Fondo y Retina -->
-
+		
 		<!-- start: Gonioscopía -->
 		<section id="mnGonioscopia">
 			<legend>Gonioscopía</legend>
@@ -465,9 +472,10 @@
 					</tr>
 				</table>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- End: Gonioscopía -->
-
+		
 		<!-- start: Movilidad -->
 		<section id="mnMovilidad">
 			<legend>Movilidad</legend>
@@ -621,9 +629,10 @@
 					</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Movilidad -->
-
+		
 		<!-- start: Refracción -->
 		<section id="mnRefraccion">
 			<legend>Refracción</legend>
@@ -853,9 +862,10 @@
 						</div>			
 					</div>				
 				</div>
+				</br></br></br></br>
 		</section>
 		<!-- end: Refracción -->
-
+		
 		<!-- start: Diagnóstico -->
 		<section id="mnDiagnostico">
 			<legend>Diagnóstico</legend>
@@ -928,10 +938,10 @@
 					</div>
 				</div>
 			</div>
-
+			</br></br></br></br>
 		</section>
 		<!-- end: Diagnóstico -->
-
+		
 		<!-- start: Tratamiento -->
 		<section id="mnTratamiento">
 			<legend>Tratamiento</legend>
@@ -943,9 +953,10 @@
 					</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Tratamiento -->
-
+		
 		<!-- start: Receta -->
 		<section id="mnReceta">
 			<legend>Receta</legend>
@@ -960,9 +971,10 @@
 			<div class="controls">
 				<a href="#" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</a>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Receta -->
-
+		
 		<!-- start: Lentes -->
 		<section id="mnLentes">
 			<legend>Lentes</legend>
@@ -1108,8 +1120,10 @@
 			<div class="controls">
 				<a href="#" class="btn btn-info" id="btnImprimirRecetaLentes"><i class="icon-print icon-white"></i> Imprimir</a>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Lentes -->
+		
 		<!-- start: Certificado -->
 		<section id="mnCertificado">
 			<legend>Certificado</legend>
@@ -1156,8 +1170,10 @@
 					</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>
 		<!-- end: Certificado -->
+		
 		<!-- start: Resumen Clínico -->
 		<section id="mnResumen_Clinico">
 			<legend>Resumen Clínico</legend>
@@ -1169,12 +1185,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="controls">
-				<button id="btnImprimirResumenClinico" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
-			</div>
+			</br></br></br></br>
 		</section>	
 		<!-- end: Resumen Clínico -->
-
+		
 		<!-- start: Hospitalización -->
 		<section id="mnHospitalizacion">
 			<legend>Hospitalización</legend>
@@ -1193,9 +1207,10 @@
 					</div>
 				</div>
 			</div>
+			</br></br></br></br>
 		</section>		
 		<!-- end: Hospitalización -->
-
+		
 		<!-- start: Consentimiento de Cirugia Ocular y Extraocular -->
 		<section id="mnConsentimientoCirugiaOcularExtraocular">
 			<legend>Consentimiento Informado de Cirugía Ocular y Extraocular</legend>
@@ -1210,9 +1225,10 @@
 			<div class="controls">
 				<button id="btnImprimirConsentimientoCirugiaOcularExtraocular" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
 			</div>
+			</br></br></br></br>
 		</section>		
 		<!-- end: Consentimiento de Cirugia Ocular y Extraocular -->
-
+		
 		<!-- start: Consentimiento Aplicacion Medicamentos Intravitreos -->
 		<section id="mnConsentimientoAplicacionMedicamentosIntravitreos">
 			<legend>Consentimiento Informado para Aplicación de Medicamentos Intravitreos</legend>
@@ -1234,9 +1250,15 @@
 			<div class="controls">
 				<button id="btnImprimirConsentimientoMedicamentosIntravitreos" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
 			</div>
+			</br></br></br></br>
+			</br></br></br></br>
+			</br></br></br></br>
+			</br></br></br></br>
+			</br></br></br></br>
+			</br></br></br></br>
 		</section>		
 		<!-- end: Consentimiento Aplicacion Medicamentos Intravitreos -->
-
+		
 		<!-- start: Button -->
 		<div class="control-group" id="btn_box">
 		  	<label class="control-label"></label>
@@ -1246,6 +1268,7 @@
 		  	</div>
 		</div>
 		<!-- end: button-->
+	
 	{{ Form::close() }}
 
 	</div><!--/fluid-row-->

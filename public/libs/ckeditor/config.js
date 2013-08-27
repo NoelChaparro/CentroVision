@@ -9,18 +9,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.height = '350';
 	config.resize_maxHeight = 600;
 	config.toolbarCanCollapse = true;
-	/*config.toolbarGroups = [
-    { name: 'clipboard'},
-    { name: 'tools' },
-    { name: 'document' },
-    { name: 'others' },
-    '/',
-    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-    { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
-    { name: 'styles' },
-    { name: 'colors' },
-	];*/
-
 	config.toolbar = [
     { name: 'document', items: [ 'Print' ] },
     { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] },
