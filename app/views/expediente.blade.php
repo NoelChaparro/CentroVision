@@ -24,6 +24,8 @@
 	                        <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
 	                        <li><a href="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
 	                        <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
+	                        <li><a href="#mnConsentimientoCirugiaOcularExtraocular"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
+	                        <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
 						</ul>
 					</nav>
 				</div>
@@ -1193,6 +1195,48 @@
 			</div>
 		</section>		
 		<!-- end: Hospitalización -->
+
+		<!-- start: Consentimiento de Cirugia Ocular y Extraocular -->
+		<section id="mnConsentimientoCirugiaOcularExtraocular">
+			<legend>Consentimiento Informado de Cirugía Ocular y Extraocular</legend>
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('CirugiaOcularExtraocular', 'Cirugía Ocular/Extraocular: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('CirugiaOcularExtraocular','',array('class' => 'span6')) }}
+					</div>
+				</div>
+			</div>
+			<div class="controls">
+				<button id="btnImprimirConsentimientoCirugiaOcularExtraocular" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
+			</div>
+		</section>		
+		<!-- end: Consentimiento de Cirugia Ocular y Extraocular -->
+
+		<!-- start: Consentimiento Aplicacion Medicamentos Intravitreos -->
+		<section id="mnConsentimientoAplicacionMedicamentosIntravitreos">
+			<legend>Consentimiento Informado para Aplicación de Medicamentos Intravitreos</legend>
+			<div class="row">
+				<div class="control-group">
+					{{ Form::label('ResponsableLegal', 'Responsable Legal: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::text('ResponsableLegal','',array('class' => 'input-xxlarge')) }}
+					</div>
+				</div>
+
+				<div class="control-group">
+					{{ Form::label('ConsentimientoMedicamentosIntravitreos', 'Medicamentos Intravitreos: ', array('class' => 'control-label')) }}
+					<div class="controls">
+						{{ Form::textarea('ConsentimientoMedicamentosIntravitreos','',array('class' => 'span6')) }}
+					</div>
+				</div>
+			</div>
+			<div class="controls">
+				<button id="btnImprimirConsentimientoMedicamentosIntravitreos" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
+			</div>
+		</section>		
+		<!-- end: Consentimiento Aplicacion Medicamentos Intravitreos -->
+
 		<!-- start: Button -->
 		<div class="control-group" id="btn_box">
 		  	<label class="control-label"></label>
