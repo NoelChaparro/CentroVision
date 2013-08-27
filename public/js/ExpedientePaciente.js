@@ -12,7 +12,17 @@ function inicio() //Inicio del documento
     $("#btnCancelar").on("click",limpiarFormularioExpedientePaciente);
     $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
+    $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
 	tablaBusquedaPacientesModal();
+}
+
+function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrimir el consentimiento informado de cirugia ocular y extraocular
+    if ($("#CirugiaOcularExtraocular").val() != '' && $("#varIdPaciente").val() != ''){
+        location.href= "ConsentimientoCirugiaOcularExtraocular/"+$("#CirugiaOcularExtraocular").val();
+    }else{
+        alertify.alert("No existe información para imprimir");
+    }
+    return false;
 }
 
 function imprimirRecetaLentes(){ //Funcion para mandar a imprimir la Receta de Lentes
@@ -323,9 +333,12 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                         $("#Clinica").val(response.Hospitalizacion[0].Clinica);
                         CKEDITOR.instances['Orden'].setData(response.Hospitalizacion[0].Orden);
                         pruebadata = CKEDITOR.instances['Orden'].getData();
-                        alert(pruebadata);
+                        //alert(pruebadata);
                         //alert(CKEDITOR.instances.Orden.getData());
                     }
+
+                    //Cirugia Ocular/Extraocular
+                    $("#CirugiaOcularExtraocular").val("Paciente: " + elemento.Nombre + " Autorizo al Cirujano Oftalmólogo Dr. Jesus Gerardo Contreras Herrera para que efectué las intervenciones quirúrjicas que sean necesarias para aliviar o curar mi padecimiento de: ");
             	});
             }
     });

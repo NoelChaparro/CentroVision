@@ -1,6 +1,10 @@
 CONSENTIMIENTO INFORMADO DE CIRUGIA OCULAR Y EXTRAOCULAR
 
 <p>
+	{{ $consentimiento }}
+</p>
+
+<p>
 1.- RIESGOS Y COMLICACIONES: Se da la autorización bajo la comprensión de que cualquier operación o procedimiento implica riesgos y peligros que incluyen: infección ocular externa o interna (endoftalmitis) hemorragia expulsiva, perdida de vítreo, desprendimiento de retina o coroides, maculopatía, glaucoma y queratopatía, etc. Otras Incluyen:
 </p>
 
