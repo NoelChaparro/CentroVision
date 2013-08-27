@@ -1,18 +1,24 @@
 $(document).on("ready",inicio);
 
 /* ---------- Datapicker ---------- */
-    $(".datepicker").datepicker({dateFormat: 'dd/mm/yy'});
-    $('.datepicker').datepicker();
+$(".datepicker").datepicker({dateFormat: 'dd/mm/yy'});
+$('.datepicker').datepicker();
+
+var txtConcentimientoCirugiaOcularExtraocular;
+var txtConcentimientoMedicamentoIntravitreos;
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var f = new Date();
 
 function inicio() //Inicio del documento
 {
-	guardarFormularioExpediente();
+    $("#btnGuardarExpedientePaciente").on("click",guardarFormularioExpediente);
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);
     $("#btnCancelar").on("click",limpiarFormularioExpedientePaciente);
     $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
+    CKEDITOR.instances['Orden'].setData("<p>Clínica: </p>");
 	tablaBusquedaPacientesModal();
 }
 
@@ -54,12 +60,22 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     });
     $("#nombre").focus();
     $("#varIdPaciente").val("");
+    CKEDITOR.instances['CirugiaOcularExtraocular'].setData('');
+    CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData('');
+    CKEDITOR.instances['ResumenClinico'].setData('');
+    CKEDITOR.instances['Orden'].setData('');
+    CKEDITOR.instances['Receta'].setData('');
+    CKEDITOR.instances['Orden'].setData("<p>Clínica: </p>");
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
     if (validarFormularioExpedientePaciente()){
+        //Se iguala la informacion de los ckedit al val del text area
+        $("#ResumenClinico").val(CKEDITOR.instances['ResumenClinico'].getData());
+        $("#Orden").val(CKEDITOR.instances['Orden'].getData());
+        $("#Receta").val(CKEDITOR.instances['Receta'].getData());
     	var form = $('.frmExpedientePaciente');
-    	form.bind("submit",function(){
+    	//form.bind("submit",function(){
     		$.ajax({
     			type: form.attr('method'),
     			url: form.attr('action'),
@@ -72,13 +88,15 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
     				alertify.alert('Error al guardar');
     			}
     		});
-    	});
+            
+    	//});
     }
     return false;
 }
 
 function validarFormularioExpedientePaciente(){ //Funcion que valida campos vacios del expediente del paciente
     if($("#nombre").val() == '' || $("#domicilio").val() == '' || $("#date01").val() == ''){
+        alertify.alert("Es necesario especificar el Nombre, Domicilio y Fecha de Nacimiento del Paciente");
         return false;
     }
     return true;
@@ -287,7 +305,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Receta
                     if(response.Receta[0]){
-                        $("#Receta").val(response.Receta[0].Receta);
+                        //$("#Receta").val(response.Receta[0].Receta);
+                        CKEDITOR.instances['Receta'].setData(response.Receta[0].Receta);
                     }
 
                     //Lentes
@@ -330,16 +349,32 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Hospitalización
                     if(response.Hospitalizacion[0]){
-                        $("#Clinica").val(response.Hospitalizacion[0].Clinica);
-                        CKEDITOR.instances['Orden'].setData(response.Hospitalizacion[0].Orden);
-                        pruebadata = CKEDITOR.instances['Orden'].getData();
-                        //alert(pruebadata);
-                        //alert(CKEDITOR.instances.Orden.getData());
+                        CKEDITOR.instances['Orden'].setData("<p>Clínica: </p>" + response.Hospitalizacion[0].Orden);
                     }
 
-                    //Cirugia Ocular/Extraocular
-                    $("#CirugiaOcularExtraocular").val("Paciente: " + elemento.Nombre + " Autorizo al Cirujano Oftalmólogo Dr. Jesus Gerardo Contreras Herrera para que efectué las intervenciones quirúrjicas que sean necesarias para aliviar o curar mi padecimiento de: ");
+                    //Consentimiento Cirugia Ocular/Extraocular
+                    CKEDITOR.instances['CirugiaOcularExtraocular'].setData("<p><b>CONSENTIMIENTO INFORMADO DE CIRUGIA OCULAR Y EXTRAOCULAR</b></p><b>Paciente:</b> " + elemento.Nombre + " Autorizo al Cirujano Oftalmólogo Dr. Jesus Gerardo Contreras Herrera para que efectué las intervenciones quirúrjicas que sean necesarias para aliviar o curar mi padecimiento de: " + txtConcentimientoCirugiaOcularExtraocular);
+
+                    //Consentimiento Medicamentos Intravitreos
+                    CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData("<p><b>CARTA DE CONSENTIMIENTO INFORMADO PARA APLICACIÓN DE MEDICAMENTOS INTRAVITREOS</b></p><p>Fecha: "+ f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() +"</p><p>Responsable Legal del Paciente:</p><p>Nombre del Paciente: "+ elemento.Nombre  + txtConcentimientoMedicamentoIntravitreos);
             	});
             }
     });
 }
+
+txtConcentimientoCirugiaOcularExtraocular = "<p>1.- RIESGOS Y COMLICACIONES: Se da la autorización bajo la comprensión de que cualquier operación o procedimiento implica riesgos y peligros que incluyen: infección ocular externa o interna (endoftalmitis) hemorragia expulsiva, perdida de vítreo, desprendimiento de retina o coroides, maculopatía, glaucoma y queratopatía, etc. Otras Incluyen:</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>2.- ANESTESIA: Existe la anestesia general y regional (local), la administración de anestésicos, también implica riesgos, el más importante aunque poco frecuente, es el riesgo de sufrir alguna reacción a los medicamentos usados en la anestesia general, que pueden causar la muerte, autorizo el uso de estos anestésicos por la persona responsable de este servicio en caso de que lo considere necesario.</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>Anestesia Regional (local) retrobulbar tiene ventajas y desventajas, que incluyen complicaciones asociadas, estas pueden ser divididas en dos grupos: A) Relacionadas con el compromiso de la visión como son: daño al nervio óptico, oclusión de la arteria central de la retina, hemorragia retrobulbar, perforación ocular, émbolos a la circulación retiniana o coroidea. B) Relacionadas con el compromiso de la vida como son: Paro Cardiaco, Depresión Respiratoria, y Depresión del Sistema Nervioso.</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>3.- ESTOY enterado (a) de que no existe garantía o seguridad sobre los resultados del procedimiento quirúrgico de cirugía de catarata y que no pueda curar mi enfermedad.</p><p>4.- NADIE puede predecir cuales serán las complicaciones que ocurran en mi caso.</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>5.- EN OCASIONES es necesario realizar un segundo o tercer procedimiento quirúrgico dependiendo del diagnóstico prequirúrgico y complicaciones transquirúrgicas o postoperatorias, se da la autorización del procedimiento que mi Médico considere necesario en el momento de la operación.</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>CONSENTIMIENTO DE PACIENTE: Tengo que leer o que me lean y entender esta forma de consentimiento y NO DEBO FIRMARLA si todos los párrafos o todas mis dudas no han sido explicadas o contestadas a mi entera satisfacción o si no entiendo cualquier termino medico o palabra contenida en este documento.</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>Si tiene cualquier duda de los riesgos o peligros de la cirugía o tratamiento propuesto, pregunte a su Cirujano (antes de firmar este documento).</p><p>NO FIRME A MENOS QUE LE LEAN O EXPLIQUEN Y ENTIENDA ESTE CONSENTIMIENTO</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p><table><tr><td></td><td>Paciente o Responsable Legal</td><td></td><td>Testigo</td></tr></table></p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>DECLARACION MEDICA: He explicado el contenido de éste documento al paciente, he respondido a todas sus preguntas al grado máximo de mi conocimiento, creo que el paciente ha sido informado adecuadamente y he aceptado operarlo.</p>";
+txtConcentimientoCirugiaOcularExtraocular = txtConcentimientoCirugiaOcularExtraocular + "<p>Firma del Médico</p><p>Cd. Cuauhtémoc, Chih. a "+f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear()+"</p>";
+
+txtConcentimientoMedicamentoIntravitreos = "<p>Autorizo al cirujano oftalmólogo Dr. J. Gerardo Contreras Herrera, para realizar la aplicación de medicamentos intraocular () en cavidad vítrea en el quirófano con las medidas de asepsia y antisepsia correspondientes con el fin de lograr el efecto terapéutico para mi patología de retina (macula) y/o vítreo.</p>";
+txtConcentimientoMedicamentoIntravitreos = txtConcentimientoMedicamentoIntravitreos + "<p>1.- Riesgos Quirúrgicos. autorizo la aplicación, sabiendo previamente que cualquier procedimiento en los ojos lleva consigo la posibilidad de: infección intraocular secundaria (endoftalmitis), hemorragia, catarata, oclusiones vasculares, glaucoma secundario, desprendimiento de retina o coroides, maculopatia, toxicidad del medicamento, cualquiera de estas complicaciones puede causar disminución severa de la agudeza visual y/o puede causar ceguera; los procedimientos adicionales pueden ser necesarios para tratar estas complicaciones.</p>";
+txtConcentimientoMedicamentoIntravitreos = txtConcentimientoMedicamentoIntravitreos + "<p>2.- Estoy consciente que no se puede predecir si existiría o no complicación alguna en el procedimiento que se me va a realizar.</p>";
+txtConcentimientoMedicamentoIntravitreos = txtConcentimientoMedicamentoIntravitreos + "<p>3.- Esta hoja será firmada por el paciente solamente hasta que le sea explicada en forma satisfactoria su enfermedad ocular, el procedimiento que se le realizara y las posibles complicaciones potenciales, liberando de toda responsabilidad al cirujano oftalmólogo de cualquier evento que pudiera presentarse durante la aplicación o posterior a la misma.</p>";
+txtConcentimientoMedicamentoIntravitreos = txtConcentimientoMedicamentoIntravitreos + "<p></p><p>Nombre y Firma del Paciente</p>";

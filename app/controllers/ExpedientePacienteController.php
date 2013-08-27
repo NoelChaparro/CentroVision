@@ -325,11 +325,10 @@ class ExpedientePacienteController extends BaseController{
 				// Guardarn en tabla Hospitalización
 				$hospitalizacionPaciente = array(
 					"Paciente_id" => $id_paciente,
-					"Clinica" => Input::get("Clinica"),
 					"Orden" => Input::get("Orden")
 				);
 				$hospitalizacion = new Hospitalizacion($hospitalizacionPaciente);
-				if($hospitalizacionPaciente["Clinica"] || $hospitalizacionPaciente["Orden"]){$hospitalizacion->save();}
+				if($hospitalizacionPaciente["Orden"]){$hospitalizacion->save();}
 			}
 		}
 	}

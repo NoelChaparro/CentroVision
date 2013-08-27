@@ -16,7 +16,6 @@ class CreateHospitalizacionTable extends Migration {
             $table->increments('IdHospitalizacion');
             $table->unsignedInteger('Paciente_id');
             $table->foreign('Paciente_id')->references('IdPaciente')->on('DatosPacientes');
-			$table->string('Clinica', 50)->nullable();
 			$table->text('Orden')->nullable();
             $table->timestamps();
         });
