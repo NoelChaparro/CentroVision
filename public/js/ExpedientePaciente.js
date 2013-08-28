@@ -64,14 +64,16 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     CKEDITOR.instances['ResumenClinico'].setData('');
     CKEDITOR.instances['Orden'].setData('');
     CKEDITOR.instances['Receta'].setData('');
+    CKEDITOR.instances['Tratamiento'].setData('');
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
     if (validarFormularioExpedientePaciente()){
-        //Se iguala la informacion de los ckedit al val del text area
+        //Se iguala la informacion de los ckeditor al val del text area
         $("#ResumenClinico").val(CKEDITOR.instances['ResumenClinico'].getData());
         $("#Orden").val(CKEDITOR.instances['Orden'].getData());
         $("#Receta").val(CKEDITOR.instances['Receta'].getData());
+        $("#Tratamiento").val(CKEDITOR.instances['Tratamiento'].getData());
     	var form = $('.frmExpedientePaciente');
     	//form.bind("submit",function(){
     		$.ajax({
@@ -298,7 +300,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Tratamiento
                     if(response.Tratamiento[0]){
-                        $("#Tratamiento").val(response.Tratamiento[0].Tratamiento);
+                        CKEDITOR.instances['Tratamiento'].setData(response.Tratamiento[0].Tratamiento);
                     }
 
                     //Receta
