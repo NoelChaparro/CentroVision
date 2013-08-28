@@ -18,7 +18,6 @@ function inicio() //Inicio del documento
     $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
-    CKEDITOR.instances['Orden'].setData("<p>Clínica: </p>");
 	tablaBusquedaPacientesModal();
 }
 
@@ -65,7 +64,6 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     CKEDITOR.instances['ResumenClinico'].setData('');
     CKEDITOR.instances['Orden'].setData('');
     CKEDITOR.instances['Receta'].setData('');
-    CKEDITOR.instances['Orden'].setData("<p>Clínica: </p>");
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
@@ -305,7 +303,6 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Receta
                     if(response.Receta[0]){
-                        //$("#Receta").val(response.Receta[0].Receta);
                         CKEDITOR.instances['Receta'].setData(response.Receta[0].Receta);
                     }
 
@@ -349,14 +346,14 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Hospitalización
                     if(response.Hospitalizacion[0]){
-                        CKEDITOR.instances['Orden'].setData("<p>Clínica: </p>" + response.Hospitalizacion[0].Orden);
+                        CKEDITOR.instances['Orden'].setData(response.Hospitalizacion[0].Orden);
                     }
 
                     //Consentimiento Cirugia Ocular/Extraocular
-                    CKEDITOR.instances['CirugiaOcularExtraocular'].setData("<p><b>CONSENTIMIENTO INFORMADO DE CIRUGIA OCULAR Y EXTRAOCULAR</b></p><b>Paciente:</b> " + elemento.Nombre + " Autorizo al Cirujano Oftalmólogo Dr. Jesus Gerardo Contreras Herrera para que efectué las intervenciones quirúrjicas que sean necesarias para aliviar o curar mi padecimiento de: " + txtConcentimientoCirugiaOcularExtraocular);
+                    CKEDITOR.instances['CirugiaOcularExtraocular'].setData("<p style='text-align: center;'><b>CONSENTIMIENTO INFORMADO DE CIRUGIA OCULAR Y EXTRAOCULAR</b></p><b>Paciente:</b> " + elemento.Nombre + " Autorizo al Cirujano Oftalmólogo Dr. Jesus Gerardo Contreras Herrera para que efectué las intervenciones quirúrjicas que sean necesarias para aliviar o curar mi padecimiento de: " + txtConcentimientoCirugiaOcularExtraocular);
 
                     //Consentimiento Medicamentos Intravitreos
-                    CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData("<p><b>CARTA DE CONSENTIMIENTO INFORMADO PARA APLICACIÓN DE MEDICAMENTOS INTRAVITREOS</b></p><p>Fecha: "+ f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() +"</p><p>Responsable Legal del Paciente:</p><p>Nombre del Paciente: "+ elemento.Nombre  + txtConcentimientoMedicamentoIntravitreos);
+                    CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData("<p style='text-align: center;'><b>CARTA DE CONSENTIMIENTO INFORMADO PARA APLICACIÓN DE MEDICAMENTOS INTRAVITREOS</b></p><p>Fecha: "+ f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() +"</p><p>Responsable Legal del Paciente:</p><p>Nombre del Paciente: "+ elemento.Nombre  + txtConcentimientoMedicamentoIntravitreos);
             	});
             }
     });
