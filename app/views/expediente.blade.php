@@ -1271,7 +1271,7 @@
 		<div class="control-group" id="btn_box">
 		  	<label class="control-label"></label>
 		  	<div class="controls">
-		    	<input value="Guardar" class="btn btn-large btn-primary" type="submit">
+		    	<input value="Guardar" class="btn btn-large btn-primary" type="submit" id="btnGuardarExpedientePaciente">
 		    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelar">
 		  	</div>
 		</div>
