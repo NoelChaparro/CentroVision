@@ -46,6 +46,7 @@
                             <li class="active"><a href="#">Expediente Paciente</a></li>
                             <li><a href="#about">Operación Láser</a></li>
                             <li><a href="#contact">Lentes de Contacto</a></li>
+                            <!-- se comenta esta parte por se se requiere mas adelante
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -57,7 +58,7 @@
                                     <li><a href="#">Separated link</a></li>
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

@@ -1,0 +1,81 @@
+/* Higher than 960 (desktop devices)
+====================================================================== */
+@media only screen and (min-width: 980px) and (max-width: 3000px){
+	#sidebar-left {
+		height: 100%;
+		width:190px !important;
+	}
+	.sidebar-nav > ul{
+		margin: 0px;
+	}
+	.margen3{
+		margin-left: 200px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+
+	#sidebar-left{
+		height: 100%;
+		width:125px !important;
+	}
+
+	.sidebar-nav > ul{
+		margin: 0px;
+	}
+	
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 12px;
+		text-align: left;	
+	}
+	
+}	
+/* All Mobile Sizes (devices and browser)
+====================================================================== */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	body {
+		padding: 0px;
+	}
+	#sidebar-left{
+		width:50px !important;
+		left:0px;
+		height:100%;
+	}
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 12px;
+		text-align: center;	
+		color:black;
+	}
+}
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+=================================================================== */
+@media only screen and (max-width: 479px) {
+	#btn_box{
+	position:fixed;
+	right:15px;
+	bottom: 0px;
+}
+
+	#sidebar-left{
+		width:50px !important;
+		left:0px;
+		height:95%;
+	}
+
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 10px;
+		text-align: center;
+		color:black;	
+	}
+}	
+@media only screen and (max-height: 768px) {
+	.nav-tabs.nav-stacked > li > a,
+	.nav-tabs.nav-stacked > li > ul > li > a {
+		font-size: 12px;
+		height:10px;	
+	}
+}	
