@@ -949,7 +949,7 @@
 				<div class="control-group">
 					{{ Form::label('Tratamiento', 'Tratamiento: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('Tratamiento','',array('class' => 'span6')) }}
+						{{ Form::textarea('Tratamiento','',array('class' => 'span6 ckeditor')) }}
 					</div>
 				</div>
 			</div>
@@ -1170,6 +1170,9 @@
 					</div>
 				</div>
 			</div>
+			<div class="controls">
+				<a href="#" class="btn btn-info" id="btnImprimirCertificado"><i class="icon-print icon-white"></i> Imprimir</a>
+			</div>			
 			</br></br></br></br>
 		</section>
 		<!-- end: Certificado -->
