@@ -28,9 +28,50 @@ input.parsley-error, textarea.parsley-error {
     background-color: #F2DEDE !important;
     border: 1px solid #EED3D7 !important;
 }
-label:hover{
-	pointer-events:none;
-	cursor:default;
+ul.hover-block li{
+	list-style:none;
+	float:left;
+	width:225px; 
+	height: 170px;
+	position: relative;
+	margin-left: 35px;
+}
+
+ul.hover-block li a {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 225px;
+	height: 170px;
+	color: #000;
+	text-decoration: none; 
+}
+ul.hover-block li a .cont-icon{
+	width:225px;
+	height:170px;
+	text-align: center;
+	font-size: 570%;
+}
+ul.hover-block li a .cont-icon i{
+	padding-top: 5%;
+}
+
+ul.hover-block li .hover-content{
+	position: absolute;
+	z-index: 1000;
+	height: 170px;
+	top: 125px;
+	color: #fff;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+ul.hover-block li img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	z-index: 500;
 }
 #btn_box{
 	position:fixed;
@@ -44,6 +85,47 @@ label:hover{
 		left:0;
 		height:100%;
 	}
+.b-lblue{
+	background: #1ba1e2;
+	color: #fff;
+	margin: 3px 0px;
+	display: inline-block;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;	
+	cursor:default;	
+}
+
+.b-lblue:hover{
+	background: #1789c1;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;		
+}
+.b-blue{
+	background: #1570a6;
+	color: #fff;
+	margin: 3px 0px;
+	display: inline-block;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;	
+	cursor:default;		
+}
+
+.b-blue:hover{
+	background: #11608f;
+	-webkit-transition:background 1s ease;
+	-moz-transition:background 1s ease;
+	-o-transition:background 1s ease;
+	transition:background 1s ease;		
+}
+.logoppal{
+	width:10%;
+}
 .nav-tabs.nav-stacked > li > a {
 	padding: 4% 10px 14px 2%;
 	color: #fff;
@@ -68,3 +150,10 @@ label:hover{
 	cursor:default;
 	pointer-events:none;
 }
+
+
+
+
+
+
+

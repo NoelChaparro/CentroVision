@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="css/alertify.core.css" />
         <link rel="stylesheet" href="css/alertify.default.css" />
         <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
-
+        <link rel="stylesheet" href="font/icomoon/style.css"/><!--iconos para menu de inicio-->               
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -91,7 +91,8 @@
         <script src="js/waypoints.min.js"></script>
         <script src="js/navbar.js"></script>
         <script src="js/plugins.js"></script>
-
+        <script src="js/main.js"></script>
+        <!--<script src="font/icomoon/lte-ie7.js"></script>-->
         @yield('Javascript')
 
     </body>

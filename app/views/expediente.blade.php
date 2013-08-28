@@ -22,10 +22,10 @@
 	            <li><a href="#mnReceta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
 	            <li><a href="#mnLentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
 	            <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
-	            <li><a href="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
+	            <li><a hlocaaref="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
 	            <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
-	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
-	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
+	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
+	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -45,10 +45,38 @@
 		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
 		<!--start: Inicio -->
 		<section id="mnInicio">
-			<figure>
-				<img src="img/logo.jpg" alt="">
-			</figure>
-			<a href="#mdlBuscarPaciente" role="button" class="btn btn-primary" data-toggle="modal" id="btnBuscarPacienteModal"><i class="icon-search icon-white"></i> Buscar Paciente</a>
+			<div class="row">
+				<figure class="logoppal">
+					<img src="img/logo.jpg" alt="">
+				</figure>
+				</br></br></br></br></br>
+			</div>
+			<div class="row offset1">
+					<ul class="hover-block">
+          				<li>
+            				<a href="#mdlBuscarPaciente" role="button" data-toggle="modal" id="btnBuscarPacienteModal">
+				              	<!-- Image -->
+				              	<div class="b-blue cont-icon"><i class="icon-users"></i></div> 
+				              	<!-- Content with background color Class -->
+				              	<div class="hover-content b-blue">
+				                	<h4>Buscar</h4>
+				                	Buscar pacientes en la base de datos de acuerdo al nombre
+				              	</div>
+				            </a>
+				        </li>
+				        <li>
+            				<a href="#mnDatos_Generales">
+				              	<!-- Image -->
+				              	<div class="b-lblue cont-icon"><i class="icon-user1"></i></div> 
+				              	<!-- Content with background color Class -->
+				              	<div class="hover-content b-lblue">
+				                	<h4>Nuevo</h4>
+				                	Registrar un nuevo Paciente en la base de datos para consultar.
+				              	</div>
+				            </a>
+				        </li>
+					</ul>
+			</div>
        		<div class="modal hide fade" tabindex="-1" role="dialog" id="mdlBuscarPaciente">
             	<div class="modal-header">
                		<a class="close" data-dismiss="modal">&times;</a>
@@ -74,7 +102,7 @@
                 	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
            		</div>
        		</div>
-       		</br></br></br></br>
+       		</br></br></br></br></br></br></br></br></br>
 		</section>
 		<!--End: Inicio -->
 		

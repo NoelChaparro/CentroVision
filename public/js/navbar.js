@@ -2,7 +2,7 @@ $(function() {
 	
 	
 	var sections = $("section");
-	var navigation_links = $("nav a");
+	var navigation_links = $("a");
 	
 	sections.waypoint({
 		handler: function(event, direction) {

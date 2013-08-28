@@ -3,7 +3,6 @@
 @media only screen and (min-width: 980px) and (max-width: 3000px){
 	#sidebar-left {
 		height: 100%;
-		width:190px !important;
 	}
 	.sidebar-nav > ul{
 		margin: 0px;
