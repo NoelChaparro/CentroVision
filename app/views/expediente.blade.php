@@ -964,12 +964,9 @@
 				<div class="control-group">
 					{{ Form::label('Receta', 'Receta: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('Receta','',array('class' => 'span6')) }}
+						{{ Form::textarea('Receta','',array('class' => 'span6 ckeditor')) }}
 					</div>
 				</div>
-			</div>
-			<div class="controls">
-				<a href="#" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</a>
 			</div>
 			</br></br></br></br>
 		</section>
@@ -1197,13 +1194,6 @@
 			<legend>Hospitalización</legend>
 			<div class="row">
 				<div class="control-group">
-					{{ Form::label('Clinica', 'Clínica: ', array('class' => 'control-label')) }}
-					<div class="controls">
-						{{ Form::text('Clinica','',array('class' => 'input-xxlarge')) }}
-					</div>
-				</div>
-
-				<div class="control-group">
 					{{ Form::label('Orden', 'Orden: ', array('class' => 'control-label')) }}
 					<div class="controls">
 						{{ Form::textarea('Orden','',array('class' => 'span6 ckeditor')) }}
@@ -1221,12 +1211,9 @@
 				<div class="control-group">
 					{{ Form::label('CirugiaOcularExtraocular', 'Cirugía Ocular/Extraocular: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('CirugiaOcularExtraocular','',array('class' => 'span6')) }}
+						{{ Form::textarea('CirugiaOcularExtraocular','',array('class' => 'span6 ckeditor')) }}
 					</div>
 				</div>
-			</div>
-			<div class="controls">
-				<button id="btnImprimirConsentimientoCirugiaOcularExtraocular" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
 			</div>
 			</br></br></br></br>
 		</section>		
@@ -1237,21 +1224,11 @@
 			<legend>Consentimiento Informado para Aplicación de Medicamentos Intravitreos</legend>
 			<div class="row">
 				<div class="control-group">
-					{{ Form::label('ResponsableLegal', 'Responsable Legal: ', array('class' => 'control-label')) }}
-					<div class="controls">
-						{{ Form::text('ResponsableLegal','',array('class' => 'input-xxlarge')) }}
-					</div>
-				</div>
-
-				<div class="control-group">
 					{{ Form::label('ConsentimientoMedicamentosIntravitreos', 'Medicamentos Intravitreos: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('ConsentimientoMedicamentosIntravitreos','',array('class' => 'span6')) }}
+						{{ Form::textarea('ConsentimientoMedicamentosIntravitreos','',array('class' => 'span6 ckeditor')) }}
 					</div>
 				</div>
-			</div>
-			<div class="controls">
-				<button id="btnImprimirConsentimientoMedicamentosIntravitreos" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
 			</div>
 			</br></br></br></br>
 			</br></br></br></br>
