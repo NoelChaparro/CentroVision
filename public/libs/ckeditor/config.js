@@ -13,8 +13,8 @@ CKEDITOR.editorConfig = function( config ) {
     { name: 'document', items: [ 'Print' ] },
     { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo' ] },
     { name: 'insert', items : ['Table' ] },
-    { name: 'paragraph', items : ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',] }
+    { name: 'paragraph', items : ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',] },
     { name: 'basicstyles', items: [ 'Bold', 'Italic','Underline' ] },
-    { name: 'styles', items:['Font','FontSize'] },
+    { name: 'styles', items:['Font','FontSize'] }
     ];
 };
