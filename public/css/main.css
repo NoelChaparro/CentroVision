@@ -19,14 +19,18 @@ footer div span{
 	padding: 2px 10px 2px 10px;
 }
 input.parsley-success, textarea.parsley-success {
-    color: #468847 !important;
-    background-color: #DFF0D8 !important;
-    border: 1px solid #D6E9C6 !important;
+    color: #5077FE !important;
+    background-color: #CAD9FF !important;
+    border: 1px solid #B0C8FF !important;
 }
 input.parsley-error, textarea.parsley-error {
     color: #B94A48 !important;
     background-color: #F2DEDE !important;
     border: 1px solid #EED3D7 !important;
+}
+label:hover{
+	pointer-events:none;
+	cursor:default;
 }
 #btn_box{
 	position:fixed;
