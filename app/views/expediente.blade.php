@@ -1143,7 +1143,7 @@
 				</div>
 			</div>
 			<div class="controls">
-				<a href="#" class="btn btn-info" id="btnImprimirRecetaLentes"><i class="icon-print icon-white"></i> Imprimir</a>
+				<a class="btn btn-info" id="btnImprimirRecetaLentes"><i class="icon-print icon-white"></i> Imprimir</a>
 			</div>
 			</br></br></br></br>
 		</section>
