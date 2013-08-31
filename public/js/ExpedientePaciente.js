@@ -15,10 +15,63 @@ function inicio() //Inicio del documento
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);
     $("#btnCancelar").on("click",limpiarFormularioExpedientePaciente);
+    $("#btnnuevo").on("click",limpiarFormularioExpedientePaciente);
     $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
 	tablaBusquedaPacientesModal();
+
+    $( "#btndg" ).click(function() {
+      $("#nombre").focus();
+    });
+    $( "#btnpad" ).click(function() {
+      $("#sintomatologia").focus();
+    });
+    $( "#btnav" ).click(function() {
+      $("#AVSCOD").focus();
+    });
+    $( "#btnbio" ).click(function() {
+      $("#CCIPCD").focus();
+    });
+    $( "#btnfyr" ).click(function() {
+      $("#PMVRD").focus();
+    });
+    $( "#btngon" ).click(function() {
+      $("#G1D").focus();
+    });
+    $( "#btnmov" ).click(function() {
+      $("#M1D").focus();
+    });
+    $( "#btnref" ).click(function() {
+      $("#ExoftalmometriaOD").focus();
+    });
+    $( "#btndia" ).click(function() {
+      $("#AstigmatismoD").focus();
+    });
+    $( "#btntra" ).click(function() {
+      $("#Tratamiento").focus();
+    });
+    $( "#btnrec" ).click(function() {
+      $("#Receta").focus();
+    });
+    $( "#btnlen" ).click(function() {
+      $("#SphOD").focus();
+    });
+    $( "#btncer" ).click(function() {
+      $("#AnexosOculares").focus();
+    });
+    $( "#btnrc" ).click(function() {
+      $("#ResumenClinico").focus();
+    });
+    $( "#btnhos" ).click(function() {
+      $("#Orden").focus();
+    });
+    $( "#btncon" ).click(function() {
+      $("#CirugiaOcularExtraocular").focus();
+    });
+    $( "#btncami" ).click(function() {
+      $("#ConsentimientoMedicamentosIntravitreos").focus();
+    });
 }
 
 function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrimir el consentimiento informado de cirugia ocular y extraocular
@@ -81,11 +134,11 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
     			url: form.attr('action'),
     			data: form.serialize(),
     			success: function(data){
-    				alertify.alert('Datos Guardados Correctamente');
+    				alertify.success('Datos Guardados Correctamente');
                     limpiarFormularioExpedientePaciente();
     			},
     			error: function(errors){
-    				alertify.alert('Error al guardar');
+    				alertify.error('Error al guardar');
     			}
     		});
             
@@ -96,7 +149,7 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
 
 function validarFormularioExpedientePaciente(){ //Funcion que valida campos vacios del expediente del paciente
     if($("#nombre").val() == '' || $("#domicilio").val() == '' || $("#date01").val() == ''){
-        alertify.alert("Es necesario especificar el Nombre, Domicilio y Fecha de Nacimiento del Paciente");
+        alertify.log("Es necesario especificar el Nombre, Domicilio y Fecha de Nacimiento del Paciente");
         return false;
     }
     return true;
@@ -127,7 +180,7 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
     });
 	$('.tblBusquedaPacientesModal tbody').on('mouseover', 'tr', function(event) { //Toma el evento mouseover en funcion live para que el tr seleccionado cambie de color al igual que el cursor
 		$(this).parent().parent().removeClass("table-striped");
-	    $(this).css({"background-color":"#adff2f","cursor":"pointer"});
+	    $(this).css({"color":"white","background-color":"#2E9FFC","cursor":"pointer"});
     });
 
     $('.tblBusquedaPacientesModal tbody').on('mouseout', 'tr', function(event) { // evento mouseout que elimina los estilos (background de todo el tr) y agrega el estilo sebra a la tabla

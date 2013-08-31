@@ -75,7 +75,7 @@
             <footer>
                 <p>
                 <span style="text-align:left;float:left">&copy; Dr. Gerardo Contreras Herrera 2013</span>
-                <span class="hidden-phone" style="text-align:right;float:right">Powered by: Imagine Code Labs</span>
+                <span class="hidden-phone" style="text-align:right;float:right">Powered by: CocoaCode</span>
                 </p>
             </footer>
 

@@ -9,23 +9,23 @@
 		<nav class=" sidebar-nav">
 			<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
 				<li><a href="#mnInicio" class="active"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
-	            <li><a href="#mnDatos_Generales"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li>
-	            <li><a href="#mnPadecimientos"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
-	            <li><a href="#mnAgudeza_Visual"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
-	            <li><a href="#mnBiomicroscopiaIris"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
-	            <li><a href="#mnFondoRetina"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo y Retina</span></a></li>
-	            <li><a href="#mnGonioscopia"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
-	            <li><a href="#mnMovilidad"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
-	            <li><a href="#mnRefraccion"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Refracción</span></a></li>
-	            <li><a href="#mnDiagnostico"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
-	            <li><a href="#mnTratamiento"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
-	            <li><a href="#mnReceta"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
-	            <li><a href="#mnLentes"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
-	            <li><a href="#mnCertificado"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
-	            <li><a hlocaaref="#mnResumen_Clinico"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
-	            <li><a href="#mnHospitalizacion"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
-	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
-	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
+	            <li><a href="#mnDatos_Generales" id="btndg"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li>
+	            <li><a href="#mnPadecimientos"id="btnpad"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
+	            <li><a href="#mnAgudeza_Visual" id="btnav"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
+	            <li><a href="#mnBiomicroscopiaIris" id="btnbio"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
+	            <li><a href="#mnFondoRetina" id="btnfyr"><i class="hidden-tablet icon-white icon-road"></i><span class="hidden-phone"> Fondo y Retina</span></a></li>
+	            <li><a href="#mnGonioscopia" id="btngon"><i class="hidden-tablet icon-white icon-filter"></i><span class="hidden-phone"> Gonioscopia</span></a></li>
+	            <li><a href="#mnMovilidad" id="btnmov"><i class="hidden-tablet icon-white icon-th-large"></i><span class="hidden-phone"> Movilidad</span></a></li>
+	            <li><a href="#mnRefraccion" id="btnref"><i class="hidden-tablet icon-white icon-picture"></i><span class="hidden-phone"> Refracción</span></a></li>
+	            <li><a href="#mnDiagnostico" id="btndia"><i class="hidden-tablet icon-white icon-comment"></i><span class="hidden-phone"> Diagnosticos</span></a></li>
+	            <li><a href="#mnTratamiento" id="btntra"><i class="hidden-tablet icon-white icon-folder-open"></i><span class="hidden-phone"> Tratamiento</span></a></li>
+	            <li><a href="#mnReceta" id="btnrec"><i class="hidden-tablet icon-white icon-ok"></i><span class="hidden-phone"> Receta</span ></a></li>
+	            <li><a href="#mnLentes" id="btnlen"><i class="hidden-tablet icon-white icon-zoom-in"></i><span class="hidden-phone"> Lentes</span></a></li>
+	            <li><a href="#mnCertificado" id="btncer"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
+	            <li><a href="#mnResumen_Clinico" id="btnrc"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
+	            <li><a href="#mnHospitalizacion" id="btnhos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
+	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular" id="btncon"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
+	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos" id="btncami"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -46,7 +46,7 @@
 		<!--start: Inicio -->
 		<section id="mnInicio">
 			<div class="row">
-				<figure class="logoppal">
+				<figure class="logoppal pull-right">
 					<img src="img/logo.jpg" alt="">
 				</figure>
 				</br></br></br></br></br>
@@ -65,7 +65,7 @@
 				            </a>
 				        </li>
 				        <li>
-            				<a href="#mnDatos_Generales">
+            				<a href="#mnDatos_Generales" id="btnnuevo">
 				              	<!-- Image -->
 				              	<div class="b-lblue cont-icon"><i class="icon-user1"></i></div> 
 				              	<!-- Content with background color Class -->
@@ -82,7 +82,7 @@
                		<a class="close" data-dismiss="modal">&times;</a>
                		<h3>Buscar Paciente</h3>
                		<br />
-               		<input type="text" class="input-xlarge search-query span4" id="txtBuscarPaciente" placeholder="Buscar Paciente">
+               		<input type="text" class="input-xlarge search-query span8" id="txtBuscarPaciente" placeholder="Buscar Paciente">
                		<button type="submit" class="btn" id="btnBuscarPaciente">Buscar</button>
            		</div>
            		<div class="modal-body">

@@ -5,3 +5,5 @@ $(function() {
         $(this).find('.hover-content').animate({top:'125px'},{queue:false,duration:500});
       });
 });
+
+
