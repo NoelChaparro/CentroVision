@@ -49,10 +49,10 @@ function inicio() //Inicio del documento
       $("#AstigmatismoD").focus();
     });
     $( "#btntra" ).click(function() {
-      $("#Tratamiento").focus();
+      CKEDITOR.instances['Tratamiento'].focus();
     });
     $( "#btnrec" ).click(function() {
-      $("#Receta").focus();
+      CKEDITOR.instances['Receta'].focus();
     });
     $( "#btnlen" ).click(function() {
       $("#SphOD").focus();
@@ -61,16 +61,16 @@ function inicio() //Inicio del documento
       $("#AnexosOculares").focus();
     });
     $( "#btnrc" ).click(function() {
-      $("#ResumenClinico").focus();
+        CKEDITOR.instances['ResumenClinico'].focus();
     });
     $( "#btnhos" ).click(function() {
-      $("#Orden").focus();
+        CKEDITOR.instances['Orden'].focus();
     });
     $( "#btncon" ).click(function() {
-      $("#CirugiaOcularExtraocular").focus();
+      CKEDITOR.instances['CirugiaOcularExtraocular'].focus();
     });
     $( "#btncami" ).click(function() {
-      $("#ConsentimientoMedicamentosIntravitreos").focus();
+      CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].focus();
     });
 }
 
@@ -78,7 +78,7 @@ function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrim
     if ($("#CirugiaOcularExtraocular").val() != '' && $("#varIdPaciente").val() != ''){
         location.href= "ConsentimientoCirugiaOcularExtraocular/"+$("#CirugiaOcularExtraocular").val();
     }else{
-        alertify.alert("No existe información para imprimir");
+        alertify.log("No existe información para imprimir");
     }
     return false;
 }
@@ -87,7 +87,7 @@ function imprimirRecetaLentes(){ //Funcion para mandar a imprimir la Receta de L
     if ($("#varIdPaciente").val() != ''){
         location.href= "RecetaLentes/"+$("#varIdPaciente").val();
     }else{
-        alertify.alert("No existe información para imprimir");
+        alertify.log("No existe información para imprimir");
     }
     return false;
 }
@@ -96,7 +96,7 @@ function imprimirResumenClinico(){ //Funcion para mandar a imprimir el Resumen C
     if ($("#varIdPaciente").val() != ''){
         location.href= "ResumenClinico/"+$("#varIdPaciente").val();
     }else{
-        alertify.alert("No existe información para imprimir");
+        alertify.log("No existe información para imprimir");
     }
     return false;
 }
