@@ -55,7 +55,7 @@
 .alertify-logs {
 	position: fixed;
 	z-index: 5000;
-	bottom: 90%;
+	top: 50px;
 	right: 10px;
 	width: 300px;
 }
