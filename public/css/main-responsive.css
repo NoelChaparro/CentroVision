@@ -10,6 +10,9 @@
 	.margen3{
 		margin-left: 200px;
 	}
+	.offset{
+		margin-left: 180px;
+	}
 }
 @media only screen and (min-width: 768px) and (max-width: 979px) {
 
@@ -27,7 +30,9 @@
 		font-size: 12px;
 		text-align: left;	
 	}
-	
+	.offset{
+		margin-left: 100px;
+	}	
 }	
 /* All Mobile Sizes (devices and browser)
 ====================================================================== */
@@ -39,7 +44,6 @@
 	}
 	#sidebar-left{
 		width:50px !important;
-		left:0px;
 		height:100%;
 	}
 	.nav-tabs.nav-stacked > li > a,
@@ -47,6 +51,9 @@
 		font-size: 12px;
 		text-align: center;	
 		color:black;
+	}
+	.offset{
+		margin-left: 80px;
 	}
 }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
@@ -56,12 +63,11 @@
 	position:fixed;
 	right:15px;
 	bottom: 0px;
-}
+	}
 
 	#sidebar-left{
 		width:50px !important;
-		left:0px;
-		height:95%;
+		height:100%;
 	}
 
 	.nav-tabs.nav-stacked > li > a,
@@ -69,6 +75,9 @@
 		font-size: 10px;
 		text-align: center;
 		color:black;	
+	}
+	.offset{
+		margin-left: 50px;
 	}
 }	
 @media only screen and (max-height: 768px) {

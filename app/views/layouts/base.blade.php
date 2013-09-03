@@ -65,19 +65,19 @@
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container">
             <div class="row-fluid"> 
                 @yield('Contenido')
             </div>
 
             <hr>
 
-            <footer>
+            <!--<footer>
                 <p>
                 <span style="text-align:left;float:left">&copy; Dr. Gerardo Contreras Herrera 2013</span>
                 <span class="hidden-phone" style="text-align:right;float:right">Powered by: CocoaCode</span>
                 </p>
-            </footer>
+            </footer>-->
 
         </div> <!-- /container -->
 
