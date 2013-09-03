@@ -24,8 +24,8 @@
 	            <li><a href="#mnCertificado" id="btncer"><i class="hidden-tablet icon-white icon-file"></i><span class="hidden-phone"> Certificado</span></a></li>
 	            <li><a href="#mnResumen_Clinico" id="btnrc"><i class="hidden-tablet icon-white icon-list"></i><span class="hidden-phone"> Resumen Clinico</span></a></li>
 	            <li><a href="#mnHospitalizacion" id="btnhos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
-	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular" id="btncon"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Concentimiento Cirugía Ocular/Extraocular</span></a></li>
-	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos" id="btncami"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Concentimiento Aplicación de Medicamentos Intravitreos</span></a></li>
+	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular" id="btncon"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Cirugía Ocular</span></a></li>
+	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos" id="btncami"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Med. Intravitreos</span></a></li>
 			</ul>
 		</nav>
 	</div>

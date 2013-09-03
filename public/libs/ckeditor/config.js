@@ -6,8 +6,8 @@
 CKEDITOR.editorConfig = function( config ) {
 	config . removePlugins =  'elementspath' ;
 	config.width = '75%';
-	config.height = '350';
-	config.resize_maxHeight = 600;
+	config.height = 600;
+	config.resize_maxHeight = 800;
 	config.toolbarCanCollapse = true;
 	config.toolbar = [
     { name: 'document', items: [ 'Print' ] },
