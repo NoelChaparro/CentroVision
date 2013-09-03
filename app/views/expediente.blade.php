@@ -1143,7 +1143,7 @@
 				</div>
 			</div>
 			<div class="controls">
-				<a class="btn btn-info" id="btnImprimirRecetaLentes"><i class="icon-print icon-white"></i> Imprimir</a>
+				<button class="btn btn-info" id="btnImprimirRecetaLentes" name="btnImprimirRecetaLentes"><i class="icon-print icon-white"></i> Imprimir</button>
 			</div>
 			</br></br></br></br>
 		</section>
@@ -1196,7 +1196,7 @@
 				</div>
 			</div>
 			<div class="controls">
-				<a href="#" class="btn btn-info" id="btnImprimirCertificado"><i class="icon-print icon-white"></i> Imprimir</a>
+				<button class="btn btn-info" id="btnImprimirCertificado" name="btnImprimirCertificado"><i class="icon-print icon-white"></i> Imprimir</a>
 			</div>			
 			</br></br></br></br>
 		</section>
