@@ -78,10 +78,14 @@ ul.hover-block li img {
 	right:15px;
 	bottom: 20px;
 }
+#mnInicio{
+	margin-top: 600px;
+}
 #sidebar-left{
 		background: #3A3A3A;
 		border:0;
 		position: fixed;
+		margin:0;
 		left:0;
 		height:100%;
 	}
@@ -124,7 +128,10 @@ ul.hover-block li img {
 	transition:background 1s ease;		
 }
 .logoppal{
-	width:10%;
+	text-align: center;
+}
+.logoppal img{
+	width:60%;
 }
 .nav-tabs.nav-stacked > li > a {
 	padding: 4% 10px 14px 2%;

@@ -18,7 +18,7 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/main-responsive.css">
+        <!--<link rel="stylesheet" href="css/main-responsive.css">-->
         <link rel="stylesheet" href="css/alertify.core.css" />
         <link rel="stylesheet" href="css/alertify.default.css" />
         <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
@@ -65,11 +65,10 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="row-fluid"> 
+        <div class="container-fluid">
+        
                 @yield('Contenido')
-            </div>
-
+     
             <hr>
 
             <!--<footer>

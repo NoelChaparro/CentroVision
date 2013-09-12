@@ -18,7 +18,7 @@
 
 	#sidebar-left{
 		height: 100%;
-		width:125px !important;
+		width:100px !important;
 	}
 
 	.sidebar-nav > ul{
@@ -31,7 +31,7 @@
 		text-align: left;	
 	}
 	.offset{
-		margin-left: 100px;
+		margin-left: 120px;
 	}	
 }	
 /* All Mobile Sizes (devices and browser)
