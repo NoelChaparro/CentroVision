@@ -28,6 +28,9 @@ input.parsley-error, textarea.parsley-error {
     background-color: #F2DEDE !important;
     border: 1px solid #EED3D7 !important;
 }
+textarea{
+	height:100px;
+}
 ul.hover-block li{
 	list-style:none;
 	float:left;

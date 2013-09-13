@@ -83,7 +83,7 @@
                		<a class="close" data-dismiss="modal">&times;</a>
                		<h3>Buscar Paciente</h3>
                		<br />
-               		<input type="text" class="input-xlarge search-query span8" id="txtBuscarPaciente" placeholder="Buscar Paciente">
+               		<input type="text" class="input-xlarge search-query span4" id="txtBuscarPaciente" placeholder="Buscar Paciente">
                		<button type="submit" class="btn" id="btnBuscarPaciente">Buscar</button>
            		</div>
            		<div class="modal-body">
@@ -636,42 +636,42 @@
 				<div class="control-group">
 					{{ Form::label('PPM', 'PPM: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('PPM','',array('class' => 'input-xxlarge')) }}
+						{{ Form::text('PPM','',array('class' => 'input-xlarge')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('PMonocular', 'P. Monocular: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('PMonocular','',array('class' => 'input-xxlarge')) }}
+						{{ Form::text('PMonocular','',array('class' => 'input-xlarge')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('PAlterno', 'P. Alterno: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('PAlterno','',array('class' => 'input-xxlarge')) }}
+						{{ Form::text('PAlterno','',array('class' => 'input-xlarge')) }}
 					</div>
 				</div>
-
+			
 				<div class="control-group">
 					{{ Form::label('Ducciones', 'Ducciones: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('Ducciones','',array('class' => 'input-xxlarge')) }}
+						{{ Form::text('Ducciones','',array('class' => 'input-xlarge')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('Versiones', 'Versiones: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('Versiones','',array('class' => 'input-xxlarge')) }}
+						{{ Form::text('Versiones','',array('class' => 'input-xlarge')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('OjoFijador', 'Ojo Fijador: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('OjoFijador','',array('class' => 'input-xxlarge')) }}
+						{{ Form::text('OjoFijador','',array('class' => 'input-xlarge')) }}
 					</div>
 				</div>
 			</div>
@@ -686,22 +686,22 @@
 				<div class="control-group span4">
 					{{ Form::label('ExoftalmometriaOD', 'Exoftalmometria OD: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('ExoftalmometriaOD','',array('class' => 'input-medium')) }}
+						{{ Form::text('ExoftalmometriaOD','',array('class' => 'input-mini')) }}
 					</div>
 				</div>
 
 				<div class="control-group span4">
 					{{ Form::label('ExoftalmometriaOI', 'Exoftalmometria OI: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('ExoftalmometriaOI','',array('class' => 'input-medium')) }}
+						{{ Form::text('ExoftalmometriaOI','',array('class' => 'input-mini')) }}
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="control-group">
+				<div class="control-group offset2">
 					{{ Form::label('ExoftalmometriaBase', 'Exoftalmometria Base: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('ExoftalmometriaBase','',array('class' => 'input-xlarge')) }}
+						{{ Form::text('ExoftalmometriaBase','',array('class' => 'input-mini')) }}
 					</div>
 				</div>
 			</div>
@@ -709,14 +709,14 @@
 				<div class="control-group span4">
 					{{ Form::label('PaquimetriaOD', 'Paquimetría OD: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('PaquimetriaOD','',array('class' => 'input-medium')) }}
+						{{ Form::text('PaquimetriaOD','',array('class' => 'input-mini')) }}
 					</div>
 				</div>
 
 				<div class="control-group span4">
 					{{ Form::label('PaquimetriaOI', 'Paquimetría OI: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('PaquimetriaOI','',array('class' => 'input-medium')) }}
+						{{ Form::text('PaquimetriaOI','',array('class' => 'input-mini')) }}
 					</div>
 				</div>
 			</div>
