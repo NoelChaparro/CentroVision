@@ -230,35 +230,39 @@
 		<section id="mnAgudeza_Visual">
 			<legend>Agudeza Visual</legend>
 			<div class="row">
-				<div class="span5">
+				<div class="span6">
 					<h5>Ojo Derecho</h5>		
 				</div>
-				<div class="span5">
+				<div class="span6">
 					<h5>Ojo Izquierdo</h5>		
 				</div>
 			</div>
 			<div class="row">
-				<div class=" span1">
-					{{ Form::label('AVSCOD', 'AVSCOD:', array('class' => 'control-label')) }}
+				<div class="span6">
+					<div class=" span1">
+						{{ Form::label('AVSCOD', 'AVSCOD:') }}
+					</div>
+					<div class="span1">
+						{{ Form::label('CCD', 'CCD:') }}
+					</div>
+					<div class="span1">
+						{{ Form::label('PuntoD', '(.):') }}
+					</div>
 				</div>
-				<div class="span1">
-					{{ Form::label('CCD', 'CCD:', array('class' => 'control-label')) }}
-				</div>
-				<div class="span1">
-					{{ Form::label('PuntoD', '(.):', array('class' => 'control-label')) }}
-				</div>
-				<div class="span1 offset2">
-					{{ Form::label('AVSCOI', 'AVSCOI:', array('class' => 'control-label')) }}
-				</div>
-				<div class="span1">
-					{{ Form::label('CCI', 'CCI:', array('class' => 'control-label')) }}
-				</div>
-				<div class="span1">
-					{{ Form::label('PuntoI', '(.):', array('class' => 'control-label')) }}
+				<div class="span6">
+					<div class="span1">
+						{{ Form::label('AVSCOI', 'AVSCOI:') }}
+					</div>
+					<div class="span1">
+						{{ Form::label('CCI', 'CCI:') }}
+					</div>
+					<div class="span1">
+						{{ Form::label('PuntoI', '(.):') }}
+					</div>
 				</div>
 			</div>
 			<div class="row">
-					<div class="span1"></div>
+				<div class="span6">
 				  	<div class="span1">
 				  		{{ Form::text('AVSCOD','',array('class' => 'input-mini')) }}
 				  	</div>
@@ -268,7 +272,9 @@
 				  	<div class="span1">
 				  		{{ Form::text('PuntoD','',array('class' => 'input-mini')) }}
 				  	</div>
-				  	<div class="span1 offset2">
+				</div>
+				<div class="span6">
+				  	<div class="span1">
 				  		{{ Form::text('AVSCOI','',array('class' => 'input-mini')) }}
 				  	</div>
 				  	<div class="span1">
@@ -277,10 +283,11 @@
 				  	<div class="span1">
 				  		{{ Form::text('PuntoI','',array('class' => 'input-mini')) }}
 				  	</div>
-			
+				</div>
+				</br></br></br>
 			</div>
 			
-			<div class="row">
+			<!--<div class="row">
 				<div class="span6"><h5>Ojo Derecho</h5></div>
 				<div class="span6"><h5>Ojo Izquierdo</h5></div>
 			</div>
@@ -315,23 +322,30 @@
 				  	</div>
 				</div>
 				</div>
-			</div>
+			</div>-->
 			
 			<div class="row">
 				<div class="span6">
-					<div class="control-group">
-					  	{{ Form::label('ParpadoD', 'Órbita, Parpados y Aparato Lagrimal:', array('class' => 'control-label')) }}
-					  	<div class="controls">
-					  		{{ Form::textarea('ParpadoD','',array('class' => 'span4')) }}
-					  	</div>
+					<div >
+					  	{{ Form::label('ParpadoD', 'Órbita, Parpados y Aparato Lagrimal:', array('class' => 'span6')) }}
 					</div>
 				</div>
 				<div class="span6">
-					<div class="control-group">
-				      	{{ Form::label('ParpadoI', 'Órbita, Parpados y Aparato Lagrimal:', array('class' => 'control-label')) }}
-					  	<div class="controls"> 
-					    	{{ Form::textarea('ParpadoI','',array('class' => 'span4')) }}                    
-					  </div>
+					<div>
+						{{ Form::label('ParpadoI', 'Órbita, Parpados y Aparato Lagrimal:', array('class' => 'span6')) }}
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span6">
+					<div >
+					  	{{ Form::textarea('ParpadoD','',array('class' => 'span4')) }}
+					</div>
+				</div>
+				<div class="span6">
+					<div>
+						{{ Form::textarea('ParpadoI','',array('class' => 'span4')) }}
 					</div>
 				</div>
 			</div>
@@ -428,94 +442,100 @@
 		<!-- start: Gonioscopía -->
 		<section id="mnGonioscopia">
 			<legend>Gonioscopía</legend>
-			<h5>Ojo Derecho</h5>
 			<div class="row">
-				<table>
-					<tr>
-						<td></td>
-						<td>
-							<div class="control-group">
-								<div class="controls ">
-									{{ Form::text('G1D','',array('class' => 'input-mini', 'id'=> 'G1D')) }}
-								</div>
-							</div>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G2D','',array('class' => 'input-mini', 'id'=> 'G2D')) }}
-								</div>
-							</div>
-						</td>
-						<td></td>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G3D','',array('class' => 'input-mini', 'id'=> 'G3D')) }}
-								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G4D','',array('class' => 'input-mini', 'id'=> 'G4D')) }}
-								</div>
-							</div>
-						</td>
-						<td></td>
-					</tr>
-				</table>
+				<div class="span6"><h5>Ojo Derecho</h5></div>
+				<div class="span6"><h5>Ojo Izquierdo</h5></div>
 			</div>
 			
-			<h5>Ojo Izquierdo</h5>
 			<div class="row">
-				<table>
-					<tr>
-						<td></td>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G1I','',array('class' => 'input-mini', 'id'=> 'G1I')) }}
+				<div class="span6">
+					<table>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									<div>
+										{{ Form::text('G1D','',array('class' => 'input-mini', 'id'=> 'G1D')) }}
+									</div>
 								</div>
-							</div>
-						</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G2I','',array('class' => 'input-mini', 'id'=> 'G2I')) }}
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<div class="control-group">
+									<div >
+										{{ Form::text('G2D','',array('class' => 'input-mini', 'id'=> 'G2D')) }}
+									</div>
 								</div>
-							</div>
-						</td>
-						<td></td>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G3I','',array('class' => 'input-mini', 'id'=> 'G3I')) }}
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									<div c>
+										{{ Form::text('G3D','',array('class' => 'input-mini', 'id'=> 'G3D')) }}
+									</div>
 								</div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<div class="control-group">
-								<div class="controls">
-									{{ Form::text('G4I','',array('class' => 'input-mini', 'id'=> 'G4I')) }}
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									<div>
+										{{ Form::text('G4D','',array('class' => 'input-mini', 'id'=> 'G4D')) }}
+									</div>
 								</div>
-							</div>
-						</td>
-						<td></td>
-					</tr>
-				</table>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			
+			
+				<div class="span6">
+					<table>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									<div>
+										{{ Form::text('G1I','',array('class' => 'input-mini', 'id'=> 'G1I')) }}
+									</div>
+								</div>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<div class="control-group">
+									<div>
+										{{ Form::text('G2I','',array('class' => 'input-mini', 'id'=> 'G2I')) }}
+									</div>
+								</div>
+							</td>
+							<td></td>
+							<td>
+								<div class="control-group">
+									<div>
+										{{ Form::text('G3I','',array('class' => 'input-mini', 'id'=> 'G3I')) }}
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<div class="control-group">
+									<div>
+										{{ Form::text('G4I','',array('class' => 'input-mini', 'id'=> 'G4I')) }}
+									</div>
+								</div>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
 			</div>
 			</br></br></br></br>
 		</section>
