@@ -1,0 +1,54 @@
+hr{
+	display:none;
+}
+span{
+	display:none;
+}
+footer{
+	display:none;
+}
+td{
+	padding-left:45px;
+}
+.fecha{
+	font-size: 16px;
+	margin-left: 500px;
+}
+.linea1{
+	display:block;
+	font-size: 16px;
+	margin:30px 0 0 240px;
+}
+.linea1 div{
+	display:inline-block;
+	vertical-align: top;
+	margin-left: 100px;
+}
+.linea2{
+	display:block;
+	font-size: 16px;
+	margin:6px 0 0 250px;
+}
+.linea2 div{
+	display:inline-block;
+	vertical-align: top;
+	margin-left: 100px;
+}
+.linea3{
+	display:block;
+	font-size: 16px;
+	margin:6px 0 0 380px;
+}
+.navbar{
+	display:none;
+}
+.nombre{
+	font-size: 16px;
+	margin:110px 0 0 350px ;
+}
+.tabla{
+	border-top: 1px solid white !important;
+	font-size: 16px;
+	margin: 68px 0 0 220px;
+
+}

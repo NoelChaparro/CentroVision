@@ -1,0 +1,30 @@
+.boton{
+	margin-top: 15px;
+	text-align: center;
+}
+.linea1 div{
+display:inline-block;
+vertical-align: top;
+margin: 20px 0 0 50px;
+}
+.linea2 div{
+	display:inline-block;
+	vertical-align: top;
+	margin:5px 0 0 50px;
+}
+.linea3{
+	margin: 5px 0 0 50px;
+}
+.tabla{
+	margin-top: 10px;
+}
+.tabla th{
+	text-align: left;
+}
+.tabla td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
