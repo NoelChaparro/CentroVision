@@ -242,12 +242,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                 		$("#AVSCOI").val(response.AgudezaVisual[0].AVSCOI);
                 		$("#CCI").val(response.AgudezaVisual[0].CCI);
                 		$("#PuntoI").val(response.AgudezaVisual[0].PuntoI);
-    					$("#TonometriaD5").val(response.AgudezaVisual[0].TonometriaD5);
-    					$("#TonometriaD10").val(response.AgudezaVisual[0].TonometriaD10);
                         $("#MmhgD").val(response.AgudezaVisual[0].MmhgD);
                 		$("#ParpadoD").val(response.AgudezaVisual[0].ParpadoD);
-    					$("#TonometriaI5").val(response.AgudezaVisual[0].TonometriaD5);
-    					$("#TonometriaI10").val(response.AgudezaVisual[0].TonometriaD10);
                 		$("#MmhgI").val(response.AgudezaVisual[0].MmhgI);
                 		$("#ParpadoI").val(response.AgudezaVisual[0].ParpadoD);
                     }
@@ -402,7 +398,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Resumen Clinico
                     if(response.ResumenClinico[0]){
-                        CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico);
+                        CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico+"<p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>"+elemento.Nombre+"</p>");
                     }
 
                     //Hospitalización

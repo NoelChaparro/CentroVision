@@ -243,7 +243,7 @@
 						{{ Form::label('AVSCOD', 'AVSCOD:') }}
 					</div>
 					<div class="span1">
-						{{ Form::label('CCD', 'CCD:') }}
+						{{ Form::label('CCD', 'CCOD:') }}
 					</div>
 					<div class="span1">
 						{{ Form::label('PuntoD', '(.):') }}
@@ -254,7 +254,7 @@
 						{{ Form::label('AVSCOI', 'AVSCOI:') }}
 					</div>
 					<div class="span1">
-						{{ Form::label('CCI', 'CCI:') }}
+						{{ Form::label('CCI', 'CCOI:') }}
 					</div>
 					<div class="span1">
 						{{ Form::label('PuntoI', '(.):') }}
@@ -286,44 +286,6 @@
 				</div>
 				</br></br></br>
 			</div>
-			
-			<!--<div class="row">
-				<div class="span6"><h5>Ojo Derecho</h5></div>
-				<div class="span6"><h5>Ojo Izquierdo</h5></div>
-			</div>
-			<div class="row">
-				<div class="span6">
-					<div class="control-group span2">
-		   			  	{{ Form::label('TonometriaD5', '5.5:', array('class' => 'control-label')) }}
-					  	<div class="controls">
-					  		{{ Form::text('TonometriaD5','',array('class' => 'input-mini')) }}
-					  </div>
-					</div>
-
-					<div class="control-group span2">
-		 			  	{{ Form::label('TonometriaD10', '10.0:', array('class' => 'control-label')) }}
-					  	<div class="controls">
-					  		{{ Form::text('TonometriaD10','',array('class' => 'input-mini')) }}  
-					  	</div>
-					</div>
-				</div>
-				<div class="span6">
-					<div class="control-group span2">
-				  	{{ Form::label('TonometriaI5', '5.5:', array('class' => 'control-label')) }}
-				  	<div class="controls">
-				  		{{ Form::text('TonometriaI5','',array('class' => 'input-mini')) }}
-				  	</div>
-				</div>
-
-				<div class="control-group span2">
-				  	{{ Form::label('TonometriaI10', '10.0:', array('class' => 'control-label')) }}
-				  	<div class="controls">
-				  		{{ Form::text('TonometriaI10','',array('class' => 'input-mini')) }}
-				  	</div>
-				</div>
-				</div>
-			</div>-->
-			
 			<div class="row">
 				<div class="span6">
 					<div >
@@ -352,18 +314,18 @@
 			<h5>Tonometría</h5>
 			<div class="row">
 				<div class="span6">
-					<div class="control-group span2">
-					{{ Form::label('MmhgD', 'MmhgD:', array('class' => 'control-label')) }}
+					<div class="control-group">
 				  	<div class="controls">
 				  		{{ Form::text('MmhgD','',array('class' => 'input-mini')) }}
+				  		mmHg
 				  	</div>
 				</div>
 				</div>
 				<div class="span6">
 					<div class="control-group">
-					{{ Form::label('MmhgI', 'MmhgI:', array('class' => 'control-label')) }}
 				  	<div class="controls">
 				  		{{ Form::text('MmhgI','',array('class' => 'input-mini')) }}
+				  		mmHg
 				  	</div>
 				</div>
 				</div>
@@ -386,7 +348,7 @@
 					</div>
 
 					<div class="control-group">
-					  	{{ Form::label('BUTD', 'BUTD: ', array ('class' => 'control-label')) }}
+					  	{{ Form::label('BUTD', 'BUT: ', array ('class' => 'control-label')) }}
 					  	<div class="controls">
 					    	{{ Form::text('BUTD','',array('class' => 'input-mini')) }}
 					    	Seg.                
@@ -402,7 +364,7 @@
 					</div>
 
 					<div class="control-group">
-					  	{{ Form::label('BUTI', 'BUTI: ', array ('class' => 'control-label')) }}
+					  	{{ Form::label('BUTI', 'BUT: ', array ('class' => 'control-label')) }}
 					  	<div class="controls">
 					    	{{ Form::text('BUTI','',array('class' => 'input-mini')) }}
 					    	Seg.                
@@ -747,9 +709,9 @@
 						<thead>
 							<tr>
 								<td><span>Sph</span></td>
+								<td><span>Cyl</span></td>
 								<td><span>Eje</span></td>
 								<td><span>Bifocal</span></td>
-								<td><span>CyI</span></td>
 								<td><span>Add</span></td>
 								<td><span>AV</span></td>
 								<td><span></span></td>
@@ -764,17 +726,17 @@
 								</td>
 								<td>
 									<div class="control-group">
+										{{ Form::text('RefraccionCylOD','',array('class' => 'input-mini', 'id' => 'RefraccionCylOD')) }}
+									</div>
+								</td>								
+								<td>
+									<div class="control-group">
 										{{ Form::text('RefraccionEjeOD','',array('class' => 'input-mini', 'id' => 'RefraccionEjeOD')) }}
 									</div>
 								</td>
 								<td>
 									<div class="control-group">
 										{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOD')) }}
-									</div>
-								</td>
-								<td>
-									<div class="control-group">
-										{{ Form::text('RefraccionCylOD','',array('class' => 'input-mini', 'id' => 'RefraccionCylOD')) }}
 									</div>
 								</td>
 								<td>
@@ -797,17 +759,17 @@
 								</td>
 								<td>
 									<div class="control-group">
+										{{ Form::text('RefraccionCylOI','',array('class' => 'input-mini', 'id' => 'RefraccionCylOI')) }}
+									</div>
+								</td>								
+								<td>
+									<div class="control-group">
 										{{ Form::text('RefraccionEjeOI','',array('class' => 'input-mini', 'id' => 'RefraccionEjeOI')) }}
 									</div>
 								</td>
 								<td>
 									<div class="control-group">
 										{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOI')) }}
-									</div>
-								</td>
-								<td>
-									<div class="control-group">
-										{{ Form::text('RefraccionCylOI','',array('class' => 'input-mini', 'id' => 'RefraccionCylOI')) }}
 									</div>
 								</td>
 								<td>
@@ -833,9 +795,9 @@
 						<thead>
 							<tr>
 								<td><span>Sph</span></td>
+								<td><span>Cyl</span></td>								
 								<td><span>Eje</span></td>
 								<td><span>Bifocal</span></td>
-								<td><span>CyI</span></td>
 								<td><span>Add</span></td>
 								<td><span>AV</span></td>
 								<td><span></span></td>
@@ -850,17 +812,17 @@
 								</td>
 								<td>
 									<div class="control-group">
+										{{ Form::text('EsquiascopiaCylOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaCylOD')) }}
+									</div>
+								</td>								
+								<td>
+									<div class="control-group">
 										{{ Form::text('EsquiascopiaEjeOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaEjeOD')) }}
 									</div>
 								</td>
 								<td>
 									<div class="control-group">
 										{{ Form::text('EsquiascopiaBifocalOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaBifocalOD')) }}
-									</div>
-								</td>
-								<td>
-									<div class="control-group">
-										{{ Form::text('EsquiascopiaCylOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaCylOD')) }}
 									</div>
 								</td>
 								<td>
@@ -881,17 +843,17 @@
 									</div></td>
 								<td>
 									<div class="control-group">
+										{{ Form::text('EsquiascopiaCylOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaCylOI')) }}
+									</div>
+								</td>									
+								<td>
+									<div class="control-group">
 										{{ Form::text('EsquiascopiaEjeOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaEjeOI')) }}
 									</div>
 								</td>
 								<td>
 									<div class="control-group">
 										{{ Form::text('EsquiascopiaBifocalOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaBifocalOI')) }}
-									</div>
-								</td>
-								<td>
-									<div class="control-group">
-										{{ Form::text('EsquiascopiaCylOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaCylOI')) }}
 									</div>
 								</td>
 								<td>
@@ -911,19 +873,19 @@
 				</div>
 			</div>
 				<div class="row">
-					<div class="span4">
+					<div class="span6">
 						<div class="control-group">
 							{{ Form::label('QueratometriaOD', 'Queratometría OD: ', array('class' => 'control-label')) }}
 							<div class="controls">
-								{{ Form::text('QueratometriaOD','',array('class' => 'input-small')) }}
+								{{ Form::text('QueratometriaOD','',array('class' => 'input-xlarge')) }}
 							</div>
 						</div>
 					</div>
-					<div class="span4">
+					<div class="span6">
 						<div class="control-group">
 							{{ Form::label('QueratometriaOI', 'Queratometría OI: ', array('class' => 'control-label')) }}
 							<div class="controls">
-								{{ Form::text('QueratometriaOI','',array('class' => 'input-small')) }}
+								{{ Form::text('QueratometriaOI','',array('class' => 'input-xlarge')) }}
 							</div>
 						</div>			
 					</div>				
@@ -1195,42 +1157,42 @@
 				<div class="control-group">
 					{{ Form::label('AnexosOculares', 'Anexos Oculares: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('AnexosOculares','',array('class' => 'span6')) }}
+						{{ Form::textarea('AnexosOculares','',array('class' => 'span10')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('SegmentoAnterior', 'Segmento Anterior: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('SegmentoAnterior','',array('class' => 'span6')) }}
+						{{ Form::textarea('SegmentoAnterior','',array('class' => 'span10')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('FondoOjo', 'Fondo Ojo: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('FondoOjo','',array('class' => 'span6')) }}
+						{{ Form::textarea('FondoOjo','',array('class' => 'span10')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('PercepcionCromatica', 'Percepción Cromática: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('PercepcionCromatica','',array('class' => 'span6')) }}
+						{{ Form::textarea('PercepcionCromatica','',array('class' => 'span10')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('DiagnosticoCertificado', 'Diagnóstico: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('DiagnosticoCertificado','',array('class' => 'span6')) }}
+						{{ Form::textarea('DiagnosticoCertificado','',array('class' => 'span10')) }}
 					</div>
 				</div>
 
 				<div class="control-group">
 					{{ Form::label('TratamientoCertificado', 'Tratamiento: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::textarea('TratamientoCertificado','',array('class' => 'span6')) }}
+						{{ Form::textarea('TratamientoCertificado','',array('class' => 'span10')) }}
 					</div>
 				</div>
 			</div>

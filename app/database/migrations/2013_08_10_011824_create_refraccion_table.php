@@ -45,8 +45,8 @@ class CreateRefraccionTable extends Migration {
 			$table->string('EsquiascopiaAddOI', 20)->nullable();
 			$table->string('EsquiascopiaBifocalOI', 20)->nullable();
 			$table->string('EsquiascopiaAVOI', 20)->nullable();
-			$table->string('QueratometriaOD', 30)->nullable();
-			$table->string('QueratometriaOI', 30)->nullable();
+			$table->string('QueratometriaOD', 130)->nullable();
+			$table->string('QueratometriaOI', 130)->nullable();
             $table->timestamps();
         });
     }
