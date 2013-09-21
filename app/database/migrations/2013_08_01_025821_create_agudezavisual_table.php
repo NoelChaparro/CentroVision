@@ -23,10 +23,6 @@ class CreateAgudezaVisualTable extends Migration {
 			$table->string('AVSCOI', 30)->nullable();
 			$table->string('CCI', 30)->nullable();
 			$table->string('PuntoI', 30)->nullable();
-			$table->string('TonometriaD5', 20)->nullable();
-			$table->string('TonometriaD10', 20)->nullable();
-			$table->string('TonometriaI5', 20)->nullable();
-			$table->string('TonometriaI10', 20)->nullable();
 			$table->text('ParpadoD')->nullable();
 			$table->text('ParpadoI')->nullable();
             $table->timestamps();
