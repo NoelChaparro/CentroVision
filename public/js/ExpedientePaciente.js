@@ -87,7 +87,7 @@ function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrim
 
 function imprimirRecetaLentes(){ //Funcion para mandar a imprimir la Receta de Lentes
     if ($("#varIdPaciente").val() != ''){
-        location.href= "RecetaLentes/"+$("#varIdPaciente").val();
+        window.open("RecetaLentes/"+$("#varIdPaciente").val()); 
     }else{
         alertify.log("No existe información para imprimir");
     }

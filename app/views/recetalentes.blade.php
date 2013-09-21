@@ -3,29 +3,35 @@
 @section('titulo')  
     Resumen Clínico
 @stop
+@section('css')
+<link rel="stylesheet" href="../css/lentesprint.css" media="print" />
+<link rel="stylesheet" href="../css/lentes.css" media="screen"/>
 
+@stop
 @section('Contenido')
-	<div class="row">
-		Fecha: {{ date("d/m/Y") }}
-		Nombre: {{ $datosPaciente[0]->Nombre  }}
+	<div class="row fecha">
+		<span>Fecha:</span> {{ date("d/m/Y") }}
+	</div>
+	<div class="nombre">
+		<span>Nombre:</span> {{ $datosPaciente[0]->Nombre  }}
 	</div>
 	
 	<div class="row">
-		<table class="table span6 offset2">
+		<table class="tabla span8">
 			<thead>
 				<tr>
 					<th></th>
-					<th>Sph</th>
-					<th>Cyl</th>
-					<th>Eje</th>
-					<th>DI</th>
-					<th>Prisma</th>
-					<th>Base</th>
+					<th><span>Sph</span></th>
+					<th><span>Cyl</span></th>
+					<th><span>Eje</span></th>
+					<th><span>DI</span></th>
+					<th><span>Prisma</span></th>
+					<th><span>Base</span></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>OD</td>
+					<td><span>OD</span></td>
 					<td>{{ $lentesPaciente[0]->SphOD }}</td>
 					<td>{{ $lentesPaciente[0]->CylOD }}</td>
 					<td>{{ $lentesPaciente[0]->EjeOD }}</td>
@@ -34,7 +40,7 @@
 					<td>{{ $lentesPaciente[0]->BaseOD }}</td>
 				</tr>
 				<tr>
-					<td>OI</td>
+					<td><span>OI</span></td>
 					<td>{{ $lentesPaciente[0]->SphOI }}</td>
 					<td>{{ $lentesPaciente[0]->CylOI }}</td>
 					<td>{{ $lentesPaciente[0]->EjeOI }}</td>
@@ -46,24 +52,39 @@
 		</table>
 	</div>
 
-	<div class="row">
-		Add: {{ $lentesPaciente[0]->Add }}
-		AO: {{ $lentesPaciente[0]->AO }}
-		Color: {{ $lentesPaciente[0]->Color }}
+	<div class="linea1">
+		<div class="add">
+			<span>Add:</span> {{ $lentesPaciente[0]->Add }}
+		</div>
+		<div class="ao">
+			<span>AO:</span> {{ $lentesPaciente[0]->AO }}
+		</div>
+		<div class="color">
+			<span>Color:</span> {{ $lentesPaciente[0]->Color }}
+		</div>
 	</div>
-	<div class="row">
-		Bifocal: {{ $lentesPaciente[0]->Bifocal }}
-		Cristal: 
-		@if ($lentesPaciente[0]->Cristal == 1)
-     		<i class="icon-ok"></i>
-		@endif
-		CR-39: 
-		@if ($lentesPaciente[0]->CR39 == 1)
-     		<i class="icon-ok"></i>
-		@endif
+	<div class="linea2">
+		<div class="bifocal">
+			<span>Bifocal:</span> {{ $lentesPaciente[0]->Bifocal }}
+		</div>
+		<div class="cristal">
+			<span>Cristal:</span> 
+			@if ($lentesPaciente[0]->Cristal == 1)
+     			<i class="icon-ok"></i>
+			@endif
+		</div>
+		<div class="cr39">
+			<span>CR-39:</span> 
+			@if ($lentesPaciente[0]->CR39 == 1)
+	     		<i class="icon-ok"></i>
+			@endif
+		</div>
 	</div>
 
-	<div class="row">
-		Observaciones: {{ $lentesPaciente[0]->Observaciones }}
+	<div class="linea3">
+		<span>Observaciones:</span> {{ $lentesPaciente[0]->Observaciones }}
+	</div>
+	<div class="boton">
+		<span><a href="#" class="btn btn-primary" onclick="window.print();"><i class="icon-print icon-white"></i> Imprimir</a></span>
 	</div>
 @stop
