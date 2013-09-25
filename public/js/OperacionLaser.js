@@ -52,6 +52,74 @@ function inicio() //Inicio del documento
 		keydown:esferaAjustada,
 		keyup:esferaAjustada
 	});
+	$("#txtRefraccionEsfera3,#txtDistanciaVertex3").on({
+		change:tratamientoEsfera,
+		keydown:tratamientoEsfera,
+		keyup:tratamientoEsfera
+	});
+	$("#txtRefraccionCilindro3").on({
+		change:tratamientoCilindro,
+		keydown:tratamientoCilindro,
+		keyup:tratamientoCilindro
+	});
+	$("#txtRefraccionEje3").on({
+		change:tratamientoEje,
+		keydown:tratamientoEje,
+		keyup:tratamientoEje
+	});
+	$("#txtQueratometriaOD3,#txtQueratometriaOI3").on({
+		change:queratometriaPromedio3,
+		keydown:queratometriaPromedio3,
+		keyup:queratometriaPromedio3
+	});
+	$("#txtRefraccionEsfera4,#txtRefraccionCilindro4").on({
+		change:trasponerEsfera,
+		keydown:trasponerEsfera,
+		keyup:trasponerEsfera
+	});
+	$("#txtRefraccionEje4").on({
+		change:trasponerEje4,
+		keydown:trasponerEje4,
+		keyup:trasponerEje4
+	});
+	$("#txtQueratometriasOD4,#txtQueratometriasOI4").on({
+		change:promedioQueratometrias4,
+		keydown:promedioQueratometrias4,
+		keyup:promedioQueratometrias4
+	});	
+}
+
+function promedioQueratometrias4(){
+	$("#txtQueratometriasPromedio4").val((parseFloat($("#txtQueratometriasOD4").val()) + parseFloat($("#txtQueratometriasOI4").val()))/2);
+}
+function trasponerEje4(){
+	if(parseFloat($("#txtRefraccionEje4").val()) > 90){
+		$("#txtTransponerEje4").val(parseFloat($("#txtRefraccionEje4").val()) - 90);
+	}else{
+		$("#txtTransponerEje4").val(parseFloat($("#txtRefraccionEje4").val()) + 90);
+	}
+	$("#txtCilindroHipermetropicoEje").val($("#txtTransponerEje4").val());
+	$("#txtCilindroMiopicoEje").val($("#txtRefraccionEje4").val());
+}
+function trasponerEsfera(){
+	$("#txtTransponerEsfera4").val(parseFloat($("#txtRefraccionEsfera4").val()) + parseFloat($("#txtRefraccionCilindro4").val()));
+	$("#txtTransponerCilindro4").val(parseFloat($("#txtRefraccionCilindro4").val()) * -1);
+
+	$("#txtCilindroHipermetropicoPoder").val(parseFloat($("#txtTransponerCilindro4").val()) + parseFloat($("#txtTransponerEsfera4").val()));
+	$("#txtCilindroMiopicoPoder").val($("#txtTransponerEsfera4").val());
+}
+
+function queratometriaPromedio3(){
+	$("#txtPromedio3").val((parseFloat($("#txtQueratometriaOD3").val()) + parseFloat($("#txtQueratometriaOI3").val())) / 2);
+}
+function tratamientoEje(){
+	$("#txtTratamientoEje3").val($("#txtRefraccionEje3").val());
+}
+function tratamientoCilindro(){
+	$("#txtTratamientoCilindro3").val($("#txtRefraccionCilindro3").val());
+}
+function tratamientoEsfera(){
+	$("#txtTratamientoEsfera3").val($("#txtRefraccionEsfera3").val() / (1-(0.001 * parseFloat($("#txtRefraccionEsfera3").val()) * parseFloat($("#txtDistanciaVertex3").val()))));
 }
 function esferaAjustada(){
 	$("#txtEsferaAjustada").val(parseFloat($("#txtAjusteCilindroEsfera").val()) - ( 0.125 * parseFloat($("#txtCilindroPuro").val())));
