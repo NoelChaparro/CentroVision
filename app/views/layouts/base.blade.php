@@ -44,7 +44,7 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="active"><a href="#">Expediente Paciente</a></li>
-                            <li><a href="operacionlaser">Operación Láser</a></li>
+                            <li><a href="OperacionLaser">Operación Láser</a></li>
                             <li><a href="#contact">Lentes de Contacto</a></li>
                             <!-- se comenta esta parte por se se requiere mas adelante
                             <li class="dropdown">

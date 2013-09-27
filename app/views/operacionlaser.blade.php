@@ -8,10 +8,10 @@
 	<div id="sidebar-left" class="span2">
 		<nav class=" sidebar-nav">
 			<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
-				<li><a href="#lasik"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Ajuste de Lasik</span></a></li>
-	           	<li><a href="#miopia"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Ajuste de Miopia</span></a></li>
-	           	<li><a href="#hipermetropia"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Hipermetropía y Astigmatismo</span></a></li>
-	           	<li><a href="#astigmatismo"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Astigmatismo Mixto</span></a></li>
+				<li><a href="#lasik"><i class="hidden-tablet icon-white icon-adjust"></i><span class="hidden-phone"> Ajuste de Lasik</span></a></li>
+	           	<li><a href="#miopia"><i class="hidden-tablet icon-white icon-search"></i><span class="hidden-phone"> Ajuste de Miopia</span></a></li>
+	           	<li><a href="#hipermetropia"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Hipermetropía y Astigmatismo</span></a></li>
+	           	<li><a href="#astigmatismo"><i class="hidden-tablet icon-white icon-tint"></i><span class="hidden-phone"> Astigmatismo Mixto</span></a></li>
 
 			</ul>
 		</nav>
@@ -217,7 +217,7 @@
 			<br><br>
 		</section>
 
-		<section id="hipermetriopia">
+		<section id="hipermetropia">
 			<h1>Hipermetropia y Astigmatismo</h1>
 			<table class="table">
 				<thead>
@@ -338,6 +338,7 @@
 					</tr>				
 				</tbody>
 			</table>
+		</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 		</section>
 	</div>	
 @stop
