@@ -37,7 +37,23 @@
 			<p>Se Necesita tener instalado <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> para usar este sitio.</p>
 		</div>
 	</noscript>
-
+	<!--start: menu nombre paciente -->
+		<div id="menu_paciente">
+			<div id="tab">
+				<div><i class="icon-user1"></i></div> 
+			</div>
+			<div id="tab2">
+				<ul>
+					<li><b>Nombre:</b></li>
+					<li> Jose Luis Ordoñez Macias</li>
+					<li><b>Edad:</b></li>
+					<li> 27 años</li>
+					<li><b>Fecha de ultima visita:</b></li>
+					<li> 10 de marzo de 2012</li>
+				</ul>
+			</div>
+		</div>
+	<!--end: menu nombre paciente -->
 	<!-- start: Content -->
 	<div class="offset2">
 		

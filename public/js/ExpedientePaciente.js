@@ -11,6 +11,20 @@ var f = new Date();
 
 function inicio() //Inicio del documento
 {
+    /* ------------- Menu Paciente ------------ */
+    $("#menu_paciente").hover(
+        function () {
+            $("#tab").animate({right:"200px"},500);
+            $("#tab2").animate({right:"0px"},500);
+            
+        },
+        function () {
+            $("#tab").animate({right:"0px"},500);
+            $("#tab2").animate({right:"-200px"},500);
+            
+        }
+    );
+    /* ------------- Menu Paciente ------------ */
     $("#btnGuardarExpedientePaciente").on("click",guardarFormularioExpediente);
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);

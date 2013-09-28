@@ -76,6 +76,57 @@ ul.hover-block li img {
 	border: 0;
 	z-index: 500;
 }
+
+
+#menu_paciente{
+	position: fixed;
+	top: 200px;
+	right: -160px;
+	padding-right: 20px;
+}
+#menu_paciente div{
+	display:inline-block;
+}
+#menu_paciente div ul li a{
+	color: #333;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 9pt;
+}
+#tab {
+	position: fixed;
+	top: 200px;
+	right: 0px;
+	cursor: pointer;
+}
+#tab div{
+	background:red;
+	width:60px;
+	height:60px;
+	border-radius:9px 0 0 9px;
+}
+#tab div i {
+	color:white;
+	font-size: 50px;
+	padding-left: 6px;
+}
+#tab2{
+	position:fixed;
+	background:red;
+	color:white;
+	width:200px;
+	height:150px;
+	top: 200px;
+	right: -200px;
+	cursor: pointer;
+	border-radius:0 0 0 9px;
+}
+#tab2 ul{
+	padding-top: 10px;
+	list-style: none;
+}
+
+
 #btn_box{
 	position:fixed;
 	right:15px;
