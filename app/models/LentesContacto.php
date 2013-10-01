@@ -1,7 +1,7 @@
 <?php
 
-class Lentes extends Eloquent {
-	protected $table = 'Lentes';
+class LentesContacto extends Eloquent {
+	protected $table = 'LentesContacto';
 
     protected $guarded = array();
 
