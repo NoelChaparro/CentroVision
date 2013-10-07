@@ -86,9 +86,13 @@ function inicio() //Inicio del documento
 		change:promedioQueratometrias4,
 		keydown:promedioQueratometrias4,
 		keyup:promedioQueratometrias4
-	});	
+	});
+	activarMenu();
 }
-
+var activarMenu = function (){
+	$(".menu_principal li:first-child").removeClass("active");
+	$(".menu_principal li:eq(1)").addClass("active");
+}
 function promedioQueratometrias4(){
 	$("#txtQueratometriasPromedio4").val((parseFloat($("#txtQueratometriasOD4").val()) + parseFloat($("#txtQueratometriasOI4").val()))/2);
 }

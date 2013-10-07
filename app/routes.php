@@ -27,3 +27,5 @@ Route::get('ResumenClinico/{idPaciente?}','ExpedientePacienteController@imprimir
 Route::get('RecetaLentes/{idPaciente?}','ExpedientePacienteController@imprimirRecetaLentes')->where('idPaciente','[0-9]+');
 //Rutas para el controlador OperacionLaser
 Route::get('OperacionLaser','OperacionLaserController@calculoOperacionLaser');
+//Rutas para el controlador LentesContacto
+Route::get('LentesContacto','LentesContactoController@lentesContactoHistorial');
