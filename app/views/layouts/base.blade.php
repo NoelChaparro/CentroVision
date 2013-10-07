@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="css/alertify.default.css" />
         <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
         <link rel="stylesheet" href="font/icomoon/style.css"/><!--iconos para menu de inicio-->               
+        <link href="assets/css/style.css" rel="stylesheet" /><!--estilo para carga de imagenes-->               
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
