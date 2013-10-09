@@ -29,3 +29,5 @@ Route::get('RecetaLentes/{idPaciente?}','ExpedientePacienteController@imprimirRe
 Route::get('OperacionLaser','OperacionLaserController@calculoOperacionLaser');
 //Rutas para el controlador LentesContacto
 Route::get('LentesContacto','LentesContactoController@lentesContactoHistorial');
+Route::post('guardarLentesContacto','LentesContactoController@guardarLentesContacto');
+Route::post('buscarHistorialLentesContacto','LentesContactoController@buscarHistorialLentesContacto');

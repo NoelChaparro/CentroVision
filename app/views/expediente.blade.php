@@ -43,7 +43,7 @@
 				<div><i class="icon-user1"></i></div> 
 			</div>
 			<div id="tab2">
-				<ul>
+				<ul id="datosUltimaConsulta">
 					<li><b>Nombre:</b></li>
 					<li> Jose Luis Ordoñez Macias</li>
 					<li><b>Edad:</b></li>

@@ -216,6 +216,8 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
 function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
     limpiarFormularioExpedientePaciente();
     var contenido = $('.tblBusquedaPacientesModal tbody');
+    var contenidoUltimaConsulta = $('#datosUltimaConsulta').html('');
+    var meses = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 	$.ajax({
             data:  'idPaciente=' + idPaciente,
             url:   'buscarPacientePorId',
@@ -241,6 +243,11 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#ocupacion").val(elemento.Ocupacion);
             		$("#telefono").val(elemento.Telefono);
             		$("#referencia").val(elemento.Referencia);
+
+                    // Datos Ultima Consulata
+                    var fechaUltimaConsulta = new Date(elemento.updated_at);
+                    $('<li><b>Nombre:<b></li><li>'+elemento.Nombre+'</li><li><b>Edad:<b></li><li>'+
+                        elemento.FechaNacimiento+'</li><li><b>Fecha de Ultima Visita:<b></li><li>'+fechaUltimaConsulta.getDate()+'/'+meses[(fechaUltimaConsulta.getMonth() + 1 )]+'/'+fechaUltimaConsulta.getFullYear()+'</li>').appendTo(contenidoUltimaConsulta);
 
             		// Padecimiento Paciente
                     if(response.Padecimiento[0]){
