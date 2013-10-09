@@ -352,7 +352,27 @@
 		
 		<!--start: Biomicroscopia e Iris -->
 		<section id="mnBiomicroscopiaIris">
-				
+			<div class="modal hide fade" tabindex="-1" role="dialog" id="ImgBiomicroscopia">
+            	<div class="modal-header">
+               		<a class="close" data-dismiss="modal">&times;</a>
+               		<h3>Subir Imagenes</h3>
+           		</div>
+           		<div class="modal-body">
+           	    	<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+						<div id="drop">
+							Arrastre las imagenes aqui
+							<a>Buscar</a>
+							<input type="file" name="upl" multiple />
+						</div>
+
+						<ul>
+							<!-- The file uploads will be shown here -->
+						</ul>
+
+					</form>
+       	    	</div>
+ 
+       		</div>
 			<legend>Biomicroscopía e Iris</legend>
 			<div class="row">
 				<div class="span6">
@@ -388,6 +408,8 @@
 					</div>
 				</div>
 			</div>
+			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-warning" role="button" data-toggle="modal" id="BtnImgBiomicroscopia"><i class="icon-white icon-upload"></i> Subir Imagenes</a>
+			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-success" id="BtnVerBiomicroscopia"><i class="icon-white icon-picture"></i> Ver Imagenes</a>
 			</br></br></br></br>
 		</section>
 		<!-- end: Biomicroscopia e Iris -->
@@ -1305,4 +1327,15 @@
 	<script src="js/lib/messages.es.js"></script>
 	<script src="js/lib/parsley.js"></script>
 	<script src="libs/ckeditor/ckeditor.js"></script>
+	<!-- JavaScript Includes -->
+	
+	<script src="assets/js/jquery.knob.js"></script>
+
+	<!-- jQuery File Upload Dependencies -->
+	<script src="assets/js/jquery.ui.widget.js"></script>
+	<script src="assets/js/jquery.iframe-transport.js"></script>
+	<script src="assets/js/jquery.fileupload.js"></script>
+	
+	<!-- Our main JS file -->
+	<script src="assets/js/script.js"></script>
 @stop

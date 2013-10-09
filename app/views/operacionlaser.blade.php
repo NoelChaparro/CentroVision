@@ -358,4 +358,5 @@
 
 @section('Javascript')
 	<script src="js/OperacionLaser.js"></script>
+	
 @stop
