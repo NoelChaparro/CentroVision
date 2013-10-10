@@ -45,11 +45,11 @@
 			<div id="tab2">
 				<ul id="datosUltimaConsulta">
 					<li><b>Nombre:</b></li>
-					<li> Jose Luis Ordoñez Macias</li>
+					<li> </li>
 					<li><b>Edad:</b></li>
-					<li> 27 años</li>
+					<li> </li>
 					<li><b>Fecha de ultima visita:</b></li>
-					<li> 10 de marzo de 2012</li>
+					<li></li>
 				</ul>
 			</div>
 		</div>
