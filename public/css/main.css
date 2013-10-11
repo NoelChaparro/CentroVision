@@ -76,7 +76,9 @@ ul.hover-block li img {
 	border: 0;
 	z-index: 500;
 }
-
+th{
+	text-align: left;
+}
 
 #menu_paciente{
 	position: fixed;
