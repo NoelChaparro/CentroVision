@@ -31,3 +31,9 @@ Route::get('OperacionLaser','OperacionLaserController@calculoOperacionLaser');
 Route::get('LentesContacto','LentesContactoController@lentesContactoHistorial');
 Route::post('guardarLentesContacto','LentesContactoController@guardarLentesContacto');
 Route::post('buscarHistorialLentesContacto','LentesContactoController@buscarHistorialLentesContacto');
+//Rutas para el upload de imagenes
+Route::post('subirImagenBiomicroscopia','ExpedientePacienteController@subirImagenBiomicroscopia');
+//Rutas para cargar las imagenes
+Route::post('buscarImagenesBiomicroscopia','ExpedientePacienteController@buscarImagenesBiomicroscopia');
+//Ruta para eliminar las imagenes
+Route::post('eliminarImagenes','ExpedientePacienteController@eliminarImagenes');

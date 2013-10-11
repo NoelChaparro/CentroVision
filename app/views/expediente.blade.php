@@ -359,12 +359,14 @@
            		</div>
            		<div class="modal-body">
            	    	
+					<h5>Subir Imagenes</h5>
+			    	<input type="file" name="images" id="images" multiple />
+			    	<button type="submit" id="btn">Upload Files!</button>
 
+				  	<div id="response"></div>
+						<ul id="image-list">
 
-
-
-
-
+						</ul>
 
        	    	</div>
  
@@ -406,6 +408,7 @@
 			</div>
 			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-warning" role="button" data-toggle="modal" id="BtnImgBiomicroscopia"><i class="icon-white icon-upload"></i> Subir Imagenes</a>
 			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-success" id="BtnVerBiomicroscopia"><i class="icon-white icon-picture"></i> Ver Imagenes</a>
+			<div id="imagenesBiomicroscopia"></div>
 			</br></br></br></br>
 		</section>
 		<!-- end: Biomicroscopia e Iris -->
@@ -1323,6 +1326,7 @@
 	<script src="js/lib/messages.es.js"></script>
 	<script src="js/lib/parsley.js"></script>
 	<script src="libs/ckeditor/ckeditor.js"></script>
+	<script src="js/upload.js"></script>
 	<!-- JavaScript Includes -->
 	
 @stop

@@ -35,6 +35,7 @@ function inicio() //Inicio del documento
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
     $("#btnImprimirRecetaLentes").attr("disabled",true);
     $("#btnImprimirCertificado").attr("disabled",true);
+    $("#BtnVerBiomicroscopia").on("click",verImagenesBiomicroscopia);
 	tablaBusquedaPacientesModal();
 
     $( "#btndg" ).click(function() {
@@ -88,6 +89,39 @@ function inicio() //Inicio del documento
     $( "#btncami" ).click(function() {
       CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].focus();
     });
+}
+
+var verImagenesBiomicroscopia = function(){ //Funcion que permite cargar las imagenes de biomicroscopia del paciente
+    var imagenesBiomicroscopia = $('#imagenesBiomicroscopia');
+    $.ajax({
+            data:  'idPaciente=' + $('#varIdPaciente').val(),
+            url:   'buscarImagenesBiomicroscopia',
+            type:  'post',
+            beforeSend: function () {
+                imagenesBiomicroscopia.html('Buscando...');
+            },
+            success:  function (response) {
+                imagenesBiomicroscopia.html('');
+                $.each(response.ImagenesBiomicroscopia, function(i,elemento){
+                    $('<img src="imagenes/thumbs/'+elemento.NombreImagen+'" /><a onclick="eliminarImagen('+elemento.IdImagen+');">Eliminar</a>').appendTo(imagenesBiomicroscopia);
+                });
+            }
+    });
+    return false;
+}
+
+var eliminarImagen = function(idImagen){ // Funcion que recibe el id de la imagen para borrarla
+    $.ajax({
+            data:  'idImagen=' + idImagen,
+            url:   'eliminarImagenes',
+            type:  'post',
+            beforeSend: function () {
+            },
+            success:  function (response) {
+                verImagenesBiomicroscopia();
+            }
+    });    
+    return false;
 }
 
 function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrimir el consentimiento informado de cirugia ocular y extraocular

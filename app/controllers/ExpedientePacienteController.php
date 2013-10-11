@@ -5,6 +5,81 @@ class ExpedientePacienteController extends BaseController{
 		return View::make('expediente');
 	}
 
+	public function subirImagenBiomicroscopia(){ //Funcion que permite subir las imagenes a una carpeta del proyecto
+		/*foreach ($_FILES["images"]["error"] as $key => $error) {
+		    if ($error == UPLOAD_ERR_OK) {
+		        $name = $_FILES["images"]["name"][$key];
+		        move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "uploads/" . $_FILES['images']['name'][$key]);
+		        unlink($name);
+		    }
+		}
+		$files = Input::file("images");
+		$idPaciente = Input::get('idPaciente');
+ 		foreach($files as $file) {
+        	$name = $file->getClientOriginalName();
+        	$file->move('imagenes/',$name);
+    	}*/
+    	$idPaciente = Input::get('idPaciente');
+		function crearImagen($nombreImagen,$alturaImagen,$directorioImagen){
+			//se redimencionan las imagenes
+			$ALTURA = $alturaImagen;
+			$DIRECTORIO = $directorioImagen;
+			$imagen = basename($nombreImagen);
+			$datos = getimagesize($imagen);
+			if($datos[2]==1){$img = @imagecreatefromgif($imagen);}
+			if($datos[2]==2){$img = @imagecreatefromjpeg($imagen);}
+			if($datos[2]==3){$img = @imagecreatefrompng($imagen);}
+			$ratio = ($datos[1]/$ALTURA);
+			$ancho = round($datos[0]/$ratio);
+			$thumb = imagecreatetruecolor($ancho, $ALTURA);
+			imagecopyresized($thumb, $img, 0, 0, 0, 0, $ancho, $ALTURA, $datos[0], $datos[1]);
+			if($datos[2]==1){imagegif($thumb, "./".$DIRECTORIO.$nombreImagen);}
+			if($datos[2]==2){imagejpeg($thumb, "./".$DIRECTORIO.$nombreImagen);}
+			if($datos[2]==3){imagepng($thumb, "./".$DIRECTORIO.$nombreImagen);}
+		}
+    	for ($x=0;$x<count($_FILES["images"]["name"]);$x++){
+    		foreach ($_FILES['images'] as $indice => $valor) {
+    			switch ($indice) {
+    				case 'name':
+    					$nombreImagen = (md5($valor[$x].$x.date('Hms'))).substr($valor[$x],strlen($valor[$x])-4,4);
+    					break;
+    				case 'type':
+    					$tipoImagen = $valor[$x];
+    					break;
+    				case 'tmp_name':
+    					if (move_uploaded_file($valor[$x], $nombreImagen)){
+    						crearImagen($nombreImagen, 600, 'imagenes/');
+							crearImagen($nombreImagen, 100, 'imagenes/thumbs/');
+							unlink($nombreImagen);
+    					}
+    					break;
+    			}
+    		}
+    		$datosImagen = array (
+    			"Paciente_id" => $idPaciente,
+    			"NombreImagen" => $nombreImagen,
+    			"Formato" => $tipoImagen,
+    			"Tipo" => 1
+    		);
+    		$imagen = new Imagenes($datosImagen);
+			$imagen->save();
+    	}
+	}
+
+	public function buscarImagenesBiomicroscopia(){ //Funcion que manda los nombres de las imagenes para mostrarla en un div
+		$idPaciente = Input::get('idPaciente');
+		$imagenesBiomicroscopia = DB::table('Imagenes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+		return Response::json(array('ImagenesBiomicroscopia'=> $imagenesBiomicroscopia));
+	}
+
+	public function eliminarImagenes(){ //Funcion que elimina las imagenes
+		$idImagen = Input::get('idImagen');
+		$imagen = DB::table('Imagenes')->where('IdImagen', '=', $idImagen)->get();
+		DB::table('Imagenes')->where('IdImagen', '=', $idImagen)->delete();
+		unlink('./imagenes/thumbs/'.$imagen[0]->NombreImagen);
+		unlink('./imagenes/'.$imagen[0]->NombreImagen);
+	}
+
 	public function imprimirRecetaLentes($idPaciente=null){ // manda a imprimir los datos para la receta de los lentes
 		$datosPaciente = '';
 		$lentesPaciente = '';
