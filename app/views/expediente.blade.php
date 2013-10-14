@@ -359,9 +359,8 @@
            		</div>
            		<div class="modal-body">
            	    	
-					<h5>Subir Imagenes</h5>
 			    	<input type="file" name="images" id="images" multiple />
-			    	<button type="submit" id="btn">Upload Files!</button>
+			    	<button class="btn btn-primary" type="submit" id="btn">Upload Files!</button>
 
 				  	<div id="response"></div>
 						<ul id="image-list">
