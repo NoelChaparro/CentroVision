@@ -26,6 +26,8 @@
 	            <li><a href="#mnHospitalizacion" id="btnhos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
 	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular" id="btncon"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Cirugía Ocular</span></a></li>
 	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos" id="btncami"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Med. Intravitreos</span></a></li>
+	            <li><a href="#mnExpedienteDigital" id="btnexd"><i class="hidden-book
+	             icon-white icon-tag"></i><span class="hidden-phone"> Expediente Digital</span></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -178,7 +180,7 @@
 				<div class="control-group span3">
 				  	{{ Form::label('fechanacimiento', 'Fecha Nacimiento:',array('class' => 'control-label', 'for' => 'date01')) }}
 				  	<div class="controls">
-				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small datepicker', 'id' => 'date01', 'placeholder' => 'DD/MM/YYYY', 'data-required' => 'true')) }}
+				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small', 'id' => 'date01', 'data-required' => 'true')) }}
 				  	</div>
 				</div>
 				<div class="control-group span5">
@@ -359,8 +361,8 @@
            		</div>
            		<div class="modal-body">
            	    	
-			    	<input type="file" name="images" id="images" multiple />
-			    	<button class="btn btn-primary" type="submit" id="btn">Upload Files!</button>
+			    	<input type="file" name="images" id="images" multiple  />
+			    	<button type="submit" id="btn">Upload Files!</button>
 
 				  	<div id="response"></div>
 						<ul id="image-list">
@@ -379,7 +381,7 @@
 					  		{{ Form::textarea('CCIPCD','',array('class' => 'span4')) }}
 					  	</div>
 					</div>
-
+					
 					<div class="control-group">
 					  	{{ Form::label('BUTD', 'BUT: ', array ('class' => 'control-label')) }}
 					  	<div class="controls">
@@ -408,7 +410,14 @@
 			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-warning" role="button" data-toggle="modal" id="BtnImgBiomicroscopia"><i class="icon-white icon-upload"></i> Subir Imagenes</a>
 			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-success" id="BtnVerBiomicroscopia"><i class="icon-white icon-picture"></i> Ver Imagenes</a>
 			<div id="imagenesBiomicroscopia"></div>
+			
+
+
+
+
+
 			</br></br></br></br>
+			
 		</section>
 		<!-- end: Biomicroscopia e Iris -->
 		
@@ -1326,6 +1335,7 @@
 	<script src="js/lib/parsley.js"></script>
 	<script src="libs/ckeditor/ckeditor.js"></script>
 	<script src="js/upload.js"></script>
+	
 	<!-- JavaScript Includes -->
 	
 @stop

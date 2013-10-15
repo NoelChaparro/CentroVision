@@ -23,8 +23,11 @@
         <link rel="stylesheet" href="css/alertify.default.css" />
         <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
         <link rel="stylesheet" href="font/icomoon/style.css"/><!--iconos para menu de inicio-->                          
+        <!-- Add fancyBox main JS and CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" /><!--Efecto modal para imagenes--> 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
+     
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -91,6 +94,7 @@
         <script src="js/navbar.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/jquery.fancybox.js"></script><!--Efecto modal para imagenes--> 
         <!--<script src="font/icomoon/lte-ie7.js"></script>-->
         @yield('Javascript')
 

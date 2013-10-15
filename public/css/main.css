@@ -79,7 +79,19 @@ ul.hover-block li img {
 th{
 	text-align: left;
 }
-
+#imagenesBiomicroscopia img{
+	margin-top: 15px;
+}
+#image-list{
+	list-style: none;	
+}
+#image-list li{
+	display:inline;
+	padding-right: 10px;
+}
+#image-list li img{
+	width:100px;
+}
 #menu_paciente{
 	position: fixed;
 	top: 200px;
@@ -182,6 +194,24 @@ th{
 	-moz-transition:background 1s ease;
 	-o-transition:background 1s ease;
 	transition:background 1s ease;		
+}
+.btn-eliminar{
+	width:70px;	
+	padding-right: 15px;
+	margin-top: 15px;
+}
+.btn-eliminar i{
+	background-color: white;
+	border:3px solid black;
+	border-radius: 15px;
+	position:relative;
+	top: -44px;
+	right:12px;
+	cursor:pointer;
+}
+.pr{
+	width:20px ;
+	font-size: 20px;
 }
 .logoppal{
 	text-align: center;

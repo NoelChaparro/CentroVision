@@ -1,16 +1,12 @@
 $(document).on("ready",inicio);
 
-/* ---------- Datapicker ---------- */
-$(".datepicker").datepicker({dateFormat: 'dd/mm/yy'});
-$('.datepicker').datepicker();
-
 var txtConcentimientoCirugiaOcularExtraocular;
 var txtConcentimientoMedicamentoIntravitreos;
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 var f = new Date();
 
 function inicio() //Inicio del documento
-{
+{ 
     /* ------------- Menu Paciente ------------ */
     $("#menu_paciente").hover(
         function () {
@@ -89,8 +85,9 @@ function inicio() //Inicio del documento
     $( "#btncami" ).click(function() {
       CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].focus();
     });
+    /* ---------- Fancybox ----------*/
+    $('.fancybox').fancybox();
 }
-
 var verImagenesBiomicroscopia = function(){ //Funcion que permite cargar las imagenes de biomicroscopia del paciente
     var imagenesBiomicroscopia = $('#imagenesBiomicroscopia');
     $.ajax({
@@ -103,13 +100,12 @@ var verImagenesBiomicroscopia = function(){ //Funcion que permite cargar las ima
             success:  function (response) {
                 imagenesBiomicroscopia.html('');
                 $.each(response.ImagenesBiomicroscopia, function(i,elemento){
-                    $('<img src="imagenes/thumbs/'+elemento.NombreImagen+'" /><a onclick="eliminarImagen('+elemento.IdImagen+');">Eliminar</a>').appendTo(imagenesBiomicroscopia);
+                    $('<a class="fancybox" href="imagenes/'+elemento.NombreImagen+'"><img src="imagenes/thumbs/'+elemento.NombreImagen+'" /></a><a class="btn-eliminar" onclick="eliminarImagen('+elemento.IdImagen+');"><i class="icon-remove"></i></a>').appendTo(imagenesBiomicroscopia);
                 });
             }
-    });
+    });    
     return false;
-}
-
+}  
 var eliminarImagen = function(idImagen){ // Funcion que recibe el id de la imagen para borrarla
     $.ajax({
             data:  'idImagen=' + idImagen,
@@ -268,7 +264,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#colonia").val(elemento.Colonia);
             		$("#campo").val(elemento.Campo);
             		$("#ciudad").val(elemento.Ciudad);
-            		$("#date01").val((elemento.FechaNacimiento).substr(8,2)+"/"+(elemento.FechaNacimiento).substr(5,2)+"/"+(elemento.FechaNacimiento).substr(0,4));
+            		/*$("#date01").val((elemento.FechaNacimiento).substr(8,2)+"/"+(elemento.FechaNacimiento).substr(5,2)+"/"+(elemento.FechaNacimiento).substr(0,4));*/
+                    $("#date01").val(elemento.FechaNacimiento);
             		if (elemento.Sexo == 'M'){
             			$('input:radio[name=Sexo]:nth(0)').prop('checked',true);
             		}else{
