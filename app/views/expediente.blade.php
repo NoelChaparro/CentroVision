@@ -407,14 +407,10 @@
 					</div>
 				</div>
 			</div>
-			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-warning" role="button" data-toggle="modal" id="BtnImgBiomicroscopia"><i class="icon-white icon-upload"></i> Subir Imagenes</a>
-			<a href="#ImgBiomicroscopia" class="btn btn-primary btn-success" id="BtnVerBiomicroscopia"><i class="icon-white icon-picture"></i> Ver Imagenes</a>
+			<button href="#ImgBiomicroscopia" role="button" class="btn btn-warning" data-toggle="modal" id="BtnImgBiomicroscopia" disabled><i class="icon-white icon-upload"></i> Subir Imagenes</button>
+			<button role="button" class="btn btn-success" data-toggle="modal" id="BtnVerBiomicroscopia" disabled><i class="icon-white icon-picture"></i> Ver Imagenes</button>
 			<div id="imagenesBiomicroscopia"></div>
 			
-
-
-
-
 
 			</br></br></br></br>
 			
@@ -1312,6 +1308,15 @@
 			</br></br></br></br>
 		</section>		
 		<!-- end: Consentimiento Aplicacion Medicamentos Intravitreos -->
+
+		<!-- start: Expediente Digital -->
+		<div id="mnExpedienteDigital">
+			<button href="#ImgBiomicroscopia" role="button" class="btn btn-warning" data-toggle="modal" id="btnImagenesExpediente" disabled><i class="icon-white icon-upload"></i> Subir Imagenes</button>
+			<button role="button" class="btn btn-success" data-toggle="modal" id="btnVerImagenesExpediente" disabled><i class="icon-white icon-picture"></i> Ver Imagenes</button>
+			<div id="imagenesExpediente"></div>
+
+		</div>
+		<!-- end: Expediente Digital -->
 		
 		<!-- start: Button -->
 		<div class="control-group" id="btn_box">

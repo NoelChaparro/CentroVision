@@ -4,6 +4,7 @@ var txtConcentimientoCirugiaOcularExtraocular;
 var txtConcentimientoMedicamentoIntravitreos;
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 var f = new Date();
+var imagenCatalogada = 0; //Variable para indicar de que tipo es la imagen si expediente digital = 2 o biomicroscopia = 1
 
 function inicio() //Inicio del documento
 { 
@@ -31,7 +32,18 @@ function inicio() //Inicio del documento
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
     $("#btnImprimirRecetaLentes").attr("disabled",true);
     $("#btnImprimirCertificado").attr("disabled",true);
-    $("#BtnVerBiomicroscopia").on("click",verImagenesBiomicroscopia);
+    $("#BtnVerBiomicroscopia").on("click",function(){
+        verImagenes(1);
+    });
+    $("#btnVerImagenesExpediente").on("click",function(){
+        verImagenes(2);
+    });
+    $("#BtnImgBiomicroscopia").on("click",function(){
+        mdlImagenes(1);
+    });
+    $("#btnImagenesExpediente").on("click",function(){
+        mdlImagenes(2);
+    });
 	tablaBusquedaPacientesModal();
 
     $( "#btndg" ).click(function() {
@@ -88,25 +100,37 @@ function inicio() //Inicio del documento
     /* ---------- Fancybox ----------*/
     $('.fancybox').fancybox();
 }
-var verImagenesBiomicroscopia = function(){ //Funcion que permite cargar las imagenes de biomicroscopia del paciente
-    var imagenesBiomicroscopia = $('#imagenesBiomicroscopia');
+
+var mdlImagenes = function(imagenCatalogo){ //Funcion que permite definir el tipo de imagen a guardar en este caso Biomicroscopia
+    $("#image-list").html(''); //Se limpian las imagenes donde se cargan en el modal
+    $("#images").val('');
+    imagenCatalogada = imagenCatalogo;
+}
+
+var verImagenes = function(imagenCatalogo){ //Funcion que permite cargar las imagenes de biomicroscopia del paciente
+    if (imagenCatalogo==1){
+        var contenedorImagenes = $('#imagenesBiomicroscopia');
+    }
+    if (imagenCatalogo==2){
+        var contenedorImagenes = $('#imagenesExpediente');
+    }
     $.ajax({
-            data:  'idPaciente=' + $('#varIdPaciente').val(),
-            url:   'buscarImagenesBiomicroscopia',
+            data:  'idPaciente=' + $('#varIdPaciente').val()+'&imagenCatalogada='+imagenCatalogo,
+            url:   'buscarImagenes',
             type:  'post',
             beforeSend: function () {
-                imagenesBiomicroscopia.html('Buscando...');
+                contenedorImagenes.html('Buscando...');
             },
             success:  function (response) {
-                imagenesBiomicroscopia.html('');
+                contenedorImagenes.html('');
                 $.each(response.ImagenesBiomicroscopia, function(i,elemento){
-                    $('<a class="fancybox" href="imagenes/'+elemento.NombreImagen+'"><img src="imagenes/thumbs/'+elemento.NombreImagen+'" /></a><a class="btn-eliminar" onclick="eliminarImagen('+elemento.IdImagen+');"><i class="icon-remove"></i></a>').appendTo(imagenesBiomicroscopia);
+                    $('<a class="fancybox" href="imagenes/'+elemento.NombreImagen+'"><img src="imagenes/thumbs/'+elemento.NombreImagen+'" /></a><a class="btn-eliminar" onclick="eliminarImagen('+elemento.IdImagen+','+elemento.Tipo+');"><i class="icon-remove"></i></a>').appendTo(contenedorImagenes);
                 });
             }
     });    
     return false;
 }  
-var eliminarImagen = function(idImagen){ // Funcion que recibe el id de la imagen para borrarla
+var eliminarImagen = function(idImagen,tipo){ // Funcion que recibe el id de la imagen para borrarla
     $.ajax({
             data:  'idImagen=' + idImagen,
             url:   'eliminarImagenes',
@@ -114,7 +138,7 @@ var eliminarImagen = function(idImagen){ // Funcion que recibe el id de la image
             beforeSend: function () {
             },
             success:  function (response) {
-                verImagenesBiomicroscopia();
+                verImagenes(tipo); //Se cargan nuevamente el contenedor
             }
     });    
     return false;
@@ -166,6 +190,16 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     CKEDITOR.instances['Tratamiento'].setData('');
     $("#btnImprimirRecetaLentes").attr("disabled",true);
     $("#btnImprimirCertificado").attr("disabled",true);
+    // Se deshabilitan los botones de las imagenes
+    $("#BtnImgBiomicroscopia").attr("disabled",true);
+    $("#BtnVerBiomicroscopia").attr("disabled",true);
+    $("#btnImagenesExpediente").attr("disabled",true);
+    $("#btnVerImagenesExpediente").attr("disabled",true);
+    // Limpiar los contenedores de las imagenes
+    $('#imagenesExpediente').html('');
+    $('#imagenesBiomicroscopia').html('');
+    //Datos de la ultima consulta
+    $('#datosUltimaConsulta').html('');
 }
 
 function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
@@ -181,7 +215,11 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
     			type: form.attr('method'),
     			url: form.attr('action'),
     			data: form.serialize(),
+                beforeSend: function () {
+                    $("#btnGuardarExpedientePaciente").attr("disabled",true); //se deshabilita el boton guardar porque el formulario contiene mucha informacion y evita que lo presionen varias veces
+                },
     			success: function(data){
+                    $("#btnGuardarExpedientePaciente").attr("disabled",false);
     				alertify.success('Datos Guardados Correctamente');
                     limpiarFormularioExpedientePaciente();
     			},
@@ -256,6 +294,11 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             	contenido.html('Buscando...');
             },
             success:  function (response) {
+                //Se habilitan los botones de las imagenes
+                $("#BtnImgBiomicroscopia").attr("disabled",false);
+                $("#BtnVerBiomicroscopia").attr("disabled",false);
+                $("#btnImagenesExpediente").attr("disabled",false);
+                $("#btnVerImagenesExpediente").attr("disabled",false);                
             	$.each(response.Paciente, function(i,elemento){
             		// Datos Generales del Paciente
                     $("#varIdPaciente").val(idPaciente);

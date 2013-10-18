@@ -5,7 +5,7 @@ class ExpedientePacienteController extends BaseController{
 		return View::make('expediente');
 	}
 
-	public function subirImagenBiomicroscopia(){ //Funcion que permite subir las imagenes a una carpeta del proyecto
+	public function subirImagenes(){ //Funcion que permite subir las imagenes a una carpeta del proyecto
 		/*foreach ($_FILES["images"]["error"] as $key => $error) {
 		    if ($error == UPLOAD_ERR_OK) {
 		        $name = $_FILES["images"]["name"][$key];
@@ -20,6 +20,7 @@ class ExpedientePacienteController extends BaseController{
         	$file->move('imagenes/',$name);
     	}*/
     	$idPaciente = Input::get('idPaciente');
+    	$imagenCatalogada = Input::get('imagenCatalogada'); //Guarda el tipo de imagen Biomicroscopia =1, Expediente Digital =2
 		function crearImagen($nombreImagen,$alturaImagen,$directorioImagen){
 			//se redimencionan las imagenes
 			$ALTURA = $alturaImagen;
@@ -59,16 +60,17 @@ class ExpedientePacienteController extends BaseController{
     			"Paciente_id" => $idPaciente,
     			"NombreImagen" => $nombreImagen,
     			"Formato" => $tipoImagen,
-    			"Tipo" => 1
+    			"Tipo" => $imagenCatalogada
     		);
     		$imagen = new Imagenes($datosImagen);
 			$imagen->save();
     	}
 	}
 
-	public function buscarImagenesBiomicroscopia(){ //Funcion que manda los nombres de las imagenes para mostrarla en un div
+	public function buscarImagenes(){ //Funcion que manda los nombres de las imagenes para mostrarla en un div
 		$idPaciente = Input::get('idPaciente');
-		$imagenesBiomicroscopia = DB::table('Imagenes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+		$imagenCatalogada = Input::get('imagenCatalogada');
+		$imagenesBiomicroscopia = DB::table('Imagenes')->where('Paciente_id', '=', $idPaciente)->where('Tipo','=',$imagenCatalogada)->orderBy('created_at', 'desc')->get();
 		return Response::json(array('ImagenesBiomicroscopia'=> $imagenesBiomicroscopia));
 	}
 

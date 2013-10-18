@@ -6,21 +6,34 @@ function inicio(){
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);	
     $("#btnGuardarLenteContacto").on("click",guardarFormularioLenteContacto);
+    $("#btnCancelarLenteContacto").on("click",limpiarFormularioLentesContacto);
 }
 
 var guardarFormularioLenteContacto = function(){ //Funcion que permite guardar el historial de los lentes de contacto
-    var formularioLentesContacto = $(".frmLentesContacto");
-    $.ajax({
-        type: formularioLentesContacto.attr('method'),
-        url: formularioLentesContacto.attr('action'),
-        data: formularioLentesContacto.serialize(),
-        success: function(data){
-            alertify.success('Datos guardados correctamente');
-        },
-        error: function(errors){
-            alertify.error('Error al guardar los datos');
-        }
-    });
+    if (pasarComprobaciones()){
+        var formularioLentesContacto = $(".frmLentesContacto");
+        $.ajax({
+            type: formularioLentesContacto.attr('method'),
+            url: formularioLentesContacto.attr('action'),
+            data: formularioLentesContacto.serialize(),
+            success: function(data){
+                alertify.success('Datos guardados correctamente');
+                limpiarFormularioLentesContacto();
+            },
+            error: function(errors){
+                alertify.error('Error al guardar los datos');
+            }
+        });
+    }else{
+        alertify.alert("No se ha especificado el paciente");
+    }
+    return false;
+}
+
+var pasarComprobaciones = function(){ //Funcion que permite verifica que se encuentre el idPaciente para poder guardar
+    if ($("#varIdPaciente").val()!=''){
+        return true;
+    }
     return false;
 }
 
@@ -93,6 +106,11 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
 var limpiarFormularioLentesContacto = function(){ // Funcion para limpiar el formulario Lentes de Contacto
 	$('#nombre').val('');
+    $('#historialLentesContacto').html('');
+    $("#varIdPaciente").val('');
+    $(".frmLentesContacto").each(function(){
+        this.reset();
+    });    
 }
 
 var buscarHistorialLentesContacto = function(idPaciente){

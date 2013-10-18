@@ -18,7 +18,7 @@
  	input.addEventListener("change", function (evt) {
  		document.getElementById("response").innerHTML = "Subiendo . . ."
  		var i = 0, len = this.files.length, img, reader, file;
-	
+		formdata = new FormData(); //Se inicializa la variable para que no repita las imagenes
 		for ( ; i < len; i++ ) {
 			file = this.files[i];
 	
@@ -33,20 +33,21 @@
 				if (formdata) {
 					formdata.append("images[]", file);
 					formdata.append("idPaciente", $("#varIdPaciente").val());
+					formdata.append("imagenCatalogada",imagenCatalogada);
 				}
 			}	
 		}
 	
 		if (formdata) {
 			$.ajax({
-				url: "subirImagenBiomicroscopia",
+				url: "subirImagenes",
 				type: "POST",
 				data: formdata,
 				processData: false,
 				contentType: false,
 				success: function (res) {
 					document.getElementById("response").innerHTML = res;
-					verImagenesBiomicroscopia(); //Se corre la funcion para que cargue de nuevo las imagenes
+					verImagenes(imagenCatalogada); //Se corre la funcion para que cargue de nuevo las imagenes
 				}
 			});
 		}
