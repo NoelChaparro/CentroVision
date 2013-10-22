@@ -178,9 +178,9 @@
 			
 			<div class="row">
 				<div class="control-group span3">
-				  	{{ Form::label('fechanacimiento', 'Fecha Nacimiento:',array('class' => 'control-label', 'for' => 'date01')) }}
+				  	{{ Form::label('fechanacimiento', 'Edad:',array('class' => 'control-label', 'for' => 'date01')) }}
 				  	<div class="controls">
-				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small', 'id' => 'date01', 'data-required' => 'true')) }}
+				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small', 'id' => 'date01')) }}
 				  	</div>
 				</div>
 				<div class="control-group span5">
