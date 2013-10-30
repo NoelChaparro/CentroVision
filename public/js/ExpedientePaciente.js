@@ -308,7 +308,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#campo").val(elemento.Campo);
             		$("#ciudad").val(elemento.Ciudad);
             		/*$("#date01").val((elemento.FechaNacimiento).substr(8,2)+"/"+(elemento.FechaNacimiento).substr(5,2)+"/"+(elemento.FechaNacimiento).substr(0,4));*/
-                    $("#date01").val(elemento.FechaNacimiento);
+                    $("#edad").val(elemento.Edad);
             		if (elemento.Sexo == 'M'){
             			$('input:radio[name=Sexo]:nth(0)').prop('checked',true);
             		}else{

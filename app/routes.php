@@ -34,7 +34,9 @@ Route::post('buscarHistorialLentesContacto','LentesContactoController@buscarHist
 //Rutas para el upload de imagenes
 Route::post('subirImagenes','ExpedientePacienteController@subirImagenes');
 //Rutas para cargar las imagenes
-//Route::post('buscarImagenesBiomicroscopia','ExpedientePacienteController@buscarImagenesBiomicroscopia');
 Route::post('buscarImagenes','ExpedientePacienteController@buscarImagenes');
 //Ruta para eliminar las imagenes
 Route::post('eliminarImagenes','ExpedientePacienteController@eliminarImagenes');
+//Ruta para el programa de baja vision
+Route::get('BajaVision','BajaVisionController@bajaVision');
+Route::post('guardarBajaVision','BajaVisionController@guardarBajaVision');

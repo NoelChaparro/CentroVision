@@ -178,9 +178,9 @@
 			
 			<div class="row">
 				<div class="control-group span3">
-				  	{{ Form::label('fechanacimiento', 'Fecha Nacimiento:',array('class' => 'control-label', 'for' => 'date01')) }}
+				  	{{ Form::label('edad', 'Edad:',array('class' => 'control-label', 'for' => 'date01')) }}
 				  	<div class="controls">
-				  		{{ Form::text('fechanacimiento','',array('class' => 'input-small', 'id' => 'date01', 'data-required' => 'true')) }}
+				  		{{ Form::text('edad','',array('class' => 'input-small', 'data-required' => 'true')) }}
 				  	</div>
 				</div>
 				<div class="control-group span5">
@@ -1340,7 +1340,4 @@
 	<script src="js/lib/parsley.js"></script>
 	<script src="libs/ckeditor/ckeditor.js"></script>
 	<script src="js/upload.js"></script>
-	
-	<!-- JavaScript Includes -->
-	
 @stop
