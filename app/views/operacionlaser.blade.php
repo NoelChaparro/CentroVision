@@ -9,40 +9,105 @@
 		<nav class=" sidebar-nav">
 			<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
 				<li><a href="#lasik"><i class="hidden-tablet icon-white icon-adjust"></i><span class="hidden-phone"> Ajuste de Lasik</span></a></li>
-	           	<li><a href="#miopia"><i class="hidden-tablet icon-white icon-search"></i><span class="hidden-phone"> Ajuste de Miopia</span></a></li>
+	           	<!--<li><a href="#miopia"><i class="hidden-tablet icon-white icon-search"></i><span class="hidden-phone"> Ajuste de Miopia</span></a></li>
 	           	<li><a href="#hipermetropia"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Hipermetropía y Astigmatismo</span></a></li>
-	           	<li><a href="#astigmatismo"><i class="hidden-tablet icon-white icon-tint"></i><span class="hidden-phone"> Astigmatismo Mixto</span></a></li>
+	           	<li><a href="#astigmatismo"><i class="hidden-tablet icon-white icon-tint"></i><span class="hidden-phone"> Astigmatismo Mixto</span></a></li>-->
 
 			</ul>
 		</nav>
 	</div>
 	<!-- end: Main Menu--> 
 		<div class="offset2">
+			<br><br>
 			<section id="lasik">
 				<legend>Ajuste de Lasik</legend>
 				<div class="row">
 					<table class="span8">
+						<tbody>
+							<tr>
+								<th style="text-align:center;">Edad</th>
+								<th><input type="text" class="input-small" id="txtEdad"></th>
+								<th style="text-align:center;">Hiper</th>
+								<th><input type="text" class="input-small" id="txtHiper"></th>
+							</tr>
+							<tr>
+								<th style="text-align:center;">KH</th>
+								<th><input type="text" class="input-small" id="txtKH"></th>
+								<th style="text-align:center;">KV</th>
+								<th><input type="text" class="input-small" id="txtKV"></th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					<table class="span8">
 						<thead>
 							<tr>
-								<th></th>
 								<th style="text-align:center;">Esfera</th>
 								<th style="text-align:center;">Cilindro</th>
-								<th></th>
 								<th style="text-align:center;">Eje</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<th class="span2">Refracción</th>
 								<td style="text-align:center;"><input type="text" class="input-small" id="txtRefraccionEsfera"></td>
 								<td style="text-align:center;"><input type="text" class="input-small" id="txtRefraccionCilindro"></td>
-								<td>X</td>
 								<td style="text-align:center;"><input type="text" class="input-small" id="txtRefraccionEje"></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div class="row">
+					<table class="span8">
+						<tbody>
+							<tr>
+								<th style="text-align:right;">Anillo</th>
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtAnillo" disabled="disabled"></td>	
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal1" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal2" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal3" disabled="disabled"></td>							
+							</tr>
+							<tr>
+								<td></td>
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal4" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal5" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal6" disabled="disabled"></td>							
+							</tr>
+							<tr>
+								<td></td>
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal7" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal8" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9" disabled="disabled"></td>							
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10" disabled="disabled"></td>							
+								<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11" disabled="disabled"></td>							
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!--<div class="row">
 					<table class="span8">
 						<thead>
 							<tr>
@@ -55,7 +120,7 @@
 						</thead>
 						<tbody>
 							<tr>
-								<th class="span2">Queratometría</th>
+								<td class="span2">Queratometría</td>
 								<td style="text-align:center;"><input type="text" class="input-small" id="txtQueratometriaOD"></td>
 								<td style="text-align:center;"><input type="text" class="input-small" id="txtQueratometriaOI"></td>
 								<td>X</td>
@@ -364,12 +429,12 @@
 					</table>
 				</div>
 				</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-			</section>
+			</section>-->
 		</div>
 @stop
 
 
 @section('Javascript')
-	<script src="js/OperacionLaser.js"></script>
+	<script src="js/OperacionLaser2.js"></script>
 	
 @stop
