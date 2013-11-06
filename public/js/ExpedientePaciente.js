@@ -321,7 +321,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                     // Datos Ultima Consulata
                     var fechaUltimaConsulta = new Date(elemento.updated_at);
                     $('<li><b>Nombre:<b></li><li>'+elemento.Nombre+'</li><li><b>Edad:<b></li><li>'+
-                        elemento.FechaNacimiento+'</li><li><b>Fecha de Ultima Visita:<b></li><li>'+fechaUltimaConsulta.getDate()+'/'+meses[(fechaUltimaConsulta.getMonth() + 1 )]+'/'+fechaUltimaConsulta.getFullYear()+'</li>').appendTo(contenidoUltimaConsulta);
+                        elemento.Edad+'</li><li><b>Fecha de Ultima Visita:<b></li><li>'+fechaUltimaConsulta.getDate()+'/'+meses[(fechaUltimaConsulta.getMonth() + 1 )]+'/'+fechaUltimaConsulta.getFullYear()+'</li>').appendTo(contenidoUltimaConsulta);
 
             		// Padecimiento Paciente
                     if(response.Padecimiento[0]){

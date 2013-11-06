@@ -155,11 +155,7 @@ class ExpedientePacienteController extends BaseController{
 				"colonia" => Input::get("colonia"),
 				"campo" => Input::get("campo"),
 				"ciudad" => Input::get("ciudad"),
-<<<<<<< HEAD
 				"edad" => Input::get("edad"),
-=======
-				"fechanacimiento" => Input::get("fechanacimiento"),
->>>>>>> cosas
 				"sexo" => Input::get("Sexo"),
 				"ocupacion" => Input::get("ocupacion"),
 				"telefono" => Input::get("telefono"),
