@@ -85,6 +85,7 @@
 		<span>Observaciones:</span> {{ $lentesPaciente[0]->Observaciones }}
 	</div>
 	<div class="boton">
-		<span><a href="#" class="btn btn-primary" onclick="window.print();"><i class="icon-print icon-white"></i> Imprimir</a></span>
+		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
+		<button id="btnRegresar" name="btnRegresar" onclick="location.href='.././'" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
 	</div>
 @stop

@@ -138,10 +138,11 @@ class ExpedientePacienteController extends BaseController{
 			$certificado = DB::table('Certificado')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
 			$resumenClinico = DB::table('ResumenClinico')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
 			$hospitalizacion = DB::table('Hospitalizacion')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$bajaVision = DB::table('BajaVision')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
 			return Response::json(array('Paciente'=>$datosPaciente,'Padecimiento'=>$padecimientoPaciente,'AgudezaVisual' => $agudezaVisual, 'Biomicroscopia'=>$biomicroscopiaIris,
 										'FondoRetina'=>$fondoRetina, 'Gonioscopia'=>$gonioscopia, 'Movilidad'=>$movilidad, 'Refraccion'=>$refraccion, 'Diagnostico'=>$diagnostico,
 										'Tratamiento' => $tratamiento, 'Receta'=> $receta, 'Lentes' => $lentes, 'Certificado'=> $certificado, 'ResumenClinico'=> $resumenClinico,
-										'Hospitalizacion'=>$hospitalizacion));
+										'Hospitalizacion'=>$hospitalizacion, 'BajaVision'=>$bajaVision));
 		}
 	}
 

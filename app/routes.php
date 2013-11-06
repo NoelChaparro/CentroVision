@@ -40,3 +40,4 @@ Route::post('eliminarImagenes','ExpedientePacienteController@eliminarImagenes');
 //Ruta para el programa de baja vision
 Route::get('BajaVision','BajaVisionController@bajaVision');
 Route::post('guardarBajaVision','BajaVisionController@guardarBajaVision');
+Route::get('imprimirBajaVision/{idPaciente?}','BajaVisionController@imprimirBajaVision')->where('idPaciente','[0-9]+');

@@ -334,7 +334,7 @@
 				<div class="span6">
 					<div class="control-group">
 				  	<div class="controls">
-				  		{{ Form::text('MmhgD','',array('class' => 'input-mini')) }}
+				  		{{ Form::text('MmhgD','',array('class' => 'input-mini','id' => 'MmhgD')) }}
 				  		mmHg
 				  	</div>
 				</div>
@@ -342,7 +342,7 @@
 				<div class="span6">
 					<div class="control-group">
 				  	<div class="controls">
-				  		{{ Form::text('MmhgI','',array('class' => 'input-mini')) }}
+				  		{{ Form::text('MmhgI','',array('class' => 'input-mini','id' => 'MmhgI')) }}
 				  		mmHg
 				  	</div>
 				</div>
