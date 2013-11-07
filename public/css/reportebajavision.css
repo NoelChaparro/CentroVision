@@ -1,0 +1,6 @@
+@media print{
+	footer, hr, .btn, .navbar{
+		margin: -20px;
+		visibility: hidden;
+	}
+}

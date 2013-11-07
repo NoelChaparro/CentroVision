@@ -4,6 +4,7 @@
     Baja Visión
 @stop
 @section('css')
+	<link rel="stylesheet" href="../css/reportebajavision.css"/>	
 @stop
 @section('Contenido')
 	<center>
