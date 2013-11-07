@@ -31,7 +31,7 @@ function inicio() //Inicio del documento
 		keyup:CalculoLasik
 	});
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
-	
+	tablaBusquedaPacientesModal();
 }
 function CalculoLasik() // Funcion donde se calcula todo 
 {
@@ -272,6 +272,7 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
     });
 }
 function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
+	limpiarBuscarPacienteModal();
     var contenido = $('.tblBusquedaPacientesModal tbody');
 	$.ajax({
             data:  'idPaciente=' + idPaciente,
@@ -285,4 +286,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             	});
             }
     });
+}
+function limpiarBuscarPacienteModal(){ //Funcion que limpia la ventana modal de buscar paciente
+    $('.tblBusquedaPacientesModal tbody').html('');
+    $("#txtBuscarPaciente").val('');
 }
