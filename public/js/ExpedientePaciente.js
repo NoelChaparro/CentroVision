@@ -493,7 +493,11 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Resumen Clinico
                     if(response.ResumenClinico[0]){
-                        CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico+"<p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>"+elemento.Nombre+"</p>");
+                        if (response.ResumenClinico.length>0){ //Se compara para que no se repita muchas veces la parte de la firma
+                            CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico);
+                        }else{
+                            CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico+"<p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>"+elemento.Nombre+"</p>");
+                        }
                     }
 
                     //Hospitalización

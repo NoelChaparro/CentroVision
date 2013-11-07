@@ -5,6 +5,20 @@ class ExpedientePacienteController extends BaseController{
 		return View::make('expediente');
 	}
 
+	public function imprimirCertificado($idPaciente=null){ //Manda llamar la vista certificado para la impresion del reporte
+		$datosPaciente = '';
+		$agudezaVisual = '';
+		$refraccion = '';
+		$certificado = '';
+		if($idPaciente){
+			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();
+			$agudezaVisual = DB::table('AgudezaVisual')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$refraccion = DB::table('Refraccion')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$certificado = DB::table('Certificado')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+		}		
+		return View::make('certificado')->with('datosPaciente',$datosPaciente)->with('agudezaVisual',$agudezaVisual)->with('refraccion',$refraccion)->with('certificado',$certificado);
+	}
+
 	public function subirImagenes(){ //Funcion que permite subir las imagenes a una carpeta del proyecto
 		/*foreach ($_FILES["images"]["error"] as $key => $error) {
 		    if ($error == UPLOAD_ERR_OK) {
