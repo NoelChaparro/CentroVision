@@ -114,4 +114,8 @@
 		________________________________ <br>
 		Dr. Gerardo Contreras Herrera
 	</center>
+	<div class="boton">
+		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
+		<button id="btnRegresar" name="btnRegresar" onclick="location.href='.././'" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
+	</div>
 @stop

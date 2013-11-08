@@ -1,3 +1,8 @@
+@media print{
+	.boton{
+		display:none;
+	}
+}
 body {
 	background: #F5F5F5;
 	color: #333;
@@ -217,7 +222,7 @@ th{
 	text-align: center;
 }
 .logoppal img{
-	width:60%;
+	width:80%;
 }
 .nav-tabs.nav-stacked > li > a {
 	padding: 4% 10px 14px 2%;

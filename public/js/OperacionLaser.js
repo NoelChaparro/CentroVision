@@ -2,179 +2,292 @@ $(document).on("ready",inicio);
 
 function inicio() //Inicio del documento
 {
+	$("#txtEdad").on({
+	change:CalculoLasik,
+	keyup:CalculoLasik
+	});
+	$("#txtHiper").on({
+		change:CalculoLasik,
+		keyup:CalculoLasik
+	});
+	$("#txtKH").on({
+		change:CalculoLasik,
+		keyup:CalculoLasik
+	});
+	$("#txtKV").on({
+		change:CalculoLasik,
+		keyup:CalculoLasik
+	});
 	$("#txtRefraccionEsfera").on({
-		change:refraccionEsfera,
-		keydown:refraccionEsfera,
-		keyup:refraccionEsfera
+		change:CalculoLasik,
+		keyup:CalculoLasik
 	});
 	$("#txtRefraccionCilindro").on({
-		change:refraccionCilindro,
-		keydown:refraccionCilindro,
-		keyup:refraccionCilindro
+		change:CalculoLasik,
+		keyup:CalculoLasik
 	});
 	$("#txtRefraccionEje").on({
-		change:refraccionEje,
-		keydown:refraccionEje,
-		keyup:refraccionEje
+		change:CalculoLasik,
+		keyup:CalculoLasik
 	});
-	$("#txtQueratometriaOD,#txtQueratometriaOI").on({
-		change:promedioQueratometrias,
-		keydown:promedioQueratometrias,
-		keyup:promedioQueratometrias
-	});
-	$("#txtRefraccionEsfera2,#txtDistanciaVertex").on({
-		change:ajustePlanoEsfera,
-		keydown:ajustePlanoEsfera,
-		keyup:ajustePlanoEsfera
-	});
-	$("#txtRefraccionCilindro2").on({
-		change:ajustePlanoCilindro,
-		keydown:ajustePlanoCilindro,
-		keyup:ajustePlanoCilindro
-	});
-	$("#txtRefraccionEje2").on({
-		change:ajustePlanoEje,
-		keydown:ajustePlanoEje,
-		keyup:ajustePlanoEje
-	});
-	$("#txtPorcentajeAjusteLasik").on({
-		change:ajusteLasikEsfera,
-		keydown:ajusteLasikEsfera,
-		keyup:ajusteLasikEsfera
-	});
-	$("#txtQueratometriaOD2,#txtQueratometriaOI2").on({
-		change:promedioQueratometrias2,
-		keydown:promedioQueratometrias2,
-		keyup:promedioQueratometrias2
-	});
-	$("#txtCilindroPuro").on({
-		change:esferaAjustada,
-		keydown:esferaAjustada,
-		keyup:esferaAjustada
-	});
-	$("#txtRefraccionEsfera3,#txtDistanciaVertex3").on({
-		change:tratamientoEsfera,
-		keydown:tratamientoEsfera,
-		keyup:tratamientoEsfera
-	});
-	$("#txtRefraccionCilindro3").on({
-		change:tratamientoCilindro,
-		keydown:tratamientoCilindro,
-		keyup:tratamientoCilindro
-	});
-	$("#txtRefraccionEje3").on({
-		change:tratamientoEje,
-		keydown:tratamientoEje,
-		keyup:tratamientoEje
-	});
-	$("#txtQueratometriaOD3,#txtQueratometriaOI3").on({
-		change:queratometriaPromedio3,
-		keydown:queratometriaPromedio3,
-		keyup:queratometriaPromedio3
-	});
-	$("#txtRefraccionEsfera4,#txtRefraccionCilindro4").on({
-		change:trasponerEsfera,
-		keydown:trasponerEsfera,
-		keyup:trasponerEsfera
-	});
-	$("#txtRefraccionEje4").on({
-		change:trasponerEje4,
-		keydown:trasponerEje4,
-		keyup:trasponerEje4
-	});
-	$("#txtQueratometriasOD4,#txtQueratometriasOI4").on({
-		change:promedioQueratometrias4,
-		keydown:promedioQueratometrias4,
-		keyup:promedioQueratometrias4
-	});
-	activarMenu();
+	$("#btnBuscarPaciente").on("click",buscarPaciente);
+	tablaBusquedaPacientesModal();
 }
-var activarMenu = function (){
-	$(".menu_principal li:first-child").removeClass("active");
-	$(".menu_principal li:eq(1)").addClass("active");
-}
-function promedioQueratometrias4(){
-	$("#txtQueratometriasPromedio4").val((parseFloat($("#txtQueratometriasOD4").val()) + parseFloat($("#txtQueratometriasOI4").val()))/2);
-}
-function trasponerEje4(){
-	if(parseFloat($("#txtRefraccionEje4").val()) > 90){
-		$("#txtTransponerEje4").val(parseFloat($("#txtRefraccionEje4").val()) - 90);
-	}else{
-		$("#txtTransponerEje4").val(parseFloat($("#txtRefraccionEje4").val()) + 90);
-	}
-	$("#txtCilindroHipermetropicoEje").val($("#txtTransponerEje4").val());
-	$("#txtCilindroMiopicoEje").val($("#txtRefraccionEje4").val());
-}
-function trasponerEsfera(){
-	$("#txtTransponerEsfera4").val(parseFloat($("#txtRefraccionEsfera4").val()) + parseFloat($("#txtRefraccionCilindro4").val()));
-	$("#txtTransponerCilindro4").val(parseFloat($("#txtRefraccionCilindro4").val()) * -1);
+function CalculoLasik() // Funcion donde se calcula todo 
+{
+	var Edad = $("#txtEdad").val();
+	var Hiper = parseFloat($("#txtHiper").val());  
+	var KH = parseFloat($("#txtKH").val());
+	var KV = parseFloat($("#txtKV").val());
+	var Esfera = parseFloat($("#txtRefraccionEsfera").val());
+	var Cilindro = parseFloat($("#txtRefraccionCilindro").val());
+	var Eje = parseFloat($("#txtRefraccionEje").val());
+	var B5 =2*(KH*KV)/(KH+KV);
+	var F3 = F6+Cilindro;
+	var F4 = F6*G6;
+	var F5 = Esfera+Cilindro;
+	var F6 = 0;
+	var F7 = Esfera+(Cilindro/2);
+	var G2 = 0;
+	var G6 = 0;
+	var G7 = 0;
+	var G8 = 0;
+	var G9 = 0;
+	var G10 = 0;
+	var H2 = Eje+90;
+	var K1 = (Cilindro/(1-(0.012*Cilindro)));
+	var L1 = K1+(K1*0.2)+0.001;
+		
+		if (Cilindro <= -4){
+			F6=Esfera+(Math.abs(Cilindro)*0.15);
+		}else{
+			F6=Esfera;
+		}
+		
+		if (H2 >= 180){
+			G2=H2-180;
+		}else{
+			G2=H2;
+		}
+		
+		if (F6<=0){
+			G10=0.75;
+		}
 
-	$("#txtCilindroHipermetropicoPoder").val(parseFloat($("#txtTransponerCilindro4").val()) + parseFloat($("#txtTransponerEsfera4").val()));
-	$("#txtCilindroMiopicoPoder").val($("#txtTransponerEsfera4").val());
-}
+		if (F6>-4){
+			G7 = 0.85;
+			G8 = 0.80;
+			G9 = 0.78;
+			}else if(F6<=-4 && F6 >-8){
+				G7 = 0.80;
+				G8 = 0.78;
+				G9 = 0.76;
+				}else{
+					G7 = 0.75;
+					G8 = 0.76;
+					G9 = 0.76;
+				}
 
-function queratometriaPromedio3(){
-	$("#txtPromedio3").val((parseFloat($("#txtQueratometriaOD3").val()) + parseFloat($("#txtQueratometriaOI3").val())) / 2);
+		if (Edad<40){
+			G6=G7;
+		}else if(Edad>39 && Edad < 50){
+			G6=G8;
+		}else if(Edad>49 && Edad < 60){
+			G6=G9;
+		}else{
+			G6=G10;
+		}
+		
+		var F4 = F6*G6;
+		var J2 = 0;
+		var J1 = ((F4/(1-(0.012*F4)))/3)+0.001;
+		
+		if (L1>=J1){
+			J2=L1;
+		}else if ((L1/2)>=J1){
+			J2=L1/2;
+		}else if ((L1/3)>=J1){
+			J2=L1/3;
+		}else if ((L1/4)>=J1){
+			J2=L1/4;
+		}
+		
+		var K4 = 0;
+		var K5 = 0;
+		var K6 = 0;
+		
+		if (F5<=2){
+			K4=F5;
+			K5=F5*1.1;
+			K6=F5*1.17;
+		}else if(F5>2 && F5<=4){
+			K4=F5*1.1;
+			k5=F5*1.18;
+			K6=F5*1.23;
+		}else{
+			K4=F5*1.2;
+			K5=F5*1.25;
+			K6=F5*1.28;
+		}
+
+		var K3 = 0;
+		var L3 = 0;
+		var L4 = 0;
+		if (Edad<30){
+			K3=K4;
+			L3=F6*0.86;
+			L4=F6*0.96;
+		}else if (Edad>29 && Edad<40){
+			K3=K5;
+			L3=F6*0.9;
+			L4=F6*0.98;
+		}else if (Edad>39 && Edad<50){
+			K3=K6;
+			L3=F6*0.99;
+			L4=F6*0.99;
+		}else{
+			K3=F5*1.3;
+			L3=F6*1.04;
+			L4=F6;
+		}
+		var B6 = 0;
+		if (B5>46){
+			B6=1;
+		}else if (B5>38 && B5<=43){
+			B6=-1;
+		}
+		$("#txtAnillo").val(B6);
+
+		var B7 = 0;
+		var C7 = 0;
+		if (F6<=0 && F6>-6 && Cilindro<=0){
+			B7=F4;
+			C7=Cilindro;
+		}else if (F6<=-6){
+			B7=J1;
+			C7=J2;
+		}else if (F6>0 && (Cilindro*-1)>=F6){
+			B7=0;
+			C7=F6;
+		}else if ((F6>0) && ((Cilindro*-1)<F6) && (Hiper==1)){
+			B7=K3;
+			C7=Cilindro*-1;
+		}else if ((F6>0) && ((Cilindro*-1)<F6) && (Hiper==2)){
+			B7=L3;
+			C7=Cilindro*-1;
+		}else if ((F6>0) && ((Cilindro*-1)<F6) && (Hiper==3)){
+			B7=L4;
+			C7=Cilindro*-1;
+		}
+		$("#txtVal1").val(B7.toFixed(2));
+		$("#txtVal2").val(C7.toFixed(2));
+
+		var D7 = 0;
+		if (B7<0 || B7==J1){
+			D7=Eje;
+		}else{
+			D7=G2;
+		}
+		$("#txtVal3").val(D7.toFixed(2));
+
+		var B8 = 0;
+		if (B7==J1){
+			B8=J1;
+		}
+		$("#txtVal4").val(B8.toFixed(2));
+		$("#txtVal7").val(B8.toFixed(2));
+
+		var C8 = 0;
+		if (C7==F6){
+			C8=F3;
+		}else if ((C7==(L1/2)) || (C7==(L1/3)) || (C7==(L1/4)) ){
+			C8=J2;
+		}
+		$("#txtVal5").val(C8.toFixed(2));
+
+		var D8 = 0;
+		if (C7==D8 || F6<=-6){
+			D8=Eje;
+		}
+		$("#txtVal6").val(D8.toFixed(2));
+
+		var C9 = 0;
+		if ((C7==(L1/3)) || (C7==(L1/4))){
+			C9=J2;
+		}
+		$("#txtVal8").val(C9.toFixed(2));
+
+		var C10 = 0;
+		if ((B7==(L1/4))){
+			C10=J2;
+		}
+		$("#txtVal10").val(C10.toFixed(2));
+		
+		var D10 = 0;
+		var D9 = 0;
+		if (C9==J2){
+			D10=Eje;
+			D9=Eje;
+		} 
+		$("#txtVal9").val(D9.toFixed(2));
+		$("#txtVal11").val(D10.toFixed(2));
+	console.log(J2);
 }
-function tratamientoEje(){
-	$("#txtTratamientoEje3").val($("#txtRefraccionEje3").val());
+function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla
+	var contenido = $('.tblBusquedaPacientesModal tbody');
+    $.ajax({
+            data:  'buscarPaciente=' + $('#txtBuscarPaciente').val(),
+            url:   'buscarPaciente',
+            type:  'post',
+            beforeSend: function () {
+            	contenido.html('Buscando...');
+            },
+            success:  function (response) {
+            	contenido.html('');
+            	$.each(response.Pacientes, function(i,elemento){
+            		$('<tr><td>'+elemento.IdPaciente+'</td><td>'+elemento.Nombre+'</td><td>'+elemento.Domicilio+'</td><td>'+elemento.Telefono+'</td></tr>').appendTo(contenido);
+            	});
+            }
+    });
+    return false;
 }
-function tratamientoCilindro(){
-	$("#txtTratamientoCilindro3").val($("#txtRefraccionCilindro3").val());
+function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la tabla de busqueda de los pacientes
+    $('#mdlBuscarPaciente').on('shown', function(){
+        $("#txtBuscarPaciente").focus();
+    });
+	$('.tblBusquedaPacientesModal tbody').on('mouseover', 'tr', function(event) { //Toma el evento mouseover en funcion live para que el tr seleccionado cambie de color al igual que el cursor
+		$(this).parent().parent().removeClass("table-striped");
+	    $(this).css({"color":"white","background-color":"#2E9FFC","cursor":"pointer"});
+    });
+
+    $('.tblBusquedaPacientesModal tbody').on('mouseout', 'tr', function(event) { // evento mouseout que elimina los estilos (background de todo el tr) y agrega el estilo sebra a la tabla
+		$(this).parent().parent().addClass("table-striped");
+        $(this).removeAttr("style");
+    });
+
+    $('.tblBusquedaPacientesModal tbody').on('click', 'tr', function(event) { // permite agregar a la tabla de personas principal el registro que se seleccione.              
+		idPaciente = $(this).children('td')[0].innerText;
+        buscarPacienteConId(idPaciente);
+        $(".close").click();
+    });
 }
-function tratamientoEsfera(){
-	$("#txtTratamientoEsfera3").val($("#txtRefraccionEsfera3").val() / (1-(0.001 * parseFloat($("#txtRefraccionEsfera3").val()) * parseFloat($("#txtDistanciaVertex3").val()))));
+function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
+	limpiarBuscarPacienteModal();
+    var contenido = $('.tblBusquedaPacientesModal tbody');
+	$.ajax({
+            data:  'idPaciente=' + idPaciente,
+            url:   'buscarPacientePorId',
+            type:  'post',
+            success:  function (response) {               
+            	$.each(response.Paciente, function(i,elemento){
+            		// Datos Generales del Paciente
+            		$("#nombre").val(elemento.Nombre);
+            		
+            	});
+            }
+    });
 }
-function esferaAjustada(){
-	$("#txtEsferaAjustada").val(parseFloat($("#txtAjusteCilindroEsfera").val()) - ( 0.125 * parseFloat($("#txtCilindroPuro").val())));
-}
-function promedioQueratometrias2(){
-	$("#txtPromedioQueratometrias2").val((parseFloat($("#txtQueratometriaOD2").val()) + parseFloat($("#txtQueratometriaOI2").val()))/2);
-}
-function ajusteLasikEsfera(){
-	$("#txtAjusteLasikEsfera").val((parseFloat($("#txtAjustePlanoEsfera").val()) * (1 - (parseFloat($("#txtPorcentajeAjusteLasik").val())/100))) * -1);
-	$("#txtAjusteCilindroEsfera").val($("#txtAjusteLasikEsfera").val() * -1);
-	$("#txtEsfera").val($("#txtAjusteCilindroEsfera").val());
-}
-function ajustePlanoEje(){
-	$("#txtAjustePlanoEje").val($("#txtRefraccionEje2").val());
-	$("#txtAjusteLasikEje").val($("#txtRefraccionEje2").val());
-	$("#txtAjusteCilindroEje").val($("#txtRefraccionEje2").val());
-	$("#txtEje").val($("#txtRefraccionEje2").val());
-}
-function ajustePlanoCilindro(){
-	$("#txtAjustePlanoCilindro").val($("#txtRefraccionCilindro2").val());
-	$("#txtAjusteLasikCilindro").val($("#txtRefraccionCilindro2").val());
-	$("#txtAjusteCilindroCilindro").val($("#txtRefraccionCilindro2").val() * 1.2);
-	$("#txtCilindro").val($("#txtAjusteCilindroCilindro").val());
-}
-function ajustePlanoEsfera(){
-	$("#txtAjustePlanoEsfera").val(parseFloat($("#txtRefraccionEsfera2").val()) / (1 - (0.001 * parseFloat($("#txtDistanciaVertex").val()) * parseFloat($("#txtRefraccionEsfera2").val()))));
-}
-function refraccionEsfera(){
-	$("#txtAjuste20Esfera").val($("#txtRefraccionEsfera").val()*0.8);
-	$("#txtAjuste19Esfera").val($("#txtRefraccionEsfera").val()*0.81);
-	$("#txtAjuste18Esfera").val($("#txtRefraccionEsfera").val()*0.82);
-	$("#txtAjuste17Esfera").val($("#txtRefraccionEsfera").val()*0.83);
-	$("#txtAjuste16Esfera").val($("#txtRefraccionEsfera").val()*0.84);
-	$("#txtAjuste15Esfera").val($("#txtRefraccionEsfera").val()*0.85);
-}
-function refraccionCilindro(){
-	$("#txtAjuste20Cilindro").val($("#txtRefraccionCilindro").val());
-	$("#txtAjuste19Cilindro").val($("#txtRefraccionCilindro").val());
-	$("#txtAjuste18Cilindro").val($("#txtRefraccionCilindro").val());
-	$("#txtAjuste17Cilindro").val($("#txtRefraccionCilindro").val());
-	$("#txtAjuste16Cilindro").val($("#txtRefraccionCilindro").val());
-	$("#txtAjuste15Cilindro").val($("#txtRefraccionCilindro").val());
-}
-function refraccionEje(){
-	$("#txtAjuste20Eje").val($("#txtRefraccionEje").val());
-	$("#txtAjuste19Eje").val($("#txtRefraccionEje").val());
-	$("#txtAjuste18Eje").val($("#txtRefraccionEje").val());
-	$("#txtAjuste17Eje").val($("#txtRefraccionEje").val());
-	$("#txtAjuste16Eje").val($("#txtRefraccionEje").val());
-	$("#txtAjuste15Eje").val($("#txtRefraccionEje").val());
-}
-function promedioQueratometrias(){
-	$("#txtPromedioQueratometrias").val((parseFloat($("#txtQueratometriaOD").val()) + parseFloat($("#txtQueratometriaOI").val()))/2);
+function limpiarBuscarPacienteModal(){ //Funcion que limpia la ventana modal de buscar paciente
+    $('.tblBusquedaPacientesModal tbody').html('');
+    $("#txtBuscarPaciente").val('');
 }

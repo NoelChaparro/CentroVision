@@ -1,15 +1,10 @@
-hr{
-	display:none;
-}
-span{
-	display:none;
-}
-footer{
+hr, span, footer, .boton{
 	display:none;
 }
 td{
 	padding-left:45px;
 }
+
 .fecha{
 	font-size: 16px;
 	margin-left: 500px;

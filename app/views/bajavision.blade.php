@@ -6,6 +6,7 @@
 @section('Contenido')
 {{ Form::open(array('action' => 'BajaVisionController@guardarBajaVision','class' => 'form-horizontal frmBajaVision')) }}
 	<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
+	</br></br>
 	<div class="row offset1">
 			<ul class="hover-block">
   				<li>

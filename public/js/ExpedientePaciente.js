@@ -29,6 +29,7 @@ function inicio() //Inicio del documento
     $("#btnnuevo").on("click",limpiarFormularioExpedientePaciente);
     $("#btnImprimirResumenClinico").on("click",imprimirResumenClinico);
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
+    $("#btnImprimirCertificado").on("click",ImprimirCertificado);
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
     $("#btnImprimirRecetaLentes").attr("disabled",true);
     $("#btnImprimirCertificado").attr("disabled",true);
@@ -156,6 +157,15 @@ function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrim
 function imprimirRecetaLentes(){ //Funcion para mandar a imprimir la Receta de Lentes
     if ($("#varIdPaciente").val() != ''){
         location.href= "RecetaLentes/"+$("#varIdPaciente").val();
+    }else{
+        alertify.log("No existe información para imprimir");
+    }
+    return false;
+}
+
+function ImprimirCertificado(){ //Funcion para mandar a imprimir el certificado
+    if ($("#varIdPaciente").val() != ''){
+        location.href= "Certificado/"+$("#varIdPaciente").val();
     }else{
         alertify.log("No existe información para imprimir");
     }
