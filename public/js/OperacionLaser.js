@@ -203,14 +203,14 @@ function CalculoLasik() // Funcion donde se calcula todo
 
 		var C8 = 0;
 		if (C7==F6){
-			C8=F3;
+			C8=F6+Cilindro;
 		}else if ((C7==(L1/2)) || (C7==(L1/3)) || (C7==(L1/4)) ){
 			C8=J2;
 		}
 		$("#txtVal5").val(C8.toFixed(2));
 
 		var D8 = 0;
-		if (C7==D8 || F6<=-6){
+		if (C7==F6 || F6<=-6){
 			D8=Eje;
 		}
 		$("#txtVal6").val(D8.toFixed(2));
@@ -235,7 +235,9 @@ function CalculoLasik() // Funcion donde se calcula todo
 		} 
 		$("#txtVal9").val(D9.toFixed(2));
 		$("#txtVal11").val(D10.toFixed(2));
-	console.log(J2);
+	console.log(C7);
+	console.log(F6);
+	console.log(C8);
 }
 function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla
 	var contenido = $('.tblBusquedaPacientesModal tbody');
