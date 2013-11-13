@@ -4,10 +4,6 @@ function inicio() //Inicio del documento
 {
 	activarMenu();
 	fechaActual();
-	$("#txtEdad").on({
-	change:CalculoLasikOjoDerecho,
-	keyup:CalculoLasikOjoDerecho
-	});
 	$("#txtHiper").on({
 		change:CalculoLasikOjoDerecho,
 		keyup:CalculoLasikOjoDerecho
