@@ -50,7 +50,6 @@
        		</br></br>
 		</section>
 			<br><br>
-			<section>
 				<legend>Ajuste de Lasik</legend>
 				<div class="row">
 					<table class="span8">
@@ -58,10 +57,13 @@
 							<tr>
 								<th style="text-align:center;">Nombre</th>
 								<th><input type="text" class="input-xxlarge" id="nombre" disabled="disabled"></th>
+								<th style="text-align:center;">Fecha</th>
+								<th><input type="text" class="input-small"  name="fecha" id="fecha" disabled="disabled"></th>
 							</tr>
 						</tbody>
 					</table>
 				</div>
+				<form action="" id="frmOperacionLaser">
 				<div class="row">
 					<table class="span8">
 						<tbody>
@@ -134,16 +136,18 @@
 						</tbody>
 					</table>
 				</div>
+				</form>
 		</div>
 		<!-- start: Button -->
-		<div class="control-group" id="btn_box">
-		  	<label class="control-label"></label>
-		  	<div class="controls">
-		    	<input value="Guardar" class="btn btn-large btn-primary" type="submit" id="btnGuardarExpedientePaciente">
-		    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelar">
-		  	</div>
-		</div>
-		<!-- end: button-->
+	<div class="control-group" id="btn_box">
+	  	<label class="control-label"></label>
+	  	<div class="controls">
+	    	<input value="Guardar" class="btn btn-large btn-primary" type="submit" id="btnGuardarOperacionLaser" disabled>
+			<input value="Imprimir" class="btn btn-large btn-danger" type="button" id="btnImprimirOperacionLaser" disabled>
+	    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelarOperacionLaser">
+	  	</div>
+	</div>
+	<!-- end: button-->
 @stop
 
 

@@ -2,6 +2,7 @@ $(document).on("ready",inicio);
 
 function inicio() //Inicio del documento
 {
+	fechaActual();
 	$("#txtEdad").on({
 	change:CalculoLasik,
 	keyup:CalculoLasik
@@ -32,6 +33,9 @@ function inicio() //Inicio del documento
 	});
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
 	tablaBusquedaPacientesModal();
+	$("#btnCancelarOperacionLaser").on("click",limpiarFormularioOperacionLaser);
+    $("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser);
+    $("#btnImprimirOperacionLaser").on("click",imprimirOperacionLaser);   
 }
 function CalculoLasik() // Funcion donde se calcula todo 
 {
@@ -282,7 +286,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             	$.each(response.Paciente, function(i,elemento){
             		// Datos Generales del Paciente
             		$("#nombre").val(elemento.Nombre);
-            		
+            		$("#btnGuardarOperacionLaser").attr("disabled",false);
+            		$("#btnImprimirOperacionLaser").attr("disabled",false);//mientras que guarda
             	});
             }
     });
@@ -290,4 +295,26 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 function limpiarBuscarPacienteModal(){ //Funcion que limpia la ventana modal de buscar paciente
     $('.tblBusquedaPacientesModal tbody').html('');
     $("#txtBuscarPaciente").val('');
+}
+var fechaActual = function () { //Funcion que obtiene la fecha actual y la pasa a la caja de texto fecha
+    var now = new Date();
+    var mes = now.getMonth() + 1;
+    if (mes<10){
+        var mes = "0" + mes;
+    }
+    $("#fecha").val(now.getDate()+'/'+mes+'/'+now.getFullYear());
+}
+var limpiarFormularioOperacionLaser = function(){ // Funcion para limpiar el formulario 
+	$('#nombre').val('');
+    $("#varIdPaciente").val('');
+    $("#frmOperacionLaser").each(function(){
+        this.reset();
+    });
+    fechaActual();
+    $("#Edad").focus();
+    $("#btnImprimirOperacionLaser").attr("disabled",true);
+    $("#btnGuardarOperacionLaser").attr("disabled",true);
+}
+var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir la informacion del formulario 
+    location.href= "imprimirOperacionLaser/"+$("#varIdPaciente").val();
 }
