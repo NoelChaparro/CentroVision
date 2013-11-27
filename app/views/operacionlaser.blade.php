@@ -205,8 +205,7 @@
 	<div class="control-group" id="btn_box">
 	  	<label class="control-label"></label>
 	  	<div class="controls">
-	    	<input value="Guardar" class="btn btn-large btn-primary" type="submit" id="btnGuardarOperacionLaser" disabled>
-			<input value="Imprimir" class="btn btn-large btn-danger" type="button" id="btnImprimirOperacionLaser" disabled>
+			<input value="Imprimir" class="btn btn-large btn-danger" type="button" id="btnImprimirOperacionLaser" onclick="window.print();" disabled>
 	    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelarOperacionLaser">
 	  	</div>
 	</div>

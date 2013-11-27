@@ -60,8 +60,7 @@ function inicio() //Inicio del documento
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
 	tablaBusquedaPacientesModal();
 	$("#btnCancelarOperacionLaser").on("click",limpiarFormularioOperacionLaser);
-    //$("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser);
-    $("#btnImprimirOperacionLaser").on("click",imprimirOperacionLaser);   
+    //$("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser); 
 }
 function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 {
