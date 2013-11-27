@@ -41,9 +41,15 @@ Route::filter('auth', function()
 
 Route::filter('auth.basic', function()
 {
+	//return Auth::basic("username");
 	return Auth::basic();
 });
 
+Route::filter('autorizar',function(){
+	if(!Auth::check()){
+		return Redirect::to('login');
+	}
+});
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

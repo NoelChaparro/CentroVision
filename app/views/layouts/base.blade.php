@@ -50,6 +50,7 @@
                             <li><a href="OperacionLaser">Operación Láser</a></li>
                             <li><a href="LentesContacto">Lentes de Contacto</a></li>
                             <li><a href="BajaVision">Baja Visión</a></li>
+                            <li>{{ HTML::link('logout', 'Salir (' . Auth::user()->username . ')') }}</li>
                             <!-- se comenta esta parte por se se requiere mas adelante
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
