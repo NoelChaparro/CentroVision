@@ -1,0 +1,14 @@
+body{
+	background-image:url("../img/atardecer.jpg");
+	background-size: 100%;
+}
+.ppal{
+	position: fixed;
+	top: 10%;
+	right: 20%;
+	background-color: white;
+	opacity: 0.85;
+	border-radius: 10px;
+	width: 250px;
+	text-align: center;
+}

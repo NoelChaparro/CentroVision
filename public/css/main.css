@@ -1,7 +1,17 @@
+@page{
+	size: letter;
+}
 @media print{
-	.boton{
+	footer, hr, strong, .btn, .navbar, #lasik{
 		display:none;
 	}
+	td{
+		padding-left: 8px;
+	}
+	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+		display:inline !important;
+	}
+	
 }
 body {
 	background: #F5F5F5;

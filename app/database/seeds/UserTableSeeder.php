@@ -8,8 +8,8 @@ class UserTableSeeder extends Seeder {
     	DB::table('users')->delete();
 
     	User::create(array(
-    		'username' => 'noel',
-    		'password' => Hash::make('noel')
+    		'username' => 'pepe',
+    		'password' => Hash::make('pepe')
     	));
 
         // Uncomment the below to run the seeder

@@ -4,6 +4,7 @@ function inicio() //Inicio del documento
 {
 	activarMenu();
 	fechaActual();
+	$("#txtHiper").val(1);
 	$("#txtHiper").on({
 		change:CalculoLasikOjoDerecho,
 		keyup:CalculoLasikOjoDerecho
@@ -512,7 +513,18 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             	$.each(response.Paciente, function(i,elemento){
             		// Datos Generales del Paciente
             		$("#nombre").val(elemento.Nombre);
+            		$("#names").val(elemento.Nombre);
             		$("#txtEdad").val(elemento.Edad);
+            		$("#telefono").val(elemento.Telefono);
+            		// Refraccion
+                    if(response.Refraccion[0]){
+                        $("#RefraccionSphOD").val(response.Refraccion[0].RefraccionSphOD);
+                        $("#RefraccionCylOD").val(response.Refraccion[0].RefraccionCylOD);
+                        $("#RefraccionEjeOD").val(response.Refraccion[0].RefraccionEjeOD);
+                        $("#RefraccionSphOI").val(response.Refraccion[0].RefraccionSphOI);
+                        $("#RefraccionCylOI").val(response.Refraccion[0].RefraccionCylOI);
+                        $("#RefraccionEjeOI").val(response.Refraccion[0].RefraccionEjeOI);
+                    }
             		$("#btnGuardarOperacionLaser").attr("disabled",false);
             		$("#btnImprimirOperacionLaser").attr("disabled",false);//mientras que guarda
             	});
