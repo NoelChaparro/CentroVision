@@ -63,7 +63,7 @@ class ExpedientePacienteController extends BaseController{
     					break;
     				case 'tmp_name':
     					if (move_uploaded_file($valor[$x], $nombreImagen)){
-    						crearImagen($nombreImagen, 600, 'imagenes/');
+    						crearImagen($nombreImagen, 800, 'imagenes/');
 							crearImagen($nombreImagen, 100, 'imagenes/thumbs/');
 							unlink($nombreImagen);
     					}

@@ -464,7 +464,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                     //Receta
                     if(response.Receta[0]){
                         CKEDITOR.instances['Receta'].setData(response.Receta[0].Receta);
-                        $("#btnImprimirCertificado").attr("disabled",false);
+                    }else{
+                        CKEDITOR.instances['Receta'].setData('<b>Nombre: </b>' + elemento.Nombre + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Fecha: </b>' + f.getDate() + " de " + meses[f.getMonth()+1] + " de " + f.getFullYear() + "<p></p><p></p><p></p><p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>Dr. Gerardo Contreras Herrera</p>");
                     }
 
                     //Lentes
@@ -499,15 +500,14 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                         $("#PercepcionCromatica").val(response.Certificado[0].PercepcionCromatica);
                         $("#DiagnosticoCertificado").val(response.Certificado[0].Diagnostico);
                         $("#TratamientoCertificado").val(response.Certificado[0].Tratamiento);
+                        $("#btnImprimirCertificado").attr("disabled",false);
                     }
 
                     //Resumen Clinico
                     if(response.ResumenClinico[0]){
-                        if (response.ResumenClinico.length>0){ //Se compara para que no se repita muchas veces la parte de la firma
-                            CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico);
-                        }else{
-                            CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico+"<p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>"+elemento.Nombre+"</p>");
-                        }
+                        CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico);
+                    }else{
+                        CKEDITOR.instances['ResumenClinico'].setData("<p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>"+elemento.Nombre+"</p>");
                     }
 
                     //Hospitalización
@@ -519,7 +519,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                     CKEDITOR.instances['CirugiaOcularExtraocular'].setData("<p style='text-align: center;'><span style='font-size:12px;'><b>CONSENTIMIENTO INFORMADO DE CIRUGIA OCULAR Y EXTRAOCULAR</b></span></p><p style='text-align:justify;'><span style='font-size:12px;'><b>Paciente:</b> " + elemento.Nombre + " Autorizo al Cirujano Oftalmólogo Dr. Jesus Gerardo Contreras Herrera para que efectué las intervenciones quirúrjicas que sean necesarias para aliviar o curar mi padecimiento de: " + txtConcentimientoCirugiaOcularExtraocular+"</span></p>");
 
                     //Consentimiento Medicamentos Intravitreos
-                    CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData("<p style='text-align: center;'><b>CARTA DE CONSENTIMIENTO INFORMADO PARA APLICACIÓN DE MEDICAMENTOS INTRAVITREOS</b></p><p>Fecha: "+ f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() +"</p><p>Responsable Legal del Paciente:</p><p>Nombre del Paciente: "+ elemento.Nombre  + txtConcentimientoMedicamentoIntravitreos);
+                    CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData("<p style='text-align: center;'><b>CARTA DE CONSENTIMIENTO INFORMADO PARA APLICACIÓN DE MEDICAMENTOS INTRAVITREOS</b></p><p>Fecha: "+ f.getDate() + " de " + meses[f.getMonth()+1] + " de " + f.getFullYear() +"</p><p>Responsable Legal del Paciente:</p><p>Nombre del Paciente: "+ elemento.Nombre  + txtConcentimientoMedicamentoIntravitreos);
             	});
             }
     });
