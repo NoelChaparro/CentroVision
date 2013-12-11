@@ -61,6 +61,7 @@ function inicio() //Inicio del documento
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
 	tablaBusquedaPacientesModal();
 	$("#btnCancelarOperacionLaser").on("click",limpiarFormularioOperacionLaser);
+	$("#btnImprimirOperacionLaser").on("click",imprimirOperacionLaser);
     //$("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser); 
 }
 function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
@@ -516,6 +517,14 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
             		$("#names").val(elemento.Nombre);
             		$("#txtEdad").val(elemento.Edad);
             		$("#telefono").val(elemento.Telefono);
+            		if (elemento.Sexo == 'M'){
+  						$('#rsexo').text('Masculino');
+				  	}else{
+				  		$('#rsexo').text('Femenino');
+				  	}
+				  	$('#rprofesion').text(elemento.Ocupacion);
+				  	$('#rtelefono').text(elemento.Telefono);
+
             		// Refraccion
                     if(response.Refraccion[0]){
                         $("#RefraccionSphOD").val(response.Refraccion[0].RefraccionSphOD);
@@ -524,6 +533,11 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                         $("#RefraccionSphOI").val(response.Refraccion[0].RefraccionSphOI);
                         $("#RefraccionCylOI").val(response.Refraccion[0].RefraccionCylOI);
                         $("#RefraccionEjeOI").val(response.Refraccion[0].RefraccionEjeOI);
+                    }
+                    // Agudeza Visual
+                    if (response.AgudezaVisual[0]){
+                        $("#txtPOOD").val(response.AgudezaVisual[0].MmhgD);
+                        $("#txtPOOI").val(response.AgudezaVisual[0].MmhgI);
                     }
             		$("#btnGuardarOperacionLaser").attr("disabled",false);
             		$("#btnImprimirOperacionLaser").attr("disabled",false);//mientras que guarda
@@ -555,7 +569,82 @@ var limpiarFormularioOperacionLaser = function(){ // Funcion para limpiar el for
     $("#btnGuardarOperacionLaser").attr("disabled",true);
 }
 var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir la informacion del formulario 
-    location.href= "imprimirOperacionLaser/"+$("#varIdPaciente").val();
+	$('#rnombre').text($('#nombre').val());
+	$('#redad').text($('#txtEdad').val());
+	$('#rfecha').text($('#txtFechaProgramada').val());
+	$('#rhora').text($('#txtHora').val());
+	$('#rRefraccionSphOD').text($('#RefraccionSphOD').val());
+	$('#rRefraccionCylOD').text($('#RefraccionCylOD').val());
+	$('#rRefraccionEjeOD').text($('#RefraccionEjeOD').val());
+	$('#rtxtCCOD').text($('#txtCCOD').val());
+	$('#rRefraccionSphOI').text($('#RefraccionSphOI').val());
+	$('#rRefraccionCylOI').text($('#RefraccionCylOI').val());
+	$('#rRefraccionEjeOI').text($('#RefraccionEjeOI').val());
+	$('#rtxtCCOI').text($('#txtCCOI').val());
+	$('#rtxtEsferaOD2').text($('#txtEsferaOD2').val());
+	$('#rtxtCilindroOD2').text($('#txtCilindroOD2').val());
+	$('#rtxtEjeOD2').text($('#txtEjeOD2').val());
+	$('#rtxtEsferaOI2').text($('#txtEsferaOI2').val());
+	$('#rtxtCilindroOI2').text($('#txtCilindroOI2').val());
+	$('#rtxtEjeOI2').text($('#txtEjeOI2').val());
+	$('#rtxtQ1').text($('#txtQ1').val());
+	$('#rtxtQ2').text($('#txtQ2').val());
+	$('#rtxtQ3').text($('#txtQ3').val());
+	$('#rtxtQ4').text($('#txtQ4').val());
+	$('#rtxtQ5').text($('#txtQ5').val());
+	$('#rtxtQ6').text($('#txtQ6').val());
+	$('#rtxtQ7').text($('#txtQ7').val());
+	$('#rtxtQ8').text($('#txtQ8').val());
+	$('#rtxtHiper').text($('#txtHiper').val());
+	$('#rtextHiper2').text($('#txtHiper').val());
+	$('#rtxtKH').text($('#txtKH').val());
+	$('#rtxtKV').text($('#txtKV').val());
+	$('#rtxtRefraccionEsfera').text($('#txtRefraccionEsfera').val());
+	$('#rtxtRefraccionCilindro').text($('#txtRefraccionCilindro').val());
+	$('#rtxtRefraccionEje').text($('#txtRefraccionEje').val());
+	$('#rtxtAnillo').text($('#txtAnillo').val());
+	$('#rtxtVal1').text($('#txtVal1').val());
+	$('#rtxtVal2').text($('#txtVal2').val());
+	$('#rtxtVal3').text($('#txtVal3').val());
+	$('#rtxtVal4').text($('#txtVal4').val());
+	$('#rtxtVal5').text($('#txtVal5').val());
+	$('#rtxtVal6').text($('#txtVal6').val());
+	$('#rtxtVal7').text($('#txtVal7').val());
+	$('#rtxtVal8').text($('#txtVal8').val());
+	$('#rtxtVal9').text($('#txtVal9').val());
+	$('#rtxtVal10').text($('#txtVal10').val());
+	$('#rtxtVal11').text($('#txtVal11').val());
+	$('#rtxtKHI').text($('#txtKHI').val());
+	$('#rtxtKVI').text($('#txtKVI').val());
+	$('#rtxtRefraccionEsferaI').text($('#txtRefraccionEsferaI').val());
+	$('#rtxtRefraccionCilindroI').text($('#txtRefraccionCilindroI').val());
+	$('#rtxtRefraccionEjeI').text($('#txtRefraccionEjeI').val());
+	$('#rtxtAnilloI').text($('#txtAnilloI').val());
+	$('#rtxtVal1I').text($('#txtVal1I').val());
+	$('#rtxtVal2I').text($('#txtVal2I').val());
+	$('#rtxtVal3I').text($('#txtVal3I').val());
+	$('#rtxtVal4I').text($('#txtVal4I').val());
+	$('#rtxtVal5I').text($('#txtVal5I').val());
+	$('#rtxtVal6I').text($('#txtVal6I').val());
+	$('#rtxtVal7I').text($('#txtVal7I').val());
+	$('#rtxtVal8I').text($('#txtVal8I').val());
+	$('#rtxtVal9I').text($('#txtVal9I').val());
+	$('#rtxtVal10I').text($('#txtVal10I').val());
+	$('#rtxtVal11I').text($('#txtVal11I').val());
+	$('#rtxtAVOD').text($('#txtAVOD').val());
+	$('#rtxtAVOI').text($('#txtAVOI').val());
+	$('#rtxtPOOD').text($('#txtPOOD').val());
+	$('#rtxtPOOI').text($('#txtPOOI').val());
+	$('#rtxtpaqOD').text($('#txtpaqOD').val());
+	$('#rtxtpaqOI').text($('#txtpaqOI').val());
+	$('#rcornea').text($("input[name='cornea']:checked").val());
+	$('#rtcorneal').text($("input[name='tcorneal']:checked").val());
+	$('#rsegmento').text($("input[name='segmento']:checked").val());
+	$('#rtpupilar').text($("input[name='tpupilar']:checked").val());
+	$('#rcristalino').text($("input[name='cristalino']:checked").val());
+	$('#rtxFOBM').text($('#txFOBM').val());
+	$('#robservaciones').text($('#observaciones').val());
+	window.print();
 }
 var activarMenu = function (){
 	$(".menu_principal li:first-child").removeClass("active");

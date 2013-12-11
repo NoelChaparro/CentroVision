@@ -2,13 +2,21 @@
 	size: letter;
 }
 @media print{
-	footer, hr, strong, .btn, .navbar, #lasik{
+	footer, .btn, .navbar, #lasik{
 		display:none;
 	}
-	td{
+	/*input{
+		border: 0 none !important;
+        background: none repeat scroll 0 0 transparent !important;
+        outline: medium none !important;
+	}*/
+	/*td{
 		padding-left: 8px;
+	}*/
+	hr{
+		margin: 5px;
 	}
-	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+	.span {
 		display:inline !important;
 	}
 	
@@ -121,6 +129,11 @@ th{
 	text-decoration: none;
 	font-family: arial;
 	font-size: 9pt;
+}
+#observaciones{
+	resize:none;
+	width:50%;
+	height:200px;
 }
 #tab {
 	position: fixed;
