@@ -260,16 +260,15 @@ function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 			D10=Eje;
 			D9=Eje;
 		} 
+		var total = B7+B8+B8;
+		$("#txtValt").val(total.toFixed(2));
 		$("#txtVal9").val(D9.toFixed(2));
 		$("#txtVal11").val(D10.toFixed(2));
-	console.log(C7);
-	console.log(F6);
-	console.log(C8);
 }
 function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 {
-	var Edad = $("#txtEdadI").val();
-	var Hiper = parseFloat($("#txtHiperI").val());  
+	var Edad = $("#txtEdad").val();
+	var Hiper = parseFloat($("#txtHiper").val());  
 	var KH = parseFloat($("#txtKHI").val());
 	var KV = parseFloat($("#txtKVI").val());
 	var Esfera = parseFloat($("#txtRefraccionEsferaI").val());
@@ -462,6 +461,8 @@ function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 			D10=Eje;
 			D9=Eje;
 		} 
+		var total = B7+B8+B8;
+		$("#txtValtI").val(total.toFixed(2));
 		$("#txtVal9I").val(D9.toFixed(2));
 		$("#txtVal11I").val(D10.toFixed(2));
 }
@@ -644,6 +645,8 @@ var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir
 	$('#rcristalino').text($("input[name='cristalino']:checked").val());
 	$('#rtxFOBM').text($('#txFOBM').val());
 	$('#robservaciones').text($('#observaciones').val());
+	$("#rtxtValt").text($('#txtValt').val());
+	$("#rtxtValtI").text($('#txtValtI').val());
 	window.print();
 }
 var activarMenu = function (){

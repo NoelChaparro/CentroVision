@@ -21,6 +21,12 @@
 	}
 	
 }
+@media screen{
+	.reporte{
+		display:none;
+	}
+
+}
 body {
 	background: #F5F5F5;
 	color: #333;
@@ -246,6 +252,11 @@ th{
 }
 .logoppal img{
 	width:80%;
+}
+.flotante{
+	position:absolute;
+	right:60px;
+	top:16px;
 }
 .nav-tabs.nav-stacked > li > a {
 	padding: 4% 10px 14px 2%;

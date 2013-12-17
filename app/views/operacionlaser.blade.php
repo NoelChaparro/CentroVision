@@ -147,8 +147,8 @@
 											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9" disabled="disabled"></td>							
 										</tr>
 										<tr>
-											<td></td>
-											<td></td>
+											<td>Total:</td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtValt" disabled="disabled"></td>							
 											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10" disabled="disabled"></td>							
 											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11" disabled="disabled"></td>							
 										</tr>
@@ -219,8 +219,8 @@
 											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9I" disabled="disabled"></td>							
 										</tr>
 										<tr>
-											<td></td>
-											<td></td>
+											<td>Total:</td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtValtI" disabled="disabled"></td>							
 											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10I" disabled="disabled"></td>							
 											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11I" disabled="disabled"></td>							
 										</tr>
@@ -249,7 +249,7 @@
 							<table class="span6">
 								<tbody>
 									<tr>
-										<th colspan="4">REVISION NO CICLOPLEJICA:</th>
+										<th colspan="4">REFRACCION NO CICLOPLEJICA:</th>
 									</tr>
 									<tr>
 										<th>Refraccion:</th>
@@ -280,7 +280,7 @@
 							<table class="span6">
 								<tbody>
 									<tr>
-										<th colspan="4">REVISION CICLOPLEJICA:</th>
+										<th colspan="4">REFRACCION CICLOPLEJICA:</th>
 									</tr>
 									<tr>
 										<th>Refraccion:</th>
@@ -426,12 +426,12 @@
 	<div class="control-group" id="btn_box">
 	  	<label class="control-label"></label>
 	  	<div class="controls">
-	  		<input value="Imprimir" class="btn btn-large btn-danger" type="button" id="btnImprimirOperacionLaser" disabled>
+	  		<input value="Imprimir" class="btn btn-large btn-info" type="button" id="btnImprimirOperacionLaser" disabled>
 	    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelarOperacionLaser">
 	  	</div>
 	</div>
 	<!-- end: button-->
-	<div class="container">
+	<div class="reporte">
 		<div class="row">
 			<!--<img class="pull-right" src="logo" alt="">-->
 			<img class="pull-right flotante" src="img/logo.jpg" alt="" width="80">
@@ -480,10 +480,10 @@
 		<div class="row">
 			<table>
 				<tr>
-					<td><strong>REVISION NO CICLOPLEJICA:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td><strong>REFRACCION NO CICLOPLEJICA:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					<td></td>
 					<td></td>
-					<td><strong>REVISION CICLOPLEJICA:</strong></td>
+					<td><strong>REFRACCION CICLOPLEJICA:</strong></td>
 				</tr>
 				<tr>
 					<td>
@@ -693,27 +693,27 @@
 					</tr>
 					<tr>
 						<td><span></span></td>
-						<td><span class="text-center"><span id="rtxtVal1"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal2"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal3"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal1"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal2"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal3"></span></span></td>
 					</tr>
 					<tr>
 						<td><span></span></td>
-						<td><span class="text-center"><span id="rtxtVal4"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal5"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal6"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal4"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal5"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal6"></span></span></td>
 					</tr>
 					<tr>
 						<td><span></span></td>
-						<td><span class="text-center"><span id="rtxtVal7"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal8"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal9"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal7"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal8"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal9"></span></span></td>
 					</tr>
 					<tr>
-						<td><span></span></td>
-						<td><span></span></td>
-						<td><span class="text-center"><span id="rtxtVal10"></span></span></td>
-						<td><span class="text-center"><span id="rtxtVal11"></span></span></td>
+						<th><span>Total:</span></th>
+						<td class="text-center"><span><span id="rtxtValt"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal10"></span></span></td>
+						<td class="text-center"><span><span id="rtxtVal11"></span></span></td>
 					</tr>
 				</table>
 				</td>
@@ -759,8 +759,8 @@
 						<td class="text-center"><span><span id="rtxtVal9I"></span></span></td>
 					</tr>
 					<tr>
-						<td><span></span></td>
-						<td><span></span></td>
+						<th><span>Total:</span></th>
+						<td class="text-center"><span><span id="rtxtValtI"><span></span></td>
 						<td class="text-center"><span><span id="rtxtVal10I"></span></span></td>
 						<td class="text-center"><span><span id="rtxtVal11I"></span></span></td>
 					</tr>
