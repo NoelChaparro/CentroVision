@@ -33,6 +33,7 @@ function inicio() //Inicio del documento
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
     $("#btnImprimirRecetaLentes").attr("disabled",true);
     $("#btnImprimirCertificado").attr("disabled",true);
+    $("#btnImprimirExpedienteCompleto").on("click",imprimirExpedienteCompleto);
     $("#BtnVerBiomicroscopia").on("click",function(){
         verImagenes(1);
     });
@@ -100,6 +101,11 @@ function inicio() //Inicio del documento
     });
     /* ---------- Fancybox ----------*/
     $('.fancybox').fancybox();
+}
+
+var imprimirExpedienteCompleto = function(){ //Funcion que manda a pagina para imprimir todo el expediente del paciente
+    location.href= "ExpedienteCompleto/"+$("#varIdPaciente").val();
+    return false;
 }
 
 var mdlImagenes = function(imagenCatalogo){ //Funcion que permite definir el tipo de imagen a guardar en este caso Biomicroscopia
@@ -205,6 +211,9 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     $("#BtnVerBiomicroscopia").attr("disabled",true);
     $("#btnImagenesExpediente").attr("disabled",true);
     $("#btnVerImagenesExpediente").attr("disabled",true);
+    $("#btnImprimirExpedienteCompleto").attr("disabled",true);
+    //Se habilita el boton Guardar
+    $("#btnGuardarExpedientePaciente").attr("disabled",false);
     // Limpiar los contenedores de las imagenes
     $('#imagenesExpediente').html('');
     $('#imagenesBiomicroscopia').html('');
@@ -308,7 +317,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                 $("#BtnImgBiomicroscopia").attr("disabled",false);
                 $("#BtnVerBiomicroscopia").attr("disabled",false);
                 $("#btnImagenesExpediente").attr("disabled",false);
-                $("#btnVerImagenesExpediente").attr("disabled",false);                
+                $("#btnVerImagenesExpediente").attr("disabled",false); 
+                $("#btnImprimirExpedienteCompleto").attr("disabled",false);
             	$.each(response.Paciente, function(i,elemento){
             		// Datos Generales del Paciente
                     $("#varIdPaciente").val(idPaciente);
@@ -507,12 +517,14 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                     if(response.ResumenClinico[0]){
                         CKEDITOR.instances['ResumenClinico'].setData(response.ResumenClinico[0].ResumenClinico);
                     }else{
-                        CKEDITOR.instances['ResumenClinico'].setData("<p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>"+elemento.Nombre+"</p>");
+                        CKEDITOR.instances['ResumenClinico'].setData("<p></p><p></p><p></p><p></p><p style='text-align: center;'>_____________________________________________</p><p style='text-align: center;'>Dr. Gerardo Contreras Herrera</p>");
                     }
 
                     //Hospitalización
                     if(response.Hospitalizacion[0]){
                         CKEDITOR.instances['Orden'].setData(response.Hospitalizacion[0].Orden);
+                    }else{
+                        CKEDITOR.instances['Orden'].setData("<b>Clinica: </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Fecha: </b>" + f.getDate() + " de " + meses[f.getMonth()+1] + " de " + f.getFullYear());
                     }
 
                     //Consentimiento Cirugia Ocular/Extraocular

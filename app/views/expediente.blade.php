@@ -722,7 +722,7 @@
 			</div>
 			<div class="row">
 				<div class="control-group offset2">
-					{{ Form::label('ExoftalmometriaBase', 'Exoftalmometria Base: ', array('class' => 'control-label')) }}
+					{{ Form::label('ExoftalmometriaBase', 'Barra: ', array('class' => 'control-label')) }}
 					<div class="controls">
 						{{ Form::text('ExoftalmometriaBase','',array('class' => 'input-mini')) }}
 					</div>
@@ -752,8 +752,8 @@
 								<td><span>Sph</span></td>
 								<td><span>Cyl</span></td>
 								<td><span>Eje</span></td>
-								<td><span>Bifocal</span></td>
 								<td><span>Add</span></td>
+								<td><span>Bifocal</span></td>
 								<td><span>AV</span></td>
 								<td><span></span></td>
 							</tr>
@@ -777,12 +777,12 @@
 								</td>
 								<td>
 									<div class="control-group">
-										{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOD')) }}
+										{{ Form::text('RefraccionAddOD','',array('class' => 'input-mini', 'id' => 'RefraccionAddOD')) }}
 									</div>
 								</td>
 								<td>
 									<div class="control-group">
-										{{ Form::text('RefraccionAddOD','',array('class' => 'input-mini', 'id' => 'RefraccionAddOD')) }}
+										{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOD')) }}
 									</div>
 								</td>
 								<td>
@@ -810,12 +810,12 @@
 								</td>
 								<td>
 									<div class="control-group">
-										{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOI')) }}
+										{{ Form::text('RefraccionAddOI','',array('class' => 'input-mini', 'id' => 'RefraccionAddOI')) }}
 									</div>
 								</td>
 								<td>
 									<div class="control-group">
-										{{ Form::text('RefraccionAddOI','',array('class' => 'input-mini', 'id' => 'RefraccionAddOI')) }}
+										{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOI')) }}
 									</div>
 								</td>
 								<td>
@@ -838,9 +838,9 @@
 								<td><span>Sph</span></td>
 								<td><span>Cyl</span></td>								
 								<td><span>Eje</span></td>
-								<td><span>Bifocal</span></td>
+								<!--<td><span>Bifocal</span></td>
 								<td><span>Add</span></td>
-								<td><span>AV</span></td>
+								<td><span>AV</span></td>-->
 								<td><span></span></td>
 							</tr>
 						</thead>
@@ -861,6 +861,7 @@
 										{{ Form::text('EsquiascopiaEjeOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaEjeOD')) }}
 									</div>
 								</td>
+								<!--
 								<td>
 									<div class="control-group">
 										{{ Form::text('EsquiascopiaBifocalOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaBifocalOD')) }}
@@ -876,6 +877,7 @@
 										{{ Form::text('EsquiascopiaAVOD','',array('class' => 'input-mini', 'id' => 'EsquiascopiaAVOD')) }}
 									</div>
 								</td>
+								-->
 								<td><span>Ojo Derecho</span></td>
 							</tr>
 							<tr>
@@ -892,6 +894,7 @@
 										{{ Form::text('EsquiascopiaEjeOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaEjeOI')) }}
 									</div>
 								</td>
+								<!--
 								<td>
 									<div class="control-group">
 										{{ Form::text('EsquiascopiaBifocalOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaBifocalOI')) }}
@@ -907,6 +910,7 @@
 										{{ Form::text('EsquiascopiaAVOI','',array('class' => 'input-mini', 'id' => 'EsquiascopiaAVOI')) }}
 									</div>
 								</td>
+								-->
 								<td><span>Ojo Izquierdo</span></td>
 							</tr>
 						</tbody>
@@ -1323,6 +1327,7 @@
 		  	<label class="control-label"></label>
 		  	<div class="controls">
 		    	<input value="Guardar" class="btn btn-large btn-primary" type="submit" id="btnGuardarExpedientePaciente">
+		    	<button id="btnImprimirExpedienteCompleto" name="btnImprimirExpedienteCompleto" class="btn btn-large btn-info" disabled>Expediente Completo</button>
 		    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelar">
 		  	</div>
 		</div>

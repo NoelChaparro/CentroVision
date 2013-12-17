@@ -325,7 +325,7 @@
 	  	<label class="control-label"></label>
 	  	<div class="controls">
 	    	<input value="Guardar" class="btn btn-large btn-primary" type="submit" id="btnGuardarBajaVision" disabled>
-			<input value="Imprimir" class="btn btn-large btn-danger" type="button" id="btnImprimirBajaVision" disabled>
+			<input value="Imprimir" class="btn btn-large btn-info" type="button" id="btnImprimirBajaVision" disabled>
 	    	<input value="Cancelar" class="btn btn-large btn-danger" type="button" id="btnCancelarBajaVision">
 	  	</div>
 	</div>

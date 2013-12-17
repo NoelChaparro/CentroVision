@@ -190,7 +190,8 @@ class ExpedientePacienteController extends BaseController{
 			if ($validation -> fails()){
 
 			}else{
-
+				//Inicializamos id_paciente a 0
+				$id_paciente = 0;
 				if (Input::get("varIdPaciente")){
 					$affectedRows = DatosPacientes::where('IdPaciente', '=', Input::get("varIdPaciente"))->update($datosPacientes);
 					$id_paciente = Input::get("varIdPaciente");
@@ -224,7 +225,7 @@ class ExpedientePacienteController extends BaseController{
 					"MmhgI" => Input::get("MmhgI")
 				);
 				$agudezaVisual = new AgudezaVisual($agudezaVisualPaciente);
-				if ($agudezaVisualPaciente["AVSCOD"] || $agudezaVisualPaciente["CCD"] || $agudezaVisualPaciente["PuntoD"] || $agudezaVisualPaciente["AVSCOI"] || $agudezaVisualPaciente["CCI"] || $agudezaVisualPaciente["PuntoI"] || $agudezaVisualPaciente["TonometriaD5"] || $agudezaVisualPaciente["TonometriaD10"] || $agudezaVisualPaciente["TonometriaI5"] || $agudezaVisualPaciente["TonometriaI10"] || $agudezaVisualPaciente["ParpadoD"] || $agudezaVisualPaciente["ParpadoI"] || $agudezaVisualPaciente["MmhgD"] || $agudezaVisualPaciente["MmhgI"]){$agudezaVisual->save();}
+				if ($agudezaVisualPaciente["AVSCOD"] || $agudezaVisualPaciente["CCD"] || $agudezaVisualPaciente["PuntoD"] || $agudezaVisualPaciente["AVSCOI"] || $agudezaVisualPaciente["CCI"] || $agudezaVisualPaciente["PuntoI"] || $agudezaVisualPaciente["ParpadoD"] || $agudezaVisualPaciente["ParpadoI"] || $agudezaVisualPaciente["MmhgD"] || $agudezaVisualPaciente["MmhgI"]){$agudezaVisual->save();}
 
 				// Guardar en tabla Biomicroscopía
 				$biomicroscopiaPaciente = array(
@@ -312,20 +313,20 @@ class ExpedientePacienteController extends BaseController{
 					"EsquiascopiaSphOD" => Input::get("EsquiascopiaSphOD"),
 					"EsquiascopiaCylOD" => Input::get("EsquiascopiaCylOD"),
 					"EsquiascopiaEjeOD" => Input::get("EsquiascopiaEjeOD"),
-					"EsquiascopiaAddOD" => Input::get("EsquiascopiaAddOD"),
-					"EsquiascopiaBifocalOD" => Input::get("EsquiascopiaBifocalOD"),
-					"EsquiascopiaAVOD" => Input::get("EsquiascopiaAVOD"),
+					//"EsquiascopiaAddOD" => Input::get("EsquiascopiaAddOD"),
+					//"EsquiascopiaBifocalOD" => Input::get("EsquiascopiaBifocalOD"),
+					//"EsquiascopiaAVOD" => Input::get("EsquiascopiaAVOD"),
 					"EsquiascopiaSphOI" => Input::get("EsquiascopiaSphOI"),
 					"EsquiascopiaCylOI" => Input::get("EsquiascopiaCylOI"),
 					"EsquiascopiaEjeOI" => Input::get("EsquiascopiaEjeOI"),
-					"EsquiascopiaAddOI" => Input::get("EsquiascopiaAddOI"),
-					"EsquiascopiaBifocalOI" => Input::get("EsquiascopiaBifocalOI"),
-					"EsquiascopiaAVOI" => Input::get("EsquiascopiaAVOI"),
+					//"EsquiascopiaAddOI" => Input::get("EsquiascopiaAddOI"),
+					//"EsquiascopiaBifocalOI" => Input::get("EsquiascopiaBifocalOI"),
+					//"EsquiascopiaAVOI" => Input::get("EsquiascopiaAVOI"),
 					"QueratometriaOD" => Input::get("QueratometriaOD"),
 					"QueratometriaOI" => Input::get("QueratometriaOI")
 				);
 				$refraccion = new Refraccion($refraccionPaciente);
-				if ($refraccionPaciente["ExoftalmometriaOD"] || $refraccionPaciente["ExoftalmometriaOI"] || $refraccionPaciente["ExoftalmometriaBase"] || $refraccionPaciente["PaquimetriaOD"] || $refraccionPaciente["PaquimetriaOI"] || $refraccionPaciente["RefraccionSphOD"] || $refraccionPaciente["RefraccionCylOD"] || $refraccionPaciente["RefraccionEjeOD"] || $refraccionPaciente["RefraccionAddOD"] || $refraccionPaciente["RefraccionBifocalOD"] || $refraccionPaciente["RefraccionAVOD"] || $refraccionPaciente["RefraccionSphOI"] || $refraccionPaciente["RefraccionCylOI"] || $refraccionPaciente["RefraccionEjeOI"] || $refraccionPaciente["RefraccionAddOI"] || $refraccionPaciente["RefraccionBifocalOI"] || $refraccionPaciente["RefraccionAVOI"] || $refraccionPaciente["EsquiascopiaSphOD"] || $refraccionPaciente["EsquiascopiaCylOD"] || $refraccionPaciente["EsquiascopiaEjeOD"] || $refraccionPaciente["EsquiascopiaAddOD"] || $refraccionPaciente["EsquiascopiaBifocalOD"] || $refraccionPaciente["EsquiascopiaAVOD"] || $refraccionPaciente["EsquiascopiaSphOI"] || $refraccionPaciente["EsquiascopiaCylOI"] || $refraccionPaciente["EsquiascopiaEjeOI"] || $refraccionPaciente["EsquiascopiaAddOI"] || $refraccionPaciente["EsquiascopiaBifocalOI"] || $refraccionPaciente["EsquiascopiaAVOI"] || $refraccionPaciente["QueratometriaOD"] || $refraccionPaciente["QueratometriaOI"]){$refraccion->save();}
+				if ($refraccionPaciente["ExoftalmometriaOD"] || $refraccionPaciente["ExoftalmometriaOI"] || $refraccionPaciente["ExoftalmometriaBase"] || $refraccionPaciente["PaquimetriaOD"] || $refraccionPaciente["PaquimetriaOI"] || $refraccionPaciente["RefraccionSphOD"] || $refraccionPaciente["RefraccionCylOD"] || $refraccionPaciente["RefraccionEjeOD"] || $refraccionPaciente["RefraccionAddOD"] || $refraccionPaciente["RefraccionBifocalOD"] || $refraccionPaciente["RefraccionAVOD"] || $refraccionPaciente["RefraccionSphOI"] || $refraccionPaciente["RefraccionCylOI"] || $refraccionPaciente["RefraccionEjeOI"] || $refraccionPaciente["RefraccionAddOI"] || $refraccionPaciente["RefraccionBifocalOI"] || $refraccionPaciente["RefraccionAVOI"] || $refraccionPaciente["EsquiascopiaSphOD"] || $refraccionPaciente["EsquiascopiaCylOD"] || $refraccionPaciente["EsquiascopiaEjeOD"] || $refraccionPaciente["EsquiascopiaSphOI"] || $refraccionPaciente["EsquiascopiaCylOI"] || $refraccionPaciente["EsquiascopiaEjeOI"] || $refraccionPaciente["QueratometriaOD"] || $refraccionPaciente["QueratometriaOI"]){$refraccion->save();}
 
 				// Guardar en tabla Diagnostico
 				$diagnosticoPaciente = array(

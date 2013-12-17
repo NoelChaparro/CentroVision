@@ -16,9 +16,17 @@
 	<table class="table">
 		<tr>
 			<th>Nombre del Paciente:</th>
-			<td>{{ $datosPaciente[0]->Nombre }}</td>
+			<td>
+				@if ($datosPaciente)
+					{{ $datosPaciente[0]->Nombre }}
+				@endif
+			</td>
 			<th>Edad:</th>
-			<td>{{ $datosPaciente[0]->Edad }}</td>
+			<td>
+				@if ($datosPaciente)
+					{{ $datosPaciente[0]->Edad }}
+				@endif
+			</td>
 		</tr>
 		<tr>
 			<th>Fecha:</th>
@@ -33,41 +41,89 @@
 			<th style="text-align:center;" colspan="2">Historia Clínica Oftalmológica</th>
 		</tr>
 		<tr>
-			<td colspan="2"><b>Antecedentes:</b> {{ $padecimiento[0]->Antecedentes }}</td>
+			<td colspan="2"><b>Antecedentes:</b>
+				@if ($padecimiento)
+					{{ $padecimiento[0]->Antecedentes }}
+				@endif
+			</td>
 		</tr>
 		<tr>
-			<td>AV corregida (lejos) Ojo Derecho: {{ $agudezaVisual[0]->AVSCOD }}</td>
-			<td>AV corregida (lejos) Ojo Izquierdo: {{ $agudezaVisual[0]->AVSCOI }}</td>
+			<td>AV corregida (lejos) Ojo Derecho: 
+				@if ($agudezaVisual)
+					{{ $agudezaVisual[0]->AVSCOD }}
+				@endif
+			</td>
+			<td>AV corregida (lejos) Ojo Izquierdo: 
+				@if ($agudezaVisual)
+					{{ $agudezaVisual[0]->AVSCOI }}
+				@endif
+			</td>
 		</tr>
 		<tr>
-			<td>PIO OD: {{ $agudezaVisual[0]->MmhgD }}</td>
-			<td>PIO OI: {{ $agudezaVisual[0]->MmhgI }}</td>
+			<td>PIO OD: 
+				@if ($agudezaVisual)
+					{{ $agudezaVisual[0]->MmhgD }}
+				@endif
+			</td>
+			<td>PIO OI: 
+				@if ($agudezaVisual)
+					{{ $agudezaVisual[0]->MmhgI }}
+				@endif
+			</td>
 		</tr>
 		<tr>
-			<td>Requiere algún estudio: {{ $bajaVision[0]->RequiereAlgunEstudio }}</td>
-			<td>Requiere tomar medicamentos:{{ $bajaVision[0]->RequiereTomarMedicamento }}</td>
+			<td>Requiere algún estudio: 
+				@if ($bajaVision)
+					{{ $bajaVision[0]->RequiereAlgunEstudio }}
+				@endif
+			</td>
+			<td>Requiere tomar medicamentos:
+				@if ($bajaVision)
+					{{ $bajaVision[0]->RequiereTomarMedicamento }}
+				@endif
+			</td>
 		</tr>		
 	</table>
 
 	<table class="table">
 		<tr>
 			<td>Refraccion OD:</td>
-			<td>Sph: {{$refraccion[0]->RefraccionSphOD}} 
-				Cyl: {{$refraccion[0]->RefraccionCylOD}} 
-				Eje: {{$refraccion[0]->RefraccionEjeOD}} 
-				Bifocal: {{$refraccion[0]->RefraccionBifocalOD}} 
-				Add: {{$refraccion[0]->RefraccionAddOD}} 
-				AV: {{$refraccion[0]->RefraccionAVOD}}
+			<td>
+				@if ($refraccion)
+					Sph: {{$refraccion[0]->RefraccionSphOD}} 
+					Cyl: {{$refraccion[0]->RefraccionCylOD}} 
+					Eje: {{$refraccion[0]->RefraccionEjeOD}} 
+					Bifocal: {{$refraccion[0]->RefraccionBifocalOD}} 
+					Add: {{$refraccion[0]->RefraccionAddOD}} 
+					AV: {{$refraccion[0]->RefraccionAVOD}}
+				@else
+					Sph:
+					Cyl:
+					Eje:
+					Bifocal:
+					Add:
+					AV:					
+				@endif
 			</td>
 		</tr>
 		<tr>
 			<td>Refraccion OI:</td>
-			<td>Sph: {{$refraccion[0]->RefraccionSphOI}} 
-				Cyl: {{$refraccion[0]->RefraccionCylOI}} 
-				Eje: {{$refraccion[0]->RefraccionEjeOI}} 
-				Bifocal: {{$refraccion[0]->RefraccionBifocalOI}} 
-				Add: {{$refraccion[0]->RefraccionAddOI}} 
-				AV: {{$refraccion[0]->RefraccionAVOI}}
+			<td>
+				@if ($refraccion)
+					Sph: {{$refraccion[0]->RefraccionSphOI}} 
+					Cyl: {{$refraccion[0]->RefraccionCylOI}} 
+					Eje: {{$refraccion[0]->RefraccionEjeOI}} 
+					Bifocal: {{$refraccion[0]->RefraccionBifocalOI}} 
+					Add: {{$refraccion[0]->RefraccionAddOI}} 
+					AV: {{$refraccion[0]->RefraccionAVOI}}
+				@else
+					Sph:
+					Cyl:
+					Eje:
+					Bifocal:
+					Add:
+					AV:					
+				@endif				
 			</td>
 		</tr>		
 	</table>
@@ -77,12 +133,28 @@
 			<th style="text-align:center;" colspan="2">Exploración</th>
 		</tr>
 		<tr>
-			<td>Lámpara de Hendidura OD: {{$biomicroscopia[0]->CCIPCD}}</td>
-			<td>Lámpara de Hendidura OI: {{$biomicroscopia[0]->CCIPCI}}</td>
+			<td>Lámpara de Hendidura OD: 
+				@if ($biomicroscopia)
+					{{$biomicroscopia[0]->CCIPCD}}
+				@endif
+			</td>
+			<td>Lámpara de Hendidura OI: 
+				@if ($biomicroscopia)
+					{{$biomicroscopia[0]->CCIPCI}}
+				@endif
+			</td>
 		</tr>		
 		<tr>
-			<td>Fondo de Ojo OD: {{$fondo[0]->PMVRD}}</td>
-			<td>Fondo de Ojo OI: {{$fondo[0]->PMVRI}}</td>
+			<td>Fondo de Ojo OD: 
+				@if ($fondo)
+					{{$fondo[0]->PMVRD}}
+				@endif
+			</td>
+			<td>Fondo de Ojo OI: 
+				@if ($fondo)
+					{{$fondo[0]->PMVRI}}
+				@endif
+			</td>
 		</tr>		
 	</table>
 
@@ -95,7 +167,17 @@
 		</tr>
 	</table>
 	<div class="boton">
-		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
+		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
 		<button id="btnRegresar" name="btnRegresar" onclick="history.back()" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
 	</div>	
+@stop
+@section('Javascript')
+	<script>
+		$(document).on('ready',inicio);
+
+		function inicio(){
+			$(".menu_principal li:first-child").removeClass("active");
+			$(".menu_principal li:eq(3)").addClass("active");
+		}
+	</script>
 @stop
