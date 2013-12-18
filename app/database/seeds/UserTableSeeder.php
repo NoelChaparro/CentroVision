@@ -7,7 +7,7 @@ class UserTableSeeder extends Seeder {
     	// Uncomment the below to wipe the table clean before populating
     	DB::table('users')->delete();
 
-    	/*User::create(array(
+    	User::create(array(
     		'username' => 'noel',
     		'password' => Hash::make('noel')
     	));
@@ -15,7 +15,12 @@ class UserTableSeeder extends Seeder {
         User::create(array(
             'username' => 'gerardocontreras',
             'password' => Hash::make('centrovision')
-        ));*/
+        ));
+
+        User::create(array(
+            'username' => 'administracion',
+            'password' => Hash::make('administracioncv')
+        ));        
 
         // Uncomment the below to run the seeder
         // DB::table('user')->insert($user);

@@ -106,6 +106,42 @@ class ExpedientePacienteController extends BaseController{
 		return View::make('recetaLentes')->with('datosPaciente',$datosPaciente)->with('lentesPaciente',$lentesPaciente);
 	}
 
+	public function imprimirExpedientePaciente($idPaciente=null){ //manda a imprimir todo el expediente del paciente
+		$datosPaciente = '';
+		$padecimientoPaciente = '';
+		$agudezaVisual = '';
+		$biomicroscopiaIris = '';
+		$fondoRetina = '';
+		$gonioscopia = '';
+		$movilidad = '';
+		$refraccion = '';
+		$diagnostico = '';
+		$tratamiento = '';
+		$receta = '';
+		$lentes = '';
+		$certificado = '';
+		$resumenClinico = '';
+		$hospitalizacion = '';
+		if ($idPaciente){
+			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();
+			$padecimientoPaciente = DB::table('PadecimientoPacientes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$agudezaVisual = DB::table('AgudezaVisual')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$biomicroscopiaIris = DB::table('Biomicroscopia')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$fondoRetina = DB::table('Fondo')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$gonioscopia = DB::table('Gonioscopia')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$movilidad = DB::table('Movilidad')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$refraccion = DB::table('Refraccion')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$diagnostico = DB::table('Diagnostico')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$tratamiento = DB::table('Tratamiento')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$receta = DB::table('Receta')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$lentes = DB::table('Lentes')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$certificado = DB::table('Certificado')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$resumenClinico = DB::table('ResumenClinico')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();
+			$hospitalizacion = DB::table('Hospitalizacion')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->get();			
+		}
+		return View::make('expedientepaciente')->with('Paciente',$datosPaciente)->with('Padecimiento',$padecimientoPaciente)->with('AgudezaVisual',$agudezaVisual)->with('Biomicroscopia',$biomicroscopiaIris)->with('FondoRetina',$fondoRetina)->with('Gonioscopia',$gonioscopia)->with('Movilidad',$movilidad)->with('Refraccion',$refraccion)->with('Diagnostico',$diagnostico)->with('Tratamiento',$tratamiento)->with('Receta',$receta)->with('Lentes',$lentes)->with('Certificado',$certificado)->with('ResumenClinico',$resumenClinico)->with('Hospitalizacion',$hospitalizacion);
+	}
+
 	public function imprimirResumenClinico($idPaciente=null){ //Manda a imprimir los datos para el resumen clinico
 		$datosPaciente = '';
 		$edadPaciente = '';

@@ -30,6 +30,7 @@ Route::get('/', array('before' => 'autorizar','uses' => 'ExpedientePacienteContr
 Route::post('guardarExpediente', 'ExpedientePacienteController@guardarExpediente');
 Route::post('buscarPaciente', 'ExpedientePacienteController@buscarPaciente');
 Route::post('buscarPacientePorId','ExpedientePacienteController@buscarPacientePorId');
+ROUTE::get('ExpedienteCompleto/{idPaciente}',array('before' => 'autorizar','uses' => 'ExpedientePacienteController@imprimirExpedientePaciente'))->where('idPaciente','[0-9]');
 //Ruta para la impresion de documentacion del ExpedientePacienteController
 Route::get('ResumenClinico/{idPaciente?}',array('before' => 'autorizar','uses' => 'ExpedientePacienteController@imprimirResumenClinico'))->where('idPaciente','[0-9]+');
 Route::get('RecetaLentes/{idPaciente?}',array('before' => 'autorizar','uses' => 'ExpedientePacienteController@imprimirRecetaLentes'))->where('idPaciente','[0-9]+');
