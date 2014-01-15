@@ -81,154 +81,7 @@
 						</tbody>
 					</table>
 				</div>
-				</br></br>
-				<form action="" id="frmOperacionLaser">
-					<div class="row">
-						<div class="span6">
-							<div class="row">
-								<div class="span5">
-									<H4>Ojo Derecho</H4>
-								</div>
-							</div>
-							<div class="row">
-								<table class="span7">
-									<tbody>
-										<tr>
-											<th style="text-align:left;">Esfera</th>
-											<th></th>
-											<th style="text-align:left;">Cilindro</th>
-											<th></th>
-											<th style="text-align:left;">Eje</th>
-											<th></th>
-										</tr>
-										<tr>
-											<th><input type="text" class="input-small" id="txtRefraccionEsfera"></th>
-											<th></th>
-											<th><input type="text" class="input-small" id="txtRefraccionCilindro"></th>
-											<th></th>
-											<th><input type="text" class="input-small" id="txtRefraccionEje"></th>
-											<th></th>
-										</tr>
-										<tr>
-											<th></th>
-											<th style="text-align:center;">KH</th>
-											<th><input type="text" class="input-small" id="txtKH"></th>
-											<th style="text-align:center;">KV</th>
-											<th><input type="text" class="input-small" id="txtKV"></th>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="row">
-								<table class="span7">
-									<tbody>
-										<tr>
-											<th style="text-align:right;">Anillo</th>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtAnillo" disabled="disabled"></td>	
-											<td></td>
-											<td></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal1" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal2" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal3" disabled="disabled"></td>							
-										</tr>
-										<tr>
-											<td></td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal4" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal5" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal6" disabled="disabled"></td>							
-										</tr>
-										<tr>
-											<td></td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal7" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal8" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9" disabled="disabled"></td>							
-										</tr>
-										<tr>
-											<td>Total:</td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtValt" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11" disabled="disabled"></td>							
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="offset2 span6">
-							<div class="row">
-								<div class="span5">
-									<H4>Ojo Izquierdo</H4>
-								</div>
-							</div>
-							<div class="row">
-								<table class="span7">
-									<tbody>
-										<tr>
-											<th style="text-align:left;">Esfera</th>
-											<th></th>
-											<th style="text-align:left;">Cilindro</th>
-											<th></th>
-											<th style="text-align:left;">Eje</th>
-											<th></th>
-										</tr>
-										<tr>
-											<th><input type="text" class="input-small" id="txtRefraccionEsferaI"></th>
-											<th></th>
-											<th><input type="text" class="input-small" id="txtRefraccionCilindroI"></th>
-											<th></th>
-											<th><input type="text" class="input-small" id="txtRefraccionEjeI"></th>
-											<th></th>
-										</tr>
-										<tr>
-											<th></th>
-											<th style="text-align:center;">KH</th>
-											<th><input type="text" class="input-small" id="txtKHI"></th>
-											<th style="text-align:center;">KV</th>
-											<th><input type="text" class="input-small" id="txtKVI"></th>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="row">
-								<table class="span7">
-									<tbody>
-										<tr>
-											<th style="text-align:right;">Anillo</th>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtAnilloI" disabled="disabled"></td>	
-											<td></td>
-											<td></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal1I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal2I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal3I" disabled="disabled"></td>							
-										</tr>
-										<tr>
-											<td></td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal4I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal5I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal6I" disabled="disabled"></td>							
-										</tr>
-										<tr>
-											<td></td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal7I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal8I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9I" disabled="disabled"></td>							
-										</tr>
-										<tr>
-											<td>Total:</td>
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtValtI" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10I" disabled="disabled"></td>							
-											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11I" disabled="disabled"></td>							
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
+				<form action="" id="frmOperacionLaser">				
 					<hr>
 					<div class="row">
 						<div class="span6">
@@ -254,22 +107,22 @@
 									<tr>
 										<th>Refraccion:</th>
 										<th>OD:</th>
-										<th><input type="text" class="input-mini" id="RefraccionSphOD" disabled="disabled"></th>
+										<th><input type="text" class="input-mini" id="RefraccionSphOD"></th>
 										<th>-</th>
-										<th><input type="text" class="input-mini" id="RefraccionCylOD" disabled="disabled"></th>
+										<th><input type="text" class="input-mini" id="RefraccionCylOD"></th>
 										<th>X</th>
-										<th><input type="text" class="input-mini" id="RefraccionEjeOD" disabled="disabled"></th>
+										<th><input type="text" class="input-mini" id="RefraccionEjeOD"></th>
 										<th></th>
 										<th>CV:20/<input type="text" class="input-mini" id="txtCCOD"></th>
 									</tr>
 									<tr>
 										<th></th>
 										<th>OI:</th>
-										<th><input type="text" class="input-mini" id="RefraccionSphOI" disabled="disabled"></th>
+										<th><input type="text" class="input-mini" id="RefraccionSphOI"></th>
 										<th>-</th>
-										<th><input type="text" class="input-mini" id="RefraccionCylOI" disabled="disabled"></th>
+										<th><input type="text" class="input-mini" id="RefraccionCylOI"></th>
 										<th>X</th>
-										<th><input type="text" class="input-mini" id="RefraccionEjeOI" disabled="disabled"></th>
+										<th><input type="text" class="input-mini" id="RefraccionEjeOI"></th>
 										<th></th>
 										<th>CV:20/<input type="text" class="input-mini" id="txtCCOI"></th>
 									</tr>
@@ -314,7 +167,7 @@
 							<table class="span7">
 								<tbody>
 									<tr>
-										<th colspan="4">QUERATROMETRIAS:</th>
+										<th colspan="4">QUERATOMETRIAS:</th>
 									</tr>
 									<tr>
 										<th>OD:</th>
@@ -399,21 +252,194 @@
 							<table class="span6">
 								<tbody>
 									<tr>
-										<th>Estudios Complementarios:</th>
-										<th>Topografia</th>
-										<th><input type="radio" name="topo" checked="checked"> Si</th>
-										<th><input type="radio" name="topo"> No</th>
+										<th colspan="8">ESTUDIOS COMPLEMENTARIOS:</th>
 									</tr>
+									<tr>
+										<th colspan="8">Queratometrias Topograficas</th>
+									</tr>
+									<tr>
+										<th>OD:</th>
+										<th><input type="text" class="input-mini" id="txtQT1"></th>
+										<th>X</th>
+										<th><input type="text" class="input-mini" id="txtQT2"></th>
+										<th>/</th>
+										<th><input type="text" class="input-mini" id="txtQT3"></th>
+										<th>X</th>
+										<th><input type="text" class="input-mini" id="txtQT4"></th>
+									</tr>
+									<tr>
+										<th>OI:</th>
+										<th><input type="text" class="input-mini" id="txtQT5"></th>
+										<th>X</th>
+										<th><input type="text" class="input-mini" id="txtQT6"></th>
+										<th>/</th>
+										<th><input type="text" class="input-mini" id="txtQT7"></th>
+										<th>X</th>
+										<th><input type="text" class="input-mini" id="txtQT8"></th>
+									</tr>
+								</tbody>
+							</table>
+						<div class="row">
+							<div class="span12">
+								<table>
 									<tr>
 										<th>Paquimetria</th>
 										<th>OD: <input type="text" class="input-mini" id="txtpaqOD"></th>
 										<th>OI: <input type="text" class="input-mini" id="txtpaqOI"></th>
 									</tr>
-								</tbody>
-							</table>
+								</table>
+							</div>
+						</div>
 						</div>
 					</div>
 					<hr>
+					<div class="row">
+						<div class="span6">
+							<div class="row">
+								<div class="span5">
+									<H4>Ojo Derecho</H4>
+								</div>
+							</div>
+							<div class="row">
+								<table class="span7">
+									<tbody>
+										<tr>
+											<th style="text-align:left;">Esfera</th>
+											<th></th>
+											<th style="text-align:left;">Cilindro</th>
+											<th></th>
+											<th style="text-align:left;">Eje</th>
+											<th></th>
+										</tr>
+										<tr>
+											<th><input type="text" class="input-small" id="txtRefraccionEsfera"></th>
+											<th></th>
+											<th><input type="text" class="input-small" id="txtRefraccionCilindro"></th>
+											<th></th>
+											<th><input type="text" class="input-small" id="txtRefraccionEje"></th>
+											<th></th>
+										</tr>
+										<tr>
+											<th></th>
+											<th style="text-align:center;">KH</th>
+											<th><input type="text" class="input-small" id="txtKH"></th>
+											<th style="text-align:center;">KV</th>
+											<th><input type="text" class="input-small" id="txtKV"></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row">
+								<table class="span7">
+									<tbody>
+										<tr>
+											<th style="text-align:right;">Anillo</th>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtAnillo" disabled="disabled"></td>	
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal1" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal2" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal3" disabled="disabled"></td>							
+										</tr>
+										<tr>
+											<td></td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal4" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal5" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal6" disabled="disabled"></td>							
+										</tr>
+										<tr>
+											<td></td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal7" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal8" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9" disabled="disabled"></td>							
+										</tr>
+										<tr>
+											<td>Total:</td>
+											<td style="text-align:left;"><input type="text" class="input-mini" id="txtValt" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11" disabled="disabled"></td>							
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="offset2 span6">
+							<div class="row">
+								<div class="span5">
+									<H4>Ojo Izquierdo</H4>
+								</div>
+							</div>
+							<div class="row">
+								<table class="span7">
+									<tbody>
+										<tr>
+											<th style="text-align:left;">Esfera</th>
+											<th></th>
+											<th style="text-align:left;">Cilindro</th>
+											<th></th>
+											<th style="text-align:left;">Eje</th>
+											<th></th>
+										</tr>
+										<tr>
+											<th><input type="text" class="input-small" id="txtRefraccionEsferaI"></th>
+											<th></th>
+											<th><input type="text" class="input-small" id="txtRefraccionCilindroI"></th>
+											<th></th>
+											<th><input type="text" class="input-small" id="txtRefraccionEjeI"></th>
+											<th></th>
+										</tr>
+										<tr>
+											<th></th>
+											<th style="text-align:center;">KH</th>
+											<th><input type="text" class="input-small" id="txtKHI"></th>
+											<th style="text-align:center;">KV</th>
+											<th><input type="text" class="input-small" id="txtKVI"></th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="row">
+								<table class="span7">
+									<tbody>
+										<tr>
+											<th style="text-align:right;">Anillo</th>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtAnilloI" disabled="disabled"></td>	
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal1I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal2I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal3I" disabled="disabled"></td>							
+										</tr>
+										<tr>
+											<td></td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal4I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal5I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal6I" disabled="disabled"></td>							
+										</tr>
+										<tr>
+											<td></td>
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal7I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal8I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal9I" disabled="disabled"></td>							
+										</tr>
+										<tr>
+											<td>Total:</td>
+											<td style="text-align:left;"><input type="text" class="input-mini" id="txtValtI" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal10I" disabled="disabled"></td>							
+											<td style="text-align:center;"><input type="text" class="input-small" id="txtVal11I" disabled="disabled"></td>							
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<br><br>
 					<div class="row">
 						<div class="span12">
 							<span>Observaciones</span>
@@ -438,26 +464,26 @@
 			<legend class="text-center">PROGRAMACION QUIRURGICA</legend>
 		</div>
 		<div class="row">
-			<div class="span"><span><strong>Medico Tratante:</strong> </span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div class="span"><strong>Medico Tratante:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 			<div class="span"><span>Dr. Gerardo Contreras Herrera</span></div>
 		</div>
 		<div class="row">
-			<div class="span"><span><strong>Nombre del Paciente:</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div class="span"><strong>Nombre del Paciente:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 			<div class="span"><span id="rnombre"></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<div class="span"><span><strong>Telefono:</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div class="span"><strong>Telefono:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 			<div class="span"><span id="rtelefono"></span></div>
 		</div>
 		<div class="row">
-			<div class="span"><span><strong>Edad:</strong> </span>&nbsp;<span id="redad"></span>&nbsp;años&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><span><strong>Sexo:</strong> </span>&nbsp;<span id="rsexo"></span>&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><span><strong>Profesion:</strong> </span>&nbsp;<span id="rprofesion"></span></div>
+			<div class="span"><strong>Edad:</strong> &nbsp;<span id="redad"></span>&nbsp;años&nbsp;&nbsp;&nbsp;</div>
+			<div class="span"><strong>Sexo:</strong> &nbsp;<span id="rsexo"></span>&nbsp;&nbsp;&nbsp;</div>
+			<div class="span"><strong>Profesion:</strong> &nbsp;<span id="rprofesion"></span></div>
 		</div>	
 		<div class="row">
 			<div class="span">
-				<span><strong>Fecha Programada:</strong></span>&nbsp; <span id="rfecha">&nbsp;&nbsp;&nbsp;</span>
+				<strong>Fecha Programada:</strong>&nbsp; <span id="rfecha">&nbsp;&nbsp;&nbsp;</span>
 			</div>
 			<div class="span">
-				<span><strong>Hora:</strong></span> &nbsp;<span id="rhora">&nbsp;&nbsp;&nbsp;</span>
+				<strong>Hora:</strong> &nbsp;<span id="rhora">&nbsp;&nbsp;&nbsp;</span>
 			</div>
 		</div>
 		<hr>
@@ -480,10 +506,7 @@
 		<div class="row">
 			<table>
 				<tr>
-					<td><strong>REFRACCION NO CICLOPLEJICA:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td></td>
-					<td></td>
-					<td><strong>REFRACCION CICLOPLEJICA:</strong></td>
+					<td><strong>REFRACCION NO CICLOPLEJICA:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>					
 				</tr>
 				<tr>
 					<td>
@@ -491,51 +514,56 @@
 	
 							<tr>
 								<th>Refraccion:</th>
-								<th>OD:&nbsp;</th>
-								<td><span id="rRefraccionSphOD"></span>&nbsp;</td>
-								<th>-&nbsp;</th>
-								<td><span id="rRefraccionCylOD"></span>&nbsp;</td>
-								<th>x</th>
-								<td><span id="rRefraccionEjeOD"></span>&nbsp;</td>
-								<th>CV:&nbsp;</th>
-								<td><span id="rtxtCCOD">&nbsp;</span></td>
+								<th>OD:&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rRefraccionSphOD"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>-&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rRefraccionCylOD"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>X&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rRefraccionEjeOD"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>CV:&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtCCOD"></span>&nbsp;&nbsp;&nbsp;</td>
 							</tr>
 							<tr>
 								<td></td>
-								<th>OI:&nbsp;</th>
-								<td><span id="rRefraccionSphOI"></span>&nbsp;</td>
-								<th>-&nbsp;</th>
-								<td><span id="rRefraccionCylOI"></span>&nbsp;</td>
-								<th>X&nbsp;</th>
-								<td><span id="rRefraccionEjeOI"></span>&nbsp;</td>
-								<th>CV:&nbsp;</th>
-								<td><span id="rtxtCCOI"></span>&nbsp;</td>
+								<th>OI:&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rRefraccionSphOI"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>-&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rRefraccionCylOI"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>X&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rRefraccionEjeOI"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>CV:&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtCCOI"></span>&nbsp;&nbsp;&nbsp;</td>
 							</tr>
 						</table>
 					</td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-					<td></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><strong>REFRACCION CICLOPLEJICA:</strong></td>
+				</tr>
+				<tr>
 					<td>
 						<table>
 							<tr>
-								<th>Refraccion:&nbsp;</th>
-								<th>OD:&nbsp;</th>
-								<td><span id="rtxtEsferaOD2"></span>&nbsp;</td>
-								<th>-&nbsp;</th>
-								<td><span id="rtxtCilindroOD2"></span>&nbsp;</td>
-								<th>x&nbsp;</th>
-								<td><span id="rtxtEjeOD2"></span>&nbsp;</td>
+								<th>Refraccion:&nbsp;&nbsp;&nbsp;</th>
+								<th>OD:&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtEsferaOD2"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>-&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtCilindroOD2"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>x&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtEjeOD2"></span>&nbsp;&nbsp;&nbsp;</td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr>
 								<td></td>
-								<th>OI:&nbsp;</th>
-								<td><span id="rtxtEsferaOI2"></span>&nbsp;</td>
-								<th>-&nbsp;</th>
-								<td><span id="rtxtCilindroOI2"></span>&nbsp;</td>
-								<th>x&nbsp;</th>
-								<td><span id="rtxtEjeOI2"></span>&nbsp;</td>
+								<th>OI:&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtEsferaOI2"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>-&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtCilindroOI2"></span>&nbsp;&nbsp;&nbsp;</td>
+								<th>x&nbsp;&nbsp;&nbsp;</th>
+								<td><span id="rtxtEjeOI2"></span>&nbsp;&nbsp;&nbsp;</td>
 								<th></th>
 								<td></td>
 							</tr>
@@ -547,7 +575,7 @@
 		<hr>
 		<div class="row">
 			<div class="span">
-				<h5>QURATOMETRIAS:</h5>
+				<h5>QUERATOMETRIAS:</h5>
 			</div>
 		</div>
 		<div class="row">
@@ -639,18 +667,46 @@
 				<table class="span">
 					<tbody>
 						<tr>
-							<th>Estudios Complementarios:</th>
+							<th colspan="8">ESTUDIOS COMPLEMENTARIOS:</th>
 						</tr>
 						<tr>
-							<th>Topografia</th>
+							<th colspan="8">Queratometrias Topograficas</th>
 						</tr>
 						<tr>
-							<th>Paquimetria</th>
-							<th>OD: <span id="rtxtpaqOD"></th>
-							<th>OI: <span id="rtxtPOOI"></th>
+							<td></td>
+							<th>&nbsp;OD:&nbsp;</th>
+							<td><span id="rtxtQT1"></span>&nbsp;</td>
+							<th>x&nbsp;</th>
+							<td><span id="rtxtQT2"></span>&nbsp;</td>
+							<th>/&nbsp;</th>
+							<td><span id="rtxtQT3"></span>&nbsp;</td>
+							<th>x&nbsp;</th>
+							<td><span id="rtxtQT4"></span>&nbsp;</td>
+						</tr>
+						<tr>
+							<td></td>
+							<th>&nbsp;OI:&nbsp;</th>
+							<td><span id="rtxtQT5"></span>&nbsp;</td>
+							<th>x&nbsp;</th>
+							<td><span id="rtxtQT6"></span>&nbsp;</td>
+							<th>/&nbsp;</th>
+							<td><span id="rtxtQT7"></span>&nbsp;</td>
+							<th>x&nbsp;</th>
+							<td><span id="rtxtQT8"></span>&nbsp;</td>
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<table>
+						<tr>
+							<th>Paquimetria</th>
+							<th>OD:</th><th><span id="rtxtpaqOD"></th>
+							<th>OI:</th><th><span id="rtxtPOOI"></th>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 		<hr>

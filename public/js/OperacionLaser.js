@@ -534,6 +534,12 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                         $("#RefraccionSphOI").val(response.Refraccion[0].RefraccionSphOI);
                         $("#RefraccionCylOI").val(response.Refraccion[0].RefraccionCylOI);
                         $("#RefraccionEjeOI").val(response.Refraccion[0].RefraccionEjeOI);
+                        $("#txtEsferaOD2").val(response.Refraccion[0].EsquiascopiaSphOD);
+                		$("#txtCilindroOD2").val(response.Refraccion[0].EsquiascopiaCylOD);
+                		$("#txtEjeOD2").val(response.Refraccion[0].EsquiascopiaEjeOD);
+                		$("#txtEsferaOI2").val(response.Refraccion[0].EsquiascopiaSphOI);
+                		$("#txtCilindroOI2").val(response.Refraccion[0].EsquiascopiaCylOI);
+                		$("#txtEjeOI2").val(response.Refraccion[0].EsquiascopiaEjeOI);txtEsferaOD2
                     }
                     // Agudeza Visual
                     if (response.AgudezaVisual[0]){
@@ -636,6 +642,14 @@ var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir
 	$('#rtxtAVOI').text($('#txtAVOI').val());
 	$('#rtxtPOOD').text($('#txtPOOD').val());
 	$('#rtxtPOOI').text($('#txtPOOI').val());
+	$('#rtxtQT1').text($('#txtQT1').val());
+	$('#rtxtQT2').text($('#txtQT2').val());
+	$('#rtxtQT3').text($('#txtQT3').val());
+	$('#rtxtQT4').text($('#txtQT4').val());
+	$('#rtxtQT5').text($('#txtQT5').val());
+	$('#rtxtQT6').text($('#txtQT6').val());
+	$('#rtxtQT7').text($('#txtQT7').val());
+	$('#rtxtQT8').text($('#txtQ8').val());
 	$('#rtxtpaqOD').text($('#txtpaqOD').val());
 	$('#rtxtpaqOI').text($('#txtpaqOI').val());
 	$('#rcornea').text($("input[name='cornea']:checked").val());
