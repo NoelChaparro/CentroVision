@@ -442,8 +442,8 @@
 					<br><br>
 					<div class="row">
 						<div class="span12">
-							<span>Observaciones</span>
-							<input type="textarea" id="observaciones">
+							<span style="vertical-align:top;">Observaciones:</span>
+							<textarea  id="observaciones"></textarea>
 						</div>
 					</div>
 				</form>
@@ -716,118 +716,73 @@
 			</div>
 		</div>
 		<div class="row">
-			<table>
-				<tr>
-					<th>Ojo Izquierdo:</th>
-					<th>&nbsp;&nbsp;&nbsp;</th>
-					<th>Ojo Derecho:</th>
-					<th>&nbsp;&nbsp;&nbsp;</th>
-					<th>Observaciones</th>
-				</tr>
-				<tr>
-				<td>
+			<div class="span12">
 				<table>
 					<tr>
-						<th><span>Hiper:</span></th>
-						<td><span><span id="rtxtHiper"></span></span></td>
-						<th><span>KH:</span></th>
-						<td><span><span id="rtxtKH"></span></span></td>
-						<th><span>KV:</span></th>
-						<td><span><span id="rtxtKV"></span></span></td>
-					</tr>
-					<tr>
-						<th><span>Esfera:</span></th>
-						<td><span><span id="rtxtRefraccionEsfera"></span></span></td>
-						<th><span>Cilindro:</span></th>
-						<td><span><span id="rtxtRefraccionCilindro"></span></span></td>
-						<th><span>Eje:</span></th>
-						<td><span><span id="rtxtRefraccionEje"></span></span></td>
-					</tr>
-					<tr>
-						<th><span>Anillo:</span></th>
-						<td><span><span id="rtxtAnillo"></span></span></td>
-					</tr>
-					<tr>
-						<td><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal1"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal2"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal3"></span></span></td>
-					</tr>
-					<tr>
-						<td><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal4"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal5"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal6"></span></span></td>
-					</tr>
-					<tr>
-						<td><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal7"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal8"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal9"></span></span></td>
-					</tr>
-					<tr>
-						<th><span>Total:</span></th>
-						<td class="text-center"><span><span id="rtxtValt"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal10"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal11"></span></span></td>
-					</tr>
-				</table>
-				</td>
-				<th></th>
-				<td>
-				<table>
-					<tr>
-						<th><span>Hiper:</span></th>
-						<td><span><span id="rtextHiper2"></span></span></td>
-						<th><span>KH:</span></th>
-						<td><span><span id="rtxtKHI"></span></span></td>
-						<th><span>KV:</span></th>
-						<td><span><span id="rrtxtKVI"></span></span></td>
-					</tr>
-					<tr>
-						<th><span>Esfera:</span></th>
-						<td><span><span id="rtxtRefraccionEsferaI"></span></span></td>
-						<th><span>Cilindro:</span></th>
-						<td><span><span id="rtxtRefraccionCilindroI"></span></span></td>
-						<th><span>Eje:</span></th>
-						<td><span><span id="rtxtRefraccionEjeI"></span></span></td>
-					</tr>
-					<tr>
-						<th><span>Anillo:</span></th>
-						<td><span><span id="rtxtAnilloI"></span></span></td>
-					</tr>
-					<tr>
-						<td><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal1I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal2I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal3I"></span></span></td>
-					</tr>
-					<tr>
-						<td><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal4I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal5I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal6I"></span></span></td>
-					</tr>
-					<tr>
-						<td><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal7I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal8I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal9I"></span></span></td>
-					</tr>
-					<tr>
-						<th><span>Total:</span></th>
-						<td class="text-center"><span><span id="rtxtValtI"><span></span></td>
-						<td class="text-center"><span><span id="rtxtVal10I"></span></span></td>
-						<td class="text-center"><span><span id="rtxtVal11I"></span></span></td>
+						<td>
+							<table>
+								<thead>
+									<tr>
+										<th>Ojo Derecho:</th>
+									</tr>
+								</thead>
+								<tbody>
+									<table>
+										<tr>
+											<th>Anillo:</th>
+											<td><span id="rtxtAnillo"></span></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td class="text-center"><span id="rtxtValt"></span></td>
+											<td class="text-center"><span id="rtxtVal2"></span></td>
+											<td>X</td>
+											<td class="text-center"><span id="rtxtVal3"></span></td>
+										</tr>
+									</table>
+								</tbody>
+							</table>
+							<table>
+								<thead>
+									<tr>
+										<th>Ojo Izquierdo:</th>
+									</tr>
+								</thead>
+								<tbody>
+									<table>
+										<tr>
+											<th>Anillo:</th>
+											<td><span id="rtxtAnilloI"></span></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td class="text-center"><span id="rtxtValtI"></span></td>
+											<td class="text-center"><span id="rtxtVal2I"></span></td>
+											<td>X</td>
+											<td class="text-center"><span id="rtxtVal3I"></span></td>
+										</tr>
+									</table>
+								</tbody>
+							</table>
+						</td>
+						<td>
+							<table>
+								<tr>
+									<th>Observaciones:</th>
+								</tr>
+								<tr>
+									<th>
+										<textarea id="robservaciones"></textarea>	
+									</th>
+								</tr>
+							</table>
+						</td>
 					</tr>
 				</table>
-				</td>
-				<th></th>
-				<td><span id="robservaciones"></span></td>
-				</tr>
-			</table>
+			</div>
 		</div>
 	</div>
+						
 @stop
 
 

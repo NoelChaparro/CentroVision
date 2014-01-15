@@ -219,7 +219,7 @@ function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 		}else{
 			D7=G2;
 		}
-		$("#txtVal3").val(D7.toFixed(2));
+		$("#txtVal3").val(D7.toFixed(0));
 
 		var B8 = 0;
 		if (B7==J1){
@@ -240,7 +240,7 @@ function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 		if (C7==F6 || F6<=-6){
 			D8=Eje;
 		}
-		$("#txtVal6").val(D8.toFixed(2));
+		$("#txtVal6").val(D8.toFixed(0));
 
 		var C9 = 0;
 		if ((C7==(L1/3)) || (C7==(L1/4))){
@@ -262,8 +262,8 @@ function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 		} 
 		var total = B7+B8+B8;
 		$("#txtValt").val(total.toFixed(2));
-		$("#txtVal9").val(D9.toFixed(2));
-		$("#txtVal11").val(D10.toFixed(2));
+		$("#txtVal9").val(D9.toFixed(0));
+		$("#txtVal11").val(D10.toFixed(0));
 }
 function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 {
@@ -420,7 +420,7 @@ function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 		}else{
 			D7=G2;
 		}
-		$("#txtVal3I").val(D7.toFixed(2));
+		$("#txtVal3I").val(D7.toFixed(0));
 
 		var B8 = 0;
 		if (B7==J1){
@@ -441,7 +441,7 @@ function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 		if (C7==F6 || F6<=-6){
 			D8=Eje;
 		}
-		$("#txtVal6I").val(D8.toFixed(2));
+		$("#txtVal6I").val(D8.toFixed(0));
 
 		var C9 = 0;
 		if ((C7==(L1/3)) || (C7==(L1/4))){
@@ -463,8 +463,8 @@ function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 		} 
 		var total = B7+B8+B8;
 		$("#txtValtI").val(total.toFixed(2));
-		$("#txtVal9I").val(D9.toFixed(2));
-		$("#txtVal11I").val(D10.toFixed(2));
+		$("#txtVal9I").val(D9.toFixed(0));
+		$("#txtVal11I").val(D10.toFixed(0));
 }
 function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla
 	var contenido = $('.tblBusquedaPacientesModal tbody');
