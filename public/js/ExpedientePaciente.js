@@ -31,8 +31,8 @@ function inicio() //Inicio del documento
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
     $("#btnImprimirCertificado").on("click",ImprimirCertificado);
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
-    $("#btnImprimirRecetaLentes").attr("disabled",true);
-    $("#btnImprimirCertificado").attr("disabled",true);
+    //$("#btnImprimirRecetaLentes").attr("disabled",true);
+    //$("#btnImprimirCertificado").attr("disabled",true);
     $("#btnImprimirExpedienteCompleto").on("click",imprimirExpedienteCompleto);
     $("#BtnVerBiomicroscopia").on("click",function(){
         verImagenes(1);
@@ -162,18 +162,28 @@ function imprimirConsentimientoCirugiaOcularExtraocular() { //Funcion para imrim
 
 function imprimirRecetaLentes(){ //Funcion para mandar a imprimir la Receta de Lentes
     if ($("#varIdPaciente").val() != ''){
-        location.href= "RecetaLentes/"+$("#varIdPaciente").val();
+        if(($("#SphOD").val()!='') || ($("#CylOD").val()!='') || ($("#EjeOD").val()!='') || ($("#DIOD").val()!='') || ($("#PrismaOD").val()!='') || ($("#BaseOD").val()!='') || ($("#SphOI").val()!='') || ($("#CylOI").val()!='') || ($("#EjeOI").val()!='') || ($("#DIOI").val()!='') || ($("#PrismaOI").val()!='') || ($("#BaseOI").val()!='') || ($("#Add").val()!='') || ($("#AO").val()!='') || ($("#Color").val()!='') || ($("#Bifocal").val()!='') || ($("#ObservacionesLentes").val()!='')){
+            guardarFormularioExpediente(1); //Se manda como parametro un 1 para que no se limpien las cajas de texto del formulario expediente paciente
+            window.open("RecetaLentes/"+$("#varIdPaciente").val());
+        }else{
+            alertify.log("No existe información en la Receta de los Lentes");
+        }
     }else{
-        alertify.log("No existe información para imprimir");
+        alertify.log("No existe información del paciente para imprimir");
     }
     return false;
 }
 
 function ImprimirCertificado(){ //Funcion para mandar a imprimir el certificado
     if ($("#varIdPaciente").val() != ''){
-        location.href= "Certificado/"+$("#varIdPaciente").val();
+        if(($("#AnexosOculares").val()!= '') || ($("#SegmentoAnterior").val()!= '') || ($("#FondoOjo").val()!= '') || ($("#PercepcionCromatica").val()!= '') || ($("#DiagnosticoCertificado").val()!= '') || ($("#TratamientoCertificado").val()!= '')){
+            guardarFormularioExpediente(1); //Se manda como parametro un 1 para que no se limpien las cajas de texto del formulario expediente paciente
+            window.open("Certificado/"+$("#varIdPaciente").val());
+        }else{
+            alertify.log("No existe información en el certificado");
+        }
     }else{
-        alertify.log("No existe información para imprimir");
+        alertify.log("No existe información del paciente para imprimir");
     }
     return false;
 }
@@ -204,8 +214,8 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     CKEDITOR.instances['Orden'].setData('');
     CKEDITOR.instances['Receta'].setData('');
     CKEDITOR.instances['Tratamiento'].setData('');
-    $("#btnImprimirRecetaLentes").attr("disabled",true);
-    $("#btnImprimirCertificado").attr("disabled",true);
+    //$("#btnImprimirRecetaLentes").attr("disabled",true);
+    //$("#btnImprimirCertificado").attr("disabled",true);
     // Se deshabilitan los botones de las imagenes
     $("#BtnImgBiomicroscopia").attr("disabled",true);
     $("#BtnVerBiomicroscopia").attr("disabled",true);
@@ -221,7 +231,7 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     $('#datosUltimaConsulta').html('');
 }
 
-function guardarFormularioExpediente(){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
+function guardarFormularioExpediente(parametroImpresion){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
     if (validarFormularioExpedientePaciente()){
         //Se iguala la informacion de los ckeditor al val del text area
         $("#ResumenClinico").val(CKEDITOR.instances['ResumenClinico'].getData());
@@ -240,7 +250,9 @@ function guardarFormularioExpediente(){ //Funcion que toma los datos del formula
     			success: function(data){
                     $("#btnGuardarExpedientePaciente").attr("disabled",false);
     				alertify.success('Datos Guardados Correctamente');
-                    limpiarFormularioExpedientePaciente();
+                    if(parametroImpresion!=1){
+                        limpiarFormularioExpedientePaciente();
+                    }
     			},
     			error: function(errors){
     				alertify.error('Error al guardar');

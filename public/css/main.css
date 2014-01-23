@@ -2,7 +2,7 @@
 	size: letter;
 }
 @media print{
-	footer, .btn, .navbar, #lasik{
+	footer, .btn, .navbar, #lasik, hr{
 		display:none;
 	}
 	/*input{

@@ -1122,7 +1122,7 @@
 								</td>
 								<td>
 									<div class="control-group">
-										{{ Form::text('PrismaOI','',array('class' => 'input-mini', 'ip' => 'PrismaOI')) }}
+										{{ Form::text('PrismaOI','',array('class' => 'input-mini', 'id' => 'PrismaOI')) }}
 									</div>
 								</td>
 								<td>

@@ -4,15 +4,15 @@
     Certificado
 @stop
 @section('css')
-	
+	<link rel="stylesheet" href="../css/reportecertificado.css"/>
 @stop
 @section('Contenido')
-	<p>El que suscribe, Médico Cirujano Oftalmologo, debidamente autorizado para ejercer la profesión, Certifica haber examinado oftalmológicamente a:</p>
+	<br><br><br><br><br><p>El que suscribe, Médico Cirujano Oftalmologo, debidamente autorizado para ejercer la profesión, Certifica haber examinado oftalmológicamente a:</p>
 	<center>
 	<p>{{ $datosPaciente[0]->Nombre }}</p>
 	</center>
 	<p>Habiendo encontrado lo siguiente:</p>
-	<table class="table">
+	<table class="table table-condensed">
 		<tr>
 			<th>AVSCOD:</th>
 			@if ($agudezaVisual)
@@ -43,16 +43,20 @@
 		</tr>			
 	</table>
 	<strong>Tonometría (Presión Intraocular):</strong>
-	<table class="table">
+	<table class="table table-condensed">
 		<tr>
-			<th>OD:</th>
-			@if ($agudezaVisual)
-			<td>{{ $agudezaVisual[0]->MmhgD }} mmHg</td>
-			@endif
-			<th>OI:</th>
-			@if ($agudezaVisual)
-			<td>{{ $agudezaVisual[0]->MmhgI }} mmHg</td>
-			@endif
+			<td style="text-align:center">
+				<b>OD = </b>
+				@if ($agudezaVisual)
+					{{ $agudezaVisual[0]->MmhgD }} mmHg
+				@endif
+			</td>
+			<td style="text-align:center">
+				<b>OI = </b>
+				@if ($agudezaVisual)
+					{{ $agudezaVisual[0]->MmhgI }} mmHg
+				@endif
+			</td>
 		</tr>
 	</table>
 	<h5>Anexos Oculares:</h5>
@@ -72,7 +76,7 @@
 	<p>{{ $certificado[0]->PercepcionCromatica }}</p>
 	@endif
 	<h5>Refracción:</h5>
-	<table class="table">
+	<table class="table tblrefraccion table-condensed">
 		<tr>
 			<td></td>
 			<th>Sph</th>
@@ -109,13 +113,28 @@
 	@if ($certificado)
 	<p>{{ $certificado[0]->Diagnostico }}</p>
 	@endif
-	<br /><br /><br />
+	<br /><br />
 	<center>
 		________________________________ <br>
 		Dr. Gerardo Contreras Herrera
 	</center>
 	<div class="boton">
 		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
-		<button id="btnRegresar" name="btnRegresar" onclick="location.href='.././'" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
+		<button id="btnCerrarVentana" name="btnCerrarVentana" onclick="cerrarVentana()" class="btn btn-danger"><i class="icon-remove icon-white"></i> Cerrar</button>
 	</div>
+@stop
+
+@section('Javascript')
+	<script text="javascript">
+		$(document).on('ready',inicio);
+
+		function inicio(){
+			window.print();
+			cerrarVentana();
+		}
+
+		var cerrarVentana = function (){
+			setTimeout("window.close()",10);
+		}
+	</script>
 @stop

@@ -86,6 +86,21 @@
 	</div>
 	<div class="boton">
 		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
-		<button id="btnRegresar" name="btnRegresar" onclick="location.href='.././'" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
+		<button id="btnCerrarVentana" name="btnCerrarVentana" onclick="cerrarVentana()" class="btn btn-danger"><i class="icon-remove icon-white"></i> Cerrar</button>
 	</div>
+@stop
+
+@section('Javascript')
+	<script text="javascript">
+		$(document).on('ready',inicio);
+
+		function inicio(){
+			window.print();
+			cerrarVentana();
+		}
+
+		var cerrarVentana = function (){
+			setTimeout("window.close()",10);
+		}
+	</script>
 @stop

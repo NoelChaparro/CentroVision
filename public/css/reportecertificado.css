@@ -1,0 +1,15 @@
+body{
+	font-size: 0.7em;
+}
+h5, table{
+	margin:0px;
+}
+table.tblrefraccion
+{
+	border-collapse:collapse;
+}
+table.tblrefraccion td,
+table.tblrefraccion th
+{
+	border:1px solid black;
+}
