@@ -13,7 +13,8 @@ function inicio(){ //Inicio del documento
 }
 
 var imprimirBajaVision = function(){ //Funcion que permite mandar a imprimir la informacion del formulario baja vision
-    location.href= "imprimirBajaVision/"+$("#varIdPaciente").val();
+    window.open("imprimirBajaVision/"+$("#varIdPaciente").val());
+    limpiarFormularioBajaVision();
 }
 
 var guardarFormularioBajaVision = function(){ //Funcion que permite guardar el historial de los lentes de contacto
@@ -23,11 +24,13 @@ var guardarFormularioBajaVision = function(){ //Funcion que permite guardar el h
             type: formularioBajaVision.attr('method'),
             url: formularioBajaVision.attr('action'),
             data: formularioBajaVision.serialize(),
+            beforeSend: function () {
+                $("#btnGuardarBajaVision").attr("disabled",true); //se deshabilita el boton guardar porque el formulario contiene mucha informacion y evita que lo presionen varias veces
+            },
             success: function(data){
                 alertify.success('Datos guardados correctamente');
                 //limpiarFormularioBajaVision();
                 $("#btnImprimirBajaVision").attr("disabled",false);
-                $("#btnGuardarBajaVision").attr("disabled",true);
             },
             error: function(errors){
                 alertify.error('Error al guardar los datos');
@@ -157,7 +160,7 @@ var limpiarFormularioBajaVision = function(){ // Funcion para limpiar el formula
         this.reset();
     });
     fechaActual();
-    $("#estudio").focus();
+    $("#antecedentes").focus();
     $("#btnImprimirBajaVision").attr("disabled",true);
     $("#btnGuardarBajaVision").attr("disabled",true);
 }
@@ -185,7 +188,7 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
 		idPaciente = $(this).children('td')[0].innerText;
 		buscarPacienteConId(idPaciente);
         $(".close").click();
-        $("#estudio").focus();
+        $("#antecedentes").focus();
     });
 }
 

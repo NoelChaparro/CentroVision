@@ -93,7 +93,7 @@
 			<div class="control-group">
 			  	{{ Form::label('antecedentes', 'Antecedentes:', array('class' => 'control-label')) }}
 			  	<div class="controls">                     
-			    	{{ Form::textarea('antecedentes','',array('class' => 'span8', 'disabled')) }}
+			    	{{ Form::textarea('antecedentes','',array('class' => 'span8')) }}
 			  	</div>
 			</div>
 		</div>
@@ -126,24 +126,24 @@
 	<div class="row">
 		<div class="span6">
 		  	<div class="span1">
-		  		{{ Form::text('AVSCOD','',array('class' => 'input-mini','disabled')) }}
+		  		{{ Form::text('AVSCOD','',array('class' => 'input-mini')) }}
 		  	</div>
 		  	<div class="span1">
-		  		{{ Form::text('CCD','',array('class' => 'input-mini','disabled')) }}
+		  		{{ Form::text('CCD','',array('class' => 'input-mini')) }}
 		  	</div>
 		  	<div class="span1">
-		  		{{ Form::text('PuntoD','',array('class' => 'input-mini','disabled')) }}
+		  		{{ Form::text('PuntoD','',array('class' => 'input-mini')) }}
 		  	</div>
 		</div>
 		<div class="span6">
 		  	<div class="span1">
-		  		{{ Form::text('AVSCOI','',array('class' => 'input-mini','disabled')) }}
+		  		{{ Form::text('AVSCOI','',array('class' => 'input-mini')) }}
 		  	</div>
 		  	<div class="span1">
-		  		{{ Form::text('CCI','',array('class' => 'input-mini','disabled')) }}
+		  		{{ Form::text('CCI','',array('class' => 'input-mini')) }}
 		  	</div>
 		  	<div class="span1">
-		  		{{ Form::text('PuntoI','',array('class' => 'input-mini','disabled')) }}
+		  		{{ Form::text('PuntoI','',array('class' => 'input-mini')) }}
 		  	</div>
 		</div>
 	</div>
@@ -153,7 +153,7 @@
 			<div class="control-group">
 			  	{{ Form::label('PIOD', 'PIO OD:', array('class' => 'control-label')) }}
 			  	<div class="controls">
-			    	{{ Form::text('PIOD','',array('class' => 'input-small', 'disabled' => '')) }}
+			    	{{ Form::text('PIOD','',array('class' => 'input-small')) }}
 			  	</div>
 			</div>
 		</div>
@@ -161,7 +161,7 @@
 			<div class="control-group"> 
 			  	{{ Form::label('PIOI', 'PIO OI:', array('class' => 'control-label')) }}
 			  	<div class="controls">
-			    	{{ Form::text('PIOI','',array('class' => 'input-small', 'disabled' => '')) }}
+			    	{{ Form::text('PIOI','',array('class' => 'input-small')) }}
 			  	</div>					
 			</div>
 		</div>
@@ -204,32 +204,32 @@
 					<tr>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionSphOD','',array('class' => 'input-mini', 'id' => 'RefraccionSphOD','disabled')) }}
+								{{ Form::text('RefraccionSphOD','',array('class' => 'input-mini', 'id' => 'RefraccionSphOD')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionCylOD','',array('class' => 'input-mini', 'id' => 'RefraccionCylOD','disabled')) }}
+								{{ Form::text('RefraccionCylOD','',array('class' => 'input-mini', 'id' => 'RefraccionCylOD')) }}
 							</div>
 						</td>								
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionEjeOD','',array('class' => 'input-mini', 'id' => 'RefraccionEjeOD','disabled')) }}
+								{{ Form::text('RefraccionEjeOD','',array('class' => 'input-mini', 'id' => 'RefraccionEjeOD')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOD','disabled')) }}
+								{{ Form::text('RefraccionBifocalOD','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOD')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionAddOD','',array('class' => 'input-mini', 'id' => 'RefraccionAddOD','disabled')) }}
+								{{ Form::text('RefraccionAddOD','',array('class' => 'input-mini', 'id' => 'RefraccionAddOD')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionAVOD','',array('class' => 'input-mini', 'id' => 'RefraccionAVOD','disabled')) }}
+								{{ Form::text('RefraccionAVOD','',array('class' => 'input-mini', 'id' => 'RefraccionAVOD')) }}
 							</div>
 						</td>
 						<td><span>Ojo Derecho</span></td>
@@ -237,32 +237,32 @@
 					<tr>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionSphOI','',array('class' => 'input-mini', 'id' => 'RefraccionSphOI','disabled')) }}
+								{{ Form::text('RefraccionSphOI','',array('class' => 'input-mini', 'id' => 'RefraccionSphOI')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionCylOI','',array('class' => 'input-mini', 'id' => 'RefraccionCylOI','disabled')) }}
+								{{ Form::text('RefraccionCylOI','',array('class' => 'input-mini', 'id' => 'RefraccionCylOI')) }}
 							</div>
 						</td>								
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionEjeOI','',array('class' => 'input-mini', 'id' => 'RefraccionEjeOI','disabled')) }}
+								{{ Form::text('RefraccionEjeOI','',array('class' => 'input-mini', 'id' => 'RefraccionEjeOI')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOI','disabled')) }}
+								{{ Form::text('RefraccionBifocalOI','',array('class' => 'input-mini', 'id' => 'RefraccionBifocalOI')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionAddOI','',array('class' => 'input-mini', 'id' => 'RefraccionAddOI','disabled')) }}
+								{{ Form::text('RefraccionAddOI','',array('class' => 'input-mini', 'id' => 'RefraccionAddOI')) }}
 							</div>
 						</td>
 						<td>
 							<div class="control-group">
-								{{ Form::text('RefraccionAVOI','',array('class' => 'input-mini', 'id' => 'RefraccionAVOI','disabled')) }}
+								{{ Form::text('RefraccionAVOI','',array('class' => 'input-mini', 'id' => 'RefraccionAVOI')) }}
 							</div>
 						</td>
 						<td><span>Ojo Izquierdo</span></td>
@@ -277,14 +277,14 @@
 			<div class="control-group">
 			  	{{ Form::label('lamparaHendiduraOD', 'Lampara de Hendidura:', array('class' => 'control-label')) }}
 			  	<div class="controls">
-			    	{{ Form::textarea('lamparaHendiduraOD','',array('class' => 'span5', 'disabled')) }}
+			    	{{ Form::textarea('lamparaHendiduraOD','',array('class' => 'span5')) }}
 			  	</div>
 			</div>
 		</div>
 		<div class="span5">
 			<div class="control-group">
 			  	<div class="controls">
-			    	{{ Form::textarea('lamparaHendiduraOI','',array('class' => 'span5','id' => 'lamparaHendiduraOI', 'disabled')) }}
+			    	{{ Form::textarea('lamparaHendiduraOI','',array('class' => 'span5','id' => 'lamparaHendiduraOI')) }}
 			  	</div>
 			</div>
 		</div>		
@@ -295,14 +295,14 @@
 			<div class="control-group">
 			  	{{ Form::label('fondoOjoOD', 'Fondo de Ojo:', array('class' => 'control-label')) }}
 			  	<div class="controls">                     
-			    	{{ Form::textarea('fondoOjoOD','',array('class' => 'span5', 'disabled')) }}
+			    	{{ Form::textarea('fondoOjoOD','',array('class' => 'span5')) }}
 			  	</div>
 			</div>
 		</div>
 		<div class="span5">
 			<div class="control-group">
 			  	<div class="controls">
-			    	{{ Form::textarea('fondoOjoOI','',array('class' => 'span5','id' => 'fondoOjoOI', 'disabled')) }}
+			    	{{ Form::textarea('fondoOjoOI','',array('class' => 'span5','id' => 'fondoOjoOI')) }}
 			  	</div>
 			</div>
 		</div>		

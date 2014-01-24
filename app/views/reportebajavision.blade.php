@@ -167,17 +167,23 @@
 		</tr>
 	</table>
 	<div class="boton">
-		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
-		<button id="btnRegresar" name="btnRegresar" onclick="history.back()" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
+		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
+		<button id="btnCerrarVentana" name="btnCerrarVentana" onclick="cerrarVentana()" class="btn btn-danger"><i class="icon-remove icon-white"></i> Cerrar</button>
 	</div>	
 @stop
 @section('Javascript')
-	<script>
+	<script text="javascript">
 		$(document).on('ready',inicio);
 
 		function inicio(){
 			$(".menu_principal li:first-child").removeClass("active");
 			$(".menu_principal li:eq(3)").addClass("active");
+			window.print();
+			cerrarVentana();
 		}
-	</script>
+
+		var cerrarVentana = function (){
+			setTimeout("window.close()",10);
+		}
+	</script>	
 @stop
