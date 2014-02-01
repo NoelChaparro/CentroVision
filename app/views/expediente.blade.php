@@ -221,7 +221,7 @@
 		
 		<!-- start: Padecimiento -->
 		<section id="mnPadecimientos"> 
-			<legend>Padecimiento</legend>
+			<legend>Padecimiento Actual</legend>
 			<div class="row">
 				<div class="span6">
 				<div class="control-group">
@@ -942,7 +942,7 @@
 		<!-- start: Diagnóstico -->
 		<section id="mnDiagnostico">
 			<legend>Diagnóstico</legend>
-			<div class="control-group">
+			<!--<div class="control-group">
 				<div class="row">
 			  	<label class="control-label" for="chkDiagnostico">Diagnóstico:</label>
 			  	</div>
@@ -1002,8 +1002,8 @@
 					    </div>
 			 		</div>
 				</div>
-			</div>
-		</br>
+			</div>-->
+			</br>
 			<div class="row">
 				<div class="control-group">
 					{{ Form::label('Diagnostico', 'Diagnóstico: ', array('class' => 'control-label')) }}

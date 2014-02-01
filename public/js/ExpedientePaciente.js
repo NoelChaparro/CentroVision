@@ -463,7 +463,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Diagnostico
                     if (response.Diagnostico[0]){
-                        if (response.Diagnostico[0].AstigmatismoD == 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
+                        /*if (response.Diagnostico[0].AstigmatismoD == 1){ $('input:checkbox[name="AstigmatismoD"]').prop('checked',true); }
                         if (response.Diagnostico[0].GlaucomaD == 1){ $('input:checkbox[name="GlaucomaD"]').prop('checked',true); }
                         if (response.Diagnostico[0].CataratasD == 1){ $('input:checkbox[name="CataratasD"]').prop('checked',true); }
                         if (response.Diagnostico[0].ConjuntivitisD == 1){ $('input:checkbox[name="ConjuntivitisD"]').prop('checked',true); }
@@ -474,7 +474,7 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                         if (response.Diagnostico[0].CataratasI == 1){ $('input:checkbox[name="CataratasI"]').prop('checked',true); }
                         if (response.Diagnostico[0].ConjuntivitisI == 1){ $('input:checkbox[name="ConjuntivitisI"]').prop('checked',true); }
                         if (response.Diagnostico[0].QueratitisI == 1){ $('input:checkbox[name="QueratitisI"]').prop('checked',true); }
-                        if (response.Diagnostico[0].EstrabismoI == 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }
+                        if (response.Diagnostico[0].EstrabismoI == 1){ $('input:checkbox[name="EstrabismoI"]').prop('checked',true); }*/
                         $("#Diagnostico").val(response.Diagnostico[0].Diagnostico);
                     }
 

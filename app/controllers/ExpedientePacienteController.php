@@ -367,7 +367,7 @@ class ExpedientePacienteController extends BaseController{
 				// Guardar en tabla Diagnostico
 				$diagnosticoPaciente = array(
 					"Paciente_id" => $id_paciente,
-					"AstigmatismoD" => Input::get("AstigmatismoD"),
+					/*"AstigmatismoD" => Input::get("AstigmatismoD"),
 					"GlaucomaD" => Input::get("GlaucomaD"),
 					"CataratasD" => Input::get("CataratasD"),
 					"ConjuntivitisD" => Input::get("ConjuntivitisD"),
@@ -378,11 +378,12 @@ class ExpedientePacienteController extends BaseController{
 					"CataratasI" => Input::get("CataratasI"),
 					"ConjuntivitisI" => Input::get("ConjuntivitisI"),
 					"QueratitisI" => Input::get("QueratitisI"),
-					"EstrabismoI" => Input::get("EstrabismoI"),
+					"EstrabismoI" => Input::get("EstrabismoI"),*/
 					"Diagnostico" => Input::get("Diagnostico")
 				);
 				$diagnostico = new Diagnostico($diagnosticoPaciente);
-				if ($diagnosticoPaciente["AstigmatismoD"] || $diagnosticoPaciente["GlaucomaD"] || $diagnosticoPaciente["CataratasD"] || $diagnosticoPaciente["ConjuntivitisD"] || $diagnosticoPaciente["QueratitisD"] || $diagnosticoPaciente["EstrabismoD"] || $diagnosticoPaciente["AstigmatismoI"] || $diagnosticoPaciente["GlaucomaI"] || $diagnosticoPaciente["CataratasI"] || $diagnosticoPaciente["ConjuntivitisI"] || $diagnosticoPaciente["QueratitisI"] || $diagnosticoPaciente["EstrabismoI"] || $diagnosticoPaciente["Diagnostico"]){$diagnostico->save();}
+				//if ($diagnosticoPaciente["AstigmatismoD"] || $diagnosticoPaciente["GlaucomaD"] || $diagnosticoPaciente["CataratasD"] || $diagnosticoPaciente["ConjuntivitisD"] || $diagnosticoPaciente["QueratitisD"] || $diagnosticoPaciente["EstrabismoD"] || $diagnosticoPaciente["AstigmatismoI"] || $diagnosticoPaciente["GlaucomaI"] || $diagnosticoPaciente["CataratasI"] || $diagnosticoPaciente["ConjuntivitisI"] || $diagnosticoPaciente["QueratitisI"] || $diagnosticoPaciente["EstrabismoI"] || $diagnosticoPaciente["Diagnostico"]){$diagnostico->save();}
+				if ($diagnosticoPaciente["Diagnostico"]){$diagnostico->save();}
 
 				// Guardar en tabla Tratamiento
 				$tratamientoPaciente = array(
