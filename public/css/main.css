@@ -24,6 +24,9 @@
 		border:1px solid black;
 		padding:1px 6px 1px 6px;
 	}	
+	div{
+		margin-top: 2px;
+	}
 }
 @media screen{
 	.reporte{

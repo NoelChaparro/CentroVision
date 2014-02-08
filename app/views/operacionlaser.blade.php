@@ -716,11 +716,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="span12">
+			
 				<table>
 					<tr>
-						<td>
-							<table>
+						<td style="width:50%;">
+							<table class="span6 table">
 								<thead>
 									<tr>
 										<th>Ojo Derecho:</th>
@@ -765,7 +765,7 @@
 								</tbody>
 							</table>
 						</td>
-						<td>
+						<td style="width:50%;">
 							<table>
 								<tr>
 									<th>Observaciones:</th>
@@ -779,7 +779,7 @@
 						</td>
 					</tr>
 				</table>
-			</div>
+			
 		</div>
 	</div>
 						
