@@ -41,9 +41,11 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right menu_principal">
                             <li class="active"><a href=".././">Expediente Paciente</a></li>
-                            <li><a href="../OperacionLaser">Lasik</a></li>
-                            <li><a href="../LentesContacto">Lentes de Contacto</a></li>
-                            <li><a href="../BajaVision">Baja Visión</a></li>
+                            @if (Auth::user()->autorizacion == 1)
+                                <li><a href="../OperacionLaser">Lasik</a></li>
+                                <li><a href="../LentesContacto">Lentes de Contacto</a></li>
+                                <li><a href="../BajaVision">Baja Visión</a></li>
+                            @endif                            
                             <li>{{ HTML::link('logout', 'Salir (' . Auth::user()->username . ')') }}</li>
                         </ul>
                     </div><!--/.nav-collapse -->

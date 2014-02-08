@@ -10,6 +10,7 @@
 			<ul class="nav nav-tabs nav-stacked main-menu" id="mytab">	
 				<li><a href="#mnInicio"><i class="hidden-tablet icon-white icon-home"></i><span class="hidden-phone"> Inicio</span></a></li>
 	            <li><a href="#mnDatos_Generales" id="btndg"><i class="hidden-tablet icon-white icon-user"></i><span class="hidden-phone"> Datos Generales</span></a></li>
+	        @if (Auth::user()->autorizacion == 1)
 	            <li><a href="#mnPadecimientos"id="btnpad"><i class="hidden-tablet icon-white icon-briefcase"></i><span class="hidden-phone"> Padecimientos</span></a></li>
 	            <li><a href="#mnAgudeza_Visual" id="btnav"><i class="hidden-tablet icon-white icon-minus-sign"></i><span class="hidden-phone"> Agudeza Visual</span></a></li>
 	            <li><a href="#mnBiomicroscopiaIris" id="btnbio"><i class="hidden-tablet icon-white icon-eye-close"></i><span class="hidden-phone"> Biomicroscopia</span></a></li>                
@@ -26,6 +27,7 @@
 	            <li><a href="#mnHospitalizacion" id="btnhos"><i class="hidden-tablet icon-white icon-plus"></i><span class="hidden-phone"> Hospitalizacion</span></a></li>
 	            <li><a href="#mnConsentimientoCirugiaOcularExtraocular" id="btncon"><i class="hidden-tablet icon-white icon-bookmark"></i><span class="hidden-phone"> Cirugía Ocular</span></a></li>
 	            <li><a href="#mnConsentimientoAplicacionMedicamentosIntravitreos" id="btncami"><i class="hidden-tablet icon-white icon-tag"></i><span class="hidden-phone"> Med. Intravitreos</span></a></li>
+	        @endif
 	            <li><a href="#mnExpedienteDigital" id="btnexd"><i class="hidden-book
 	             icon-white icon-tag"></i><span class="hidden-phone"> Expediente Digital</span></a></li>
 			</ul>
@@ -62,6 +64,7 @@
 		<!-- Form Name -->
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente', 'data-validate' => 'parsley')) }}
 		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
+		<input type='hidden' name='auth' id="auth" value='{{Auth::user()->autorizacion}}' />
 			<div class="row">
 				<figure class="logoppal">
 					<img src="img/logo.jpg" alt="">
@@ -219,6 +222,8 @@
 		</section>
 		<!-- end: Datos Generales -->
 		
+		@if (Auth::user()->autorizacion == 1)
+
 		<!-- start: Padecimiento -->
 		<section id="mnPadecimientos"> 
 			<legend>Padecimiento Actual</legend>
@@ -354,6 +359,7 @@
 		
 		<!--start: Biomicroscopia e Iris -->
 		<section id="mnBiomicroscopiaIris">
+		@endif
 			<div class="modal hide fade" tabindex="-1" role="dialog" id="ImgBiomicroscopia">
             	<div class="modal-header">
                		<a class="close" data-dismiss="modal">&times;</a>
@@ -372,6 +378,7 @@
        	    	</div>
  
        		</div>
+       	@if (Auth::user()->autorizacion == 1)
 			<legend>Biomicroscopía e Iris</legend>
 			<div class="row">
 				<div class="span6">
@@ -1313,8 +1320,11 @@
 		</section>		
 		<!-- end: Consentimiento Aplicacion Medicamentos Intravitreos -->
 
+		@endif
+
 		<!-- start: Expediente Digital -->
 		<div id="mnExpedienteDigital">
+			<legend>Expediente Digital</legend>
 			<button href="#ImgBiomicroscopia" role="button" class="btn btn-warning" data-toggle="modal" id="btnImagenesExpediente" disabled><i class="icon-white icon-upload"></i> Subir Imagenes</button>
 			<button role="button" class="btn btn-success" data-toggle="modal" id="btnVerImagenesExpediente" disabled><i class="icon-white icon-picture"></i> Ver Imagenes</button>
 			<div id="imagenesExpediente"></div>

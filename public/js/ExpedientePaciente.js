@@ -208,12 +208,14 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     });
     $("#nombre").focus();
     $("#varIdPaciente").val("");
+    if($("#auth").val() == 1){ //Auth para admon
     CKEDITOR.instances['CirugiaOcularExtraocular'].setData('');
     CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData('');
     CKEDITOR.instances['ResumenClinico'].setData('');
     CKEDITOR.instances['Orden'].setData('');
     CKEDITOR.instances['Receta'].setData('');
     CKEDITOR.instances['Tratamiento'].setData('');
+    } //Fin de if de auth
     //$("#btnImprimirRecetaLentes").attr("disabled",true);
     //$("#btnImprimirCertificado").attr("disabled",true);
     // Se deshabilitan los botones de las imagenes
@@ -233,11 +235,13 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
 
 function guardarFormularioExpediente(parametroImpresion){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos
     if (validarFormularioExpedientePaciente()){
+        if($("#auth").val() == 1){ //Auth para admon
         //Se iguala la informacion de los ckeditor al val del text area
         $("#ResumenClinico").val(CKEDITOR.instances['ResumenClinico'].getData());
         $("#Orden").val(CKEDITOR.instances['Orden'].getData());
         $("#Receta").val(CKEDITOR.instances['Receta'].getData());
         $("#Tratamiento").val(CKEDITOR.instances['Tratamiento'].getData());
+        } //Fin de if de auth
     	var form = $('.frmExpedientePaciente');
     	//form.bind("submit",function(){
     		$.ajax({
@@ -354,6 +358,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
                     var fechaUltimaConsulta = new Date(elemento.updated_at);
                     $('<li><b>Nombre:<b></li><li>'+elemento.Nombre+'</li><li><b>Edad:<b></li><li>'+
                         elemento.Edad+'</li><li><b>Fecha de Ultima Visita:<b></li><li>'+fechaUltimaConsulta.getDate()+'/'+meses[(fechaUltimaConsulta.getMonth() + 1 )]+'/'+fechaUltimaConsulta.getFullYear()+'</li>').appendTo(contenidoUltimaConsulta);
+
+                    if($("#auth").val() == 1){ //Auth para admon
 
             		// Padecimiento Paciente
                     if(response.Padecimiento[0]){
@@ -544,6 +550,8 @@ function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente 
 
                     //Consentimiento Medicamentos Intravitreos
                     CKEDITOR.instances['ConsentimientoMedicamentosIntravitreos'].setData("<p style='text-align: center;'><b>CARTA DE CONSENTIMIENTO INFORMADO PARA APLICACIÓN DE MEDICAMENTOS INTRAVITREOS</b></p><p>Fecha: "+ f.getDate() + " de " + meses[f.getMonth()+1] + " de " + f.getFullYear() +"</p><p>Responsable Legal del Paciente:</p><p>Nombre del Paciente: "+ elemento.Nombre  + txtConcentimientoMedicamentoIntravitreos);
+
+                    } //Termina if de auth
             	});
             }
     });
