@@ -51,3 +51,5 @@ Route::post('eliminarImagenes','ExpedientePacienteController@eliminarImagenes');
 Route::get('BajaVision',array('before' => 'autorizar','uses' => 'BajaVisionController@bajaVision'));
 Route::post('guardarBajaVision','BajaVisionController@guardarBajaVision');
 Route::get('imprimirBajaVision/{idPaciente?}',array('before' => 'autorizar','uses' => 'BajaVisionController@imprimirBajaVision'))->where('idPaciente','[0-9]+');
+//Ruta para los respaldos del sistema
+Route::post('respaldoSistema','ExpedientePacienteController@respaldoSistema');

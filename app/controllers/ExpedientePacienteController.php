@@ -95,6 +95,76 @@ class ExpedientePacienteController extends BaseController{
 		return Response::json(array('ImagenesBiomicroscopia'=> $imagenesBiomicroscopia));
 	}
 
+	public function respaldoSistema(){ //Metodo para realizar el respaldo de la informacion
+		$tipoRespaldo = Input::get('tipoRespaldo');
+		$pathProject = '/projects/CentroVision/app/storage/backups/';
+		$ubicacionRespaldo = $_SERVER['DOCUMENT_ROOT'].$pathProject;
+		$fechaRespaldo = date('dmYHis');
+		$mensajeRespaldo = '';
+		if ($tipoRespaldo == 1){
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblAgudezaVisual_".$fechaRespaldo.".sql' FROM agudezavisual");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblBajaVision_".$fechaRespaldo.".sql' FROM bajavision");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblBiomicroscopia_".$fechaRespaldo.".sql' FROM biomicroscopia");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblCalendarioOperacion_".$fechaRespaldo.".sql' FROM calendariooperacion");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblCertificado_".$fechaRespaldo.".sql' FROM certificado");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblDatosPacientes_".$fechaRespaldo.".sql' FROM datospacientes");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblDiagnostico_".$fechaRespaldo.".sql' FROM diagnostico");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblFondo_".$fechaRespaldo.".sql' FROM fondo");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblGonioscopia_".$fechaRespaldo.".sql' FROM gonioscopia");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblHospitalizacion_".$fechaRespaldo.".sql' FROM hospitalizacion");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblImagenes_".$fechaRespaldo.".sql' FROM imagenes");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblLentes_".$fechaRespaldo.".sql' FROM lentes");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblMovilidad_".$fechaRespaldo.".sql' FROM movilidad");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblPadecimientoPacientes_".$fechaRespaldo.".sql' FROM padecimientopacientes");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblReceta_".$fechaRespaldo.".sql' FROM receta");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblRefraccion_".$fechaRespaldo.".sql' FROM refraccion");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblResumenClinico_".$fechaRespaldo.".sql' FROM resumenclinico");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblTratamiento_".$fechaRespaldo.".sql' FROM tratamiento");
+			DB::select("SELECT * INTO OUTFILE '".$ubicacionRespaldo."tblUsers_".$fechaRespaldo.".sql' FROM users");
+			$mensajeRespaldo = "<br/>Proceso Finalizado";
+		}else{
+			$pathImagenes = $_SERVER['DOCUMENT_ROOT'].'/projects/CentroVision/public/imagenes/';
+			function agregar_zip($dir, $zip){
+        		if (is_dir($dir)) {
+          			if ($da = opendir($dir)) {
+            			while (($archivo = readdir($da))!== false) {
+              				if (is_dir($dir . $archivo) && $archivo!="." && $archivo!=".."){
+                				agregar_zip($dir.$archivo . "/", $zip);
+				            }elseif(is_file($dir.$archivo) && $archivo!="." && $archivo!=".."){
+				                $zip->addFile($dir.$archivo, $dir.$archivo);
+              				}
+            			}
+            			closedir($da);
+          			}
+        		} 
+      		} //fin de la función
+	    	//creamos una instancia de ZipArchive      
+      		$zip = new ZipArchive();
+      		//directorio a comprimir
+      		//la barra inclinada al final es importante
+      		//la ruta debe ser relativa no absoluta      
+      		$dir = $pathImagenes;
+      		//ruta donde guardar los archivos zip, ya debe existir
+      		$rutaFinal=$ubicacionRespaldo;
+      		$archivoZip = "dirImagenes".$fechaRespaldo.".zip";  
+      		if($zip->open($archivoZip,ZIPARCHIVE::CREATE)===true) {  
+        		agregar_zip($dir, $zip);
+        		$zip->close();
+        		//Muevo el archivo a una ruta
+        		//donde no se mezcle los zip con los demas archivos
+        		@rename($archivoZip, "$rutaFinal$archivoZip");
+        		//Hasta aqui el archivo zip ya esta creado
+        		//Verifico si el archivo ha sido creado
+        		if (file_exists($rutaFinal.$archivoZip)){
+        			$mensajeRespaldo = "<br/>Proceso Finalizado";  
+        		}else{
+          			$mensajeRespaldo = "<br/>Error, archivo zip no ha sido creado";
+        		}
+      		}
+		}
+		return Response::json(array('mensajeRespaldo'=> $mensajeRespaldo));
+	}
+
 	public function eliminarImagenes(){ //Funcion que elimina las imagenes
 		$idImagen = Input::get('idImagen');
 		$imagen = DB::table('Imagenes')->where('IdImagen', '=', $idImagen)->get();

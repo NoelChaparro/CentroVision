@@ -48,7 +48,16 @@
    		</div>
    	</div>
    	<br><br>
-
+	<!--start: Cuadro Respaldo -->
+	<div style="display:none">
+		<div id="dataRespaldo">
+			¿Que respaldo desea realizar? <br><br>
+			<button id="btnRespaldarBaseDatos"  class="btn btn-info">Base de Datos</button>
+			<button id="btnRespaldarSistema"  class="btn btn-info">Archivos de Sistema</button>
+			<div id="loadingRespado"></div>
+		</div>
+	</div>
+	<!--End: Cuadro Respaldo -->
    	<div class="row">
 		<div class="span7">
 			<div class="control-group">

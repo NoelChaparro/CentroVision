@@ -52,6 +52,7 @@
                                 <li><a href="LentesContacto">Lentes de Contacto</a></li>
                                 <li><a href="BajaVision">Baja Visión</a></li>
                             @endif
+                            <li><a href="#dataRespaldo" id="respaldarSistema">Respaldar</a></li>
                             <li>{{ HTML::link('logout', 'Salir (' . Auth::user()->username . ')') }}</li>
                             <!-- se comenta esta parte por se se requiere mas adelante
                             <li class="dropdown">

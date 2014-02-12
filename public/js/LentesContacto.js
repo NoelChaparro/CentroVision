@@ -7,6 +7,42 @@ function inicio(){
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);	
     $("#btnGuardarLenteContacto").on("click",guardarFormularioLenteContacto);
     $("#btnCancelarLenteContacto").on("click",limpiarFormularioLentesContacto);
+    /* ---------- Respaldos ----------*/
+    $("#btnRespaldarBaseDatos").on("click",function(){
+        respaldarSistema(1);
+    });
+    $("#btnRespaldarSistema").on("click",function(){
+        respaldarSistema(2);
+    });
+    $("#respaldarSistema").on('click',respaldos);
+    $("a#respaldarSistema").fancybox({
+        'hideOnContentClick': true
+    });
+    /* ---------- Respaldos ----------*/    
+}
+
+var respaldos = function (){ //Funcion para limpiar la capa de dialogo de los respaldos
+    $("#loadingRespado").html('');
+}
+
+var respaldarSistema = function (tipoRespaldo){ //Metodo para realizar los respaldos, se envia un parametro si el tipo de respaldo es 1 se respalda la base de datos, si es 2 respalda las imagenes
+    var contenedorLoading = $("#loadingRespado");
+    $.ajax({
+            data:  'tipoRespaldo='+tipoRespaldo,
+            url:   'respaldoSistema',
+            type:  'post',
+            beforeSend: function () {
+                $("#btnRespaldarBaseDatos").attr("disabled",true);
+                $("#btnRespaldarSistema").attr("disabled",true);
+                contenedorLoading.html("<img src='img/ajax-loader.gif' /><br />Respaldando por favor espere...");
+            },
+            success:  function (response) {
+                $("#btnRespaldarBaseDatos").attr("disabled",false);
+                $("#btnRespaldarSistema").attr("disabled",false);
+                contenedorLoading.html(response.mensajeRespaldo);
+            }
+    });
+    return false;
 }
 
 var guardarFormularioLenteContacto = function(){ //Funcion que permite guardar el historial de los lentes de contacto
