@@ -127,7 +127,23 @@
        		</br></br></br></br></br></br></br></br></br>
 		</section>
 		<!--End: Inicio -->
+		@if ($operacionesLasikHoy)
+			Existen operaciones programadas para el día de hoy:
+			<br />
+			@foreach ($operacionesLasikHoy as $operacionesHoy)
+				{{$operacionesHoy->Nombre}} <br>
+			@endforeach
+			<br />
+		@endif
 		
+		@if ($operacionesLasikManana)
+			Existen operaciones programadas para el día de mañana:
+			<br />
+			@foreach ($operacionesLasikManana as $operacionesManana)
+				{{$operacionesManana->Nombre}} <br>
+			@endforeach
+			<br />		
+		@endif		
 		<!--start: Datos Generales -->
 		<section id="mnDatos_Generales">
 			<legend>Registrar Paciente</legend>
@@ -215,6 +231,14 @@
 				  	{{ Form::label('referencia', 'Referencia:', array('class' => 'control-label')) }}
 				  	<div class="controls">
 				    	{{ Form::text('referencia','',array('class' => 'input-xlarge')) }}
+				  	</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="control-group">
+				  	{{ Form::label('fechaoperacion', 'Fecha Operacion:', array('class' => 'control-label')) }}
+				  	<div class="controls">
+				    	{{ Form::text('fechaoperacion','',array('class' => 'input-small')) }}
 				  	</div>
 				</div>
 			</div>

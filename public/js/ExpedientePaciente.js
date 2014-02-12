@@ -21,6 +21,10 @@ function inicio() //Inicio del documento
             
         }
     );
+    $("#fechaoperacion").datepicker({
+        firstDay:0,
+        dateFormat:'dd-mm-yy'
+    });
     /* ------------- Menu Paciente ------------ */
     $("#btnGuardarExpedientePaciente").on("click",guardarFormularioExpediente);
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
