@@ -5,8 +5,169 @@
 
 @section('Contenido')	 
 			</br></br>
-			<section id="lasik">
-				<div class="row offset1">
+			<div class="reporte">
+				<div class="row">
+					<!--<img class="pull-right" src="logo" alt="">-->
+					<img class="pull-right flotante" src="img/logo.jpg" alt="" width="80">
+					<legend class="text-center">PROGRAMACION QUIRURGICA</legend>
+				</div>
+				<div class="row">
+					<div class="span"><strong>Medico Tratante:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					<div class="span"><span>Dr. Gerardo Contreras Herrera</span></div>
+				</div>
+				<div class="row">
+					<div class="span"><strong>Nombre del Paciente:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					<div class="span"><span id="rnombre"></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="span"><strong>Telefono:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+					<div class="span"><span id="rtelefono"></span></div>
+				</div>
+				<div class="row">
+					<div class="span"><strong>Edad:</strong> &nbsp;<span id="redad"></span>&nbsp;años&nbsp;&nbsp;&nbsp;</div>
+					<div class="span"><strong>Sexo:</strong> &nbsp;<span id="rsexo"></span>&nbsp;&nbsp;&nbsp;</div>
+					<div class="span"><strong>Profesion:</strong> &nbsp;<span id="rprofesion"></span></div>
+				</div>	
+				<div class="row">
+					<div class="span">
+						<strong>Fecha Programada:</strong>&nbsp; <span id="rfecha">&nbsp;&nbsp;&nbsp;</span>
+					</div>
+					<div class="span">
+						<strong>Hora:</strong> &nbsp;<span id="rhora">&nbsp;&nbsp;&nbsp;</span>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="span">
+						<table class="span">
+							<tbody>
+								<tr>
+									<th>A.V. S.C.&nbsp;&nbsp;</th>
+									<th> OD:20/</th>
+									<td><span id="rtxtAVOD"></span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<th>OI:20/</th>
+									<td><span id="rtxtAVOI"></span></td> 
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<table>
+						<tr>
+							<td><strong>REFRACCION NO CICLOPLEJICA:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>					
+						</tr>
+						<tr>
+							<td>
+								<table>
+			
+									<tr>
+										<th>Refraccion:</th>
+										<th>OD:&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rRefraccionSphOD"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>-&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rRefraccionCylOD"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>X&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rRefraccionEjeOD"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>CV:&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtCCOD"></span>&nbsp;&nbsp;&nbsp;</td>
+									</tr>
+									<tr>
+										<td></td>
+										<th>OI:&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rRefraccionSphOI"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>-&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rRefraccionCylOI"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>X&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rRefraccionEjeOI"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>CV:&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtCCOI"></span>&nbsp;&nbsp;&nbsp;</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<td><strong>REFRACCION CICLOPLEJICA:</strong></td>
+						</tr>
+						<tr>
+							<td>
+								<table>
+									<tr>
+										<th>Refraccion:&nbsp;&nbsp;&nbsp;</th>
+										<th>OD:&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtEsferaOD2"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>-&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtCilindroOD2"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>x&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtEjeOD2"></span>&nbsp;&nbsp;&nbsp;</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<th>OI:&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtEsferaOI2"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>-&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtCilindroOI2"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th>x&nbsp;&nbsp;&nbsp;</th>
+										<td><span id="rtxtEjeOI2"></span>&nbsp;&nbsp;&nbsp;</td>
+										<th></th>
+										<td></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="span">
+						<h5>QUERATOMETRIAS:</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span">
+						<table sclass="table">
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<th>&nbsp;OD:&nbsp;</th>
+								<td><span id="rtxtQ1"></span>&nbsp;</td>
+								<th>x&nbsp;</th>
+								<td><span id="rtxtQ2"></span>&nbsp;</td>
+								<th>/&nbsp;</th>
+								<td><span id="rtxtQ3"></span>&nbsp;</td>
+								<th>x&nbsp;</th>
+								<td><span id="rtxtQ4"></span>&nbsp;</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<th>&nbsp;OI:&nbsp;</th>
+								<td><span id="rtxtQ5"></span>&nbsp;</td>
+								<th>x&nbsp;</th>
+								<td><span id="rtxtQ6"></span>&nbsp;</td>
+								<th>/&nbsp;</th>
+								<td><span id="rtxtQ7"></span>&nbsp;</td>
+								<th>x&nbsp;</th>
+								<td><span id="rtxtQ8"></span>&nbsp;</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+
+			<section>
+				<div class="lasik row offset1">
 						<ul class="hover-block">
 	          				<li>
 	            				<a href="#mdlBuscarPaciente" role="button" data-toggle="modal" id="btnBuscarPacienteModal">
@@ -21,7 +182,7 @@
 					        </li>
 						</ul>
 				</div>
-	       		<div class="modal hide fade" tabindex="-1" role="dialog" id="mdlBuscarPaciente">
+	       		<div class="lasik modal hide fade" tabindex="-1" role="dialog" id="mdlBuscarPaciente">
 	            	<div class="modal-header">
 	               		<a class="close" data-dismiss="modal">&times;</a>
 	               		<h3>Buscar Paciente</h3>
@@ -46,19 +207,11 @@
 	                	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
 	           		</div>
 	       		</div>
+	       		<div class="lasik">
        			<br><br><br><br>
-       			<!--start: Cuadro Respaldo -->
-				<div style="display:none">
-					<div id="dataRespaldo">
-						¿Que respaldo desea realizar? <br><br>
-						<button id="btnRespaldarBaseDatos"  class="btn btn-info">Base de Datos</button>
-						<button id="btnRespaldarSistema"  class="btn btn-info">Archivos de Sistema</button>
-						<div id="loadingRespado"></div>
-					</div>
-				</div>
-				<!--End: Cuadro Respaldo -->
-				<legend>Lasik</legend>
-				<div class="row">
+       			</div>
+				<legend class="lasik">Lasik</legend>
+				<div class="lasik row">
 					<table class="span12">
 						<tbody>
 							<tr>
@@ -79,7 +232,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="row">
+				<div class="lasik row">
 					<table class="span6">
 						<tbody>
 							<tr>
@@ -93,7 +246,7 @@
 				</div>
 				<form action="" id="frmOperacionLaser">				
 					<hr>
-					<div class="row">
+					<div class="lasik row">
 						<div class="span6">
 							<table class="span6">
 								<tbody>
@@ -107,7 +260,7 @@
 						</div>
 					</div>
 					<hr>
-					<div class="row">
+					<div class="lasik row">
 						<div class="span6">
 							<table class="span6">
 								<tbody>
@@ -172,7 +325,7 @@
 						</div>
 					</div>	
 					<hr>
-					<div class="row">
+					<div class="lasik row">
 						<div class="span12">
 							<table class="span7">
 								<tbody>
@@ -204,7 +357,7 @@
 						</div>
 					</div>
 					<hr>
-					<div class="row">
+					<div class="lasik row">
 						<div class="span6">
 							<table class="span6">
 								<th>Presion Ocular:</th>
@@ -249,7 +402,7 @@
 										<th><input type="radio" name="cristalino" value="Izquierdo"> Izquierdo</th>
 									</tr>
 									<tr><br></tr>
-									<tr>
+									<tr class="lasik">
 										<th colspan="4">FO.B/M <input type="text" class="input-large" id="txFOBM"></th>
 									</tr>
 								</tbody>							
@@ -257,7 +410,7 @@
 						</div>
 					</div>
 					<hr>
-					<div class="row">
+					<div class="lasik row">
 						<div class="span12">
 							<table class="span6">
 								<tbody>
@@ -265,45 +418,18 @@
 										<th colspan="8">ESTUDIOS COMPLEMENTARIOS:</th>
 									</tr>
 									<tr>
-										<th colspan="8">Queratometrias Topograficas</th>
-									</tr>
-									<tr>
-										<th>OD:</th>
-										<th><input type="text" class="input-mini" id="txtQT1"></th>
-										<th>X</th>
-										<th><input type="text" class="input-mini" id="txtQT2"></th>
-										<th>/</th>
-										<th><input type="text" class="input-mini" id="txtQT3"></th>
-										<th>X</th>
-										<th><input type="text" class="input-mini" id="txtQT4"></th>
-									</tr>
-									<tr>
-										<th>OI:</th>
-										<th><input type="text" class="input-mini" id="txtQT5"></th>
-										<th>X</th>
-										<th><input type="text" class="input-mini" id="txtQT6"></th>
-										<th>/</th>
-										<th><input type="text" class="input-mini" id="txtQT7"></th>
-										<th>X</th>
-										<th><input type="text" class="input-mini" id="txtQT8"></th>
+										<th>Paquimetria:</th>
+										<th></th>
+										<th>OD: <input type="text" class="input-mini" id="txtpaqOD"></th>
+										<th></th>
+										<th>OI: <input type="text" class="input-mini" id="txtpaqOI"></th>
 									</tr>
 								</tbody>
 							</table>
-						<div class="row">
-							<div class="span12">
-								<table>
-									<tr>
-										<th>Paquimetria</th>
-										<th>OD: <input type="text" class="input-mini" id="txtpaqOD"></th>
-										<th>OI: <input type="text" class="input-mini" id="txtpaqOI"></th>
-									</tr>
-								</table>
-							</div>
-						</div>
 						</div>
 					</div>
 					<hr>
-					<div class="row">
+					<div class="lasik row">
 						<div class="span6">
 							<div class="row">
 								<div class="span5">
@@ -449,8 +575,10 @@
 							</div>
 						</div>
 					</div>
+					<div class="lasik">
 					<br><br>
-					<div class="row">
+					</div>
+					<div class="lasik row">
 						<div class="span12">
 							<span style="vertical-align:top;">Observaciones:</span>
 							<textarea  id="observaciones"></textarea>
@@ -467,198 +595,8 @@
 	  	</div>
 	</div>
 	<!-- end: button-->
+
 	<div class="reporte">
-		<div class="row">
-			<!--<img class="pull-right" src="logo" alt="">-->
-			<img class="pull-right flotante" src="img/logo.jpg" alt="" width="80">
-			<legend class="text-center">PROGRAMACION QUIRURGICA</legend>
-		</div>
-		<div class="row">
-			<div class="span"><strong>Medico Tratante:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><span>Dr. Gerardo Contreras Herrera</span></div>
-		</div>
-		<div class="row">
-			<div class="span"><strong>Nombre del Paciente:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><span id="rnombre"></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<div class="span"><strong>Telefono:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><span id="rtelefono"></span></div>
-		</div>
-		<div class="row">
-			<div class="span"><strong>Edad:</strong> &nbsp;<span id="redad"></span>&nbsp;años&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><strong>Sexo:</strong> &nbsp;<span id="rsexo"></span>&nbsp;&nbsp;&nbsp;</div>
-			<div class="span"><strong>Profesion:</strong> &nbsp;<span id="rprofesion"></span></div>
-		</div>	
-		<div class="row">
-			<div class="span">
-				<strong>Fecha Programada:</strong>&nbsp; <span id="rfecha">&nbsp;&nbsp;&nbsp;</span>
-			</div>
-			<div class="span">
-				<strong>Hora:</strong> &nbsp;<span id="rhora">&nbsp;&nbsp;&nbsp;</span>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="span">
-				<table class="span">
-					<tbody>
-						<tr>
-							<th>A.V. S.C.&nbsp;&nbsp;</th>
-							<th> OD:20/</th>
-							<td><span id="rtxtAVOD"></span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-							<th>OI:20/</th>
-							<td><span id="rtxtAVOI"></span></td> 
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<table>
-				<tr>
-					<td><strong>REFRACCION NO CICLOPLEJICA:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>					
-				</tr>
-				<tr>
-					<td>
-						<table>
-	
-							<tr>
-								<th>Refraccion:</th>
-								<th>OD:&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rRefraccionSphOD"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>-&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rRefraccionCylOD"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>X&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rRefraccionEjeOD"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>CV:&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtCCOD"></span>&nbsp;&nbsp;&nbsp;</td>
-							</tr>
-							<tr>
-								<td></td>
-								<th>OI:&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rRefraccionSphOI"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>-&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rRefraccionCylOI"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>X&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rRefraccionEjeOI"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>CV:&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtCCOI"></span>&nbsp;&nbsp;&nbsp;</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<td><strong>REFRACCION CICLOPLEJICA:</strong></td>
-				</tr>
-				<tr>
-					<td>
-						<table>
-							<tr>
-								<th>Refraccion:&nbsp;&nbsp;&nbsp;</th>
-								<th>OD:&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtEsferaOD2"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>-&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtCilindroOD2"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>x&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtEjeOD2"></span>&nbsp;&nbsp;&nbsp;</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<th>OI:&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtEsferaOI2"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>-&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtCilindroOI2"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th>x&nbsp;&nbsp;&nbsp;</th>
-								<td><span id="rtxtEjeOI2"></span>&nbsp;&nbsp;&nbsp;</td>
-								<th></th>
-								<td></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="span">
-				<h5>QUERATOMETRIAS:</h5>
-			</div>
-		</div>
-		<div class="row">
-			<div class="span">
-				<table sclass="table">
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<th>&nbsp;OD:&nbsp;</th>
-						<td><span id="rtxtQ1"></span>&nbsp;</td>
-						<th>x&nbsp;</th>
-						<td><span id="rtxtQ2"></span>&nbsp;</td>
-						<th>/&nbsp;</th>
-						<td><span id="rtxtQ3"></span>&nbsp;</td>
-						<th>x&nbsp;</th>
-						<td><span id="rtxtQ4"></span>&nbsp;</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<th>&nbsp;OI:&nbsp;</th>
-						<td><span id="rtxtQ5"></span>&nbsp;</td>
-						<th>x&nbsp;</th>
-						<td><span id="rtxtQ6"></span>&nbsp;</td>
-						<th>/&nbsp;</th>
-						<td><span id="rtxtQ7"></span>&nbsp;</td>
-						<th>x&nbsp;</th>
-						<td><span id="rtxtQ8"></span>&nbsp;</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="span">
-				<table class="span">
-					<tbody>
-						<tr>
-							<th colspan="4"> EXPLORACION FISICA:</th>
-						</tr>
-						<tr>
-							<th>Cornea:</th>
-							<td>&nbsp;&nbsp;<span id="rcornea"></span></td>
-							<th>&nbsp;&nbsp;&nbsp;Tamaño Corneal:</th>
-							<td>&nbsp;&nbsp;<span id="rtcorneal"></span></td>
-						</tr>
-						<tr></tr>
-						<tr>
-							<th>Segmento Anterior:</th>
-							<td>&nbsp;&nbsp;<span id="rsegmento"></span></td>
-							<th>&nbsp;&nbsp;&nbsp;Tamaño Pupilar:</th>
-							<td>&nbsp;&nbsp;<span id="rtpupilar"></span></td>
-						</tr>
-						<tr></tr>
-						<tr>
-							<th>Cristalino:</th>
-							<td>&nbsp;&nbsp;<span id="rcristalino"></span></td>
-						</tr>
-						<tr><br></tr>
-						<tr>
-							<th>FO.B/M</th>
-							<td>&nbsp;&nbsp;<span id="rtxFOBM"></span></td>
-						</tr>
-					</tbody>							
-				</table>
-			</div>
-		</div>
 		<hr>
 		<div class="row">
 			<div class="span">
@@ -678,31 +616,6 @@
 					<tbody>
 						<tr>
 							<th colspan="8">ESTUDIOS COMPLEMENTARIOS:</th>
-						</tr>
-						<tr>
-							<th colspan="8">Queratometrias Topograficas</th>
-						</tr>
-						<tr>
-							<td></td>
-							<th>&nbsp;OD:&nbsp;</th>
-							<td><span id="rtxtQT1"></span>&nbsp;</td>
-							<th>x&nbsp;</th>
-							<td><span id="rtxtQT2"></span>&nbsp;</td>
-							<th>/&nbsp;</th>
-							<td><span id="rtxtQT3"></span>&nbsp;</td>
-							<th>x&nbsp;</th>
-							<td><span id="rtxtQT4"></span>&nbsp;</td>
-						</tr>
-						<tr>
-							<td></td>
-							<th>&nbsp;OI:&nbsp;</th>
-							<td><span id="rtxtQT5"></span>&nbsp;</td>
-							<th>x&nbsp;</th>
-							<td><span id="rtxtQT6"></span>&nbsp;</td>
-							<th>/&nbsp;</th>
-							<td><span id="rtxtQT7"></span>&nbsp;</td>
-							<th>x&nbsp;</th>
-							<td><span id="rtxtQT8"></span>&nbsp;</td>
 						</tr>
 					</tbody>
 				</table>

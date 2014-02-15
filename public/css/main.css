@@ -2,7 +2,7 @@
 	size: letter;
 }
 @media print{
-	footer, .btn, .navbar, #lasik, hr{
+	footer, .btn, .navbar, .lasik, hr{
 		display:none;
 	}
 	/*input{
@@ -16,6 +16,9 @@
 	hr{
 		margin: 2px;
 		border: 1px solid black;
+	}
+	.reporte{
+		display:;
 	}
 	.span{
 		display:inline !important;

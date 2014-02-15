@@ -62,45 +62,8 @@ function inicio() //Inicio del documento
 	tablaBusquedaPacientesModal();
 	$("#btnCancelarOperacionLaser").on("click",limpiarFormularioOperacionLaser);
 	$("#btnImprimirOperacionLaser").on("click",imprimirOperacionLaser);
-    //$("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser);
-	/* ---------- Respaldos ----------*/
-    $("#btnRespaldarBaseDatos").on("click",function(){
-        respaldarSistema(1);
-    });
-    $("#btnRespaldarSistema").on("click",function(){
-        respaldarSistema(2);
-    });
-    $("#respaldarSistema").on('click',respaldos);
-    $("a#respaldarSistema").fancybox({
-        'hideOnContentClick': true
-    });
-    /* ---------- Respaldos ----------*/     
+    //$("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser); 
 }
-
-var respaldos = function (){ //Funcion para limpiar la capa de dialogo de los respaldos
-    $("#loadingRespado").html('');
-}
-
-var respaldarSistema = function (tipoRespaldo){ //Metodo para realizar los respaldos, se envia un parametro si el tipo de respaldo es 1 se respalda la base de datos, si es 2 respalda las imagenes
-    var contenedorLoading = $("#loadingRespado");
-    $.ajax({
-            data:  'tipoRespaldo='+tipoRespaldo,
-            url:   'respaldoSistema',
-            type:  'post',
-            beforeSend: function () {
-                $("#btnRespaldarBaseDatos").attr("disabled",true);
-                $("#btnRespaldarSistema").attr("disabled",true);
-                contenedorLoading.html("<img src='img/ajax-loader.gif' /><br />Respaldando por favor espere...");
-            },
-            success:  function (response) {
-                $("#btnRespaldarBaseDatos").attr("disabled",false);
-                $("#btnRespaldarSistema").attr("disabled",false);
-                contenedorLoading.html(response.mensajeRespaldo);
-            }
-    });
-    return false;
-}
-
 function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 {
 	var Edad = $("#txtEdad").val();
@@ -689,12 +652,6 @@ var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir
 	$('#rtxtQT8').text($('#txtQ8').val());
 	$('#rtxtpaqOD').text($('#txtpaqOD').val());
 	$('#rtxtpaqOI').text($('#txtpaqOI').val());
-	$('#rcornea').text($("input[name='cornea']:checked").val());
-	$('#rtcorneal').text($("input[name='tcorneal']:checked").val());
-	$('#rsegmento').text($("input[name='segmento']:checked").val());
-	$('#rtpupilar').text($("input[name='tpupilar']:checked").val());
-	$('#rcristalino').text($("input[name='cristalino']:checked").val());
-	$('#rtxFOBM').text($('#txFOBM').val());
 	$('#robservaciones').text($('#observaciones').val());
 	$("#rtxtValt").text($('#txtValt').val());
 	$("#rtxtValtI").text($('#txtValtI').val());

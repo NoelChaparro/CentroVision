@@ -128,34 +128,6 @@
 		</section>
 		<!--End: Inicio -->
 		
-		<!--start: Cuadro Respaldo -->
-		<div style="display:none">
-			<div id="dataRespaldo">
-				¿Que respaldo desea realizar? <br><br>
-				<button id="btnRespaldarBaseDatos"  class="btn btn-info">Base de Datos</button>
-				<button id="btnRespaldarSistema"  class="btn btn-info">Archivos de Sistema</button>
-				<div id="loadingRespado"></div>
-			</div>
-		</div>
-		<!--End: Cuadro Respaldo -->
-
-		@if ($operacionesLasikHoy)
-			Existen operaciones programadas para el día de hoy:
-			<br />
-			@foreach ($operacionesLasikHoy as $operacionesHoy)
-				{{$operacionesHoy->Nombre}} <br>
-			@endforeach
-			<br />
-		@endif
-		
-		@if ($operacionesLasikManana)
-			Existen operaciones programadas para el día de mañana:
-			<br />
-			@foreach ($operacionesLasikManana as $operacionesManana)
-				{{$operacionesManana->Nombre}} <br>
-			@endforeach
-			<br />		
-		@endif		
 		<!--start: Datos Generales -->
 		<section id="mnDatos_Generales">
 			<legend>Registrar Paciente</legend>
@@ -243,14 +215,6 @@
 				  	{{ Form::label('referencia', 'Referencia:', array('class' => 'control-label')) }}
 				  	<div class="controls">
 				    	{{ Form::text('referencia','',array('class' => 'input-xlarge')) }}
-				  	</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="control-group">
-				  	{{ Form::label('fechaoperacion', 'Fecha Operacion:', array('class' => 'control-label')) }}
-				  	<div class="controls">
-				    	{{ Form::text('fechaoperacion','',array('class' => 'input-small')) }}
 				  	</div>
 				</div>
 			</div>
@@ -1185,7 +1149,7 @@
 				<div class="control-group">
 					{{ Form::label('Add', 'Add: ', array('class' => 'control-label')) }}
 					<div class="controls">
-						{{ Form::text('Add','',array('class' => 'input-xlarge')) }}
+						{{ Form::text('Add','',array('class' => 'input-small')) }}
 					</div>
 				</div>
 				
