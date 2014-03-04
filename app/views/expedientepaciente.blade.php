@@ -8,46 +8,89 @@
 @stop
 
 @section('Contenido')
-	{{$Paciente[0]->Nombre}}
-	{{$Paciente[0]->Domicilio}}
-	{{$Paciente[0]->Colonia}}
-	{{$Paciente[0]->Campo}}
-	{{$Paciente[0]->Ciudad}}
-	{{$Paciente[0]->Edad}}
-	@if ($Paciente[0]->Sexo == 'M')
-		Masculino
-	@else
-		Femenino
-	@endif
-	{{$Paciente[0]->Ocupacion}}
-	{{$Paciente[0]->Telefono}}
-	{{$Paciente[0]->Referencia}}
+	<table class="table table-condensed">
+		<tr>
+			<th>Nombre:</th>
+			<td>{{$Paciente[0]->Nombre}}</td>
+			<th>Domicilio:</th>
+			<td>{{$Paciente[0]->Domicilio}}</td>
+			<th>Colonia:</th>
+			<td>{{$Paciente[0]->Colonia}}</td>
+		</tr>
+		<tr>
+			<td></td><td></td>
+			<th>Campo:</th>
+			<td>{{$Paciente[0]->Campo}}</td>
+			<th>Ciudad:</th>
+			<td>{{$Paciente[0]->Ciudad}}</td>
+		</tr>
+		<tr>
+			<th>Sexo:</th>
+			<td>
+				@if ($Paciente[0]->Sexo == 'M')
+					Masculino
+				@else
+					Femenino
+				@endif
+			</td>
+			<th>Edad:</th>
+			<td>{{$Paciente[0]->Edad}}</td>
+			<th>Ocupación:</th>
+			<td>{{$Paciente[0]->Ocupacion}}</td>
+		</tr>
+		<tr>
+			<th>Teléfono:</th>
+			<td>{{$Paciente[0]->Telefono}}</td>
+			<th>Referencia:</th>
+			<td>{{$Paciente[0]->Referencia}}</td>
+		</tr>
+	</table>
 	<p></p>
 
-	Padecimiento<br />
+	<h3>Padecimiento:</h3>
 	@if ($Padecimiento)
-	{{$Padecimiento[0]->Sintomatologia}}
-	{{$Padecimiento[0]->Antecedentes}}
+	<table class="table">
+		<tr>
+			<th>Sintomatología:</th>
+			<td>{{$Padecimiento[0]->Sintomatologia}}</td>
+		</tr>
+		<tr>
+			<th>Antecedentes:</th>
+			<td>{{$Padecimiento[0]->Antecedentes}}</td>
+		</tr>
+	</table>
 	@endif
 	<p></p>
 
-	Agudeza Visual<br />
-	@if ($AgudezaVisual)
-	{{$AgudezaVisual[0]->AVSCOD}}
-	{{$AgudezaVisual[0]->CCD}}
-	{{$AgudezaVisual[0]->PuntoD}}
-	{{$AgudezaVisual[0]->AVSCOD}}
-	{{$AgudezaVisual[0]->AVSCOI}}
-	{{$AgudezaVisual[0]->CCI}}
-	{{$AgudezaVisual[0]->PuntoI}}
-	{{$AgudezaVisual[0]->ParpadoD}}
-	{{$AgudezaVisual[0]->ParpadoI}}
-	{{$AgudezaVisual[0]->MmhgD}}
-	{{$AgudezaVisual[0]->MmhgI}}
-	@endif
+	<h3>Agudeza Visual:</h3>
+	<table class="table">
+		<tr>
+			<th colspan="3" style="text-align:center">Ojo Derecho</th>
+			<th colspan="3" style="text-align:center">Ojo Izquierdo</th>
+		</tr>
+		<tr>
+			<td style="text-align:center">AVSCOD:</td>
+			<td style="text-align:center">CCOD:</td>
+			<td style="text-align:center">(.):</td>
+			<td style="text-align:center">AVSCOI:</td>
+			<td style="text-align:center">CCOI:</td>
+			<td style="text-align:center">(.):</td>
+		</tr>
+		<tr>
+			@if ($AgudezaVisual)
+			<td style="text-align:center">{{$AgudezaVisual[0]->AVSCOD}}</td>
+			<td style="text-align:center">{{$AgudezaVisual[0]->CCD}}</td>
+			<td style="text-align:center">{{$AgudezaVisual[0]->PuntoD}}</td>
+			<td style="text-align:center">{{$AgudezaVisual[0]->AVSCOI}}</td>
+			<td style="text-align:center">{{$AgudezaVisual[0]->CCI}}</td>
+			<td style="text-align:center">{{$AgudezaVisual[0]->PuntoI}}</td>
+			@endif
+		</tr>		
+	</table>	
 	<p></p>
 
-	Biomicroscopía e Iris <br />
+	<h3>Biomicroscopía e Iris:</h3>
+	
 	@if ($Biomicroscopia)
 	{{$Biomicroscopia[0]->BUTD}}
 	{{$Biomicroscopia[0]->BUTI}}
