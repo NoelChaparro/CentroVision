@@ -90,13 +90,27 @@
 	<p></p>
 
 	<h3>Biomicroscopía e Iris:</h3>
+	<table class="table">
+		<tr>
+			<th>Conjuntiva, Cornea, Iris, Pupilas y Cristalino OD:</th>
+			<th>Conjuntiva, Cornea, Iris, Pupilas y Cristalino OI:</th>
+		</tr>
+		<tr>
+			@if ($Biomicroscopia)
+			<td>{{$Biomicroscopia[0]->CCIPCD}}</td>			
+			<td>{{$Biomicroscopia[0]->CCIPCI}}</td>
+			@endif
+		</tr>
+		<tr>
+			<td>BUT: {{$Biomicroscopia[0]->BUTD}} Seg.</td>
+		</tr>
+	</table>
 	
-	@if ($Biomicroscopia)
-	{{$Biomicroscopia[0]->BUTD}}
+	
 	{{$Biomicroscopia[0]->BUTI}}
-	{{$Biomicroscopia[0]->CCIPCD}}
-	{{$Biomicroscopia[0]->CCIPCI}}
-	@endif
+	
+	
+	
 	<p></p>
 
 	Fondo y Retina <br />
