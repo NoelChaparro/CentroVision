@@ -145,7 +145,7 @@ var respaldarSistema = function (tipoRespaldo){ //Metodo para realizar los respa
 }
 
 var imprimirExpedienteCompleto = function(){ //Funcion que manda a pagina para imprimir todo el expediente del paciente
-    location.href= "ExpedienteCompleto/"+$("#varIdPaciente").val();
+    window.open("ExpedienteCompleto/"+$("#varIdPaciente").val());
     return false;
 }
 

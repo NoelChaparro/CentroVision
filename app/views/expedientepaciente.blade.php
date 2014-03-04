@@ -8,6 +8,7 @@
 @stop
 
 @section('Contenido')
+	<br><br><br><br><br><br>
 	<table class="table table-condensed">
 		<tr>
 			<th>Nombre:</th>
@@ -103,153 +104,223 @@
 		</tr>
 		<tr>
 			<td>BUT: {{$Biomicroscopia[0]->BUTD}} Seg.</td>
+			<td>BUT: {{$Biomicroscopia[0]->BUTI}} Seg.</td>
 		</tr>
 	</table>
-	
-	
-	{{$Biomicroscopia[0]->BUTI}}
-	
-	
-	
 	<p></p>
 
-	Fondo y Retina <br />
-	@if ($FondoRetina)
-	{{$FondoRetina[0]->PMVRD}}
-	{{$FondoRetina[0]->PMVRI}}
-	@endif
+	<h3>Fondo y Retina:</h3>
+	<table class="table">
+		<tr>
+			<th>Papila, Mácula, Vasos y Retina Periférica OD:</th>
+			<th>Papila, Mácula, Vasos y Retina Periférica OI:</th>
+		</tr>
+		<tr>
+			@if ($FondoRetina)
+			<td>{{$FondoRetina[0]->PMVRD}}</td>
+			<td>{{$FondoRetina[0]->PMVRI}}</td>
+			@endif
+		</tr>
+	</table>	
 	<p></p>
 
-	Gonioscopía <br />
-	@if ($Gonioscopia)
-	{{$Gonioscopia[0]->G1D}}
-	{{$Gonioscopia[0]->G2D}}
-	{{$Gonioscopia[0]->G3D}}
-	{{$Gonioscopia[0]->G4D}}
-	{{$Gonioscopia[0]->G1I}}
-	{{$Gonioscopia[0]->G2I}}
-	{{$Gonioscopia[0]->G3I}}
-	{{$Gonioscopia[0]->G4I}}
-	@endif
+	<h3>Gonioscopía</h3>
+	<table class="table">
+		@if ($Gonioscopia)
+		<tr>
+			<td></td><td>{{$Gonioscopia[0]->G1D}}</td><td></td><td></td><td></td><td></td><td>{{$Gonioscopia[0]->G1I}}</td><td></td>
+		</tr>
+		<tr>
+			<td>{{$Gonioscopia[0]->G2D}}</td><td></td><td>{{$Gonioscopia[0]->G3D}}</td><td></td><td></td><td>{{$Gonioscopia[0]->G2I}}</td><td></td><td>{{$Gonioscopia[0]->G3I}}</td>
+		</tr>
+		<tr>
+			<td></td><td>{{$Gonioscopia[0]->G4D}}</td><td></td><td></td><td></td><td></td><td>{{$Gonioscopia[0]->G4I}}</td><td></td>
+		</tr>
+		@endif	
+	</table>
 	<p></p>
 
-	Movilidad <br />
+
+	<h3>Movilidad:</h3>
 	@if ($Movilidad)
-	{{$Movilidad[0]->M1D}}
-	{{$Movilidad[0]->M2D}}
-	{{$Movilidad[0]->M3D}}
-	{{$Movilidad[0]->M4D}}
-	{{$Movilidad[0]->M5D}}
-	{{$Movilidad[0]->M6D}}
-	{{$Movilidad[0]->M1C}}
-	{{$Movilidad[0]->M2C}}
-	{{$Movilidad[0]->M3C}}
-	{{$Movilidad[0]->M1I}}
-	{{$Movilidad[0]->M2I}}
-	{{$Movilidad[0]->M3I}}
-	{{$Movilidad[0]->M4I}}
-	{{$Movilidad[0]->M5I}}
-	{{$Movilidad[0]->M6I}}
-	{{$Movilidad[0]->PPM}}
-	{{$Movilidad[0]->PMonocular}}
-	{{$Movilidad[0]->PAlterno}}
-	{{$Movilidad[0]->Ducciones}}
-	{{$Movilidad[0]->Versiones}}
-	{{$Movilidad[0]->OjoFijador}}
+	<table class="table">
+		
+		<tr>
+			<td></td><td>{{$Movilidad[0]->M1D}}</td><td></td><td>{{$Movilidad[0]->M2D}}</td><td></td><td>{{$Movilidad[0]->M1C}}</td><td></td><td>{{$Movilidad[0]->M1I}}</td><td></td><td>{{$Movilidad[0]->M2I}}</td><td></td>
+		</tr>
+		<tr>
+			<td>{{$Movilidad[0]->M3D}}</td><td></td><td>{{$Movilidad[0]->M4D}}</td><td></td><td></td><td>{{$Movilidad[0]->M2C}}</td><td></td><td></td><td>{{$Movilidad[0]->M3I}}</td><td></td><td>{{$Movilidad[0]->M4I}}</td>
+		</tr>
+		<tr>
+			<td></td><td>{{$Movilidad[0]->M5D}}</td><td></td><td>{{$Movilidad[0]->M6D}}</td><td></td><td>{{$Movilidad[0]->M3C}}</td><td></td><td>{{$Movilidad[0]->M5I}}</td><td></td><td>{{$Movilidad[0]->M6I}}</td><td></td>
+		</tr>
+	</table>
+	<table class="table table-condensed">
+		<tr>
+			<th>PPM:</th>
+			<td>{{$Movilidad[0]->PPM}}</td>
+			<th>P. Monocular: </th>
+			<td>{{$Movilidad[0]->PMonocular}}</td>
+			<th>P. Alterno: </th>
+			<td>{{$Movilidad[0]->PAlterno}}</td>
+		</tr>
+		<tr>
+			<th>Ducciones:</th>
+			<td>{{$Movilidad[0]->Ducciones}}</td>
+			<th>Versiones:</th>
+			<td>{{$Movilidad[0]->Versiones}}</td>
+			<th>Ojo Fijador:</th>
+			<td>{{$Movilidad[0]->OjoFijador}}</td>
+		</tr>
+	</table>
 	@endif
 	<p></p>
 
-	Refracción <br />
+	<h3>Refracción:</h3>
 	@if ($Refraccion)
-	{{$Refraccion[0]->ExoftalmometriaOD}}
-	{{$Refraccion[0]->ExoftalmometriaOI}}
-	{{$Refraccion[0]->ExoftalmometriaBase}}
-	{{$Refraccion[0]->PaquimetriaOD}}
-	{{$Refraccion[0]->PaquimetriaOI}}
-	{{$Refraccion[0]->RefraccionSphOD}}
-	{{$Refraccion[0]->RefraccionCylOD}}
-	{{$Refraccion[0]->RefraccionEjeOD}}
-	{{$Refraccion[0]->RefraccionAddOD}}
-	{{$Refraccion[0]->RefraccionBifocalOD}}
-	{{$Refraccion[0]->RefraccionAVOD}}
-
-	{{$Refraccion[0]->RefraccionSphOI}}
-	{{$Refraccion[0]->RefraccionCylOI}}
-	{{$Refraccion[0]->RefraccionEjeOI}}
-	{{$Refraccion[0]->RefraccionAddOI}}
-	{{$Refraccion[0]->RefraccionBifocalOI}}
-	{{$Refraccion[0]->RefraccionAVOI}}
-
-	{{$Refraccion[0]->EsquiascopiaSphOD}}
-	{{$Refraccion[0]->EsquiascopiaCylOD}}
-	{{$Refraccion[0]->EsquiascopiaEjeOD}}
-	{{$Refraccion[0]->EsquiascopiaSphOI}}
-	{{$Refraccion[0]->EsquiascopiaCylOI}}
-	{{$Refraccion[0]->EsquiascopiaEjeOI}}
-
-	{{$Refraccion[0]->QueratometriaOD}}
-	{{$Refraccion[0]->QueratometriaOI}}
+	<table class="table">
+		<tr>
+			<td>Exoftalmometria OD: {{$Refraccion[0]->ExoftalmometriaOD}}</td>
+			<td></td>
+			<td>Exoftalmometria OI: {{$Refraccion[0]->ExoftalmometriaOI}}</td>
+		</tr>
+		<tr>
+			<td></td><td>Barra: {{$Refraccion[0]->ExoftalmometriaBase}}</td><td></td>
+		</tr>
+		<tr>
+			<td>Paquimetría OD: {{$Refraccion[0]->PaquimetriaOD}}</td>
+			<td></td>
+			<td>Paquimetría OI: {{$Refraccion[0]->PaquimetriaOI}}</td>
+		</tr>
+	</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Sph</td>
+				<td>Cyl</td>
+				<td>Eje</td>
+				<td>Add</td>
+				<td>Bifocal</td>
+				<td>AV</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{$Refraccion[0]->RefraccionSphOD}}</td>
+				<td>{{$Refraccion[0]->RefraccionCylOD}}</td>								
+				<td>{{$Refraccion[0]->RefraccionEjeOD}}</td>
+				<td>{{$Refraccion[0]->RefraccionAddOD}}</td>
+				<td>{{$Refraccion[0]->RefraccionBifocalOD}}</td>
+				<td>{{$Refraccion[0]->RefraccionAVOD}}</td>
+				<th>Ojo Derecho</th>
+			</tr>
+			<tr>
+				<td>{{$Refraccion[0]->RefraccionSphOI}}</td>
+				<td>{{$Refraccion[0]->RefraccionCylOI}}</td>								
+				<td>{{$Refraccion[0]->RefraccionEjeOI}}</td>
+				<td>{{$Refraccion[0]->RefraccionAddOI}}</td>
+				<td>{{$Refraccion[0]->RefraccionBifocalOI}}</td>
+				<td>{{$Refraccion[0]->RefraccionAVOI}}</td>
+				<th>Ojo Izquierdo</th>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Sph</td>
+				<td>Cyl</td>								
+				<td>Eje</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{$Refraccion[0]->EsquiascopiaSphOD}}</td>
+				<td>{{$Refraccion[0]->EsquiascopiaCylOD}}</td>								
+				<td>{{$Refraccion[0]->EsquiascopiaEjeOD}}</td>
+				<th>Ojo Derecho</th>
+			</tr>
+			<tr>
+				<td>{{$Refraccion[0]->EsquiascopiaSphOI}}</td>
+				<td>{{$Refraccion[0]->EsquiascopiaCylOI}}</td>									
+				<td>{{$Refraccion[0]->EsquiascopiaEjeOI}}</td>
+				<th>Ojo Izquierdo</th>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table">
+		<tr>
+			<th>Queratometría OD: </th>
+			<td>{{$Refraccion[0]->QueratometriaOD}}</td>
+		</tr>
+		<tr>
+			<th>Queratometría OI: </th>
+			<td>{{$Refraccion[0]->QueratometriaOI}}</td>			
+		</tr>
+	</table>
 	@endif
 	<p></p>
-	Diagnóstico <br />
+
+	<h3>Diagnóstico:</h3>
 	@if ($Diagnostico)
-		@if ($Diagnostico[0]->AstigmatismoD)
-			Asigmatismo OD
-		@endif
-		@if ($Diagnostico[0]->GlaucomaD)
-			Glaucoma OD
-		@endif
-		@if ($Diagnostico[0]->CataratasD)
-			Cataratas OD
-		@endif
-		@if ($Diagnostico[0]->ConjuntivitisD)
-			Conjuntivitis OD
-		@endif
-		@if ($Diagnostico[0]->QueratitisD)
-			Queratitis OD
-		@endif
-		@if ($Diagnostico[0]->EstrabismoD)
-			Estrabismo OD
-		@endif
-		@if ($Diagnostico[0]->AstigmatismoI)
-			Asigmatismo OI
-		@endif
-		@if ($Diagnostico[0]->GlaucomaI)
-			Glaucoma OI
-		@endif
-		@if ($Diagnostico[0]->CataratasI)
-			Cataratas OI
-		@endif
-		@if ($Diagnostico[0]->ConjuntivitisI)
-			Conjuntivitis OI
-		@endif
-		@if ($Diagnostico[0]->QueratitisI)
-			Queratitis OI
-		@endif
-		@if ($Diagnostico[0]->EstrabismoI)
-			Estrabismo OI
-		@endif
 		{{$Diagnostico[0]->Diagnostico}}
 	@endif
 	<p></p>
 
-	Tratamiento <br />
+	<h3>Tratamiento:</h3>
 	@if ($Tratamiento)
-	{{$Tratamiento[0]->Tratamiento}}
+		{{$Tratamiento[0]->Tratamiento}}
 	@endif
 	<p></p>
 
-	Certificado <br />
+	<h3>Certificado:</h3>
 	@if ($Certificado)
-	{{$Certificado[0]->AnexosOculares}}
-	{{$Certificado[0]->SegmentoAnterior}}
-	{{$Certificado[0]->FondoOjo}}
-	{{$Certificado[0]->PercepcionCromatica}}
-	{{$Certificado[0]->Diagnostico}}
-	{{$Certificado[0]->Tratamiento}}
+	<table class="table">
+		<tr>
+			<th>Anexos Oculares: </th>
+			<td>{{$Certificado[0]->AnexosOculares}}</td>
+		</tr>
+		<tr>
+			<th>Segmento Anterior: </th>
+			<td>{{$Certificado[0]->SegmentoAnterior}}</td>
+		</tr>
+		<tr>
+			<th>Fondo Ojo: </th>
+			<td>{{$Certificado[0]->FondoOjo}}</td>
+		</tr>
+		<tr>
+			<th>Percepción Cromática: </th>
+			<td>{{$Certificado[0]->PercepcionCromatica}}</td>
+		</tr>
+		<tr>
+			<th>Diagnóstico: </th>
+			<td>{{$Certificado[0]->Diagnostico}}</td>
+		</tr>
+		<tr>
+			<th>Tratamiento: </th>
+			<td>{{$Certificado[0]->Tratamiento}}</td>
+		</tr>
+	</table>
 	@endif
 	<div class="boton">
-		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-info"><i class="icon-print icon-white"></i> Imprimir</button>
-		<button id="btnRegresar" name="btnRegresar" onclick="history.back()" class="btn btn-primary"><i class="icon-chevron-left icon-white"></i> Regresar</button>
-	</div>		
+		<button id="btnImprimir" name="btnImprimir" onclick="window.print();" class="btn btn-primary"><i class="icon-print icon-white"></i> Imprimir</button>
+		<button id="btnCerrarVentana" name="btnCerrarVentana" onclick="cerrarVentana()" class="btn btn-danger"><i class="icon-remove icon-white"></i> Cerrar</button>
+	</div>	
+@stop
+
+@section('Javascript')
+	<script text="javascript">
+		$(document).on('ready',inicio);
+
+		function inicio(){
+			window.print();
+			cerrarVentana();
+		}
+
+		var cerrarVentana = function (){
+			setTimeout("window.close()",10);
+		}
+	</script>
 @stop
