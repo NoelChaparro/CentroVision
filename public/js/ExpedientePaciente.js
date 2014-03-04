@@ -8,7 +8,7 @@ var imagenCatalogada = 0; //Variable para indicar de que tipo es la imagen si ex
 
 function inicio() //Inicio del documento
 { 
-    /* ------------- Menu Paciente ------------ */
+    /* ------------- Inicio Menu Paciente ------------ */
     $("#menu_paciente").hover(
         function () {
             $("#tab").animate({right:"200px"},500);
@@ -21,11 +21,26 @@ function inicio() //Inicio del documento
             
         }
     );
+    /* ------------- Fin Menu Paciente ------------ */
     $("#fechaoperacion").datepicker({
         firstDay:0,
         dateFormat:'dd-mm-yy'
     });
-    /* ------------- Menu Paciente ------------ */
+    /* ------------- Inicio Proxima Consulta ------------ */
+    $("#proxima_consulta").hover(
+        function () {
+            $("#tabpc").animate({right:"200px"},500);
+            $("#tab2pc").animate({right:"0px"},500);
+            
+        },
+        function () {
+            $("#tabpc").animate({right:"0px"},500);
+            $("#tab2pc").animate({right:"-200px"},500);
+            
+        }
+    );
+    /* ------------- Fin Proxima Consulta ------------ */
+
     $("#btnGuardarExpedientePaciente").on("click",guardarFormularioExpediente);
 	$("#btnBuscarPaciente").on("click",buscarPaciente);
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);
@@ -272,6 +287,8 @@ function limpiarFormularioExpedientePaciente(){ //Funcion que limpia el formular
     $('#imagenesBiomicroscopia').html('');
     //Datos de la ultima consulta
     $('#datosUltimaConsulta').html('');
+    $('#datosOperacionLaser').html('');
+    
 }
 
 function guardarFormularioExpediente(parametroImpresion){ //Funcion que toma los datos del formulario frmExpedientePaciente para posteriormente guardarlos

@@ -146,6 +146,21 @@ th{
 	font-family: arial;
 	font-size: 9pt;
 }
+#proxima_consulta{
+	position: fixed;
+	top: 140px;
+	right: -160px;
+	padding-right: 20px;
+}
+#proxima_consulta div{
+	display:inline-block;
+}
+#proxima_consulta div ul li a{
+	color: #0044CC;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 9pt;
+}
 #observaciones{
 	resize:none;
 	width:80%;
@@ -184,8 +199,41 @@ th{
 	right: -200px;
 	cursor: pointer;
 	border-radius:0 0 0 9px;
+	z-index: 100;
 }
 #tab2 ul{
+	padding-top: 10px;
+	list-style: none;
+}
+#tabpc {
+	position: fixed;
+	top: 140px;
+	right: 0px;
+	cursor: pointer;
+}
+#tabpc div{
+	background:blue;
+	width:60px;
+	height:60px;
+	border-radius:9px 0 0 9px;
+}
+#tabpc div i {
+	color:white;
+	font-size: 50px;
+	padding-left: 6px;
+}
+#tab2pc{
+	position:fixed;
+	background:blue;
+	color:white;
+	width:200px;
+	height:250px;
+	top: 140px;
+	right: -200px;
+	cursor: pointer;
+	border-radius:0 0 0 9px;
+}
+#tab2pc ul{
 	padding-top: 10px;
 	list-style: none;
 }

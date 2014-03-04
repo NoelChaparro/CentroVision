@@ -58,6 +58,39 @@
 			</div>
 		</div>
 	<!--end: menu nombre paciente -->
+		<!--start: fecha proxima consulta -->
+		@if ($operacionesLasikHoy || $operacionesLasikManana)
+		<div id="proxima_consulta">
+			<div id="tabpc">
+				<div><i class="icon-users"></i></div> 
+			</div>
+			<div id="tab2pc">
+				<ul id="datosOperacionLaser">
+					<li><b>Fecha de Operación:</b></li>
+					<li>
+						@if ($operacionesLasikHoy)
+						Existen operaciones programadas para el día de hoy:
+						<br />
+						@foreach ($operacionesLasikHoy as $operacionesHoy)
+							{{$operacionesHoy->Nombre}} <br>
+						@endforeach
+						<br />
+					@endif
+					
+					@if ($operacionesLasikManana)
+						Existen operaciones programadas para el día de mañana:
+						<br />
+						@foreach ($operacionesLasikManana as $operacionesManana)
+							{{$operacionesManana->Nombre}} <br>
+						@endforeach
+						<br />		
+					@endif
+					</li>
+				</ul>
+			</div>
+		</div>
+		@endif
+	<!--end: menu fecha proxima consulta -->
 	<!-- start: Content -->
 	<div class="offset2">
 		
@@ -137,25 +170,7 @@
 				<div id="loadingRespado"></div>
 			</div>
 		</div>
-		<!--End: Cuadro Respaldo -->
-
-		@if ($operacionesLasikHoy)
-			Existen operaciones programadas para el día de hoy:
-			<br />
-			@foreach ($operacionesLasikHoy as $operacionesHoy)
-				{{$operacionesHoy->Nombre}} <br>
-			@endforeach
-			<br />
-		@endif
-		
-		@if ($operacionesLasikManana)
-			Existen operaciones programadas para el día de mañana:
-			<br />
-			@foreach ($operacionesLasikManana as $operacionesManana)
-				{{$operacionesManana->Nombre}} <br>
-			@endforeach
-			<br />		
-		@endif		
+		<!--End: Cuadro Respaldo -->	
 		<!--start: Datos Generales -->
 		<section id="mnDatos_Generales">
 			<legend>Registrar Paciente</legend>
