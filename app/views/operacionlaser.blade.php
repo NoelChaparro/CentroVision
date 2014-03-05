@@ -638,71 +638,48 @@
 				<h5>PLAN QUIRURGICO:</h5>
 			</div>
 		</div>
-		<div class="row">
-			
-				<table>
-					<tr>
-						<td style="width:50%;">
-							<table class="span6 table">
-								<thead>
-									<tr>
-										<th>Ojo Derecho:</th>
-									</tr>
-								</thead>
-								<tbody>
-									<table>
-										<tr>
-											<th>Anillo:</th>
-											<td><span id="rtxtAnillo"></span></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td class="text-center"><span id="rtxtValt"></span></td>
-											<td class="text-center"><span id="rtxtVal2"></span></td>
-											<td>X</td>
-											<td class="text-center"><span id="rtxtVal3"></span></td>
-										</tr>
-									</table>
-								</tbody>
-							</table>
-							<table>
-								<thead>
-									<tr>
-										<th>Ojo Izquierdo:</th>
-									</tr>
-								</thead>
-								<tbody>
-									<table>
-										<tr>
-											<th>Anillo:</th>
-											<td><span id="rtxtAnilloI"></span></td>
-										</tr>
-										<tr>
-											<td></td>
-											<td class="text-center"><span id="rtxtValtI"></span></td>
-											<td class="text-center"><span id="rtxtVal2I"></span></td>
-											<td>X</td>
-											<td class="text-center"><span id="rtxtVal3I"></span></td>
-										</tr>
-									</table>
-								</tbody>
-							</table>
-						</td>
-						<td style="width:50%;">
-							<table>
-								<tr>
-									<th>Observaciones:</th>
-								</tr>
-								<tr>
-									<th>
-										<textarea id="robservaciones"></textarea>	
-									</th>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			
+			<table>
+				<tr>
+					<th colspan="5">Ojo Derecho:</th>
+					<td width="100"></td>
+					<td  rowspan="6">
+						<table width="300">
+							<tr>
+								<th>Observaciones:</th>
+							</tr>
+							<tr>
+								<th>
+									<textarea id="robservaciones"></textarea>	
+								</th>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<th>Anillo:</th>
+					<td><span id="rtxtAnillo"></span></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="text-center"><span id="rtxtValt"></span></td>
+					<td class="text-center"><span id="rtxtVal2"></span></td>
+					<td>X</td>
+					<td class="text-center"><span id="rtxtVal3"></span></td>
+				</tr>
+				<tr>
+					<th colspan="5">Ojo Izquierdo:</th>
+				<tr>
+					<th>Anillo:</th>
+					<td><span id="rtxtAnilloI"></span></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="text-center"><span id="rtxtValtI"></span></td>
+					<td class="text-center"><span id="rtxtVal2I"></span></td>
+					<td>X</td>
+					<td class="text-center"><span id="rtxtVal3I"></span></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 						

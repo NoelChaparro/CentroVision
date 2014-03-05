@@ -69,7 +69,7 @@
 					<li><b>Fecha de Operación:</b></li>
 					<li>
 						@if ($operacionesLasikHoy)
-						Existen operaciones programadas para el día de hoy:
+						Operaciones programadas para el día de hoy:
 						<br />
 						@foreach ($operacionesLasikHoy as $operacionesHoy)
 							{{$operacionesHoy->Nombre}} <br>
@@ -78,7 +78,7 @@
 					@endif
 					
 					@if ($operacionesLasikManana)
-						Existen operaciones programadas para el día de mañana:
+						Operaciones programadas para el día de mañana:
 						<br />
 						@foreach ($operacionesLasikManana as $operacionesManana)
 							{{$operacionesManana->Nombre}} <br>
