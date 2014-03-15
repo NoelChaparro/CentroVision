@@ -12,13 +12,21 @@
 					<legend class="text-center">PROGRAMACION QUIRURGICA</legend>
 				</div>
 				<div class="row">
+					<div class="span">
+						<strong>Fecha Programada:</strong>&nbsp; <span id="rfecha"></span>
+					</div>
+					<div class="span">
+						<strong>Hora:</strong> &nbsp;<span id="rhora"s></span>
+					</div>
+					<div class="span"><strong>Id:</strong>&nbsp;<span id="rtelefono"></span>&nbsp;&nbsp;&nbsp;</div>
+				</div>
+				<div class="row">
 					<div class="span"><strong>Medico Tratante:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 					<div class="span"><span>Dr. Gerardo Contreras Herrera</span></div>
 				</div>
 				<div class="row">
 					<div class="span"><strong>Nombre del Paciente:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 					<div class="span"><span id="rnombre"></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<div class="span"><strong>Telefono:</strong>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 					<div class="span"><span id="rtelefono"></span></div>
 				</div>
 				<div class="row">
@@ -26,14 +34,6 @@
 					<div class="span"><strong>Sexo:</strong> &nbsp;<span id="rsexo"></span>&nbsp;&nbsp;&nbsp;</div>
 					<div class="span"><strong>Profesion:</strong> &nbsp;<span id="rprofesion"></span></div>
 				</div>	
-				<div class="row">
-					<div class="span">
-						<strong>Fecha Programada:</strong>&nbsp; <span id="rfecha">&nbsp;&nbsp;&nbsp;</span>
-					</div>
-					<div class="span">
-						<strong>Hora:</strong> &nbsp;<span id="rhora">&nbsp;&nbsp;&nbsp;</span>
-					</div>
-				</div>
 				<hr>
 				<div class="row">
 					<div class="span">
@@ -377,29 +377,34 @@
 										<th colspan="4"> EXPLORACION FISICA:</th>
 									</tr>
 									<tr>
+										<th></th>
+										<th>Ojo Derecho</th>
+										<th>Ojo Izquierdo</th>
+									</tr>
+									<tr>
 										<th>Cornea:</th>
-										<th><input type="radio" name="cornea" value="Trasparente" checked="checked"> Transparente</th>
-										<th><input type="radio" name="cornea" value="No Trasparente"> No Trasparente</th>
+										<th><input type="radio" name="cornead" checked="checked"><input type="radio" name="cornead"> Trasplante/No Trasplante</th>
+										<th><input type="radio" name="corneai" checked="checked"><input type="radio" name="corneai">Trasplante/No Trasplante</th>
 									</tr>
 									<tr>
 										<th>Tamaño Corneal:</th>
-										<th><input type="radio" name="tcorneal" value="Derecha" checked="checked"> Derecha</th>
-										<th><input type="radio" name="tcorneal" value="Izquierda"> Izquierda</th>
+										<th><input type="radio" name="tcorneald" checked="checked"><input type="radio" name="tcorneald"> Normal/Anormal</th>
+										<th><input type="radio" name="tcorneali" checked="checked"><input type="radio" name="tcorneali"> Normal/Anormal</th>
 									</tr>
 									<tr>
 										<th>Segmento Anterior:</th>
-										<th><input type="radio" name="segmento" value="Normal" checked="checked"> Normal</th>
-										<th><input type="radio" name="segmento" value="Anormal"> Anormal</th>
+										<th><input type="radio" name="segmentod" checked="checked"><input type="radio" name="segmentod"> Normal/Anormal</th>
+										<th><input type="radio" name="segmentoi" checked="checked"><input type="radio" name="segmentoi"> Normal/Anormal</th>
 									</tr>
 									<tr>
 										<th>Tamaño Pupilar:</th>
-										<th><input type="radio" name="tpupilar" value="Derecha" checked="checked"> Derecha</th>
-										<th><input type="radio" name="tpupilar" value="Izquierda"> Izquierda</th>
+										<th><input type="radio" name="tpupilard" checked="checked"><input type="radio" name="tpupilard"> Normal/Anormal</th>
+										<th><input type="radio" name="tpupilari" checked="checked"><input type="radio" name="tpupilari"> Normal/Anormal</th>
 									</tr>
 									<tr>
 										<th>Cristalino:</th>
-										<th><input type="radio" name="cristalino" value="Derecho" checked="checked"> Derecho</th>
-										<th><input type="radio" name="cristalino" value="Izquierdo"> Izquierdo</th>
+										<th><input type="radio" name="cristalinod" value="Derechod" checked="checked"><input type="radio" name="cristalinod"> Trasparente/No Trasparente</th>
+										<th><input type="radio" name="cristalinoi" value="Derechod" checked="checked"><input type="radio" name="cristalinoi"> Trasparente/No Trasparente</th>
 									</tr>
 									<tr><br></tr>
 									<tr class="lasik">
@@ -597,7 +602,10 @@
 	<!-- end: button-->
 
 	<div class="reporte">
-		<hr>
+		<div class="row">
+			FO.B/M <span id="rtxFOBM"></span>
+		</div>		
+		<br>
 		<div class="row">
 			<div class="span">
 				<table class="span">
@@ -626,7 +634,7 @@
 						<tr>
 							<th>Paquimetria</th>
 							<th>OD:</th><th><span id="rtxtpaqOD"></th>
-							<th>OI:</th><th><span id="rtxtPOOI"></th>
+							<th>OI:</th><th><span id="rtxtpaqOI"></th>
 						</tr>
 					</table>
 				</div>
@@ -656,7 +664,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th>Anillo:</th>
+					<th>Der: Anillo Z.O. 9.5mm</th>
 					<td><span id="rtxtAnillo"></span></td>
 				</tr>
 				<tr>
@@ -669,7 +677,7 @@
 				<tr>
 					<th colspan="5">Ojo Izquierdo:</th>
 				<tr>
-					<th>Anillo:</th>
+					<th>Izq: Anillo Z.O. 9.5mm</th>
 					<td><span id="rtxtAnilloI"></span></td>
 				</tr>
 				<tr>

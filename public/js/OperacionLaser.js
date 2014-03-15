@@ -63,6 +63,24 @@ function inicio() //Inicio del documento
 	$("#btnCancelarOperacionLaser").on("click",limpiarFormularioOperacionLaser);
 	$("#btnImprimirOperacionLaser").on("click",imprimirOperacionLaser);
     //$("#btnGuardarOperacionLaser").on("click",guardarFormularioOperacionLaser); 
+
+    //funcion para copiar queratometrias
+    $("#txtQ1").on({
+		change:CalculoLasikOjoDerecho,
+		keyup:CalculoLasikOjoDerecho
+	});	
+	$("#txtQ3").on({
+		change:CalculoLasikOjoDerecho,
+		keyup:CalculoLasikOjoDerecho
+	});
+	$("#txtQ5").on({
+		change:CalculoLasikOjoIzquierdo,
+		keyup:CalculoLasikOjoIzquierdo
+	});
+	$("#txtQ7").on({
+		change:CalculoLasikOjoIzquierdo,
+		keyup:CalculoLasikOjoIzquierdo
+	});
 }
 function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 {
@@ -264,6 +282,8 @@ function CalculoLasikOjoDerecho() // Funcion donde se calcula el ojo derecho
 		$("#txtValt").val(total.toFixed(2));
 		$("#txtVal9").val(D9.toFixed(0));
 		$("#txtVal11").val(D10.toFixed(0));
+		$("#txtKH").val($("#txtQ1").val());
+		$("#txtKV").val($("#txtQ3").val());
 }
 function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 {
@@ -465,6 +485,8 @@ function CalculoLasikOjoIzquierdo() // Funcion donde se calcula el ojo izquierdo
 		$("#txtValtI").val(total.toFixed(2));
 		$("#txtVal9I").val(D9.toFixed(0));
 		$("#txtVal11I").val(D10.toFixed(0));
+		$("#txtKHI").val($("#txtQ5").val());
+		$("#txtKVI").val($("#txtQ7").val());
 }
 function buscarPaciente(){ //Busca los pacientes segun criterio de busqueda y los muestra en una tabla
 	var contenido = $('.tblBusquedaPacientesModal tbody');
@@ -580,6 +602,7 @@ var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir
 	$('#redad').text($('#txtEdad').val());
 	$('#rfecha').text($('#txtFechaProgramada').val());
 	$('#rhora').text($('#txtHora').val());
+	$('#rtelefono').text($('#telefono').val());
 	$('#rRefraccionSphOD').text($('#RefraccionSphOD').val());
 	$('#rRefraccionCylOD').text($('#RefraccionCylOD').val());
 	$('#rRefraccionEjeOD').text($('#RefraccionEjeOD').val());
@@ -594,6 +617,7 @@ var imprimirOperacionLaser = function(){ //Funcion que permite mandar a imprimir
 	$('#rtxtEsferaOI2').text($('#txtEsferaOI2').val());
 	$('#rtxtCilindroOI2').text($('#txtCilindroOI2').val());
 	$('#rtxtEjeOI2').text($('#txtEjeOI2').val());
+	$('#rtxFOBM').text($('#txFOBM').val());
 	$('#rtxtQ1').text($('#txtQ1').val());
 	$('#rtxtQ2').text($('#txtQ2').val());
 	$('#rtxtQ3').text($('#txtQ3').val());

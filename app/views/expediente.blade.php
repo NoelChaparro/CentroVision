@@ -173,7 +173,7 @@
 		<!--End: Cuadro Respaldo -->	
 		<!--start: Datos Generales -->
 		<section id="mnDatos_Generales">
-			<legend>Registrar Paciente</legend>
+			<legend>Ficha de Identificación</legend>
 			<div class="row">
 				<div class="control-group">
 				  	{{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
@@ -263,7 +263,7 @@
 			</div>
 			<div class="row">
 				<div class="control-group">
-				  	{{ Form::label('fechaoperacion', 'Fecha Operacion:', array('class' => 'control-label')) }}
+				  	{{ Form::label('fechaoperacion', 'Fecha de Cirugía:', array('class' => 'control-label')) }}
 				  	<div class="controls">
 				    	{{ Form::text('fechaoperacion','',array('class' => 'input-small')) }}
 				  	</div>
@@ -430,7 +430,7 @@
  
        		</div>
        	@if (Auth::user()->autorizacion == 1)
-			<legend>Biomicroscopía e Iris</legend>
+			<legend>Biomicroscopía</legend>
 			<div class="row">
 				<div class="span6">
 					<div class="control-group">
@@ -477,7 +477,7 @@
 		
 		<!-- start: Fondo y Retina -->
 		<section id="mnFondoRetina">
-			<legend>Fondo y Retina</legend>
+			<legend>Fondo de Ojo</legend>
 			<div class="row">
 				<div class="span6">
 					<div class="control-group">
