@@ -73,6 +73,7 @@
 						<br />
 						@foreach ($operacionesLasikHoy as $operacionesHoy)
 							{{$operacionesHoy->Nombre}} <br>
+							Lugar: {{$operacionesHoy->LugarOperacion}}
 						@endforeach
 						<br />
 					@endif
@@ -82,6 +83,7 @@
 						<br />
 						@foreach ($operacionesLasikManana as $operacionesManana)
 							{{$operacionesManana->Nombre}} <br>
+							Lugar: {{$operacionesManana->LugarOperacion}}
 						@endforeach
 						<br />		
 					@endif
@@ -262,12 +264,18 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="control-group">
+				<div class="control-group span3">
 				  	{{ Form::label('fechaoperacion', 'Fecha de Cirugía:', array('class' => 'control-label')) }}
 				  	<div class="controls">
 				    	{{ Form::text('fechaoperacion','',array('class' => 'input-small')) }}
 				  	</div>
 				</div>
+				<div class="control-group span4">
+				  	{{ Form::label('lugaroperacion', 'Lugar de Cirugía:', array('class' => 'control-label')) }}
+				  	<div class="controls">
+				    	{{ Form::text('lugaroperacion','',array('class' => 'input-large')) }}
+				  	</div>
+				</div>				
 			</div>
 			</br></br></br></br>
 		</section>

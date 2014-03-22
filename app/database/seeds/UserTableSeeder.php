@@ -22,6 +22,12 @@ class UserTableSeeder extends Seeder {
             'password' => Hash::make('administracioncv')
         ));        
 
+        User::create(array(
+            'username' => 'brendaaguirre',
+            'password' => Hash::make('centrovision')
+        ));        
+
+
         // Uncomment the below to run the seeder
         // DB::table('user')->insert($user);
     }

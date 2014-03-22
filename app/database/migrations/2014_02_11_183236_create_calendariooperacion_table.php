@@ -17,6 +17,7 @@ class CreateCalendarioOperacionTable extends Migration {
             $table->unsignedinteger('Paciente_id');
             $table->foreign('Paciente_id')->references('IdPaciente')->on('DatosPacientes');
 			$table->date('FechaOperacion')->nullable();
+            $table->string('LugarOperacion', 50)->nullable();
             $table->timestamps();
         });
     }

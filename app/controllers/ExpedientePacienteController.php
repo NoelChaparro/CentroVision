@@ -6,8 +6,8 @@ class ExpedientePacienteController extends BaseController{
 		$mes_manana = date('m',time()+84600); 
 		$ano_manana = date('Y',time()+84600);
 		$fecha_manana = $ano_manana . '-' . $mes_manana . '-' . $dia_manana;
-		$operacionesLasikHoy = DB::table('CalendarioOperacion')->join('DatosPacientes','CalendarioOperacion.Paciente_id','=','DatosPacientes.IdPaciente')->select('DatosPacientes.Nombre')->where('CalendarioOperacion.FechaOperacion','=',date('Y-m-d'))->orderBy('CalendarioOperacion.created_at', 'desc')->get();
-		$operacionesLasikManana = DB::table('CalendarioOperacion')->join('DatosPacientes','CalendarioOperacion.Paciente_id','=','DatosPacientes.IdPaciente')->select('DatosPacientes.Nombre')->where('CalendarioOperacion.FechaOperacion','=',date("Y-m-d",strtotime($fecha_manana)))->orderBy('CalendarioOperacion.created_at', 'desc')->get();
+		$operacionesLasikHoy = DB::table('CalendarioOperacion')->join('DatosPacientes','CalendarioOperacion.Paciente_id','=','DatosPacientes.IdPaciente')->select('DatosPacientes.Nombre','CalendarioOperacion.LugarOperacion')->where('CalendarioOperacion.FechaOperacion','=',date('Y-m-d'))->orderBy('CalendarioOperacion.created_at', 'desc')->get();
+		$operacionesLasikManana = DB::table('CalendarioOperacion')->join('DatosPacientes','CalendarioOperacion.Paciente_id','=','DatosPacientes.IdPaciente')->select('DatosPacientes.Nombre','CalendarioOperacion.LugarOperacion')->where('CalendarioOperacion.FechaOperacion','=',date("Y-m-d",strtotime($fecha_manana)))->orderBy('CalendarioOperacion.created_at', 'desc')->get();
 		return View::make('expediente')->with('operacionesLasikHoy',$operacionesLasikHoy)->with('operacionesLasikManana',$operacionesLasikManana);
 
 	}
@@ -317,10 +317,11 @@ class ExpedientePacienteController extends BaseController{
 				// Guardar en la tabla CalendarioOperacion
 				$calendarioOperacionPaciente = array (
 					"Paciente_id" => $id_paciente,
-					"FechaOperacion" => date("Y-m-d",strtotime(Input::get("fechaoperacion")))
+					"FechaOperacion" => date("Y-m-d",strtotime(Input::get("fechaoperacion"))),
+					"LugarOperacion" => Input::get("lugaroperacion")
 				);
 				$calendarioOperacion = new CalendarioOperacion($calendarioOperacionPaciente);
-				if ($calendarioOperacionPaciente["FechaOperacion"]){$calendarioOperacion->save();}
+				if ($calendarioOperacionPaciente["FechaOperacion"] || $calendarioOperacionPaciente["LugarOperacion"]){$calendarioOperacion->save();}
 
 				// Se guarda en la tabla PadecimientoPacientes
 				$padecimientoPaciente = array (
