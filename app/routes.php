@@ -26,7 +26,7 @@ Route::get('logout', array('as' => 'logout', function () {
     return Redirect::to('login');
 }));
 //Rutas para el controlador ExpedientePacienteController
-Route::get('/', array('before' => 'autorizar','uses' => 'ExpedientePacienteController@expediente'));
+Route::get('/{idPaciente?}', array('before' => 'autorizar','uses' => 'ExpedientePacienteController@expediente'))->where('idPaciente','[0-9]+');
 Route::post('guardarExpediente', 'ExpedientePacienteController@guardarExpediente');
 Route::post('buscarPaciente', 'ExpedientePacienteController@buscarPaciente');
 Route::post('buscarPacientePorId','ExpedientePacienteController@buscarPacientePorId');
@@ -38,7 +38,7 @@ Route::get('Certificado/{idPaciente?}',array('before' => 'autorizar','uses' => '
 //Rutas para el controlador OperacionLaser
 Route::get('OperacionLaser',array('before' => 'autorizar','uses' => 'OperacionLaserController@calculoOperacionLaser'));
 //Rutas para el controlador LentesContacto
-Route::get('LentesContacto',array('before' => 'autorizar','uses' => 'LentesContactoController@lentesContactoHistorial'));
+Route::get('LentesContacto/{idPaciente?}',array('before' => 'autorizar','uses' => 'LentesContactoController@lentesContactoHistorial'))->where('idPaciente','[0-9]+');
 Route::post('guardarLentesContacto','LentesContactoController@guardarLentesContacto');
 Route::post('buscarHistorialLentesContacto','LentesContactoController@buscarHistorialLentesContacto');
 //Rutas para el upload de imagenes

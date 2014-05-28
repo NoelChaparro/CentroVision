@@ -98,7 +98,7 @@
 		
 		<!-- Form Name -->
 		{{ Form::open(array('action' => 'ExpedientePacienteController@guardarExpediente','class' => 'form-horizontal frmExpedientePaciente', 'data-validate' => 'parsley')) }}
-		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
+		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='{{$idPaciente}}' />
 		<input type='hidden' name='auth' id="auth" value='{{Auth::user()->autorizacion}}' />
 			<div class="row">
 				<figure class="logoppal">

@@ -1,19 +1,17 @@
-@extends('layouts.base')
+@extends('layouts.baseother')
 @section('titulo')  
     Operación Laser
 @stop
 
 @section('Contenido')
 	{{ Form::open(array('action' => 'LentesContactoController@guardarLentesContacto','class' => 'form-horizontal frmLentesContacto')) }}
-		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='' />
-		</br></br>
+		<input type='hidden' name='varIdPaciente' id="varIdPaciente" value='{{$Paciente[0]->IdPaciente}}' />
+		<!--</br></br>
 		<div class="row offset1">
 				<ul class="hover-block">
       				<li>
         				<a href="#mdlBuscarPaciente" role="button" data-toggle="modal" id="btnBuscarPacienteModal">
-			              	<!-- Image -->
 			              	<div class="b-blue cont-icon"><i class="icon-users"></i></div> 
-			              	<!-- Content with background color Class -->
 			              	<div class="hover-content b-blue">
 			                	<h4>Buscar</h4>
 			                	Buscar paciente en la base de datos de acuerdo al nombre
@@ -46,9 +44,9 @@
 	        	<div class="modal-footer">
             	<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
        		</div>
-   		</div>
+   		</div>-->
    		<br><br>
-
+		
 		<!--start: Cuadro Respaldo -->
 		<div style="display:none">
 			<div id="dataRespaldo">
@@ -65,7 +63,7 @@
 				<div class="control-group">
 				  	{{ Form::label('nombre', 'Nombre:', array('class' => 'control-label')) }}
 				  	<div class="controls">
-				    	{{ Form::text('nombre','',array('class' => 'input-xxlarge', 'disabled' => '')) }}
+				    	{{ Form::text('nombre',$Paciente[0]->Nombre,array('class' => 'input-xxlarge', 'disabled' => '')) }}
 				  	</div>
 				</div>
 			</div>
@@ -202,10 +200,9 @@
 	</div>
 
 	<div id="historialLentesContacto">
-		
 	</div>
 @stop
 
 @section('Javascript')
-	<script src="js/LentesContacto.js"></script>
+	<script src="../js/LentesContacto.js"></script>
 @stop

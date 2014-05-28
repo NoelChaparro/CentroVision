@@ -1,8 +1,14 @@
 <?php
 
 class LentesContactoController extends BaseController{
-	public function lentesContactoHistorial(){ //Manda llamar la vista operacionLaser
-		return View::make('lentescontacto')->with('fechaActual',date('d/m/Y'));
+	public function lentesContactoHistorial($idPaciente=null){ //Manda llamar la vista operacionLaser
+		$datosPaciente = '';
+		$lentesContacto = '';
+		if($idPaciente){
+			$datosPaciente = DB::table('DatosPacientes')->where('IdPaciente', '=', $idPaciente)->get();
+			$lentesContacto = DB::table('LentesContacto')->where('Paciente_id', '=', $idPaciente)->orderBy('created_at', 'desc')->take(3)->get();
+		}
+		return View::make('lentescontacto')->with('Paciente',$datosPaciente)->with('fechaActual',date('d/m/Y'))->with('LentesContacto',$lentesContacto);
 	}
 
 	public function guardarLentesContacto(){ //Guarda todos los datos del formulario lentes contacto

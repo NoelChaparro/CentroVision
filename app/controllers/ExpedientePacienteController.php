@@ -1,14 +1,14 @@
 <?php
 
 class ExpedientePacienteController extends BaseController{
-	public function expediente(){ //manda llamar la vista expediente
+	public function expediente($idPaciente=null){ //manda llamar la vista expediente
 		$dia_manana = date('d',time()+84600); 
 		$mes_manana = date('m',time()+84600); 
 		$ano_manana = date('Y',time()+84600);
 		$fecha_manana = $ano_manana . '-' . $mes_manana . '-' . $dia_manana;
 		$operacionesLasikHoy = DB::table('CalendarioOperacion')->join('DatosPacientes','CalendarioOperacion.Paciente_id','=','DatosPacientes.IdPaciente')->select('DatosPacientes.Nombre','CalendarioOperacion.LugarOperacion')->where('CalendarioOperacion.FechaOperacion','=',date('Y-m-d'))->orderBy('CalendarioOperacion.created_at', 'desc')->get();
 		$operacionesLasikManana = DB::table('CalendarioOperacion')->join('DatosPacientes','CalendarioOperacion.Paciente_id','=','DatosPacientes.IdPaciente')->select('DatosPacientes.Nombre','CalendarioOperacion.LugarOperacion')->where('CalendarioOperacion.FechaOperacion','=',date("Y-m-d",strtotime($fecha_manana)))->orderBy('CalendarioOperacion.created_at', 'desc')->get();
-		return View::make('expediente')->with('operacionesLasikHoy',$operacionesLasikHoy)->with('operacionesLasikManana',$operacionesLasikManana);
+		return View::make('expediente')->with('operacionesLasikHoy',$operacionesLasikHoy)->with('operacionesLasikManana',$operacionesLasikManana)->with('idPaciente',$idPaciente);
 
 	}
 

@@ -50,6 +50,7 @@ function inicio() //Inicio del documento
     $("#btnImprimirRecetaLentes").on("click",imprimirRecetaLentes);
     $("#btnImprimirCertificado").on("click",ImprimirCertificado);
     $("#btnImprimirConsentimientoCirugiaOcularExtraocular").on("click",imprimirConsentimientoCirugiaOcularExtraocular);
+    $("#linkLentesContacto").on("click",pageLentesContacto);
     //$("#btnImprimirRecetaLentes").attr("disabled",true);
     //$("#btnImprimirCertificado").attr("disabled",true);
     $("#btnImprimirExpedienteCompleto").on("click",imprimirExpedienteCompleto);
@@ -133,6 +134,15 @@ function inicio() //Inicio del documento
         'hideOnContentClick': true
     });
     /* ---------- Respaldos ----------*/
+    buscarPacienteConId($("#varIdPaciente").val());
+
+}
+
+var pageLentesContacto = function(){ //Funcion para redireccionar a la pagina de lentes de contacto con el id del paciente
+    if ($("#varIdPaciente").val()!=''){
+        location.href= "LentesContacto/"+$("#varIdPaciente").val();
+    }    
+    return false;
 }
 
 var respaldos = function (){ //Funcion para limpiar la capa de dialogo de los respaldos
@@ -375,7 +385,13 @@ function tablaBusquedaPacientesModal(){ //Funcion que permite interactuar con la
 }
 
 function buscarPacienteConId(idPaciente){ //Funcion que toma el id del paciente seleccionado en la tabla de la busqueda y carga los datos en los controles del formulario
-    limpiarFormularioExpedientePaciente();
+    //limpiarFormularioExpedientePaciente();
+    // Limpiar los contenedores de las imagenes
+    $('#imagenesExpediente').html('');
+    $('#imagenesBiomicroscopia').html('');
+    //Datos de la ultima consulta
+    $('#datosUltimaConsulta').html('');
+    $('#datosOperacionLaser').html('');    
     var contenido = $('.tblBusquedaPacientesModal tbody');
     var contenidoUltimaConsulta = $('#datosUltimaConsulta').html('');
     var meses = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];

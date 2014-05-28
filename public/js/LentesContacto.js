@@ -7,6 +7,7 @@ function inicio(){
     $("#btnBuscarPacienteModal").on("click",limpiarBuscarPacienteModal);	
     $("#btnGuardarLenteContacto").on("click",guardarFormularioLenteContacto);
     $("#btnCancelarLenteContacto").on("click",limpiarFormularioLentesContacto);
+    $("#linkExpedientePaciente").on("click",pageExpedientePaciente);
     /* ---------- Respaldos ----------*/
     $("#btnRespaldarBaseDatos").on("click",function(){
         respaldarSistema(1);
@@ -18,13 +19,18 @@ function inicio(){
     $("a#respaldarSistema").fancybox({
         'hideOnContentClick': true
     });
-    /* ---------- Respaldos ----------*/    
+    /* ---------- Respaldos ----------*/
+    buscarHistorialLentesContacto($("#varIdPaciente").val());
 }
 
 var respaldos = function (){ //Funcion para limpiar la capa de dialogo de los respaldos
     $("#loadingRespado").html('');
 }
 
+var pageExpedientePaciente = function (){ //Funcion para link de expediente paciente
+    location.href= "../"+$("#varIdPaciente").val();
+    return false;
+}
 var respaldarSistema = function (tipoRespaldo){ //Metodo para realizar los respaldos, se envia un parametro si el tipo de respaldo es 1 se respalda la base de datos, si es 2 respalda las imagenes
     var contenedorLoading = $("#loadingRespado");
     $.ajax({
@@ -154,7 +160,7 @@ var buscarHistorialLentesContacto = function(idPaciente){
     var meses = ['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
     $.ajax({
             data:  'idPaciente=' + idPaciente,
-            url:   'buscarHistorialLentesContacto',
+            url:   '../buscarHistorialLentesContacto',
             type:  'post',
             success:  function (response) {
                 contenido.html('');

@@ -10,22 +10,22 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
         <style>
             body {
                 padding-top: 40px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="../css/main.css">
         <!--<link rel="stylesheet" href="css/main-responsive.css">-->
-        <link rel="stylesheet" href="css/alertify.core.css" />
-        <link rel="stylesheet" href="css/alertify.default.css" />
-        <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
-        <link rel="stylesheet" href="font/icomoon/style.css"/><!--iconos para menu de inicio-->                          
+        <link rel="stylesheet" href="../css/alertify.core.css" />
+        <link rel="stylesheet" href="../css/alertify.default.css" />
+        <link rel="stylesheet" href="../css/jquery-ui-1.8.21.custom.css"><!--para calendario en inputbox-->
+        <link rel="stylesheet" href="../font/icomoon/style.css"/><!--iconos para menu de inicio-->                          
         <!-- Add fancyBox main JS and CSS files -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen" /><!--Efecto modal para imagenes--> 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/jquery.fancybox.css" media="screen" /><!--Efecto modal para imagenes--> 
+        <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
      
     <body>
@@ -46,12 +46,11 @@
                     <a class="brand pull-left" href="#">Centro de Visión</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right menu_principal">
-                            <li class="active"><a href="./">Expediente Paciente</a></li>
+                            <li class="active"><a href="" id="linkExpedientePaciente">Expediente Paciente</a></li>
                             @if (Auth::user()->autorizacion == 1)
-                                <li><a href="OperacionLaser">Lasik</a></li>
-                                <li><a href="" id="linkLentesContacto">Lentes de Contacto</a></li>
-                                <li><a href="BajaVision">Baja Visión</a></li>
-                                <li><a href="#dataRespaldo" id="respaldarSistema">Respaldar</a></li>
+                                <li><a href="../OperacionLaser">Lasik</a></li>
+                                <li><a>Lentes de Contacto</a></li>
+                                <li><a href="../BajaVision">Baja Visión</a></li>
                             @endif
                             <li>{{ HTML::link('logout', 'Salir (' . Auth::user()->username . ')') }}</li>
                             <!-- se comenta esta parte por se se requiere mas adelante
@@ -89,17 +88,17 @@
         </div> <!-- /container -->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/jquery-ui-1.10.0.custom.min.js"></script><!--para calendario en inputbox-->
-        <script src="js/alertify.min.js"></script>
-        <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/navbar.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script type="text/javascript" src="js/jquery.fancybox.js"></script><!--Efecto modal para imagenes--> 
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <script src="../js/jquery-ui-1.10.0.custom.min.js"></script><!--para calendario en inputbox-->
+        <script src="../js/alertify.min.js"></script>
+        <script src="../js/jquery.scrollTo-1.4.3.1-min.js"></script>
+        <script src="../js/waypoints.min.js"></script>
+        <script src="../js/navbar.js"></script>
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
+        <script type="text/javascript" src="../js/jquery.fancybox.js"></script><!--Efecto modal para imagenes--> 
         <!--<script src="font/icomoon/lte-ie7.js"></script>-->
         @yield('Javascript')
 
